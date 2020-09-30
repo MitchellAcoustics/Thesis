@@ -42,3 +42,11 @@ Thesis writing workspace.code-workspace
 __latexindent_temp.synctex.gz
 __latexindent_temp.pdf
 main.synctex.gz
+main.aux
+main.bbl
+main.blg
+main.lof
+main.log
+main.lot
+main.toc
+.aux
