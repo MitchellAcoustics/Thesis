@@ -1,52 +1,290 @@
-Archive/Thesis Main - Auditory Saliency as a Tool for Soundscape Assessment.url
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.aux
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.log
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.out
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.pdf
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.synctex.gz
-Archive/Thesis Outline/2018-10-29 Thesis Outline v1.0.tex
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.aux
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.log
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.out
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.pdf
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.synctex.gz
-Archive/Thesis Outline/2018-11-08 Thesis Outline v1.1.tex
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth-2.log
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth-2.pdf
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth-2.tex
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth.log
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth.pdf
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth-andrew-Blade-Stealth.tex
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.aux
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.log
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.out
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.pdf
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.synctex-andrew-Blade-Stealth-2.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.synctex-andrew-Blade-Stealth.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.synctex.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2-andrew-Blade-Stealth.tex
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.aux
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.bbl
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.blg
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.log
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.out
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.pdf
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.synctex-andrew-Blade-Stealth-2.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.synctex-andrew-Blade-Stealth.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.synctex.gz
-Archive/Thesis Outline/2018-11-20 Thesis Outline v1.2.tex
-Archive/Thesis Outline/Duquesne-Thesis-Outline-Guide.pdf
-Archive/Thesis Outline/Duquesne-Thesis-Outline-Guide.tex
-.vscode/settings.json
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
+
+## Generated if empty string is given at "Please type another file name for output:"
+.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Build tool directories for auxiliary files
+# latexrun
+latex.out/
+
+## Auxiliary and intermediate files from other packages:
+# algorithms
+*.alg
+*.loa
+
+# achemso
+acs-*.bib
+
+# amsthm
+*.thm
+
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
+
+# changes
+*.soc
+
+# comment
+*.cut
+
+# cprotect
+*.cpt
+
+# elsarticle (documentclass of Elsevier journals)
+*.spl
+
+# endnotes
+*.ent
+
+# fixme
+*.lox
+
+# feynmf/feynmp
+*.mf
+*.mp
+*.t[1-9]
+*.t[1-9][0-9]
+*.tfm
+
+#(r)(e)ledmac/(r)(e)ledpar
+*.end
+*.?end
+*.[1-9]
+*.[1-9][0-9]
+*.[1-9][0-9][0-9]
+*.[1-9]R
+*.[1-9][0-9]R
+*.[1-9][0-9][0-9]R
+*.eledsec[1-9]
+*.eledsec[1-9]R
+*.eledsec[1-9][0-9]
+*.eledsec[1-9][0-9]R
+*.eledsec[1-9][0-9][0-9]
+*.eledsec[1-9][0-9][0-9]R
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+
+# uncomment this for glossaries-extra (will ignore makeindex's style files!)
+# *.ist
+
+# gnuplottex
+*-gnuplottex-*
+
+# gregoriotex
+*.gaux
+*.gtex
+
+# htlatex
+*.4ct
+*.4tc
+*.idv
+*.lg
+*.trc
+*.xref
+
+# hyperref
+*.brf
+
+# knitr
+*-concordance.tex
+# TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
+# *.tikz
+*-tikzDictionary
+
+# listings
+*.lol
+
+# luatexja-ruby
+*.ltjruby
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+
+# minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+# minted
+_minted*
+*.pyg
+
+# morewrites
+*.mw
+
+# nomencl
+*.nlg
+*.nlo
+*.nls
+
+# pax
+*.pax
+
+# pdfpcnotes
+*.pdfpc
+
+# sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# scrwfile
+*.wrt
+
+# sympy
+*.sout
+*.sympy
+sympy-plots-for-*.tex/
+
+# pdfcomment
+*.upa
+*.upb
+
+# pythontex
+*.pytxcode
+pythontex-files-*/
+
+# tcolorbox
+*.listing
+
+# thmtools
+*.loe
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# todonotes
+*.tdo
+
+# vhistory
+*.hst
+*.ver
+
+# easy-todo
+*.lod
+
+# xcolor
+*.xcp
+
+# xmpincl
+*.xmpi
+
+# xindy
+*.xdy
+
+# xypic precompiled matrices and outlines
+*.xyc
+*.xyd
+
+# endfloat
+*.ttt
+*.fff
+
+# Latexian
+TSWLatexianTemp*
+
+## Editors:
+# WinEdt
+*.bak
+*.sav
+
+# Texpad
+.texpadtmp
+
+# LyX
+*.lyx~
+
+# Kile
+*.backup
+
+# gummi
+.*.swp
+
+# KBibTeX
+*~[0-9]*
+
+# TeXnicCenter
+*.tps
+
+# auto folder when using emacs and auctex
+./auto/*
+*.el
+
+# expex forward references with \gathertags
+*-tags.tex
+
+# standalone packages
+*.sta
+
+# Makeindex log files
+*.lpz
+
+# xwatermark package
+*.xwm
+
+# REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
+# option is specified. Footnotes are the stored in a file with suffix Notes.bib.
+# Uncomment the next line to have this generated file ignored.
+#*Notes.bib
+
+.vscode/
 Thesis writing workspace.code-workspace
-__latexindent_temp.synctex.gz
 __latexindent_temp.pdf
-main.synctex.gz
-main.aux
-main.bbl
-main.blg
-main.lof
-main.log
-main.lot
-main.toc
-.aux
+Archive/
+Chapters/*.aux
