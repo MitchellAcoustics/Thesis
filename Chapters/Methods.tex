@@ -2,7 +2,7 @@
 \label{ch:methods}
 
 \section{Data Collection (Protocol)}
- \hl{From: Protocol paper}
+ \draft{From: Protocol paper}
  Soundscape studies strive to understand the perception of a sound environment, in context, including acoustic, (non-acoustic) environmental, contextual, and personal factors. These factors combine together to form a person's soundscape in complex interacting ways \citep{Berglund2006Tool}. In order to predict how people would perceive an acoustic environment, it is essential to identify the underlying acoustic and non-acoustic properties of soundscape.
 
  The ISO/TS 12913-2:2018 is the current reference document addressing data collection and reporting requirements in soundscape studies. In terms of methods, the ISO document covers two main approaches, namely: soundwalks combined with questionnaires (Methods A and B) and narrative interviews (Method C) \citep{ISO12913_2_2018IOS}, which relate to on-site and off-site data collection, accordingly. Part 3 of the ISO 12913 series builds on Part 2 and provides guidelines for analyzing data gathered using only those methods \citep{ISO12913_3_2019IOS}. However, the range of possible methodological approaches to soundscape data collection is much broader and it includes, for instance, laboratory experiments \citep{Aletta2016Soundscape,Sun2019Classification,Oberman2018Towards}, pseudo-randomized experience sampling \citep{Craig2017Experience}, and even non-participatory studies \citep{Lavia2018Non}. The protocol described in this paper was designed having in mind the need for a relatively large soundscape dataset that could be used for design and modeling purposes, thus trying to expand the scope of soundwalks that typically deal with much smaller samples of participants \citep{Engel2018Review}. For the sake of comparability and standardization with these methods, we chose to refer to the soundscape attributes reported in the ISO Part 2 (Method A).
@@ -12,8 +12,8 @@
  The ability to predict the likely soundscape assessment of a space is crucial to implementing the soundscape concept in practical design. Current methods of assessing soundscapes are generally limited to a post-hoc assessment of the existing environment, where users of the space in question are surveyed regarding their experience of the acoustic environment \citep{Engel2018Review, Zhang2018Effect}. While this approach has proved useful in identifying the impacts of an existing environment, designers require the ability to predict how a change or proposed design will impact the soundscape of the space. To this end, a model that is built upon measurable or estimate-able quantities of the environment would represent a leap forward in the ability to design soundscapes.
 
  % TODO Rephrase
- \subsubsection{\hl{Need to rephrase all of this, lifted wholesale from protocol paper}}
-
+ \draft{Need to rephrase all of this, lifted wholesale from protocol paper}
+\proof{hello!}
    Developing soundscape indices is a process that requires consideration of how people perceive, experience, and understand the surrounding sound environment. For the purpose of modeling and comparisons, it is important that such indices are numerical entities and that these quantities are collected consistently across all investigated spaces and soundscapes. Although the soundscape approach taken in this protocol represents a step-change away from existing methods of noise exposure measurements, strong cues particularly in the realm of acoustic measurement methods should be taken from existing standards both to make use of the significant knowledge and experience that has gone into the creation of these standards and to facilitate compatibility between soundscape and traditional measurements. In general, the measurement methods and best practice given in environmental noise standards such as ISO 1996-1:2016 and ISO 1996-2:2017 should be followed wherever possible, including the use of standardized acoustic equipment such as standard sound level meters. % CITE {ISO1996-1, ISO1996-2} 
 
    An European Research Council (ERC) Advanced Grant project is ongoing to develop the proposed ``Soundscape Indices'' (SSID), which adequately reflect levels of human comfort and preference while integrating measurable and observable quantities. The framework proposed for the SSID project is laid out in detail by Kang et al. \citep{Kang2019Towards}, the first step of which is generating a large-scale and coherent database of the required soundscape characterization data. Given the already recognized differences in soundscape assessment across various countries and cultures \citep{Ren2018Soundscape,Kang2016Ten} and the success of existing international soundscape efforts such as the Soundscapes of the World project \citep{DeCoensel2017Urban}, the collection of soundscapes from many different countries and in many different contexts is an important component of the SSID project.
@@ -42,8 +42,6 @@
    \subsubsection{Labeling and Data Organization}
      \label{section:metadata}
      In order to be able to identify all of the many data components of the Recording and Questionnaire Stages and to associate these with their various corresponding data, the following labeling system is suggested. This system is focused on (1) relating all of the separate recordings and factors to specific questionnaire responses and (2) efficiency and consistency on site. A recent paper by Aumond et al. \citep{Aumond2017Modeling} demonstrated the importance of addressing multiple levels of factors which influence perception, from individual-, to session-, to location-level. The successful pleasantness models built incorporating these information levels showed a marked improvement over the equivalent individual-level or location-level only models. The data organisation system proposed here was designed in order to maintain this important information, and the levels of information for the data collected on site are shown in Table \ref{table:metadata}.
-
-     At the top level is the \textbf{Location} information. This includes information about the location which does not change day-to-day, and generally characterizes the architectural character of the space, or typical climate conditions for the area. As described in Section \ref{section:location}, each 'environmental unit' should be considered a new location. Therefore, if researchers want to investigate the differences in soundscape assessment in the middle of a small urban park and along the road next to the same park, these would be considered different locations since they would (typically) have different environmental factors, and should be given different names. The name chosen should be concise, but it should be obvious what location is referred to.
 
      At the top level is the \textbf{Location} information. This includes information about the location which does not change day-to-day, and generally characterizes the architectural character of the space, or typical climate conditions for the area. As described in Section \ref{section:location}, each `environmental unit' should be considered a new location. Therefore, if researchers want to investigate the differences in soundscape assessment in the middle of a small urban park and along the road next to the same park, these would be considered different locations since they would (typically) have different environmental factors, and should be given different names. The name chosen should be concise, but it should be obvious what location is referred to.
 
@@ -96,6 +94,19 @@
  \subsection{Feature Selection}
 
 \section{Machine Learning and Regression Techniques}
+
+\subsection{Feature Selection}
+\subsubsection{Mutual Information}
+\draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
+\paragraph*{From scholarpedia:}
+% http://www.scholarpedia.org/article/Mutual_information
+\qt{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
+
+\qt{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. } 
+\misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
+
+\subsubsection{Conditional Mutual Information}
+The Mutual Information between two variables, given another variable as a control.
 
  \subsection{Clustering Analysis}
    \paragraph{K-means}

@@ -9,12 +9,23 @@
 \usepackage{natbib}
 \bibliographystyle{apalike}
 \usepackage{color, soul}
+\usepackage{xcolor}
 
 \usepackage{gensymb}
 \usepackage{makecell}
 \usepackage{booktabs}
 % \usepackage{tabularx}
 % \usepackage{pdfpages} 
+
+\newcommand{\remark}[3]{%
+    {\colorbox{#2}{\sffamily\scriptsize\bfseries\textcolor{white}{#1}}}
+    {\sffamily\small\itshape\textcolor{#2}{#3}}
+}
+\newcommand{\misc}[1]{\remark{misc}{green}{#1}}
+\newcommand{\draft}[1]{\remark{draft}{blue}{#1}}
+\newcommand{\error}[1]{\remark{err}{red}{#1}}
+\newcommand{\proof}[1]{\remark{proof}{orange}{#1}}
+\newcommand{\qt}[1]{\remark{quote}{brown}{#1}}
 
 % * Formatting
 % Margins at the binding edge must not be less than 40mm (1.5 inches) and other margins not less than 20mm (0.75 inches).
