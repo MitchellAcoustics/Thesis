@@ -10,12 +10,12 @@
 \bibliographystyle{apalike}
 \usepackage{color, soul}
 \usepackage{xcolor}
+\usepackage{pdfpages}
 
 \usepackage{gensymb}
 \usepackage{makecell}
 \usepackage{booktabs}
 % \usepackage{tabularx}
-% \usepackage{pdfpages} 
 
 \newcommand{\remark}[3]{%
     {\colorbox{#2}{\sffamily\scriptsize\bfseries\textcolor{white}{#1}}}
@@ -37,14 +37,7 @@
 \put(0,730)% the specific point of the page with coordinates (x=100,y=100)
 {\includegraphics[scale=1]{Figures/UCL header.png}}%
 }
-% \usepackage{ebgaramond}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\title{Machine Learning and Regression Modelling of Dynamic Urban Soundscapes}
-\author{Andrew James Mitchell}
-% \titlehead{Modelling Urban Soundscapes}
-\publishers{Institute for Environmental Design and Engineering\\University College London (UCL)\\ - \\ Principal Supervisor: Prof. Jian Kang\\Co-Supervisor: Dr. Phil Symonds}
+\usepackage{ebgaramond}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -58,7 +51,38 @@
       % - the institution name 'UCL'
       % - the degree for which the thesis is submitted
       \AddToShipoutPicture*{}
-      \maketitle
+      \begin{center}
+            \vspace*{3cm}
+
+            \Huge
+            \textbf{Machine Learning and Regression Modelling of Complex Urban Soundscapes}
+
+            % \vspace{0.5cm}
+            \LARGE
+            % Thesis Subtitle
+
+            \vspace{1.5cm}
+
+            \textbf{Andrew James Mitchell}
+
+            \vfill
+            A thesis presented for the degree of\\
+            Doctor of Philosophy\\
+            \rule[-.5cm]{0.5\textwidth}{1pt}
+
+            \vspace{1.5cm}
+
+            \Large
+            Institute for Environmental Design \& Engineering\\
+            University College London (UCL)\\
+            \today
+
+            \vspace{1cm}
+
+            Principal Supervisor: Prof. Jian Kang\\
+            Co-Supervisor: Dr. Phil Symonds
+
+      \end{center}
 \end{titlepage}
 
 
@@ -71,123 +95,174 @@
 % I, Andrew Mitchell, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
 
 \chapter*{Abstract}
- % The signed declaration should be followed by an abstract consisting of no more than 300 words
- 
- 
- % \chapter*{Acknowledgements}
- % This research was funded by the European Research Council.
- 
- % People to thank:
- % \begin{itemize}
- %     \item Dr Francesco Aletta
- %     \item Prof Jian Kang
- %     \item Dr Tin Oberman
- %     \item Dr Phil Symonds
- %     \item Ms Mercede Erfanian
- %     \item Ms Magdalena Kachlicka
- %     \item Mr Matteo Lionello
- %     \item Friends: Nicole Watson, Nick Wilson, Valentina
- % \end{itemize}
+% The signed declaration should be followed by an abstract consisting of no more than 300 words
+
+
+% \chapter*{Acknowledgements}
+% This research was funded by the European Research Council.
+
+% People to thank:
+% \begin{itemize}
+%     \item Dr Francesco Aletta
+%     \item Prof Jian Kang
+%     \item Dr Tin Oberman
+%     \item Dr Phil Symonds
+%     \item Ms Mercede Erfanian
+%     \item Ms Magdalena Kachlicka
+%     \item Mr Matteo Lionello
+%     \item Friends: Nicole Watson, Nick Wilson, Valentina
+% \end{itemize}
 
 \chapter*{List of Studies}
- 
- This doctoral thesis is based on the following studies:
- 
- \paragraph*{Commentary: }
- Kang, J., Aletta, F., Oberman, T., \textbf{Mitchell, A}., Erfanian, M., Tong, H. (2021). Fuck the decibel. \emph{Nature Sustainability}.
- 
- \paragraph*{Protocol:  }
- \textbf{Mitchell, A.}, Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., \& Kang, J. (2020) The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information. \emph{Applied Sciences, 10} (7), 2397. https://doi.org/10.3390/app10072397
- 
- % \paragraph*{Study II:   }
- % Erfanian, M., Mitchell, A. J., Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. https://doi.org/10.3390/ijerph16193533
- 
- \paragraph*{Study I:    }
- Erfanian, M., \textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2020). Psychological Well-being, Age and Gender can Mediate Soundscapes Pleasantness and Eventfulness: A large sample study. \emph{Environmental Psychology}.
- 
- \paragraph*{Study II:   }
- Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. https://doi.org/10.3390/su13115779
- 
- \paragraph*{Study III:  }
- \textbf{Mitchell, A.}, Oberman, T., Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Applied Predictive Soundscape Modelling: A Case Study Investigating Changes from the COVID-19 Lockdown. \emph{JASA}.
- 
- \paragraph*{Study IV:   }
- \textbf{Mitchell, A.}, Soelitsyo, C., Erfanian, M., Xue, J-H., Oberman, T., Kang, J., \& Aletta, F. (2021). A Temporal Convolutional Neural Network for Multi-label Environmental Sound Recognition and Annoyance Detection. \emph{IEEE}.
- 
- \paragraph*{Commentary: }
- \textbf{Mitchell, A.}, Aletta, F., Chalabi, Z., \& Kang, J. (2021). From Deterministic to Probabilistic Soundscapes: A critical tour around the soundscape circumplex. \emph{JASA-EL}.
- 
- 
- 
- % \chapter*{Impact Statement}
- % % The abstract should be followed by an impact statement consisting of no more than 500 words.
- % The statement should describe, in no more than 500 words, how the expertise, knowledge, analysis, discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits from \textbf{inside} and \textbf{outside} academia and the ways in which these benefits could be brought about.
- 
- % \chapter*{COVID-19 Statement}
- 
- % In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. Solely by good fortune and a tendency to speed ahead with too-little thought, the primary data collection had fortunately been completed prior to the first lockdown. However, this work was impacted in three ways: 
- 
- % \begin{enumerate}
- %     \item Further in-situ data collection could not be completed, reducing the range of soundscape types we could include;
- %     \item The unprecedented and stressful world of the pandemic had a significant mental health and social impact, the effects of which cannot be quantified, nor overstated;
- %     \item In response to the unique scientific opportunity of a world-wide transportation and social lockdown, new, unplanned studies were carried out.
- % \end{enumerate}
- 
- % In particular, this final point has had an impact on the structure and content of this thesis. Certain aspects of the research, in particular the model development and building, were accelerated and put into practice to investigate the impacts of the COVID lockdowns, before being returned to and further developed. The initial research plan would have followed a more logical path of nailing down the model development first, then moving on to a first implementation. In addition, new work was added to this thesis which may appear incongruous or unrelated, but represents a great deal of necessary work which further informed the key strains of the thesis. 
- 
- 
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- \tableofcontents
- % In each copy of the thesis the abstract should be followed by a full table of contents (including any material not bound in) and a list of tables, photographs and any other materials.
- \listoffigures
- \listoftables
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- % Thesis by publication add-ons
+
+This doctoral thesis is based on the following studies:
+
+\paragraph*{Commentary: }
+Kang, J., Aletta, F., Oberman, T., \textbf{Mitchell, A}., Erfanian, M., Tong, H. (2021). Supportive Soundscapes are Crucial for Sustainable Cities and Communities. \emph{Nature Sustainability}.
+
+\paragraph*{Protocol:  }
+\textbf{Mitchell, A.}, Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., \& Kang, J. (2020) The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information. \emph{Applied Sciences, 10} (7), 2397. https://doi.org/10.3390/app10072397
+
+% \paragraph*{Study II:   }
+% Erfanian, M., Mitchell, A. J., Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. https://doi.org/10.3390/ijerph16193533
+
+\paragraph*{Study I:    }
+Erfanian, M., \textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2020). Psychological Well-being, Age and Gender can Mediate Soundscapes Pleasantness and Eventfulness: A large sample study. \emph{Environmental Psychology}.
+
+\paragraph*{Study II:   }
+Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. https://doi.org/10.3390/su13115779
+
+\paragraph*{Study III:  }
+\textbf{Mitchell, A.}, Oberman, T., Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Applied Predictive Soundscape Modelling: A Case Study Investigating Changes from the COVID-19 Lockdown. \emph{JASA}.
+
+\paragraph*{Study IV:   }
+\textbf{Mitchell, A.}, Soelitsyo, C., Erfanian, M., Xue, J-H., Oberman, T., Kang, J., \& Aletta, F. (2021). A Temporal Convolutional Neural Network for Multi-label Environmental Sound Recognition and Annoyance Detection. \emph{IEEE}.
+
+\paragraph*{Commentary: }
+\textbf{Mitchell, A.}, Aletta, F., Chalabi, Z., \& Kang, J. (2021). From Deterministic to Probabilistic Soundscapes: A critical tour around the soundscape circumplex. \emph{JASA-EL}.
+
+\newpage
+The following studies are related works which influenced this thesis and were completed as part of the same work but have not been included as key components:
+
+\paragraph*{}Lionello, M., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2020). Introducing a Method for Intervals Correction on Multiple Likert Scales: A Case Study on an Urban Soundscape Data Collection Instrument. \emph{frontiers in Psychology}.
+
+\paragraph*{}Aletta, F., Oberman, T., \textbf{Mitchell, A.}, Tong, H., \& Kang, J. (2020). Assessing the changing urban sound environment during the COVID-19 lockdown period using short-term acoustic measurements. \emph{Noise Mapping}.
+
+\paragraph*{}Tong, H., Aletta, F., \textbf{Mitchell, A.}, Oberman, T., \& Kang, J. (2021). Increases in noise complaints during the COVID-19 lockdown in Spring 2020: A case study in Greater London, UK. \emph{Science of the Total Environment}.
+
+
+
+% \chapter*{Impact Statement}
+% % The abstract should be followed by an impact statement consisting of no more than 500 words.
+% The statement should describe, in no more than 500 words, how the expertise, knowledge, analysis, discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits from \textbf{inside} and \textbf{outside} academia and the ways in which these benefits could be brought about.
+
+% \chapter*{COVID-19 Statement}
+
+% In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. Solely by good fortune and a tendency to speed ahead with too-little thought, the primary data collection had fortunately been completed prior to the first lockdown. However, this work was impacted in three ways: 
+
+% \begin{enumerate}
+%     \item Further in-situ data collection could not be completed, reducing the range of soundscape types we could include;
+%     \item The unprecedented and stressful world of the pandemic had a significant mental health and social impact, the effects of which cannot be quantified, nor overstated;
+%     \item In response to the unique scientific opportunity of a world-wide transportation and social lockdown, new, unplanned studies were carried out.
+% \end{enumerate}
+
+% In particular, this final point has had an impact on the structure and content of this thesis. Certain aspects of the research, in particular the model development and building, were accelerated and put into practice to investigate the impacts of the COVID lockdowns, before being returned to and further developed. The initial research plan would have followed a more logical path of nailing down the model development first, then moving on to a first implementation. In addition, new work was added to this thesis which may appear incongruous or unrelated, but represents a great deal of necessary work which further informed the key strains of the thesis. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+% In each copy of the thesis the abstract should be followed by a full table of contents (including any material not bound in) and a list of tables, photographs and any other materials.
+% \listoffigures
+% \listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Thesis by publication add-ons
 
 \chapter{Introduction}
- 
- \section{Impacts of Urban Noise on Health and Wellbeing}
- 
- \section{Current Methods of Assessing and Addressing Urban Noise}
- \section{Soundscape - Theory and Application}
-  \subsection{Soundscape Descriptors and Indices}
-        \citep{Aletta2016Soundscape}
-  
-  \subsection{The ISO 12913 Standard Series}
- \section{Environmental Acoustics and Psychoacoustics Analyses}
+
+\section{Impacts of Urban Noise on Health and Wellbeing}
+
+\section{Current Methods of Assessing and Addressing Urban Noise}
+ The approach to a practical predictive soundscape model arrived at within this thesis is heavily based on past environmental acoustics approaches, I will therefore begin with a brief summary of these past approaches.
+
+\section{Soundscape - Theory and Application}
+ \subsection{Soundscape Descriptors and Indices}
+       \citep{Aletta2016Soundscape}
+
+ \subsection{The ISO 12913 Standard Series}
+\section{Environmental Acoustics and Psychoacoustics Analyses}
 
 
-\chapter{An Open International Urban Soundscape Database}
- 
- 
- 
+ \chapter{An Open International Urban Soundscape Database}
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \chapter{Studies \& Summaries}
+
+ The following studies form the core of this thesis, with each contributing a key component of the soundscape modelling process. They are presented in a logical, rather than chronological order and are each preceded by a brief summary.
+
+ \newpage
+\section[Commentary]{Commentary: Supportive Soundscapes are Crucial for Sustainable Cities and Communities}
+
+ Presented as a \textit{Comment} paper in Nature Sustainability, this paper provides an opininated view towards the placement of soundscape in future sustainability research and development. Heavily shaped and primarily drafted by me, it puts forth the argument that cities and communities cannot be sustainably designed without a consideration of 1) how noise impacts the community, and 2) how the community impacts the existing soundscape. \misc{add a bit about the agenda presented}
+
+ Although published towards the end of my PhD, it is placed at the beginning as it offers our strongest argument for the necessity of soundscape in future sustainable design. It situates noise as a key environmental concern and provides a justification for a soundscape approach, which requires and incorporates predictive tools to be applied in engineering, research, and design contexts.
+
+ \newpage
+\section[Protocol]{Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
+
+ Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913_2_2018IOS} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context.
+
+ \includepdf[pages={1-16}]{./Papers/Mitchell2020Soundscape.pdf}
+
+\section[Study I]{Study I: Psychological Well-being, Age, and Gender can Mediate Soundscape Pleasantness and Eventfulness: A large sample study}
+
+ \includepdf[pages={1-32}]{./Papers/PsychoPreprint.pdf}
+
+\section[Study II]{Study II: Multilevel Annoyance Modelling of Short Environmental Sound Recordings}
+
+ \includepdf[pages=-]{./Papers/Orga2021Multilevel.pdf}
+
+\section[Study III]{Study III: Applied Predictive Soundscape Modelling: A Case Study Investigating Changes from the COVID-19 Lockdown}
+
+ \newpage
+\section[Study IV]{Study IV: A Temporal Convolutional Neural Network for Multi-label Sound Recognition and Annoyance Detection of Complex Soundscapes}
+
+ \includepdf[pages=-]{./Papers/IEEE_DeLTA_Preprint.pdf}
+
+\section[Commentary]{Commentary: From Deterministic to Probabilistic Soundscapes: A critical tour around the soundscape circumplex}
+
+ \includepdf[pages=-]{./Papers/J13_Circumplex_transform_Preprint.pdf}
+
+
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+
  % \include{./Chapters/Introduction}
  % \include{./Chapters/LitReview}
  % \include{./Chapters/Methods}
- 
+
  % \include{./Chapters/TemporalKeyChapter}
  % \include{./Chapters/MultiLevelModelKeyChapter}
  % \include{./Chapters/SSPKeyChapter}
  % \include{./Chapters/BayesianKeyChapter}
  % \include{./Chapters/SmartCitiesKeyChapter}
- 
- % \include{./Chapters/Conclusions}
- 
+
+ \include{./Chapters/Conclusions}
+
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+
+
  \backmatter
  % A glossary and list of acronyms may go here
  % or may go in the front matter after the abstract.
- 
+
  % The bibliography will go here.
  \bibliography{thesis_refs}
- 
+
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
