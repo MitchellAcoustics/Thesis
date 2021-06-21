@@ -213,7 +213,7 @@ In particular, this final point has had an impact on the structure and content o
  Although published towards the end of my PhD, it is placed at the beginning as it offers our strongest argument for the necessity of soundscape in future sustainable design. It situates noise as a key environmental concern and provides a justification for a soundscape approach, which requires and incorporates predictive tools to be applied in engineering, research, and design contexts.
 
  \newpage
-\section[Protocol]{Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
+\section[Protocol]{\label{pap:prot}Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
 
  Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913_2_2018IOS} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context.
 
@@ -224,6 +224,9 @@ In particular, this final point has had an impact on the structure and content o
  \includepdf[pages={1-32}]{./Papers/PsychoPreprint.pdf}
 
 \section[Study II]{Study II: Multilevel Annoyance Modelling of Short Environmental Sound Recordings}
+The soundscape approach cannot be limited to only the cases where detailed acoustical or social surveys can be conducted. The rest of the papers in this thesis rely on an extensive survey methodology (as outlined in Section \ref{pap:prot} and \citep{Mitchell2020Soundscape}), however a practical application of a more holistic approach is key to more sustainable future development. One of the goals, therefore, is to be able to implement such a model on the nodes of a Wireless Acoustic Sensor Network (WASN). \draft{Add more here}
+
+This study therefore aimed to make use of data which is more limited than the SSID database, but to still demonstrate the potential for an annoyance model based on psychoacoustic metrics which is 1) independent of sound level, and 2) is developed in the context of real-world sounds, rather than simplified artificial sounds.
 
  \includepdf[pages=-]{./Papers/Orga2021Multilevel.pdf}
 
@@ -231,6 +234,12 @@ In particular, this final point has had an impact on the structure and content o
 
  \newpage
 \section[Study IV]{Study IV: A Temporal Convolutional Neural Network for Multi-label Sound Recognition and Annoyance Detection of Complex Soundscapes}
+
+\subsection{Positivity (or the absence of negativity?)}
+From the experience of the previous studies which are highly focused on the existing environmental acoustic and psychoacoustic metrics, one (of many) potential limitations has been revealed. For the most part, these metrics were designed to characterise various negative qualities of the sound. Certainly, they therefore have a negative correlation with positive assessments of the sound, but the simple fact is that they were conceived of and implemented in an attempt to quantify some sonic characteristic that was assumed by the researchers to contribute to a negative perception. Hence why in Zwicker's empirical formula for Psychoacoustic Annoyance \citep{PsychoacousticsfactsmodelsZwicker} $PA = N_5 (1 + \sqrt{\omega^2_S + \omega^2_{FR}})$, all of the constituent parts have positive coefficients.
+
+While this would not theoretically hinder a formula for describing positive aspects of the sound, it creates a sort of conceptual barrier. If all of these metrics are designed to capture negative aspects of the sound, then it is insufficient to use them create a formula to describe a positive sound, since that formula would only represent the 'absence of negativity', not necessarily positivity.
+
 
  \includepdf[pages=-]{./Papers/IEEE_DeLTA_Preprint.pdf}
 
