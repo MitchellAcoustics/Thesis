@@ -11,12 +11,19 @@
 \usepackage{color, soul}
 \usepackage{xcolor}
 \usepackage{pdfpages}
+\usepackage{ebgaramond}
 
 \usepackage{gensymb}
 \usepackage{makecell}
 \usepackage{booktabs}
 % \usepackage{tabularx}
 
+% glossary
+\usepackage[xindy]{glossaries} 
+\input{glossary}
+\makeglossaries
+
+% markup commands
 \newcommand{\remark}[3]{%
     {\colorbox{#2}{\sffamily\scriptsize\bfseries\textcolor{white}{#1}}}
     {\sffamily\small\itshape\textcolor{#2}{#3}}
@@ -25,7 +32,7 @@
 \newcommand{\draft}[1]{\remark{draft}{blue}{#1}}
 \newcommand{\error}[1]{\remark{err}{red}{#1}}
 \newcommand{\proof}[1]{\remark{proof}{orange}{#1}}
-\newcommand{\qt}[1]{\remark{quote}{brown}{#1}}
+\newcommand{\cit}[1]{\remark{cit}{brown}{#1}}
 
 % * Formatting
 % Margins at the binding edge must not be less than 40mm (1.5 inches) and other margins not less than 20mm (0.75 inches).
@@ -37,7 +44,6 @@
 \put(0,730)% the specific point of the page with coordinates (x=100,y=100)
 {\includegraphics[scale=1]{Figures/UCL header.png}}%
 }
-\usepackage{ebgaramond}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,56 +97,57 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \chapter*{Declaration}
-% % The title page should be followed by a signed declaration that the work presented in the thesis is the candidate's own:
-% I, Andrew Mitchell, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
+\chapter*{Declaration}
+% The title page should be followed by a signed declaration that the work presented in the thesis is the candidate's own:
+I, Andrew Mitchell, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
 
 \chapter*{Abstract}
 % The signed declaration should be followed by an abstract consisting of no more than 300 words
 
 
-% \chapter*{Acknowledgements}
-% This research was funded by the European Research Council.
+\chapter*{Acknowledgements}
+This research was funded by the European Research Council.
 
-% People to thank:
-% \begin{itemize}
-%     \item Dr Francesco Aletta
-%     \item Prof Jian Kang
-%     \item Dr Tin Oberman
-%     \item Dr Phil Symonds
-%     \item Ms Mercede Erfanian
-%     \item Ms Magdalena Kachlicka
-%     \item Mr Matteo Lionello
-%     \item Friends: Nicole Watson, Nick Wilson, Valentina
-% \end{itemize}
+People to thank:
+\begin{itemize}
+      \item Dr Francesco Aletta
+      \item Prof Jian Kang
+      \item Dr Tin Oberman
+      \item Dr Phil Symonds
+      \item Ms Mercede Erfanian
+      \item Ms Magdalena Kachlicka
+      \item Mr Matteo Lionello
+      \item Friends: Nicole Watson, Nick Wilson, Valentina
+\end{itemize}
 
 \chapter*{List of Studies}
 
 This doctoral thesis is based on the following studies:
 
-\paragraph*{Commentary*: }
-Kang, J., Aletta, F., Oberman, T., \textbf{Mitchell, A}., Erfanian, M., Tong, H., Torresin, S., Xu, C., Yang, T. (2021). Supportive Soundscapes are Crucial for Sustainable Cities and Communities. \emph{Nature Sustainability}.
-
-\paragraph*{Protocol:  }
+\paragraph*{}
 \textbf{Mitchell, A.}, Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., \& Kang, J. (2020) The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information. \emph{Applied Sciences, 10} (7), 2397. \url{https://doi.org/10.3390/app10072397}
 
-% \paragraph*{Study II:   }
-% Erfanian, M., Mitchell, A. J., Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. https://doi.org/10.3390/ijerph16193533
+\paragraph*{}
+Erfanian, M., Mitchell, A. J., Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. https://doi.org/10.3390/ijerph16193533
 
-\paragraph*{Study I:    }
+\paragraph*{}
 Erfanian, M., \textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2020). Psychological Well-being and Demographic Factors can Mediate Soundscape Pleasantness and Eventfulness: A large sample study. \emph{Environmental Psychology}.
 
-\paragraph*{Study II:   }
+\paragraph*{}
 Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. \url{https://doi.org/10.3390/su13115779}
 
-\paragraph*{Study III:  }
-Oberman, T., \textbf{Mitchell, A.}, Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Applied Predictive Soundscape Modelling: A Case Study Investigating Changes from the COVID-19 Lockdown. \emph{JASA}.
+\paragraph*{}
+\textbf{Mitchell, A.}, Oberman, T., Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Investigating Urban Soundscapees of the COVID-19 Lockdown: A predictive soundscape modelling approach. \emph{JASA}.
 
-\paragraph*{Study IV:   }
+\paragraph*{}
 \textbf{Mitchell, A.}, Soelitsyo, C., Erfanian, M., Xue, J-H., Oberman, T., Kang, J., \& Aletta, F. (2021). A Temporal Convolutional Neural Network for Multi-label Sound Recognition and Annoyance Detection of Complex Soundscapes. \emph{IEEE}.
 
-\paragraph*{Commentary: }
+\paragraph*{}
 \textbf{Mitchell, A.}, Aletta, F., Chalabi, Z., \& Kang, J. (2021). From Deterministic to Probabilistic Soundscapes: A critical tour around the soundscape circumplex. \emph{JASA-EL}.
+
+\paragraph*{}
+Kang, J., Aletta, F., Oberman, T., \textbf{Mitchell, A}., Erfanian, M., Tong, H., Torresin, S., Xu, C., Yang, T. (2021). Supportive Soundscapes are Crucial for Sustainable Cities and Communities. \emph{Nature Sustainability}.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,173 +187,117 @@ In particular, this final point has had an impact on the structure and content o
 
 \tableofcontents
 % In each copy of the thesis the abstract should be followed by a full table of contents (including any material not bound in) and a list of tables, photographs and any other materials.
+
 % \listoffigures
 % \listoftables
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Chapters/Introduction}
 
-% Thesis by publication add-ons
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Introduction}
-
-\section{Impacts of Urban Noise on Health and Wellbeing}
-
-\section{Current Methods of Assessing and Addressing Urban Noise}
- The approach to a practical predictive soundscape model arrived at within this thesis is heavily based on past environmental acoustics approaches, I will therefore begin with a brief summary of these past approaches.
-
-\section{Soundscape - Theory and Application}
- \subsection{Soundscape Descriptors and Indices}
-       \citep{Aletta2016Soundscape}
-
- \subsection{The ISO 12913 Standard Series}
-\section{Environmental Acoustics and Psychoacoustics Analyses}
-
-\section{Practical Applications for Predictive Modelling}
-
- The soundscape approach faces several challenges in practical applications which are unaddressed by current assessment methods, but which may be solved through the development of a predictive modelling framework. The first of these challenges is predicting how a change in an existing sound environment will be reflected in the soundscape. While it is possible in this scenario to measure the existing soundscape via questionnaire surveys, if a change is then introduced to the acoustic environment, it is so far impossible to say what the resulting soundscape change would be. This question relates strongly to the idea of soundscape interventions; where a particular noise pollution challenge is addressed by introducing more pleasant sounds (e.g. a water feature), following the soundscape principle of treating sound as a resource. Predicting how much a particular intervention would improve the soundscape (or, indeed whether it would improve at all) is not yet possible with the retrospective methods available. This question is also addressed in Study III of this thesis \draft{cite Lockdown paper} which uses a predictive model to look at how the changes in the acoustic environment due to the COVID-19 lockdowns resulted in changes in the soundscapes of the spaces.
-
- Retrospective assessment methods also struggle to capture the dynamics of the soundscape in a space. Whether through the narrative interview method of \draft{section of ISO12913-2}, through soundwalks, or through in-situ questionnaires \citep{Mitchell2020Soundscape}, only the soundscape during the particular period which the researchers are actively investigating is captured. This makes it very difficult to determine diurnal, seasonal, or yearly patterns of the soundscape. These patterns may be driven by corresponding diurnal, seasonal, or yearly patterns in the acoustic or visual environment, or by variations in how people process and respond to the sound at different times of day/season/year. Currently the only way to investigate any of these patterns is through repeated surveys. Predictive modelling, on the other hand, could allow a trained soundscape model to be paired with longterm monitoring methods to track how a soundscape may change in response to changes in the acoustic environment. \draft{Should mention De Coensel's saliency summary as a solution here.}
-
- Admittedly, this method would not be able to answer the second part of the question - how do people's responses to a given acoustic and visual environment change throughout the various daily/seasonal/yearly periods? \draft{This part should maybe be moved to a discussion}One approach to answering this question which has not, as far as the author is aware, been employed is through an un-attended survey method. Such a method could involve creating and posting fliers asking users of a space to complete a soundscape survey (accessed through a QR code) and leaving these fliers installed for longer periods of time. It is unclear how successful such a general approach would be, in particular what response rate would be expected, but given the increasing familiarity with QR codes among the general public following their use for track-and-trace during COVID-19, it does appear promising. These un-attended surveys could also be paired with long-term acoustic and environmental monitoring via a WASN or powered SLM which could simultaneously track the acoustic environment. This would thus result in a time series of online soundscape questionnaires with a corresponding time series of acoustic and environmental information, allowing us to track the changes of each over long periods of time.
-
- \draft{Predicting soundscape of not-yet-existing spaces}
-
- \draft{Soundscape mapping}
-
- \draft{Where to put this in this section?}The existing methods for soundscape assessment and measurement, such as those given in the ISO 12913 series, have been focussed primarily at determining the \emph{status quo} of an environment. That is, they are able to determine how the space is \emph{currently} perceived, but offer little insight into hypothetical environments. As such, they are less relevant for design purposes, where a key goal is to determine how a space \emph{will be} perceived, not just how an existing space is perceived. Toward this, and following from the combination of perceptual and objective data collection encouraged in \citet{ISO12913_2_2018IOS}, the natural push from the design perspective is towards 'predictive modeling' In this context, predictive modeling involves predicting how physical acoustic environments would likely be perceived or assessed by the users of the space.
+\include{Chapters/LitReview}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \include{Chapters/Methods.tex}
 
+\chapter{\label{pap:prot}Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
 
-\section{General Aim}
+\section{Background and aims}
+Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913_2_2018IOS} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context.
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Result and conclusions}
 
- \chapter{General Method}
+\includepdf[pages={1-16}]{./Papers/Mitchell2020Soundscape.pdf}
 
-\section{In-situ Surveys}
-
-\section{An Open International Urban Soundscape Database}
-
-\section{Predictive Modelling}
-
-
- \subsection{Multi-level Regression}
-
- \subsection{Deep Learning}
-
-
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-       \chapter{Studies \& Summaries}
-
-       The following studies form the core of this thesis, with each contributing a key component of the soundscape modelling process. They are presented in a logical, rather than chronological order and are each preceded by a brief summary.
-
-       \newpage
-\section{Commentary: Supportive Soundscapes are Crucial for Sustainable Cities and Communities}
-
- \subsection*{Background and aims}
-
-       Presented as a \textit{Comment} paper in Nature Sustainability, this paper provides an opininated view towards the placement of soundscape in future sustainability research and development. Heavily shaped and primarily drafted by me, it puts forth the argument that cities and communities cannot be sustainably designed without a consideration of 1) how noise impacts the community, and 2) how the community impacts the existing soundscape. \misc{add a bit about the agenda presented}
-
-       Although published towards the end of my PhD, it is placed at the beginning as it offers our strongest argument for the necessity of soundscape in future sustainable design. It situates noise as a key environmental concern and provides a justification for a soundscape approach, which requires and incorporates predictive tools to be applied in engineering, research, and design contexts.
-
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-       \newpage
-\section{\label{pap:prot}Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
-
- \subsection*{Background and aims}
-       Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913_2_2018IOS} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context.
-
- \subsection*{Result and conclusions}
-
-       \includepdf[pages={1-16}]{./Papers/Mitchell2020Soundscape.pdf}
-
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Study I: Psychological Well-being and Demographic Factors can Mediate Soundscape Pleasantness and Eventfulness: A large sample study}
 
- \subsection*{Background and aims}
+\subsection*{Background and aims}
 
-       \hl{Some summary text here.}
+\hl{Some summary text here.}
 
- \subsection*{Result and conclusion}
+\subsection*{Result and conclusion}
 
-       \includepdf[pages={1-30}]{./Papers/PsychoPreprint2.pdf}
+\includepdf[pages={1-8}]{./Papers/Erfanian2021Psychological - Psychological Well Being and Demographic Factors Can Mediate Soundscape Pleasantness and Eventfulness_ a Large Sample Study.pdf}
 
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Study II: Multilevel Annoyance Modelling of Short Environmental Sound Recordings}
+\include{./Chapters/MLMAnnoyance}
 
- \subsection*{Background and aims}
-       The soundscape approach cannot be limited to only the cases where detailed acoustical or social surveys can be conducted. The rest of the papers in this thesis rely on an extensive survey methodology (as outlined in Section \ref{pap:prot} and \citep{Mitchell2020Soundscape}), however a practical application of a more holistic approach is key to more sustainable future development. One of the goals, therefore, is to be able to implement such a model on the nodes of a Wireless Acoustic Sensor Network (WASN). \draft{Add more here}
+% \section{Study II: Multilevel Annoyance Modelling of Short Environmental Sound Recordings}
 
-       This study therefore aimed to make use of data which is more limited than the SSID database, but to still demonstrate the potential for an annoyance model based on psychoacoustic metrics which is 1) independent of sound level, and 2) is developed in the context of real-world sounds, rather than simplified artificial sounds.
+%  \subsection*{Background and aims}
+%        The soundscape approach cannot be limited to only the cases where detailed acoustical or social surveys can be conducted. The rest of the papers in this thesis rely on an extensive survey methodology (as outlined in Section \ref{pap:prot} and \citep{Mitchell2020Soundscape}), however a practical application of a more holistic approach is key to more sustainable future development. One of the goals, therefore, is to be able to implement such a model on the nodes of a Wireless Acoustic Sensor Network (WASN). \draft{Add more here}
 
- \subsection*{Result and conclusion}
+%        This study therefore aimed to make use of data which is more limited than the SSID database, but to still demonstrate the potential for an annoyance model based on psychoacoustic metrics which is 1) independent of sound level, and 2) is developed in the context of real-world sounds, rather than simplified artificial sounds.
 
-       \includepdf[pages=-]{./Papers/Orga2021Multilevel.pdf}
+%  \subsection*{Result and conclusion}
 
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        \includepdf[pages=-]{./Papers/Orga2021Multilevel.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Study III: Applied Predictive Soundscape Modelling: A Case Study Investigating Changes from the COVID-19 Lockdown}
 
- \subsection*{Background and aims}
-       \hl{Some summary text here.}
+\subsection*{Background and aims}
+\hl{Some summary text here.}
 
- \subsection*{Result and conclusion}
+\subsection*{Result and conclusion}
 
- \includepdf[pages=-]{./Papers/Modelling_Lockdown_Soundscape_JASA.pdf}
+\includepdf[pages=-]{./Papers/Modelling_Lockdown_Soundscape_JASA.pdf}
 
-       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-       \newpage
+\newpage
 \section{Study IV: A Temporal Convolutional Neural Network for Multi-label Sound Recognition and Annoyance Detection of Complex Soundscapes}
 
- \subsection*{Background and aims}
+\subsection*{Background and aims}
 
-       \subsubsection*{Positivity (or the absence of negativity?)}
-             From the experience of the previous studies which are highly focused on the existing environmental acoustic and psychoacoustic metrics, one (of many) potential limitations has been revealed. For the most part, these metrics were designed to characterise various negative qualities of the sound. Certainly, they therefore have a negative correlation with positive assessments of the sound, but the simple fact is that they were conceived of and implemented in an attempt to quantify some sonic characteristic that was assumed by the researchers to contribute to a negative perception. Hence why in Zwicker's empirical formula for Psychoacoustic Annoyance \citep{PsychoacousticsfactsmodelsZwicker} $PA = N_5 (1 + \sqrt{\omega^2_S + \omega^2_{FR}})$, all of the constituent parts have positive coefficients.
+\subsubsection*{Positivity (or the absence of negativity?)}
+From the experience of the previous studies which are highly focused on the existing environmental acoustic and psychoacoustic metrics, one (of many) potential limitations has been revealed. For the most part, these metrics were designed to characterise various negative qualities of the sound. Certainly, they therefore have a negative correlation with positive assessments of the sound, but the simple fact is that they were conceived of and implemented in an attempt to quantify some sonic characteristic that was assumed by the researchers to contribute to a negative perception. Hence why in Zwicker's empirical formula for Psychoacoustic Annoyance \citep{PsychoacousticsfactsmodelsZwicker} $PA = N_5 (1 + \sqrt{\omega^2_S + \omega^2_{FR}})$, all of the constituent parts have positive coefficients.
 
-             While this would not theoretically hinder a formula for describing positive aspects of the sound, it creates a sort of conceptual barrier. If all of these metrics are designed to capture negative aspects of the sound, then it is insufficient to use them create a formula to describe a positive sound, since that formula would only represent the 'absence of negativity', not necessarily positivity.
- \subsection*{Result and conclusion}
+While this would not theoretically hinder a formula for describing positive aspects of the sound, it creates a sort of conceptual barrier. If all of these metrics are designed to capture negative aspects of the sound, then it is insufficient to use them create a formula to describe a positive sound, since that formula would only represent the 'absence of negativity', not necessarily positivity.
+\subsection*{Result and conclusion}
 
-       \includepdf[pages=-]{./Papers/IEEE_DeLTA_Preprint.pdf}
+\includepdf[pages=-]{./Papers/IEEE_DeLTA_Preprint.pdf}
 
 \section{Commentary: From Deterministic to Probabilistic Soundscapes: A critical tour around the soundscape circumplex}
 
- \hl{Some summary text here.}
+\hl{Some summary text here.}
 
- \includepdf[pages=-]{./Papers/J13_Circumplex_transform_Preprint.pdf}
-
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- % \include{./Chapters/Introduction}
- % \include{./Chapters/LitReview}
- % \include{./Chapters/Methods}
-
- % \include{./Chapters/TemporalKeyChapter}
- % \include{./Chapters/MultiLevelModelKeyChapter}
- % \include{./Chapters/SSPKeyChapter}
- % \include{./Chapters/BayesianKeyChapter}
- % \include{./Chapters/SmartCitiesKeyChapter}
-
- \include{./Chapters/Conclusions}
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\includepdf[pages=-]{./Papers/J13_Circumplex_transform_Preprint.pdf}
 
 
- \backmatter
- % A glossary and list of acronyms may go here
- % or may go in the front matter after the abstract.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- % The bibliography will go here.
- \bibliography{thesis_refs}
+% \include{./Chapters/Introduction}
+% \include{./Chapters/LitReview}
+% \include{./Chapters/Methods}
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \include{./Chapters/TemporalKeyChapter}
+% \include{./Chapters/MultiLevelModelKeyChapter}
+% \include{./Chapters/SSPKeyChapter}
+% \include{./Chapters/BayesianKeyChapter}
+% \include{./Chapters/SmartCitiesKeyChapter}
+
+\include{./Chapters/Conclusions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\backmatter
+% A glossary and list of acronyms may go here
+% or may go in the front matter after the abstract.
+\printglossaries
+
+% The bibliography will go here.
+\bibliography{thesis_refs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

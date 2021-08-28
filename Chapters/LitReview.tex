@@ -3,51 +3,74 @@
 
 \section{Impact of Urban Noise on Health and Wellbeing}
 
-  \hl{Give a full formal background to why noise control is important for public health}.
-  % https://www.euro.who.int/__data/assets/pdf_file/0008/383921/noise-guidelines-eng.pdf?ua=1
+\cit{Environmental noise in Europe 2020}
+
+\hl{Give a full formal background to why noise control is important for public health}.
+% https://www.euro.who.int/__data/assets/pdf_file/0008/383921/noise-guidelines-eng.pdf?ua=1
 
 \section{Current Methods of Assessing and Addressing Urban Noise}
 
-  \subsection{Acoustical Parameters}
+The approach to a practical predictive soundscape model arrived at within this thesis is heavily based on past environmental acoustics approaches. I will therefore begin with a brief summary of these past approaches.
 
-  \subsection{ISO Environmental Acoustics Standards}
-    \hl{ISO 1996-1, esp sections on annoyance, e.g. Annex F, G, H}
+\subsection{Acoustical Parameters}
 
-  \subsection{EU Noise Mapping}
+\subsection{ISO Environmental Acoustics Standards}
+\hl{ISO 1996-1, esp sections on annoyance, e.g. Annex F, G, H}
 
-  \subsection{Shortcomings}
+\subsection{EU Noise Mapping}
+
+\cit{Environmental noise in Europe 2020}
+
+\subsection{Shortcomings}
+
 
 \section{Soundscape Studies}
 
-  \subsection{Soundscape Descriptors and Indices}
+\subsection{Soundscape Descriptors and Indices}
 
-  \subsection{World Soundscape Project}
+\subsection{World Soundscape Project}
 
-  \subsection{Swedish Soundscape Quality Protocol}
+\subsection{Swedish Soundscape Quality Protocol}
 
 
-  \subsection{Demographic differences}
-    Several studies have attempted to study the degree to which personal and demographic factors influence a person's soundscape perception. In some conceptions \citep{Kou2020effects} % CITE add Erfanian 2020
-    these personal factors are classed as 'contextual' soundscape indicators - features which influence or, in a modelling context, be used as independent variables to predict the value of a soundscape descriptor. The personal factors help to create a personal soundscape interpretation model which is individual to each person.
+\subsection{Demographic differences}
+Several studies have attempted to study the degree to which personal and demographic factors influence a person's soundscape perception. In some conceptions \cit{Kou2020effects} % CITE add Erfanian 2020
+these personal factors are classed as 'contextual' soundscape indicators - features which influence or, in a modelling context, be used as independent variables to predict the value of a soundscape descriptor. The personal factors help to create a personal soundscape interpretation model which is individual to each person.
 
-    In this way, a person's individual state-of-mind, ethnic identity, educational background, gender identity, etc. form a pseudo-deterministic framework %! what a load of crap
-    through which the physical inputs from their environment are filtered. Clearly, many of these personal factors could never be measured and even those which are measurable will have wide ranges of legitimate effects, however estimating the degree and type of effect they may have can both help us better predict individual soundscape assessments and understand how group identities influence sound perception.
+In this way, a person's individual state-of-mind, ethnic identity, educational background, gender identity, etc. form a pseudo-deterministic framework %! what a load of crap
+through which the physical inputs from their environment are filtered. Clearly, many of these personal factors could never be measured and even those which are measurable will have wide ranges of legitimate effects, however estimating the degree and type of effect they may have can both help us better predict individual soundscape assessments and understand how group identities influence sound perception.
 
-    %TODO: Need to include earlier, more foundational studies into demographic factors
+%TODO: Need to include earlier, more foundational studies into demographic factors
 
-    \paragraph*{Section on Erfanian et al. 2020, Psychological Well-being}
+\paragraph*{Section on Erfanian et al. 2020, Psychological Well-being}
 
-    \paragraph*{Low-income and minority evidence} % FIXME I think this section will need to be heavily revised for phrasing and content. I'm not happy with how I'm discussing under-represented groups.
-    A consistent limitation of soundscape studies investigating the influence of personal factors is a sampling bias towards majority ethnicities (typically White British for UK studies and ethnic Chinese for Chinese studies) and middle-class and highly educated groups. % CITE Hoo boy citation definitely needed
-    This results in not only incomplete information about how demographics influence soundscape perception, but also represents a systemic under-representation of certain environments. While it may be unclear to what extent ethnicity and social class internally influence a person's perception, it is clear that these groups are exposed to different sound environments % NOTE: socio-economic studies - Huan 2019? Jian ~2015?
-    and therefore studies which do not include under-represented groups are also by definition not including those sound environments which those groups inhabit.
+\paragraph*{Low-income and minority evidence} % FIXME I think this section will need to be heavily revised for phrasing and content. I'm not happy with how I'm discussing under-represented groups.
+A consistent limitation of soundscape studies investigating the influence of personal factors is a sampling bias towards majority ethnicities (typically White British for UK studies and ethnic Chinese for Chinese studies) and middle-class and highly educated groups. % CITE Hoo boy citation definitely needed
+This results in not only incomplete information about how demographics influence soundscape perception, but also represents a systemic under-representation of certain environments. While it may be unclear to what extent ethnicity and social class internally influence a person's perception, it is clear that these groups are exposed to different sound environments % NOTE: socio-economic studies - Huan 2019? Jian ~2015?, Environmental noise in Europe 2020
 
-    A recent study by \cite{Kou2020effects} was successful in making inroads in these under-represented environments by studying the Humboldt Park neighbourhood in Chicago, USA. Their study included
-    % TODO: Finish summarising results from Kou2020
+and therefore studies which do not include under-represented groups are also by definition not including those sound environments which those groups inhabit.
+
+A recent study by \cit{Kou2020effects} was successful in making inroads in these under-represented environments by studying the Humboldt Park neighbourhood in Chicago, USA. Their study included
+% TODO: Finish summarising results from Kou2020
+
+
+\section{Approaches to Soundscape in Engineering}
+
+From this literature review, some conclusions about current approaches to incorporating the concept of "soundscape" into practical engineering and architectural design have been identified.
+
+\subsection{The Quiet Areas approach}
+
+This approach maintains a focus on "identifying and preserving quiet areas" \cit{Environmental noise in Europe 2020} following the imperative given in the Environmental Noise Directive \cit{END}. This approach is mostly rooted in a noise mindset, although the methods employed for identifying quiet areas varies across countries within the EEA. Background sound levels seem to play an important role in identifying quiet areas, in particular when attempting to
+
+%TODO Continue adding from Remarkable notes
 
 \section{Existing Predictive Models}
 
-  \citep{Lionello2020systematic}
+Contrary to the hopes expressed by \citet{Aletta2014Towards}, that "ideally there should be one acoustic indicator per dimension", the evidence from subsequent investigations and modelling attempts \citep{Lionello2020systematic} indicates this to be unlikely. There appears to be no reason we should think the perceptual dimensions should be reduced to a single acoustic indicator. The dimensions of soundscape represent complex perceptual concepts which we should expect to be composed of a multi-factor interaction between the input features. This necessary complexity  highlights the need for a more sophisticated machine learning approach in order to handle and interpret the interactions between the many input features which contribute to the formation of a soundscape perception.
+\citep{Aletta2016Soundscape}
 
-  \subsection{Models based on non-acoustic data sources}
-    \citep{Verma2020Predicting}, \citep{Gasco2020Social}
+\citep{Lionello2020systematic}
+
+\subsection{Models based on non-acoustic data sources}
+
+\citep{Verma2020Predicting}, \citep{Gasco2020Social}
