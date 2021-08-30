@@ -1,4 +1,4 @@
-\documentclass[twoside,fontsize=12pt,titlepage]{scrbook}
+\documentclass[oneside,fontsize=12pt,titlepage]{scrbook}
 
 % * Packages
 \usepackage[utf8]{inputenc}
@@ -21,6 +21,7 @@
 % glossary
 \usepackage[xindy]{glossaries} 
 \input{glossary}
+\setacronymstyle{long-short}
 \makeglossaries
 
 % markup commands
@@ -197,16 +198,10 @@ In particular, this final point has had an impact on the structure and content o
 
 \include{Chapters/LitReview}
 
+\include{Chapters/ProtocolChapter}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \include{Chapters/Methods.tex}
-
-\chapter{\label{pap:prot}Protocol: The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information}
-
-\section{Background and aims}
-Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913_2_2018IOS} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context.
-
-\subsection*{Result and conclusions}
 
 \includepdf[pages={1-16}]{./Papers/Mitchell2020Soundscape.pdf}
 
