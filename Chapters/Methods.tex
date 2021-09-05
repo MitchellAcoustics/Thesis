@@ -1,112 +1,40 @@
 \chapter{Methods}
-\label{ch:methods}
+\label{chap:methods}
 
-\section{Data Collection (Protocol)}
- \draft{From: Protocol paper}
- Soundscape studies strive to understand the perception of a sound environment, in context, including acoustic, (non-acoustic) environmental, contextual, and personal factors. These factors combine together to form a person's soundscape in complex interacting ways \citep{Berglund2006Tool}. In order to predict how people would perceive an acoustic environment, it is essential to identify the underlying acoustic and non-acoustic properties of soundscape.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FIXME: Find a better spot for this
+The ability to predict the likely soundscape assessment of a space is crucial to implementing the soundscape concept in practical design. Current methods of assessing soundscapes are generally limited to a post-hoc assessment of the existing environment, where users of the space in question are surveyed regarding their experience of the acoustic environment \citep{Engel2018Review, Zhang2018Effect}. While this approach has proved useful in identifying the impacts of an existing environment, designers require the ability to predict how a change or proposed design will impact the soundscape of the space. To this end, a model that is built upon measurable or estimate-able quantities of the environment would represent a leap forward in the ability to design soundscapes.
 
- The ISO/TS 12913-2:2018 is the current reference document addressing data collection and reporting requirements in soundscape studies. In terms of methods, the ISO document covers two main approaches, namely: soundwalks combined with questionnaires (Methods A and B) and narrative interviews (Method C) \citep{ISO12913_2_2018IOS}, which relate to on-site and off-site data collection, accordingly. Part 3 of the ISO 12913 series builds on Part 2 and provides guidelines for analyzing data gathered using only those methods \citep{ISO12913_3_2019IOS}. However, the range of possible methodological approaches to soundscape data collection is much broader and it includes, for instance, laboratory experiments \citep{Aletta2016Soundscape,Sun2019Classification,Oberman2018Towards}, pseudo-randomized experience sampling \citep{Craig2017Experience}, and even non-participatory studies \citep{Lavia2018Non}. The protocol described in this paper was designed having in mind the need for a relatively large soundscape dataset that could be used for design and modeling purposes, thus trying to expand the scope of soundwalks that typically deal with much smaller samples of participants \citep{Engel2018Review}. For the sake of comparability and standardization with these methods, we chose to refer to the soundscape attributes reported in the ISO Part 2 (Method A).
+\section{Questionnaires}
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ The full protocol developed for this thesis is outlined in Chapter \ref{chap:protocol}. The development and presentation of this protocol involved a substantial development and testing phase, and represents a novel advancement in soundscape survey methodology. Therefore it was submitted and published as a peer-reviewed journal article in MDPI Applied Sciences as \citet{Mitchell2020Soundscape} and is presented as a stand-alone chapter within this thesis.
 
- The ability to predict the likely soundscape assessment of a space is crucial to implementing the soundscape concept in practical design. Current methods of assessing soundscapes are generally limited to a post-hoc assessment of the existing environment, where users of the space in question are surveyed regarding their experience of the acoustic environment \citep{Engel2018Review, Zhang2018Effect}. While this approach has proved useful in identifying the impacts of an existing environment, designers require the ability to predict how a change or proposed design will impact the soundscape of the space. To this end, a model that is built upon measurable or estimate-able quantities of the environment would represent a leap forward in the ability to design soundscapes.
+ \subsection{Likert Responses}
 
- % TODO Rephrase
- \draft{Need to rephrase all of this, lifted wholesale from protocol paper}
-\proof{hello!}
-   Developing soundscape indices is a process that requires consideration of how people perceive, experience, and understand the surrounding sound environment. For the purpose of modeling and comparisons, it is important that such indices are numerical entities and that these quantities are collected consistently across all investigated spaces and soundscapes. Although the soundscape approach taken in this protocol represents a step-change away from existing methods of noise exposure measurements, strong cues particularly in the realm of acoustic measurement methods should be taken from existing standards both to make use of the significant knowledge and experience that has gone into the creation of these standards and to facilitate compatibility between soundscape and traditional measurements. In general, the measurement methods and best practice given in environmental noise standards such as ISO 1996-1:2016 and ISO 1996-2:2017 should be followed wherever possible, including the use of standardized acoustic equipment such as standard sound level meters. % CITE {ISO1996-1, ISO1996-2} 
-
-   An European Research Council (ERC) Advanced Grant project is ongoing to develop the proposed ``Soundscape Indices'' (SSID), which adequately reflect levels of human comfort and preference while integrating measurable and observable quantities. The framework proposed for the SSID project is laid out in detail by Kang et al. \citep{Kang2019Towards}, the first step of which is generating a large-scale and coherent database of the required soundscape characterization data. Given the already recognized differences in soundscape assessment across various countries and cultures \citep{Ren2018Soundscape,Kang2016Ten} and the success of existing international soundscape efforts such as the Soundscapes of the World project \citep{DeCoensel2017Urban}, the collection of soundscapes from many different countries and in many different contexts is an important component of the SSID project.
-
-   Therefore, the following protocol has been conceived and implemented within the SSID framework to collect data about urban soundscapes for use in general soundscape research and toward the design of Soundscape Indices. Thus far, the collected database includes nearly 4000 participants' responses from 59 locations in 10 cities and provinces across the UK, China, Spain, and Italy. This protocol has been refined and adjusted as needed during this extensive data collection process to arrive at this final version. This work was conducted by nine associated research groups and coordinated by the SSID group based at University College London and has already produced several pieces of published work towards the creation of Soundscape Indices \citep{Aletta2018Towards,Aletta2019Exploring,Mitchell2019spectral,Mitchell2019Making,Aletta2019Associations,Lionello2019dimension,Aletta2019Exploring,Oberman2018Towards}. Additional collaborations and data collection efforts are currently underway in France, the Netherlands, and Croatia.
-
-   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \subsection{Purpose}
-   This protocol was designed to achieve two primary goals: (1) gather in situ soundscape assessments from the public, which can be further analyzed and utilized in designing a soundscape index; (2) conduct recordings needed to reproduce the audio-visual environment of a location in a laboratory setting for conducting controlled experiments on soundscape. These two goals represent two levels of data required for developing a general soundscape model. The first enables large scale data collection, resulting in a database with thousands of perceptual responses and their corresponding quantitative data which can be statistically analyzed on a large scale, or used for training in machine learning modeling. In situ assessments also represent the most holistic assessment, ensuring all factors that influence the soundscape are present, including those which cannot be reproduced elsewhere.
-
-   However, there are questions which cannot be practically addressed in situ, such as soundscape assessment of less- or un-populated areas, the influence of mismatched acoustic and visual cues, physiological and neural responses to various soundscapes, and so on \citep{Kogan2017comprehensive}. Laboratory experiments with controlled environments are required to address these aspects. Toward the development of a coherent SSID, however, it is important that these two forms of data are collected simultaneously and with compatible methods, such that the results of the two approaches can be confidently combined and compared. In addition, since this protocol is intended to be used for the creation of a large-scale international database with additions carried out by several different and remote teams, it has been designed for efficiency, scalability, and information redundancy.
-
-   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \subsection{Protocol Design and Equipment}
-   \label{section:design}
-   The first goal is achieved by conducting in situ questionnaires using a slightly altered version of Method A (questionnaire) from Annex C of the ISO/TS 12913-2:2018 technical specification \citep{ISO12913_2_2018IOS} collected either via handheld tablets or paper copies of the questionnaire. Typically, a minimum of 100 responses are collected at each location during multiple 2-5-hour sessions over several days. During the survey sessions, acoustic data are collected via a stationary Class 1 Sound Level Meter (SLM) (as defined in IEC 61672-1:2013) running throughout the survey period and through binaural recordings taken next to each respondent. % CITE IEC61672-1
-   These acoustic and response data are linked through an indexing system so that features of the acoustic environment can be correlated with individual responses or with the overall assessment of the soundscape, as required by researchers.
-
-   The second goal is achieved by making First-Order Ambisonic (FOA) recordings simultaneously with 360\degree video which can be reproduced in a virtual reality environment. It has been shown that head-tracked binaural and multi-speaker ambisonic reproduction of recorded acoustic environments recorded in this way have high ecological validity \citep{Davies2014Soundscape}, particularly when paired with simultaneous head-tracked virtual reality video \citep{Hong2017Spatial,Hong2018Quality,DeCoensel2017Urban}.
-
-   % TODO Check if section reference is fixed
-   The on-site procedure to collect these data are separated into two stages, which will be outlined in detail in Section \ref{section:procedure}. The stage during which the spatial audio-visual recordings are made for lab experiments is called the \textbf{Recording Stage}, while the stage during which questionnaires and environmental data are captured is called the \textbf{Questionnaire Stage}.
-
-   The procedure has been designed to include multiple levels of data and metadata redundancy, making it robust to on-site issues and human error. The most crucial aspect of the redundancy is ensuring perceptual responses can be matched with the appropriate corresponding environmental and acoustic data even when some information is lost or forgotten.
-
-   \subsubsection{Labeling and Data Organization}
-     \label{section:metadata}
-     In order to be able to identify all of the many data components of the Recording and Questionnaire Stages and to associate these with their various corresponding data, the following labeling system is suggested. This system is focused on (1) relating all of the separate recordings and factors to specific questionnaire responses and (2) efficiency and consistency on site. A recent paper by Aumond et al. \citep{Aumond2017Modeling} demonstrated the importance of addressing multiple levels of factors which influence perception, from individual-, to session-, to location-level. The successful pleasantness models built incorporating these information levels showed a marked improvement over the equivalent individual-level or location-level only models. The data organisation system proposed here was designed in order to maintain this important information, and the levels of information for the data collected on site are shown in Table \ref{table:metadata}.
-
-     At the top level is the \textbf{Location} information. This includes information about the location which does not change day-to-day, and generally characterizes the architectural character of the space, or typical climate conditions for the area. As described in Section \ref{section:location}, each `environmental unit' should be considered a new location. Therefore, if researchers want to investigate the differences in soundscape assessment in the middle of a small urban park and along the road next to the same park, these would be considered different locations since they would (typically) have different environmental factors, and should be given different names. The name chosen should be concise, but it should be obvious what location is referred to.
-
-     The next level is information which is specific to each session, labeled with a \textbf{SessionID}. This~SessionID should contain the name of the location and a numerical index which will increase with each repeated session at that location. The SessionID is associated with the data collected during the Recording Stage, and with the data which are continuous throughout the Questionnaire Stage, SLM, and ENV data. For easy automatic processing, correct spelling and consistency with the format is crucial so that data can be filtered according to the SessionID or the location, as is often necessary. In addition,  for ease of automatic processing, it is recommended not to include spaces in the SessionID to avoid string splitting issues in analysis code.
-
-     Underneath each SessionID will be a set of \textbf{GroupID}s. One GroupID is assigned for \textit{each group of participants}. This should correspond to a single binaural recording and a single 360\degree~photo. This~will be used to (1) relate multiple surveys taken simultaneously and (2) link the recording and photo with the surveys. The GroupID is particularly crucial as it allows commonly missing data to be shared across multiple collection methods. For instance, occasionally paper questionnaires will be missing start and end time information. In this case, this information can be pulled directly from other questionnaires with the same GroupID. Where no questionnaires have the times, it is possible to extract an approximate start time from the binaural recording or 360\degree~photo and then estimate an average end time.
-
-     The GroupID should have the following format: [a set of letters representing the location name][the SessionID index number][an incrementing index for each group]. For example, for the second session at Regent's Park Japanese Garden, the location name is RegentsParkJapan, the GroupID letters might be 'RPJ'; the SessionID would be 'RegentsParkJapan2' so the GroupIDs for that session would start at '201'. Therefore, for example, the tenth group of participants for that session would be labeled 'RPJ210'. This format ensures that, if the location or SessionID are not recorded for a questionnaire, it is still obvious which session it belongs to.
-
-
-     \begin{table}
-       \caption{Labeling system for on site data collection. Regent's Park Japanese Garden is used as an example location. SLM: Sound Level Meter (acoustical factors); ENV: Environmental factors; BIN: Binaural; QUE: Questionnaires; PIC: Site pictures.}
-       \label{table:metadata}
-       \centering
-       \scalebox{.65}[.65]{\begin{tabular}{cccccccc}
-           \toprule
-           \textbf{Level of Information} & \multicolumn{6}{c}{\textbf{Example Label}} & \textbf{Factors Measured at This Level}                                                                                 \\
-           \midrule
-           Location                      & \multicolumn{6}{c}{RegentsParkJapan}       & GPS, Architectural typology, visual openness, etc.                                                                      \\ \midrule
-           SessionID                     & \multicolumn{4}{c}{RegentsParkJapan1}      & \multicolumn{2}{c}{RegentsParkJapan2}              & SLM, session notes, ENV                                            \\ \midrule
-           GroupID                       & \multicolumn{2}{c}{RPJ101}                 & RPJ102                                             & \ldots                  & RPJ201 & \ldots & BIN, PIC               \\ \midrule
-           Questionnaire                 & \multicolumn{2}{c}{1, 2, 3}                & 4, 5                                               & \ldots                  & 25, 26 & \ldots & QUE, Start \& End time \\ \bottomrule
-         \end{tabular}}
-
-     \end{table}
-
-   \subsubsection{Location and Measurement Point Selection}
-
- \subsection{Equipment}
-
-\section{Techniques for Field Data Collection}
-
-
- \subsection{Spatial Recording}
-
- \subsection{Ambisonic Encoding}
-
- \subsection{Lab Design?}
-
- \subsection{VR Reproduction}
-
-\section{Questionnaire}
+ \subsection{Circumplex Projection}
 
 \section{Psychoacoustics and Auditory Perception}
 
  \subsection{Psychoacoustic Parameters}
 
    \subsubsection{Loudness}
-     \emph{Zwicker and Fastl, Chap 8, see Mendeley notes and python-acoustics development notes.}
+   \emph{Zwicker and Fastl, Chap 8, see Mendeley notes and python-acoustics development notes.}
  \subsection{Feature Selection}
 
 \section{Machine Learning and Regression Techniques}
 
-\subsection{Feature Selection}
-\subsubsection{Mutual Information}
-\draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
-\paragraph*{From scholarpedia:}
-% http://www.scholarpedia.org/article/Mutual_information
-\qt{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
+ \subsection{Feature Selection}
+   \subsubsection{Mutual Information}
+   \draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
+   \paragraph*{From scholarpedia:}
+   % http://www.scholarpedia.org/article/Mutual_information
+   \draft{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
 
-\qt{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. } 
-\misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
+   \draft{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. }
+   \misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
 
-\subsubsection{Conditional Mutual Information}
-The Mutual Information between two variables, given another variable as a control.
+   \subsubsection{Conditional Mutual Information}
+   The Mutual Information between two variables, given another variable as a control.
 
  \subsection{Clustering Analysis}
    \paragraph{K-means}
