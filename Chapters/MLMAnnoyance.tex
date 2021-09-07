@@ -2,84 +2,136 @@
 
 Published as: Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. \url{https://doi.org/10.3390/su13115779}
 
+%TODO: Need to heavily edit this to rephrase and to re focus on my work
+
 \section*{Abstract}
 
-The recent development and deployment of Wireless Acoustic Sensor Networks (WASN) present new ways to address urvan acoustic challenges in a smart city context. A focus on improving quality of life forms the core of smart-city design paradigms and cannot be limited to simply measuring objective environmental factors, but should also consider the perceptual, psychological, and health impacts on citizens. This study therefore makes use of short (1 - 2.7s) recordings sourced from a WASN in Milan which were grouped into various environmental sound source types and given an annoyance rating via an online survey with $N=100$ participants. A multilevel psychoacoustic model was found to achieve an overall $R^2=0.64$ which incorporates Sharpness as a fixed effect regardless of the sound source type and Roughness, Impulsiveness, and Tonality as random effects whose coefficients vary depending on the sound source. These results present a promising step torward implementing an on-sensor annoyance model which incorporates psychoacoustic features and sound source type, and is ultimately not dependent on sound level.
+ The recent development and deployment of Wireless Acoustic Sensor Networks (WASN) present new ways to address urvan acoustic challenges in a smart city context. A focus on improving quality of life forms the core of smart-city design paradigms and cannot be limited to simply measuring objective environmental factors, but should also consider the perceptual, psychological, and health impacts on citizens. This study therefore makes use of short (1 - 2.7s) recordings sourced from a WASN in Milan which were grouped into various environmental sound source types and given an annoyance rating via an online survey with $N=100$ participants. A multilevel psychoacoustic model was found to achieve an overall $R^2=0.64$ which incorporates Sharpness as a fixed effect regardless of the sound source type and Roughness, Impulsiveness, and Tonality as random effects whose coefficients vary depending on the sound source. These results present a promising step torward implementing an on-sensor annoyance model which incorporates psychoacoustic features and sound source type, and is ultimately not dependent on sound level.
 
 \section{Introduction}
 
-Noise has been proven to have a wide impact on the social and economic aspects of citizens' lives \citep{Goines2007Noise} and is regarded as one of the primary environmental health issues referenced in the new environmental noise guidelines \citep{Nations2018World}. Over the past few years, several research teams have analysed the causes and the impact of this noise, revealling that it causes more than 48,000 new cases of ischemic heart disease and around 12,000 deaths in Europe each year \citep{Blanes2017Noise}. Furthermore, it leads to chronic high annoyance for more than 22 million people, and sleep disturbance for more than 6.5 million people \citep{Ndrepepa2011Relationship}. One of the main noise sources according to research is road traffic noise \citep{Ouis2001Annoyance}, causing psychological reactions in citizens \citet{Basner2006Aircraft} and even cardiovascular diseases \citep{Ndrepepa2011Relationship}.
+ Noise has been proven to have a wide impact on the social and economic aspects of citizens' lives \citep{Goines2007Noise} and is regarded as one of the primary environmental health issues referenced in the new environmental noise guidelines \citep{Nations2018World}. Over the past few years, several research teams have analysed the causes and the impact of this noise, revealling that it causes more than 48,000 new cases of ischemic heart disease and around 12,000 deaths in Europe each year \citep{Blanes2017Noise}. Furthermore, it leads to chronic high annoyance for more than 22 million people, and sleep disturbance for more than 6.5 million people \citep{Ndrepepa2011Relationship}. One of the main noise sources according to research is road traffic noise \citep{Ouis2001Annoyance}, causing psychological reactions in citizens \citet{Basner2006Aircraft} and even cardiovascular diseases \citep{Ndrepepa2011Relationship}.
 
-Other studies analyse the effects of aircraft noise on sleep \cit{} and learning impairments in children \cit{}. Also, railway noise has proven to cause annoyance due to its huge variety of sounds, e.g. rail breaks, whistles, squeels, and vibrations \cit{ 8, 9}. Most of the literature focuses on sound level measurements and the corresponding annoyance \cit{ 10}, but other acoustical and psychoacoustical charactersitics could be taken into account, e.g. loudness or sharpness \cit{ 11}, in order to understand the degree of noise annoyance and identify the characteristics of sounds that may be more detrimental to psychological well-being and consequently for health. Such knowledge is relevant for policy makers and urban planners in order to create healthy environments.
+ Other studies analyse the effects of aircraft noise on sleep \cit{} and learning impairments in children \cit{}. Also, railway noise has proven to cause annoyance due to its huge variety of sounds, e.g. rail breaks, whistles, squeals, and vibrations \cit{ 8, 9}. Most of the literature focuses on sound level measurements and the corresponding annoyance \cit{ 10}, but other acoustical and psychoacoustical characteristics could be taken into account, e.g. loudness or sharpness \cit{ 11}, in order to understand the degree of noise annoyance and identify the characteristics of sounds that may be more detrimental to psychological well-being and consequently for health. Such knowledge is relevant for policy makers and urban planners in order to create healthy environments.
 
-Several tests used in studies to evaluate the effects of environmental noise for citizens \cit{ 12} can be used to design this model. This study uses real-life data and its sound characterisation, thus focusing on noise sensitivity was not the closes approach to the problem. The tests used as a basis in this work have been defined with the purpose of finding new ways of analysing the impact of sound -- usually traffic -- on citizens in urban environments \cit{ 13, 14}, in order to model the annoyance perception \cit{15, 16}.
+ Several tests used in studies to evaluate the effects of environmental noise for citizens \cit{ 12} can be used to design this model. This study uses real-life data and its sound characterisation, thus focusing on noise sensitivity was not the closes approach to the problem. The tests used as a basis in this work have been defined with the purpose of finding new ways of analysing the impact of sound -- usually traffic -- on citizens in urban environments \cit{ 13, 14}, in order to model the annoyance perception \cit{15, 16}.
 
-The perceptual tests were designed to measure the annoyance in people relating to different urban sounds and their characteristics \cit{ 17, 18}, by means of short excerpts of raw acoustic audio obtained from the DYNAMAP project \cit{ 19}. The most representative audio excerpts were selected, using a wide range of sound types (sirens, airplanes, people talking, dogs barking, etc.) \cit{ 20, 21}. However, sound annoyance depends on the acoustic characterisation of each sample, and it is possible to classify the acoustic excerpts depending on their characterisation, which can be the basis to ask participants about their perceptions. The characterisation is based on the psychoacoustic measurements of loudness, sharpness, and others defined by Zwicker \cit{ 11}.
+ The perceptual tests were designed to measure the annoyance in people relating to different urban sounds and their characteristics \cit{ 17, 18}, by means of short excerpts of raw acoustic audio obtained from the DYNAMAP project \cit{ 19}. The most representative audio excerpts were selected, using a wide range of sound types (sirens, airplanes, people talking, dogs barking, etc.) \cit{ 20, 21}. However, sound annoyance depends on the acoustic characterisation of each sample, and it is possible to classify the acoustic excerpts depending on their characterisation, which can be the basis to ask participants about their perceptions. The characterisation is based on the psychoacoustic measurements of loudness, sharpness, and others defined by Zwicker \cit{ 11}.
 
-% FIXME will need to rewrite this paragraph, not happy with it.
-The researchers asked more than 100 people to conduct the perceptual tests \cit{18}. Some preliminary results of the three tests conducted were published in \cit{17} in which the relationship between sharpness and annoyance was analysed by means of an A/B test \cit{22}, and later on in \cit{18}, where some of the research quesstions were formulated. In this study, I aim to determine the parameters that have an effect in the individual annoyance scores. For this reason, a multilevel psychoacoustic model is trained using the results of the MUSHRA \cit{23} test, essentially focused on annoyance evaluation by the participants over sesveral different types of sound, while loudness and sharpness were kept constant. The results show that the differences in annoyance perception between the different demographic groups is not statistically significant and that sharpness is the main predictor for annoyance.
+ % FIXME will need to rewrite this paragraph, not happy with it.
+ The researchers asked more than 100 people to conduct the perceptual tests \cit{18}. Some preliminary results of the three tests conducted were published in \cit{17} in which the relationship between sharpness and annoyance was analysed by means of an A/B test \cit{22}, and later on in \cit{18}, where some of the research questions were formulated. In this study, I aim to determine the parameters that have an effect in the individual annoyance scores. For this reason, a multilevel psychoacoustic model is trained using the results of the MUSHRA \cit{23} test, essentially focused on annoyance evaluation by the participants over several different types of sound, while loudness and sharpness were kept constant. The results show that the differences in annoyance perception between the different demographic groups is not statistically significant and that sharpness is the main predictor for annoyance.
 
-The chapter is structured as follows: Section \ref{sec:mod} detailes the state-of-the-art of annoyance modelling by means of subjective data collection. Section \ref{sec:proc} describes the procedure followed in this work, including the dataset and the design of the perceptual test. In section \ref{sec:res} the results obtained from the perception tests are presented and discussed, and the annoyance model is proposed. Section \ref{sec:disc} contains the discussion and, finally, Section \ref{sec:conc} presents the conclusions of the study.
+ The chapter is structured as follows: Section \ref{sec:mod} detailes the state-of-the-art of annoyance modelling by means of subjective data collection. Section \ref{sec:proc} describes the procedure followed in this work, including the dataset and the design of the perceptual test. In section \ref{sec:res} the results obtained from the perception tests are presented and discussed, and the annoyance model is proposed. Section \ref{sec:disc} contains the discussion and, finally, Section \ref{sec:conc} presents the conclusions of the study.
 
 \section{State of the Art of Annoyance Evaluation and Modelling}
-\label{sec:mod}
-In this section I gather a short synthesis of the most relevant contributions of the state-of-the-art on which the design of the tests and the modelling of perceptual annoyance have been based.
+ \label{sec:mod}
+ In this section I gather a short synthesis of the most relevant contributions of the state-of-the-art on which the design of the tests and the modelling of perceptual annoyance have been based.
 
-\subsection{Evaluation of Annoyance}
-% FIXME prob need to rewrite this
-The evaluation of annoyance can be found in literature by means of the objective parameters related to sound and noise \cit{10}. Nevertheless, when the goal is to measure the perception -- the real annoyance experienced by people -- one of the most frequently used methods is to conduct a survey to measure the degree of annoyanced produced by different sounds \cit{24, 25,26}. Following the recommendation of the International Committee for the Biological Effects of Noise (ICBEN), this evaluation should be done inn a qualitative way, using a verbal scale; this can be translated into \emph{not at all, slightly, moderately, very} and \emph{extremely}, just to give a few examples. Also an 11-point scale -- also from an ICBEN recommendation -- can be used, where in this case, zero corresponse to \emph{not at all} and 10 corresponds to \emph{extremely disturbing}.
+ \subsection{Evaluation of Annoyance}
+   % FIXME prob need to rewrite this
+   The evaluation of annoyance can be found in literature by means of the objective parameters related to sound and noise \cit{10}. Nevertheless, when the goal is to measure the perception -- the real annoyance experienced by people -- one of the most frequently used methods is to conduct a survey to measure the degree of annoyance produced by different sounds \cit{24, 25,26}. Following the recommendation of the International Committee for the Biological Effects of Noise (ICBEN), this evaluation should be done inn a qualitative way, using a verbal scale; this can be translated into \emph{not at all, slightly, moderately, very} and \emph{extremely}, just to give a few examples. Also an 11-point scale -- also from an ICBEN recommendation -- can be used, where in this case, zero corresponds to \emph{not at all} and 10 corresponds to \emph{extremely disturbing}.
 
-% FIXME take this paragraph out
-Furthermore, taking advantage of the experience in soundscape evaluation \cit{27} citizens can be asked about other aspects besides annoyance. To this end a perceptual assessment based on a Likert scale \cit{28} could be used. This scale defines five levels of agreement with a given statement: \emph{Strongly disagree, Disagree, Neither agree nor disagree, Agree} and \emph{Strongly agree}. This scale was used in \cit{17,18} to evaluate several types of noise sources accordig to a small group of attributes such as \emph{loud, shrill, noisy, disturbing, sharp, excting, calming} and \emph{pleasant} (see the complete list of adjectives in \cit{27}).
+   % FIXME take this paragraph out
+   Furthermore, taking advantage of the experience in soundscape evaluation \cit{27} citizens can be asked about other aspects besides annoyance. To this end a perceptual assessment based on a Likert scale \cit{28} could be used. This scale defines five levels of agreement with a given statement: \emph{Strongly disagree, Disagree, Neither agree nor disagree, Agree} and \emph{Strongly agree}. This scale was used in \cit{17,18} to evaluate several types of noise sources according to a small group of attributes such as \emph{loud, shrill, noisy, disturbing, sharp, exciting, calming} and \emph{pleasant} (see the complete list of adjectives in \cit{27}).
 
-Borrowing from the subjective assessment of audio quality, the MUSHRA method has been also used for the evaluation of annoyance in \cit{17, 18}. MUSHRA, which stands for \emph{MUlti Stimulus test with Hidden Reference and Anchor}, was described and designed by ITU-R under the recommendation ITU-R BS.1534-3 \cit{23}. This recommendation gives guidelines on listening tests and subjective assessment, as well as audio quality (among other applications), assuming that the best way to evaluate audio quality is by means of subjective listening.
+   Borrowing from the subjective assessment of audio quality, the MUSHRA method has been also used for the evaluation of annoyance in \cit{17, 18}. \gls{mushra} was described and designed by ITU-R under the recommendation ITU-R BS.1534-3 \cit{23}. This recommendation gives guidelines on listening tests and subjective assessment, as well as audio quality (among other applications), assuming that the best way to evaluate audio quality is by means of subjective listening.
 
-Listening tests can be conducted in a controlled scenario (e.g. in an anechoic chamber) thus allowing the organiser to have control over the setup and experimental design. Nevertheless, this approach is expensive and time consuming. Alternatively, online listening tests have been widely used in the perceptual evaluation of audio quality or speech synthesis systems, even resorting to crowdsourcing strategies \cit{29}. These tests can be run in parallel and anywhere, thereby reducing costs and allowing researchers to reach a wider audience \cit{30}.
+   Listening tests can be conducted in a controlled scenario (e.g. in an anechoic chamber) thus allowing the organiser to have control over the setup and experimental design. Nevertheless, this approach is expensive and time consuming. Alternatively, online listening tests have been widely used in the perceptual evaluation of audio quality or speech synthesis systems, even resorting to crowdsourcing strategies \cit{29}. These tests can be run in parallel and anywhere, thereby reducing costs and allowing researchers to reach a wider audience \cit{30}.
 
-\subsection{Annoyance Prediction}
-After the design and execution of the perceptual tests, the resulting evaluation coming from participants are used to generate a model that can predict the annoyance value depending on the type and the parameters of the noise excerpt under study. One of the most representative examples of annoyance modelling is found in \cit{15}, where a model based on the hypothesis that annoyance is primarily determined by the detection of intruding sounds is presented. The model takes into account several measurable elements:
+ \subsection{Annoyance Prediction}
+   After the design and execution of the perceptual tests, the resulting evaluation coming from participants are used to generate a model that can predict the annoyance value depending on the type and the parameters of the noise excerpt under study. One of the most representative examples of annoyance modelling is found in \cit{15}, where a model based on the hypothesis that annoyance is primarily determined by the detection of intruding sounds is presented. The model takes into account several measurable elements:
 
-\begin{enumerate}
-  \item signal-to-noise ration (SNR);
-  \item indoor background level;
-  \item the activity conducted by the listener, assuming that in the conducted tests, their main activity is not listening to events.
-\end{enumerate}
+   \begin{enumerate}
+     \item signal-to-noise ration (SNR);
+     \item indoor background level;
+     \item the activity conducted by the listener, assuming that in the conducted tests, their main activity is not listening to events.
+   \end{enumerate}
 
-The model is obtained from the results of a test evaluating annoyance and acoustic data from a field experiment in a natural setting.
+   The model is obtained from the results of a test evaluating annoyance and acoustic data from a field experiment in a natural setting.
 
-Another reference model for annoyance prediction is found in \cit{16}, where the authors model and predict road traffic noise annoyanced based on:
-\begin{enumerate}
-  \item noise perception;
-  \item noise exposure levels;
-  \item demographics.
-\end{enumerate}
+   Another reference model for annoyance prediction is found in \cit{16}, where the authors model and predict road traffic noise annoyance based on:
+   \begin{enumerate}
+     \item noise perception;
+     \item noise exposure levels;
+     \item demographics.
+   \end{enumerate}
 
-The authors apply machine-learning algorithms in order to conduct the prediction and measure error rates, which give them a good trade-off in the prediction of the traffic noise annoyance, with a strong dependence on subjective noise perception and predicted noise exposure levels, assuming that the classical statistical approaches fail in their predictions in terms of accuracy. % REVIEW should/could rewrite this last bit
+   The authors apply machine-learning algorithms in order to conduct the prediction and measure error rates, which give them a good trade-off in the prediction of the traffic noise annoyance, with a strong dependence on subjective noise perception and predicted noise exposure levels, assuming that the classical statistical approaches fail in their predictions in terms of accuracy. % REVIEW should/could rewrite this last bit
 
-A model of annoyance based on a combination of psychoacoustic metrics was proposed by \citet{PsychoacousticsfactsmodelsZwicker}. Generated from laboratory-collected data, this model attempts to provide a method to directly calculate the relative annoyance values of single-source sounds from the psychoacoustic Loudness, Roughness, Sharpness, and Fluctuation Strength. this model has also been further expanded upon to include a term for the Tonality of the sound \cit{31}. However, this model was developed based on laboratory studies of generated, simple sounds (i.e. not real recorded sounds) and does not take into account the semantic information associated with the real environmental sounds present in an urban environment.
+   A model of annoyance based on a combination of psychoacoustic metrics was proposed by \citet{PsychoacousticsfactsmodelsZwicker}. Generated from laboratory-collected data, this model attempts to provide a method to directly calculate the relative annoyance values of single-source sounds from the psychoacoustic Loudness, Roughness, Sharpness, and Fluctuation Strength. this model has also been further expanded upon to include a term for the Tonality of the sound \cit{31}. However, this model was developed based on laboratory studies of generated, simple sounds (i.e. not real recorded sounds) and does not take into account the semantic information associated with the real environmental sounds present in an urban environment.
 
-In \cit{32}, the authors led us to a better understanding of the transportation noise-annoyance responnse, in three different and relevant approximations:
+   In \cit{32}, the authors led us to a better understanding of the transportation noise-annoyance response, in three different and relevant approximations:
 
-\begin{enumerate}
-  \item to unravel the factors that affect the annoyance response of people in reference to the mixed transportation noise;
-  \item to contrast the noise-annoyance dependence in situations where road traffic and railway noise dominate;
-  \item to detail the differences between those two using structural equation modelling.
-\end{enumerate}
+   \begin{enumerate}
+     \item to unravel the factors that affect the annoyance response of people in reference to the mixed transportation noise;
+     \item to contrast the noise-annoyance dependence in situations where road traffic and railway noise dominate;
+     \item to detail the differences between those two using structural equation modelling.
+   \end{enumerate}
 
-As expected, the results show that annoyance is largely determined by noise disturbance and the noisiness perceived by citizens. Finally, in \cit{33} an approach to develop a road traffic noise prediction model is presented, and it takes into account:
+   As expected, the results show that annoyance is largely determined by noise disturbance and the noisiness perceived by citizens. Finally, in \cit{33} an approach to develop a road traffic noise prediction model is presented, and it takes into account:
 
-\begin{enumerate}
-  \item social aspects
-  \item characteristics of traffic, and
-  \item urban development
-\end{enumerate}
+   \begin{enumerate}
+     \item social aspects
+     \item characteristics of traffic, and
+     \item urban development
+   \end{enumerate}
 
-It is based on the creation of a local model, with a pilot in Istanbul (Turkey), which uses all the information gathered for the creation of the noise maps as an input, and provides annoyance levels prediction as an output, complementing the noise maps which provide no subjective indicator.
+   It is based on the creation of a local model, with a pilot in Istanbul (Turkey), which uses all the information gathered for the creation of the noise maps as an input, and provides annoyance levels prediction as an output, complementing the noise maps which provide no subjective indicator.
 
 \section{Methods}
 
-In this section, I detail the several methods applied in this experiment from the perceptual test design based on an urban sound dataset \cit{21} to the multilevel linear regression modelling applied to obtain the annoyance prediction.
+ In this section, I detail the several methods applied in this experiment from the perceptual test design based on an urban sound dataset \cit{21} to the multilevel linear regression modelling applied to obtain the annoyance prediction.
 
-\subsection{Dataset}
+ \subsection{Dataset}
+   %FIXME: Rewrite this section for better language
+   In order to obtain a proper representation of the acoustic environment in the design of the perceptual tests, a large quantity of recorded data is needed. The data gathered in this project belongs to different recording times and urban locations, using the \gls{wasn} deployed in Milan (Italy) in the framework of the LIFE DYNAMAP project \cit{19, 21}.
 
+   Gathering the data through a \gls{wasn} facilitates the collection of a wide and accurate representation of the acoustic events, because it keeps the same recording conditions in every node and allows the retrieval of data at any time of the day. The dataset used in this study has been obtained by homogeneously sampling several hours, in both weekday and weekend, with 24 sensors distributed along the urban District 9 of Milan \cit{34}. After that, experts from the DYNAMAP development team labelled the acoustic events of the recordings manually to obtain a 151-h dataset \cit{21}. Due to the nature of the project, that consisted in removing events not related to traffic noise from the noise map computation, events were grouped in \gls{rtn} that belongs to the 83.7\% of the total time of the dataset, and \gls{ane} with the 8.7\% of the total time. Another class was used to include overlapping and unidentified events: \gls{complx} with 7.6\% of the total time \cit{20}. During the labelling process, the DYNAMAP developers found up to 26 types of anomalous events, which they decided to group in the following classes: airplane, alarm, bell, bike, bird, blind, brake, bus door, construction, dog, door, glass, horn, interference, music, people, rain, rubbish service, siren, squeak, step, thunder, tramway, train, trolley, wind, works (construction) \cit{35}.
+
+   The most common sound classes were picked to evaluate the relationship between the event measurements and the citizens' perception of annoyance. These selected events used in the study belong to the following 9 classes: airplane, bird, brake, construction, dog, door, horn, people, and siren \cit{36}. As the selected events are the most common, those are the ones that contain the wides variety of recording conditions, including different sensor locations and recording hours \cit{17}. The reason for that choice was double:
+
+   \begin{enumerate}
+     \item the availability of a wide range of examples of each type of sound to choose for the design of the tests ,including the possibility of finding different samples that keep similar psychoacoustic values,
+     \item the fact that the most common sounds are the most reasonable to evaluate with people, as they are the most probable to generate annoyance due to their repetitiveness.
+   \end{enumerate}
+   %FIXME: Particularly rewrite this paragraph, it's a very different style
+   The comparison between events was only carried out with sounds collected using the same sensor, in order to ensure the same recording conditions. For this reason, if the chosen events for the perceptive tests belong to a sensor or another, depends on the availability of the classes to be compared in each sensor. In all the cases, measure were taken to ensure that the sensor containing the events has enough variety of samples with various psychoacoustic parameters, to ensure a proper representation of each category. To satisfy these requirements, only data from four sensors have been used to make the comparisons, as they provide enough information to carry out the perceptual test, i.e. hb115, hb124, hb127, and hb133 \cit{20}. More details about the event selection process and the availability of the study sensors are detailed in \cit{17}, and the time of each event in the sensors is depicted in \cit{18}.
+
+ \subsection{Design of the Perceptual Tests}
+
+   In order to assess the degree of annoyance produced by the aforementioned classes of sounds, an online test has been conducted using the Web Audio Evaluation Tool \cit{30}. Specifically, the \gls{mushra} test method \cit{23} -- which was originally designed for the evaluation of audio codecs -- has been adapted for that purpose. Participants were given a clear explanation of what they were asked, including detailed instructions on the operation of the test. No training phase was therefore considered. A demographics survey was included at the beginning of the test for all 100 participants, asking for them to identify age, gender, and a subjective rating of the participant's residential area (zr1 - very quiet, zr2 - quiet, zr3 - bit noisy, zr4 - noisy, zr5 - very noisy).
+
+   The second part of the test consists of five sets. Each set presents a group of short acoustic events with similar values of loudness and sharpness but from different classes, and recorded in the same sensor, in order to maintain the recording conditions and location of the sounds under comparison. For each set, the participants were asked to evaluate the annoyance produced by the presented audios, ordering them in a $0-10$ scale, where zero corresponds to \emph{not at all} and 10 corresponds to \emph{extremely disturbing} following the ICBEN recommendation. The interface was customised including a colour scale to help the participants place the stimuli according to the degree of annoyance that they perceive. Each audio is represented with a green bar with a "play" icon on it and the audios are sorted randomly along the \gls{mushra} scale (see Figure \ref{fig:mushra-test}). An audio is reproduced when the corresponding bar is clicked. The system ensures the participant listens to all the audios moves all the bars before they jump to the next set of audios. The sets were presented in a random order to prevent learning biases. \gls{mushra} tests usually include hidden reference stimuli, which in audio or speech quality evaluation corresponds to the highest quality samples and that are used to remove outlier responses. Nonetheless, since stimuli pertaining to different classes are compared, no audio reference was included, thus avoiding biases towards a certain audio class. Moreover, the participants were asked to take the test using headphones and to keep the same volume during all the tests, to maintain the same conditions throughout the entire testing process. One hundred participants undertook this test, 59 men and 41 women, with a mean age of 33. Participants were volunteers, mainly from the university and also gathered via social networks. The distribution according to residential area is the following: 9 in zr1, 37 in zr2, 35 in zr3, 18 in zr4, and 1 in zr5. The \gls{mushra} test allows us to:
+
+   \begin{enumerate}
+     \item obtain an individual score of annoyance for each audio,
+     \item carry out comparisons among the different types of events contained in a set.
+   \end{enumerate}
+
+   The detail of the stimuli included in each of the five sets of the test can be found in Table \ref{tab:sensor-stimuli}.
+
+   \begin{figure}
+     \label{fig:mushra-test}
+     \centering
+     \caption{Screenshot of the \gls{mushra} test conducted to assess the annoyance provoked by different sounds. Title: sort the following sounds according to the cause annoyance. The scale ranges from \emph{not annoying at all} to \emph{extremely annoying}.}
+   \end{figure}
+
+   \begin{table}
+     \label{tab:sensor-stimuli}
+     \centering
+     \caption{Psychoacoustic parameters calculated for the 27 stimuli used in the listening experiment.}
+   \end{table}
+
+ \subsection{Psychoacoustic Data Analysis}
+
+   The dataset resulted in 27 audio recordings of identified sound events with durations ranging between 1.01 and 2.69 s. The calibrated audio files were imported into the ArtemiS Suite software (v. 11.5, Head Acoustics GmbH) and the following psychoacoustic parameters were computed: \emph{loudness, sharpness, roughness, tonality} and \emph{impulsiveness} \cit{11}; values for these parameters are reported in Table \ref{tab:sensor-stimuli}. The rationale for selecting a relatively large set of psychoacoustic metrics is that they are often used as indicators to predict perceptual constructs (such as annoyance) in perceptual studies, as shown in recent soundscape literature \cit{37, 38}. Fluctuation Strength, which could otherwise be included in this list of psychoacoustic parameters, as in Zwicker's annoyance model, was not included as the length of the recordings are too short to obtain a valid value. Loudness was calculated according to the DIN 45631 / A1 standard for time-varying sounds, in a free-field \cit{39}.As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field \cit{39}. With this sharpness method, the absolute loudness of the sound is not accounted for, so there should not be a duplication of information across the loudness and sharpness metrics. Roughness was calculated according to the hearing model by Sottek \cit{40}, with the option to skip the first 0.5 s in order to not distort the single value. Impulsiveness was also calculated according to the hearing model by Sottek, with a 0.5 s skip interval. Finally, tonality was calculated according to ECMA-74 (17th edition), which is based on the hearing model of Sottek, with a frequency range of 20 Hz to 20 kHz \cit{41}.
+
+ \subsection{Multi-Level Linear Regression Modelling}
+
+   The analysis for this study utilises a \gls{mlm}, with a random intercept and a random slope, using backward step feature selection. \gls{mlm}s are commonly used in psychological research for repeated measures studies \cit{42, 43} and for applied prediction models \cit{44, 45}. \gls{mlm} allows for the incorporation of nested and non-nested groups effects within the structure of the model, where the coefficients and intercepts for the independent variables are allowed to vary across groups. For this study, the data are grouped into two non-nested sets to form a two-level model: by repeated measures per respondent (`user`) and by sound type (`label`). In order to take into account the repeated measures across participants, and to correct for the participant's mean annoyance level, the `user` variable is included in the second-level as a random intercept. We then include the psychoacoustic features as label effects, with coefficients which are allowed to vary across the sound type labels. The psychoacoustic features are also included as fixed effects in the first level, which do not vary across either the user or label groups.
+
+   The initial model structure, as written in Wilkinson-Rogers notation \cit{46}, is thus:
+
+   %FIXME: 
+   annoyance ~ \gls{n5} + \gls{r} + \gls{s} + \gls{tu} + \gls{iu} + (1|user) + (1 + \gls{n5} + \gls{r} + \gls{s} + \gls{tu} + \gls{iu} | label)
 
