@@ -1,43 +1,53 @@
 \chapter{Methods}
-\label{ch:methods}
+\label{chap:methods}
 
-% From: Protocol paper
-This protocol is trying to extend the scope of objective measurements that are being collected in conjunction with perceptual responses by including other environmental and visual data.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FIXME: Find a better spot for this
+The ability to predict the likely soundscape assessment of a space is crucial to implementing the soundscape concept in practical design. Current methods of assessing soundscapes are generally limited to a post-hoc assessment of the existing environment, where users of the space in question are surveyed regarding their experience of the acoustic environment \citep{Engel2018Review, Zhang2018Effect}. While this approach has proved useful in identifying the impacts of an existing environment, designers require the ability to predict how a change or proposed design will impact the soundscape of the space. To this end, a model that is built upon measurable or estimate-able quantities of the environment would represent a leap forward in the ability to design soundscapes.
 
-\section{Data Collection}
+\section{Questionnaires}
 
-  \subsection{Spatial Recording}
+ The full protocol developed for this thesis is outlined in Chapter \ref{chap:protocol}. The development and presentation of this protocol involved a substantial development and testing phase, and represents a novel advancement in soundscape survey methodology. Therefore it was submitted and published as a peer-reviewed journal article in MDPI Applied Sciences as \citet{Mitchell2020Soundscape} and is presented as a stand-alone chapter within this thesis. This section therefore presents those methods not associated with the data collection procedure, i.e. the analysis and statistical methods used.
 
-  \subsection{Ambisonic Encoding}
+ \subsection{Likert Responses}
 
-  \subsection{Lab Design?}
-
-  \subsection{VR Reproduction}
-
-\section{Questionnaire}
+ \subsection{Circumplex Projection}
 
 \section{Psychoacoustics and Auditory Perception}
 
-  \subsection{Psychoacoustic Parameters}
+ \subsection{Psychoacoustic Parameters}
 
-  \subsubsection{Loudness}
-    \emph{Zwicker and Fastl, Chap 8, see Mendeley notes and python-acoustics development notes.}
-  \subsection{Feature Selection}
+   \subsubsection{Loudness}
+   \emph{Zwicker and Fastl, Chap 8, see Mendeley notes and python-acoustics development notes.}
+ \subsection{Feature Selection}
 
 \section{Machine Learning and Regression Techniques}
 
-  \subsection{Clustering Analysis}
-    \paragraph{K-means}
-    \paragraph{nbclust}
+ \subsection{Feature Selection}
+   \subsubsection{Mutual Information}
+   \draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
+   \paragraph*{From scholarpedia:}
+   % http://www.scholarpedia.org/article/Mutual_information
+   \draft{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
 
-  \subsection{Modelling Likert-type Data}
+   \draft{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. }
+   \misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
 
-    \subsubsection{Multiple Linear Regression}
+   \subsubsection{Conditional Mutual Information}
+   The Mutual Information between two variables, given another variable as a control.
 
-    \subsubsection{Ordinal Logistic Regression}
+ \subsection{Clustering Analysis}
+   \paragraph{K-means}
+   \paragraph{nbclust}
 
-    \subsubsection{Multi-output Regression}
+ \subsection{Modelling Likert-type Data}
 
-  \subsection{Multi-level Models}
+   \subsubsection{Multiple Linear Regression}
 
-  \subsection{Bayesian Regression}
+   \subsubsection{Ordinal Logistic Regression}
+
+   \subsubsection{Multi-output Regression}
+
+ \subsection{Multi-level Models}
+
+ \subsection{Bayesian Regression}
