@@ -1,8 +1,9 @@
 \chapter[Study II: Multilevel Annoyance Modelling]{Study II: Multilevel Annoyance Modelling of Short Environmental Sound Recordings}
 
-Published as: Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. \url{https://doi.org/10.3390/su13115779}
+Published as: Orga, F., \textbf{Mitchell, A.}\footnote{Joint first author}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. \url{https://doi.org/10.3390/su13115779}
 
 %TODO: Need to heavily edit this to rephrase and to re focus on my work
+\draft{This chapter will be re-worded and somewhat reorganised to better fit my thinking and to highlight the analysis work. Its focus within the thesis is on the use of sound source information to improve the prediction of annoyance. Right now this is wholesale copied from the published paper.}
 
 \section*{Abstract}
 
@@ -186,6 +187,12 @@ Published as: Orga, F., \textbf{Mitchell, A.}, Freixes, M., Aletta, F., Alsina-P
  The fact that no significant differences in annoyance scores were observed between sample groups (i.e. gender or area of residence) is particularly interesting: it is common to assume in soundscape studies that personal and contextual factors play a strong role in how people respond to urban acoustic environments \cit{53}. However, this is probably more relevant when complex sound environments (e.g. multi-source) are being considered and when dealing with relatively longer duration of exposures (e.g. several minutes) as seen in in-situ surveys. For clearly identifiable sources of environmental noise, with signals of short duration (i.e. 1-3s) like those used for this experiment, it is likely it was easier for the sample to converge on similar annoyance scores, regardless of other demographic factors.
 
  Regarding the noise annoyance scores, sharpness came up as an important predictor in the first level of the modelling stage (explaining up to 8\% of the variance alone). It is important to highlight that the sharpness calculation method used in this study did not include any loudness correction; nor was any loudness-related parameter selected by the feature selection algorithm. To some extent, this is possibly due to the fact that, begin an online experiment, it was not possible for the research team to actually calibrate the loudness playback level accurately for the remote participants. On the other hand, considering this aspect from the \gls{wasn} implementation perspective, this could be seen as an encouraging finding, since calibrating a diffuse acoustic monitoring network may not be practical in real-world scenarios, so it is good to have models that can achieve up to 64\% of variance explained regardless of actual levels. Furthermore, in complex acoustic environments, loudness would likely vary over time depending on the relative positions between sound sources and (human) listeners in ways in which the other psychoacoustic parameters such as sharpness and tonality are less likely to. This is something that is impossible for fixed sensors to take into account, so once again it is preferable not to rely on loudness as a predictor.
+
+\subsection*{Positivity (or the absence of negativity?)}
+\draft{NEW!!}
+From the experience of the previous studies which are highly focused on the existing environmental acoustic and psychoacoustic metrics, one (of many) potential limitations has been revealed. For the most part, these metrics were designed to characterise various negative qualities of the sound. Certainly, they therefore have a negative correlation with positive assessments of the sound, but the simple fact is that they were conceived of and implemented in an attempt to quantify some sonic characteristic that was assumed by the researchers to contribute to a negative perception. Hence why in Zwicker's empirical formula for Psychoacoustic Annoyance \citep{PsychoacousticsfactsmodelsZwicker} $PA = N_5 (1 + \sqrt{\omega^2_S + \omega^2_{FR}})$, all of the constituent parts have positive coefficients.
+
+While this would not theoretically hinder a formula for describing positive aspects of the sound, it creates a sort of conceptual barrier. If all of these metrics are designed to capture negative aspects of the sound, then it is insufficient to use them create a formula to describe a positive sound, since that formula would only represent the 'absence of negativity', not necessarily positivity.
 
  %TODO: Add a more indepth discussion and add a limitation  section to lead into DeLTA
 
