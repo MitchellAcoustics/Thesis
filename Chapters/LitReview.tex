@@ -28,7 +28,12 @@ The approach to a practical predictive soundscape model arrived at within this t
 
 \subsection{Soundscape Descriptors and Indices}
 
-\subsection{World Soundscape Project}
+\subsection{Soundwalks}
+%TODO: Lit review of the concept of soundwalks
+%FIXME: This section on collective soundscapes belongs somewhere else.
+Soundwalks, following \gls{wsp} have focussed on the soundscape as 1) an individual's experience of a particular space or 2) as the sonic expression of a culture or community's relationship with the space \citep{Droumeva2021sound}. Starting with Schafer's framing of the soundscape as a collective composition balancing background and foreground sounds, soundmarks and primary sound types, to the \gls{iso} definition of a soundscape, the totality of the acoustic and contextual environment is processed and interpreted by an individual. Despite the \gls{iso}'s expansion from the individual to a group highlighted by the phrasing "by a person, or people", the tools it presents -- and, in particular, how they have been employed -- fail when attempting to address the perception of many people.
+
+This conceptual difficulty in dealing with the perception of many people has contributed to the problems associated with incorporating perception-focussed approaches in practice and regulation. \draft{Read and integrate some section on the purpose of regulation. Peter John 2011 'Making Policy Work'} %TODO: Policy discussion
 
 \subsection{Swedish Soundscape Quality Protocol}
 
@@ -60,7 +65,7 @@ From this literature review, some conclusions about current approaches to incorp
 
 \subsection{The Quiet Areas approach}
 
-This approach maintains a focus on "identifying and preserving quiet areas" \citep{EEA2020Environmental} following the imperative given in the \gls{end} \citep{EU2002Directive}. This approach is mostly rooted in a noise mindset, although the methods employed for identifying quiet areas vary across countries within the EEA. Background sound levels seem to play an important role in identifying quiet areas, in particular when attempting to produce maps of available quiet areas on a city- or agglomeration-scale such as that used in the \citet{EEA2020Environmental}, where quiet areas were defined as: "those with less than 55 dB $L_{den}$ from road, rail, aircraft and industrial sources and were classified, depending on their land cover type, as quiet areas with green/blue land cover." However, several background noise thresholds are cited as being used by agglomerations for their definitions, along with non-acoustic criteria such as urban functionality, land cover type, location, size and accessibility of the area, visual qualities, and subjective judgement. %CITE: pg 70 EnE
+This approach maintains a focus on "identifying and preserving quiet areas" \citep{EEA2020Environment} following the imperative given in the \gls{end} \citep{EU2002Directive}. This approach is mostly rooted in a noise mindset, although the methods employed for identifying quiet areas vary across countries within the EEA. Background sound levels seem to play an important role in identifying quiet areas, in particular when attempting to produce maps of available quiet areas on a city- or agglomeration-scale such as that used in the \citet{EEA2020Environment}, where quiet areas were defined as: "those with less than 55 dB $L_{den}$ from road, rail, aircraft and industrial sources and were classified, depending on their land cover type, as quiet areas with green/blue land cover." However, several background noise thresholds are cited as being used by agglomerations for their definitions, along with non-acoustic criteria such as urban functionality, land cover type, location, size and accessibility of the area, visual qualities, and subjective judgement. %CITE: pg 70 EnE
 Despite these attempts to incorporate multiple factors within the definition of quiet areas, this approach still tends toward a 1- or 2-dimensional focus, and struggles to take a holistic approach to people's perception or response to the space.
 
 Given that the Quiet Areas approach started with the 2002 \gls{end}, predating the ISO 12913 series of technical specifications on soundscape, it has not yet moved in line with the conception of "soundscape" and the accompanying measurement methods and reporting requirements given in the ISO documents. There is therefore an open question of whether the directive to identify and preserve quiet areas would truly be considered soundscape, however it does represent the most successful foray into policy and is frequently cited as a success by soundscape researchers \cit{Aletta, Guastavino, Kang, etc.}.
@@ -91,3 +96,20 @@ Contrary to the hopes expressed by \citet{Aletta2014Towards}, that "ideally ther
 
 \subsection{Red and Green Soundscape Indices}
 \citep{Yang2022Effects,Kogan2018Green} 
+
+\subsection{Clustering/Classification Approach}
+
+\subsection{Why not a clustering approach?}
+%FIXME: Probably needs to go to a new location
+%TODO: Review Sun 2019 Classification
+One approach which may seem promising is to generate clusters of soundscapes. \draft{Review ref on this -> \citet{Sun2019Classification}}. Soundscape perception of a space has many dimensions and can be difficult to adequately express. Clustering analysis provides a method to investigate the patterns present in a high-dimensional dataset and aid interpretation while imposing minimal starting assumptions. Within soundscape, this would enable the identification of 'soundscape types' based on some combination of perceptual, physical, and architectural data. 
+
+For the purposes of predictive soundscape modelling with the characteristics laid out above, clustering would allow us to identify perceptual types, into which a soundscape could be placed based on its physical features. This process is outlined in \cref{fig:clusterModel}. Once the combined perceptual, contextual, and physical data are collected, unsupervised clustering analysis is performed on the perceptual data, including all \gls{paq}s, the overall questions, and perhaps demographic data. Once the clusters are identified. prior knowledge and information about the architectural typologies and use cases are used to inform the selection of appropriate descriptive labels for the clusters. Then... %TODO: Continue clustering discussion.
+
+\begin{figure}
+  %TODO: Create clustering approach model
+  \includegraphics[width=\textwidth]{Figures/Remarkable clustering figure.jpg}
+  \caption{Draft figure of a clustering approach}\label{fig:clusterModel}
+\end{figure}
+
+\draft{Issue with this approach to expand on: Limitations of starting dataset - impossible to know if we've identified all possible classes. Highly dependent on the primary dataset, the identified clusters cannot extend beyond what was already present.}
