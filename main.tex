@@ -1,4 +1,4 @@
-\documentclass[oneside,fontsize=13pt,titlepage]{scrbook}
+\documentclass[oneside,fontsize=12pt,titlepage]{scrbook}
 
 % * Packages
 \usepackage[utf8]{inputenc}
@@ -10,14 +10,14 @@
 \usepackage{color, soul}
 \usepackage{xcolor}
 \usepackage{pdfpages}
-\usepackage{ebgaramond}
+% \usepackage{ebgaramond}
 \usepackage{nth}
 
 % Show labels in pdf, remove for final
-% \usepackage{showlabels}
+\usepackage{showlabels}
 
 \usepackage{gensymb}
-\usepackage{makecell}
+% \usepackage{makecell}
 \usepackage{booktabs}
 \usepackage{tabularx}
 
@@ -231,9 +231,7 @@ In particular, this final point has had an impact on the structure and content o
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \chapter[Commentary: Probabilistic Soundscapes]{Commentary: On Probabilistic Soundscapes and the Soundscape Circumplex}
-
- \hl{Some summary text here.}
+ \include{Chapters/CircumplexChapter.tex}
 
  \includepdf[pages=-]{./Papers/J13_Circumplex_transform_Preprint.pdf}
 
