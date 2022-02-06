@@ -22,6 +22,40 @@ The ability to predict the likely soundscape assessment of a space is crucial to
  \subsection{Feature Selection}
 
 \section{Machine Learning and Regression Techniques}
+Machine learning approaches are typically divided into three broad categories: supervised, unsupervised, and reinforcement learning. In supervised learning, the training data consists of input-output pairs and learns a model which can map from the inputs to the outputs. In unsupervised learning, no corresponding output data is available to the training model, thus it learns patterns in the input without feedback. Reinforcement learning does not necessarily begin with training data, instead the learning agent is given a series of reinforcements in the form of rewards and punishments \citep{StuartRussell2021}. Reinforcement learning will not be used in this thesis. Unsupervised learning has been applied to a limited degree to the acoustic data collected in several sound environments which will be expanded upon later. 
+
+The majority of this thesis is therefore focussed on creating a supervised learning model wherein the input data are the result of measurements and the output data are the perceptual assessments of the soundscapes. In the context of this thesis, there are two primary types of supervised machine learning models - regression and classification. Regression is applied when the output is a continuous number (e.g. temperature) whereas classification is used when the output is a finite set of values. 
+
+As will be further expanded upon in \autoref{ch:circumplex}, using the trigonometric projection method provided in \citet{ISO12913Part3} enables us to transform the 8 Likert scale PAQ values into a pair of coordinate values. This transformation has a few beneficial effects for applying standard modelling techniques to soundscape data. First, it simplifies and reduces the target problem; rather than needing to model eight separate responses, we are now focussed on only two. Second, it transforms the data from ordinal responses on a 1 to 5 scale into continuous values between -1 and +1. While it is clearly possible to model ordinal outputs through classification, the methods are often less familiar and more complicated than dealing with a more standard regression problem. For those outside of machine learning (i.e. designers, engineers, etc.) regression methods, especially linear regression, are already familiar and interpretable while methods of classification and ordinal modelling are typically less familiar. By applying the \gls{iso} projection to each individual's soundscape assessment, we generate a vector of output values which can be matched up to physical data measured for each individual. This creates the sort of input-output pair vector necessary for supervised regression learning.
+
+\subsection{Multi-level Linear Regression}
+
+Multi-level regression modelling is a technique commonly used in fields such as psychology \cit{42, 43 from Orga paper}, and \draft{other examples}. \gls{mlm}s are particularly useful when data is organised at one or more levels or groups. The concept behind \gls{mlm}s can be built up starting from simple linear regression, as given by:
+
+\begin{equation}
+  y_i = X_i\beta + \epsilon_i
+\end{equation}
+
+For a classical multiple linear regression, we expand the $k$ coefficients out as so:
+
+\begin{equation}
+  y_i = \beta_i X_{i1} + \ldots + \beta_k X_{ik} + \epsilon_i \text{ for } i = 1, \ldots, n,
+\end{equation}
+
+where the errors $\epsilon_i$ have independent normal distributions with mean 0 and standard deviation $\sigma$
+
+Their primary feature is the ability to have coefficients and intercepts which are allowed to vary depending on the group \citep{Gelman2006Multilevel}. This can take three forms:
+
+\begin{enumerate}
+  \item Random intercepts
+  \item Random slopes
+  \item Random intercept and random slopes
+\end{enumerate}
+
+%TODO: Finish mlm section
+
+\paragraph*{Repeated Measures}
+
 
  \subsection{Feature Selection}
    \subsubsection{Mutual Information}
@@ -36,6 +70,7 @@ The ability to predict the likely soundscape assessment of a space is crucial to
    \subsubsection{Conditional Mutual Information}
    The Mutual Information between two variables, given another variable as a control.
 
+
  \subsection{Clustering Analysis}
    \paragraph{K-means}
    \paragraph{nbclust}
@@ -48,6 +83,5 @@ The ability to predict the likely soundscape assessment of a space is crucial to
 
    \subsubsection{Multi-output Regression}
 
- \subsection{Multi-level Models}
 
  \subsection{Bayesian Regression}
