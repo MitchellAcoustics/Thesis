@@ -1,9 +1,50 @@
-\chapter{Methods}
+\chapter{Methodology Part 2 - Data Analysis and Modelling}
 \label{chap:methods}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%FIXME: Find a better spot for this
+
+\section{Practical Applications for Predictive Modelling}
+\draft{From surveys to modelling}
+
+The soundscape approach faces several challenges in practical applications which are unaddressed by current assessment methods, but which may be solved through the development of a predictive modelling framework. The first of these challenges is predicting how a change in an existing sound environment will be reflected in the soundscape. While it is possible in this scenario to measure the existing soundscape via questionnaire surveys, if a change is then introduced to the acoustic environment, it is so far impossible to say what the resulting soundscape change would be. This question relates strongly to the idea of soundscape interventions; where a particular noise pollution challenge is addressed by introducing more pleasant sounds (e.g. a water feature), following the soundscape principle of treating sound as a resource. Predicting how much a particular intervention would improve the soundscape (or, indeed whether it would improve at all) is not yet possible with the retrospective methods available. This question is also addressed in Study III of this thesis \cit{Lockdown paper} which uses a predictive model to look at how the changes in the acoustic environment due to the COVID-19 lockdowns resulted in changes in the soundscapes of the spaces.
+
+The existing methods for soundscape assessment and measurement, such as those given in the ISO 12913 series, have been focussed primarily at determining the \emph{status quo} of an environment. That is, they are able to determine how the space is \emph{currently} perceived, but offer little insight into hypothetical environments. As such, they are less relevant for design purposes, where a key goal is to determine how a space \emph{will be} perceived, not just how an existing space is perceived. Toward this, and following from the combination of perceptual and objective data collection encouraged in \citet{ISO12913Part2}, the natural push from the design perspective is towards 'predictive modeling' In this context, predictive modeling involves predicting how physical acoustic environments would likely be perceived or assessed by the users of the space.
+
 The ability to predict the likely soundscape assessment of a space is crucial to implementing the soundscape concept in practical design. Current methods of assessing soundscapes are generally limited to a post-hoc assessment of the existing environment, where users of the space in question are surveyed regarding their experience of the acoustic environment \citep{Engel2018Review, Zhang2018Effect}. While this approach has proved useful in identifying the impacts of an existing environment, designers require the ability to predict how a change or proposed design will impact the soundscape of the space. To this end, a model that is built upon measurable or estimate-able quantities of the environment would represent a leap forward in the ability to design soundscapes.
+
+\subsection{Predicting soundscape of not-yet-existing spaces}
+
+A challenge for the soundscape approach which frequently arises in practice is how it applies to the prospective design of new spaces. The methods for assessment outlined in \citet{ISO12913Part2} and for analysis given in \citet{ISO12913Part3} are inherently limited to post hoc assessments of an existing space. Since they are focussed on surveying people on their experience of the environment, it stands that the space must already exist for people to be able to experience. How then would an urban planner, architect, or other designer estimate how a potential user would react to a space which is under design and not available to be assessed.
+
+%STUB: 3 paragraph review of VR and auralization of simulated spaces
+One approach to this challenge has been through the use of virtual reality and auralization.
+
+\subsection{Soundscape mapping}
+
+Retrospective assessment methods also struggle to capture the dynamics of the soundscape in a space. Whether through the narrative interview method of \draft{section of ISO12913-2}, through soundwalks, or through in-situ questionnaires \citep{Mitchell2020Soundscape}, only the soundscape during the particular period which the researchers are actively investigating is captured. This makes it very difficult to determine diurnal, seasonal, or yearly patterns of the soundscape. These patterns may be driven by corresponding diurnal, seasonal, or yearly patterns in the acoustic or visual environment, or by variations in how people process and respond to the sound at different times of day/season/year. Currently the only way to investigate any of these patterns is through repeated surveys. Predictive modelling, on the other hand, could allow a trained soundscape model to be paired with longterm monitoring methods to track how a soundscape may change in response to changes in the acoustic environment. \draft{Should mention De Coensel's saliency summary as a solution here.}
+
+Admittedly, this method would not be able to answer the second part of the question - how do people's responses to a given acoustic and visual environment change throughout the various daily/seasonal/yearly periods? \draft{This part should maybe be moved to a discussion}One approach to answering this question which has not, as far as the author is aware, been employed is through an un-attended survey method. Such a method could involve creating and posting fliers asking users of a space to complete a soundscape survey (accessed through a QR code) and leaving these fliers installed for longer periods of time. It is unclear how successful such a general approach would be, in particular what response rate would be expected, but given the increasing familiarity with QR codes among the general public following their use for track-and-trace during COVID-19, it does appear promising. These un-attended surveys could also be paired with long-term acoustic and environmental monitoring via a WASN or powered SLM which could simultaneously track the acoustic environment. This would thus result in a time series of online soundscape questionnaires with a corresponding time series of acoustic and environmental information, allowing us to track the changes of each over long periods of time.
+
+Similarly, a move towards modelling methods based on objective and/or measurable factors would facilitate the application of mapping in soundscape. While noise maps have become common in urban noise research and legislation \citep{EEA2020Environment} \cit{other legislation and examples}, they can be difficult to translate into a soundscape approach. In general, noise maps are based on modelled traffic flows \cit{}, from which decibel levels are extrapolated and mapped. Alternatively, they can be produced using longterm \gls{slm}s or sensor networks. While these methods have significant utility for tracking increases in urban noise levels and are important for determining the health and societal impacts of noise on a large scale, their restricted focus on noise levels alone limits their scope and reduces the potential for identifying more nuanced health and psychological effects of urban sound \cit{need one to demonstrate failure}.
+
+Predictive soundscape modelling thus provides a possibility for a more holistic approach to large scale urban sound investigations. Studies from outside of soundscape have demonstrated that a user's perception of a space is a much better predictor of how the use it -- and of the benefits they derive from it -- than the strict physical characteristics of the space \citep{Kruize2019Exploring}. It thus stands that a soundscape approach focussed on perception which can be generalised across a city-scale -- rather than in isolated spaces -- could provide more reliable metrics with which to investigate the health, social, and psychological effects of sound.
+
+The empirical and modelling work in this thesis represents a key step towards realising this application to soundscape mapping. When the predictive modelling approach is paired with data from, e.g. a large-scale acoustic sensor network, it could be used to produce a dynamic map of the likely perception of spaces across a city.
+
+\fig{Create a diagram illustrating how a sensor network could feed into a predictive model to produce a soundscape map.}
+
+
+
+\subsection{Soundwalks}
+%TODO: Lit review of the concept of soundwalks
+%FIXME: This section on collective soundscapes belongs somewhere else.
+Soundwalks, following \gls{wsp} have focussed on the soundscape as 1) an individual's experience of a particular space or 2) as the sonic expression of a culture or community's relationship with the space \citep{Droumeva2021sound}. Starting with Schafer's framing of the soundscape as a collective composition balancing background and foreground sounds, soundmarks and primary sound types, to the \gls{iso} definition of a soundscape, the totality of the acoustic and contextual environment is processed and interpreted by an individual. Despite the \gls{iso}'s expansion from the individual to a group highlighted by the phrasing "by a person, or people", the tools it presents -- and, in particular, how they have been employed -- fail when attempting to address the perception of many people.
+
+This conceptual difficulty in dealing with the perception of many people has contributed to the problems associated with incorporating perception-focussed approaches in practice and regulation. \draft{Read and integrate some section on the purpose of regulation. Peter John 2011 'Making Policy Work'} %TODO: Policy discussion
+
+\subsection{Swedish Soundscape Quality Protocol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\draft{Why questionnaires and modelling?}
 
 \section{Questionnaires}
 
@@ -58,30 +99,19 @@ Their primary feature is the ability to have coefficients and intercepts which a
 
 
  \subsection{Feature Selection}
-   \subsubsection{Mutual Information}
-   \draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
-   \paragraph*{From scholarpedia:}
-   % http://www.scholarpedia.org/article/Mutual_information
-   \draft{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
+  %  \subsubsection{Mutual Information}
+  %  \draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
+  %  \paragraph*{From scholarpedia:}
+  %  % http://www.scholarpedia.org/article/Mutual_information
+  %  \draft{Based on entropy, where the uncertainty about a variable can be expressed as "the number of yes/no questions it takes to guess a random variable, given knowledge of the underlying distribution and taking the optimal question-asking strategy". "The mutual information is therefore the \emph{reduction} in uncertainty about variable $X$, or the expected reduction in the number of yes/no questions needed to guess $X$ after observing $Y$.". }
 
-   \draft{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. }
-   \misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
+  %  \draft{"Mutual Information is just one way among many of measuring how related two variables are. However, it is a measure ideally suited for analyzing communication channels. Abstractly, a communication channel can be visualized as a transmission medium which receives an input $x$ and produces an output $y$. If the channel is \emph{noiseless}, the output will be equal to the input. However, in general, the transmission medium is noisy and an input $x$ is converted to an output $y$ with probability $P_{Y|X}(y|x)$. }
+  %  \misc{This seems very useful for my conception of sound perception / auditory processing, where the perception system is a noisy communication channel.}
 
-   \subsubsection{Conditional Mutual Information}
-   The Mutual Information between two variables, given another variable as a control.
-
+  %  \subsubsection{Conditional Mutual Information}
+  %  The Mutual Information between two variables, given another variable as a control.
 
  \subsection{Clustering Analysis}
    \paragraph{K-means}
    \paragraph{nbclust}
 
- \subsection{Modelling Likert-type Data}
-
-   \subsubsection{Multiple Linear Regression}
-
-   \subsubsection{Ordinal Logistic Regression}
-
-   \subsubsection{Multi-output Regression}
-
-
- \subsection{Bayesian Regression}
