@@ -47,15 +47,15 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
 
  The second goal is achieved by making First-Order (or higher) Ambisonic recordings simultaneously with 360\degree video which can be reproduced in a virtual reality environment. It has been shown that head-tracked binaural and multi-speaker ambisonic reproduction of recorded acoustic environments recorded in this way have high ecological validity \cit{33}, particularly when paired with simultaneous head-tracked virtual reality video \cit{22, 34, 35}.
 
- The on-site procedure to collect these data are separated into two stages, which will be outlined in detail in Section \ref{sec:proc}. The stage during which the audio-visual recordings are made for lab experiments is called the \textbf{Recording Stage}, while the stage during which questionnaires and environmental data are captured is called the \textbf{Questionnaire Stage}.
+ The on-site procedure to collect these data are separated into two stages, which will be outlined in detail in \cref{sec:proc}. The stage during which the audio-visual recordings are made for lab experiments is called the \textbf{Recording Stage}, while the stage during which questionnaires and environmental data are captured is called the \textbf{Questionnaire Stage}.
 
  The procedure has been designed to include multiple levels of data and metadata redundancy, making it robust to on-site issues and human error. The most crucial aspect of the redundancy is ensuring the perceptual responses can be matched with the appropriate corresponding environmental and acoustic data even when some information is lost or forgotten.
 
  \subsection{Labelling and Data Organisation}
    \label{section:metadata}
-   In order to be able to identify all of the many data components of the Recording and Questionnaire Stages and to associate these with their various corresponding data, the following labelling system is suggested. This system is focussed on (1) relating all of the separate recordings and factors to specific questionnaire responses and (2) efficiency and consistency on site. A recent paper by \citet{Aumond2017Modeling} demonstrated the importance of addressing multiple levels of factors which influence perception, from individual-, to session-, to location-level. The successful pleasantness models built incorporating these information levels showed a marked improvement over the equivalent individual-level or location-level only models. The data organisation system proposed here was designed in order to maintain this important information, and the levels of information for the data collected on site are shown in Table \ref{tab:metadata}.
+   In order to be able to identify all of the many data components of the Recording and Questionnaire Stages and to associate these with their various corresponding data, the following labelling system is suggested. This system is focussed on (1) relating all of the separate recordings and factors to specific questionnaire responses and (2) efficiency and consistency on site. A recent paper by \citet{Aumond2017Modeling} demonstrated the importance of addressing multiple levels of factors which influence perception, from individual-, to session-, to location-level. The successful pleasantness models built incorporating these information levels showed a marked improvement over the equivalent individual-level or location-level only models. The data organisation system proposed here was designed in order to maintain this important information, and the levels of information for the data collected on site are shown in \cref{tab:metadata}.
 
-   At the top level is the \textbf{Location} information. This includes information about the location which does not change day-to-day, and generally characterises the architectural character of the space, or typical climate conditions for the area. As described in Section \ref{sec:loc-selection}, each '\gls{environmental-unit}' should be considered a new location. Therefore, if researchers want to investigate the differences in soundscape assessment in the middle of a small urban park and along the road next to the same park, these would be considered different locations since they would (typically) have different environmental factors and should be given difference names. The name chosen should be concise, but it should be obvious what location is referred to.
+   At the top level is the \textbf{Location} information. This includes information about the location which does not change day-to-day, and generally characterises the architectural character of the space, or typical climate conditions for the area. As described in \cref{sec:location-selection}, each `\gls{environmental-unit}' should be considered a new location. Therefore, if researchers want to investigate the differences in soundscape assessment in the middle of a small urban park and along the road next to the same park, these would be considered different locations since they would (typically) have different environmental factors and should be given difference names. The name chosen should be concise, but it should be obvious what location is referred to.
 
    The next level is information which is specific to each session, labelled with a \textbf{SessionID}. This SessionID should contain the name of the location and a numerical index which will increase with each repeated session at that location. The SessionID is associated with the data collected during the Recording Stage, and with the data which are continuous throughout the Questionnaire Stage, SLM, and ENV data. For easy automatic processing, correct spelling and consistency with the format is crucial so that data can be filtered according to the SessionID or the location, as is often necessary. In addition, for ease of automatic processing, it is recommended not to include spaces in the SessionID to avoid string splitting issues in analysis code.
 
@@ -78,8 +78,7 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
          Questionnaire                 & \multicolumn{2}{|c|}{1, 2, 3}              & \multicolumn{1}{c|}{4, 5}                          & \multicolumn{1}{c|}{...} & \multicolumn{1}{c|}{25, 26}  & \multicolumn{1}{c|}{\ldots} & QUE, Start \& End time \\ \bottomrule
        \end{tabular}%
      }
-     \caption{Labelling system for on site data collection. Regents Park Japanese Garden is used as an example location. Abbreviations as defined in Table \ref{table:factors} - SLM: Sound Level Meter (acoustical factors); ENV: Environmental factors; QUE: Questionnaires; PIC: Site pictures.}
-     \label{tab:metadata}
+     \caption{Labelling system for on site data collection. Regents Park Japanese Garden is used as an example location. Abbreviations as defined in \cref{table:factors} - SLM: Sound Level Meter (acoustical factors); ENV: Environmental factors; QUE: Questionnaires; PIC: Site pictures.\label{tab:metadata}}
    \end{table}
 
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,26 +86,24 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
  \subsection{Location and Measurement Point Selection}
    \label{sec:location-selection}
 
-   To select the appropriate measurement point, it should be ensured that the following contextual factors representative of the site are present in the spatial recording: openness, greenness, presence of landmarks, dominant use (walking, staying), and social presence (related to the dominant use). These are identified as objective metrics often used in urban and landscape research \cit{36-40}, possibly contributing to soundscape assessment \cit{23, 41}. This relies on the researcher's opinion-drive assessment -- it is advised to observe the location for a moment and then choose the point representative of the context and the first-person user experience. For instance, in a park, it would probably be near a bench in the central area near the fountain; in a busy square, it would be a place where most people gather and have the best view of the landmark. While doing so, the placement too near the prominent vertical objects such as a statue, a wall, or a mast should be avoided as it might cause issues in later handling the visual data (3m is considered a safe distance from these features). Similar concerns are also true for the audio data and careful attention should be paid to avoid placing the recording equipment near extraneous noisy equipment or acoustic shadows. Further guidance on this is given in Point 4 of Section \ref{sec:proc}. It is important to avoid placing the recording equipment at a position where no users are expected (i.e. don't put the equipment in the middle of a flower bed or a grass area that nobody uses).
+   To select the appropriate measurement point, it should be ensured that the following contextual factors representative of the site are present in the spatial recording: openness, greenness, presence of landmarks, dominant use (walking, staying), and social presence (related to the dominant use). These are identified as objective metrics often used in urban and landscape research \cit{36-40}, possibly contributing to soundscape assessment \cit{23, 41}. This relies on the researcher's opinion-drive assessment -- it is advised to observe the location for a moment and then choose the point representative of the context and the first-person user experience. For instance, in a park, it would probably be near a bench in the central area near the fountain; in a busy square, it would be a place where most people gather and have the best view of the landmark. While doing so, the placement too near the prominent vertical objects such as a statue, a wall, or a mast should be avoided as it might cause issues in later handling the visual data (3m is considered a safe distance from these features). Similar concerns are also true for the audio data and careful attention should be paid to avoid placing the recording equipment near extraneous noisy equipment or acoustic shadows. Further guidance on this is given in Point 4 of \cref{sec:proc}. It is important to avoid placing the recording equipment at a position where no users are expected (i.e. don't put the equipment in the middle of a flower bed or a grass area that nobody uses).
 
    For the purposes of this protocol, a single location was considered to be an '\gls{environmental-unit}' wherein the environmental factors are consistent and is typically perceived to constitute a single distinct area. The exact dimensions and delineation of the \gls{environmental-unit} will vary depending on the characteristics of the space, so it is ultimately up to the judgement of the researchers on site to select an appropriate measurement point to best capture the character of the \gls{environmental-unit}.
 
  \subsection{Equipment}
    \label{sec:equipment}
    %TODO: Check table referencing issues
-   The equipment listed in Table \ref{tab:equipment} is designed to facilitate both the audio-visual recording of the location and the collection of objective environmental factors, as given in Table \ref{tab:factors}. What equipment is brought on site should be adjusted depending on availability, needs of the researchers, and whether only one of the protocol stages will be carried out, or both. The equipment selected should be neutral and not noticeable. In general, this means dark or neutral colours as opposed to high-visibility colours and selecting compact equipment.
+   The equipment listed in \cref{tab:equipment} is designed to facilitate both the audio-visual recording of the location and the collection of objective environmental factors, as given in \cref{tab:factors}. What equipment is brought on site should be adjusted depending on availability, needs of the researchers, and whether only one of the protocol stages will be carried out, or both. The equipment selected should be neutral and not noticeable. In general, this means dark or neutral colours as opposed to high-visibility colours and selecting compact equipment.
 
    The use of class 1 or class 2 \gls{slm}s has been stipulated to maintain verifiable consistency and quality of data across all soundscape studies which make use of this protocol, as well as with data collected under various other environmental acoustics purposes. As the accuracy of acoustic information gathered at the site is the most vital in the discussion of soundscape indices, specific requirements have only been set out for the acoustic equipment. Class 1 is highly preferred, but consideration is made for cost and availability of equipment. It should be noted what standard of \gls{slm} was used in the data collection and appropriate consideration of the precision and tolerances of the equipment should be taken during the data analysis.
 
    \begin{table}
-     \label{tab:equipment}
-     \caption{Recommended equipment for implementing the \gls{ssid} protocol. \gls{slm}: Sound Level Meter; \gls{amb}: Ambisonics; \gls{bin}: Binaural; \gls{que}: Questionnaires}
+     \caption{Recommended equipment for implementing the \gls{ssid} protocol. \gls{slm}: Sound Level Meter; \gls{amb}: Ambisonics; \gls{bin}: Binaural; \gls{que}: Questionnaires. \label{tab:equipment}}
 
    \end{table}
 
    \begin{table}
-     \label{tab:factors}
-     \caption{Table of recommended context and acoustic measurement factors.}
+     \caption{Table of recommended context and acoustic measurement factors. \label{tab:factors}}
    \end{table}
 
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,7 +145,7 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
 
  \subsection{Contextual and Environmental Factor Data Collection}
 
-   During each survey, the equipment listed in Section \ref{sec:equipment} is set up to capture the contextual and environmental data for the location. Table \ref{tab:factors} lists the factors to be collected and at what stage they should be collected.
+   During each survey, the equipment listed in \cref{sec:equipment} is set up to capture the contextual and environmental data for the location. \cref{tab:factors} lists the factors to be collected and at what stage they should be collected.
 
    \subsubsection{Spatial Audio-Visual Recordings}
 
@@ -176,13 +173,12 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
 \section{Procedure}
  \label{sec:proc}
 
- Figure \ref{fig:timeline} shows the whole process of the on site soundscape protocol. The relevant equipment in each row should be operating when the row is coloured in, such that when multiple rows are shaded this means that multiple pieces of equipment should be running during that time period. The following section prepares step-by-step instructions for conducting the in-situ surveys, including the Recording Stage and Questionnaire Stage. Figure \ref{fig:survey-pic} shows an example of the recommended equipment setup.
+ \cref{fig:timeline} shows the whole process of the on site soundscape protocol. The relevant equipment in each row should be operating when the row is coloured in, such that when multiple rows are shaded this means that multiple pieces of equipment should be running during that time period. The following section prepares step-by-step instructions for conducting the in-situ surveys, including the Recording Stage and Questionnaire Stage. \cref{fig:survey-pic} shows an example of the recommended equipment setup.
 
  \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{Figures/Survey-Diagram_V2}
-   \caption{Timeline of the on site soundscape protocol. RegentsParkJapan (RPJ) is used as an example. Abbreviations as defined in Table \ref{tab:factors} -- \gls{que}: Questionnaires; \gls{vid}: 360\degree video; \gls{pic}: Site pictures; \gls{bin}: Binaural Recording; \gls{amb}: Ambisonic recording; \gls{slm}: Sound Level Meter (acoustical factors); \gls{env}: Environmental factors.}
-   \label{fig:timeline}
+   \caption{Timeline of the on site soundscape protocol. RegentsParkJapan (RPJ) is used as an example. Abbreviations as defined in Table \ref{tab:factors} -- \gls{que}: Questionnaires; \gls{vid}: 360\degree video; \gls{pic}: Site pictures; \gls{bin}: Binaural Recording; \gls{amb}: Ambisonic recording; \gls{slm}: Sound Level Meter (acoustical factors); \gls{env}: Environmental factors. \label{fig:timeline}}
  \end{figure}
 
  \paragraph*{Setup \& Calibration} The equipment should be assembled, checked, and calibrated prior to arriving at the measurement location. Calibrate the equipment according to the manufacturer's instructions. All \gls{slm}s should have built-in methods to calibrate using a standard 94 dB 1 kHz tone calibrator. If a similar method is available for the ambisonic microphone, this should be used. If a built-in method is not available, but a calibrator can be fitted to the microphone capsules, then the ambisonic microphone should be calibrated by recording the 1 kHz signal through the system for each microphone capsule after the gain settings have been finalised on site (see below). If it is not possible to calibrate the ambisonic microphone, then the levels recorded will need to be compared to the levels taken simultaneously with the \gls{slm}. This is why it is crucial to have an appropriate quality, calibrated \gls{slm} included within the same setup as the \gls{amb} recordings.
@@ -190,27 +186,26 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
  \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{Figures/RegentsParkSurvey_V2-2}
-   \caption{Photo of a full survey carried out in a park in London during the Questionnaire Stage. To the left is the equipment (colour-coded to match Figure \ref{fig:timeline}), with the ambisonic microphone and \gls{slm} microphone in the windscreen, with the 360\degree camera on top of the tripod and to the right are one researcher interacting with the participant while the second researcher conducts the binaural recording. The body of the \gls{slm} and the multi-channel recorder are stored in a bag under the tripod which can contain all of the pieces of equipment for easy transport.}
-   \label{fig:survey-pic}
+   \caption{Photo of a full survey carried out in a park in London during the Questionnaire Stage. To the left is the equipment (colour-coded to match \cref{fig:timeline}), with the ambisonic microphone and \gls{slm} microphone in the windscreen, with the 360\degree camera on top of the tripod and to the right are one researcher interacting with the participant while the second researcher conducts the binaural recording. The body of the \gls{slm} and the multi-channel recorder are stored in a bag under the tripod which can contain all of the pieces of equipment for easy transport. \label{fig:survey-pic}}
  \end{figure}
 
  \subsection{Assembling the Equipment}
 
    \begin{enumerate}
-     \item Set up the equipment by prioritising the position of the 360\degree camera and position the lens at the average eye level 160--180 cm, as shown in Figure \ref{fig:survey-pic}.
+     \item Set up the equipment by prioritising the position of the 360\degree camera and position the lens at the average eye level 160--180 cm, as shown in \cref{fig:survey-pic}.
 
            It is advisable to test the setup for video stitching issues and reconfigure if needed (e.g. the equipment will be partially visible in the raw video recording, so you need to test if the chosen setup allows for efficient erasing/hiding/patching of the exposed parts in the post-processing). Companies selling 360\degree cameras usually offer free software for basic editing and previewing. It is advisable to position the camera as the highest item in the set to avoid the need for editing both the sky and the ground.
      \item Carefully position the \gls{amb} microphone so its axes are aligned with the axes of the 360\degree camera; the microphone's front (usually marked by the logo) and the camera's front should be looking in the same direction. Many \gls{amb} microphones allow them to be oriented vertically or horizontally (end-fire), this should be noted and adjusted in the relevant software settings.
 
            This is essential for informed post-processing. It is advisable to position the capsules of the \gls{amb} microphone and the capsule of the \gls{slm} as near to each other as possible, without introducing scattering effects. It can usually be done within the same windshield unit, but it is not essential to do so and depends on the available clamps and stands.
      \item The gain settings for the four ambisonic audio channels should be set to the same level. In some devices (such as the MixPre10), this can be set by locking the channel gain settings to a single channel. Many devices also offer ambisonic plugins which simplify these settings and automatically link the gain settings -- these should be used where available.
-     \item Set the \gls{slm} to log sound levels and simultaneously record .wav audio. The recommended logging settings are given in Table \ref{tab:equipment}. The \gls{slm} should be mounted and positioned according to standard guidance for environmental noise measurements, like that given in Section 9 of ISO 1996-2:2017 \cit{ISO1996} or Section 5 of ANSI/ASA S12.9-2013/Part 1 \cit{ANSI}. Generally, the microphone should be a minimum of 1.2m above the ground and a minimum of 1m from any vertical reflecting surfaces.
+     \item Set the \gls{slm} to log sound levels and simultaneously record .wav audio. The recommended logging settings are given in \cref{tab:equipment}. The \gls{slm} should be mounted and positioned according to standard guidance for environmental noise measurements, like that given in Section 9 of ISO 1996-2:2017 \cit{ISO1996} or Section 5 of ANSI/ASA S12.9-2013/Part 1 \cit{ANSI}. Generally, the microphone should be a minimum of 1.2m above the ground and a minimum of 1m from any vertical reflecting surfaces.
      \item Attach the environmental meter(s) to the tripod. Care should be taken when positioning the environmental monitor. Most units will include guidance on their use from the manufacturer -- these should be followed where available. Some general items to keep in mind include not accidentally covering air quality sensor holes, not positioning light sensors in the shade of the other equipment, and not positioning temperature sensors in direct sunlight unless this is how they are intended to be positioned.
    \end{enumerate}
 
  \subsection{Recording Stage}
 
-   The following section prepares step-by-step instructions for conducting the Recording Stage of the on site protocol, as shown in Figure \ref{fig:timeline}.
+   The following section prepares step-by-step instructions for conducting the Recording Stage of the on site protocol, as shown in \cref{fig:timeline}.
 
    \begin{enumerate}
      \item Double check all settings and file save locations on the recording equipment.
@@ -224,7 +219,7 @@ Conducting urban soundscape studies on a scale large enough to form a machine le
 
  \subsection{Questionnaire Stage}
 
-   The following section prepares step-by-step instructions for conducting the in-situ questionnaires and their accompanying reference recordings as part of the Questionnaire Stage. Typically these are performed during the same working session as the Recording Stage, using the same set of equipment. The selection of an appropriate location and setup of the equipment should follow the guidance given in Section \ref{sec:location-selection}, while making sure the location selected is representative of where the respondents will be stopped. Wherever possible, the equipment should be assembled and located so as not to draw the attention of the respondents and particularly to avoid influencing their perception of the space.
+   The following section prepares step-by-step instructions for conducting the in-situ questionnaires and their accompanying reference recordings as part of the Questionnaire Stage. Typically these are performed during the same working session as the Recording Stage, using the same set of equipment. The selection of an appropriate location and setup of the equipment should follow the guidance given in \cref{sec:location-selection}, while making sure the location selected is representative of where the respondents will be stopped. Wherever possible, the equipment should be assembled and located so as not to draw the attention of the respondents and particularly to avoid influencing their perception of the space.
 
    \begin{enumerate}
      \item Double check all settings and file save locations on the recording equipment. If starting this stage immediately after the Recording Stage, make sure to rename or advance the index of on the filenames for the \gls{slm} and \gls{env} meters.
