@@ -24,7 +24,7 @@ Retrospective assessment methods also struggle to capture the dynamics of the so
 
 Admittedly, this method would not be able to answer the second part of the question - how do people's responses to a given acoustic and visual environment change throughout the various daily/seasonal/yearly periods? \draft{This part should maybe be moved to a discussion}One approach to answering this question which has not, as far as the author is aware, been employed is through an un-attended survey method. Such a method could involve creating and posting fliers asking users of a space to complete a soundscape survey (accessed through a QR code) and leaving these fliers installed for longer periods of time. It is unclear how successful such a general approach would be, in particular what response rate would be expected, but given the increasing familiarity with QR codes among the general public following their use for track-and-trace during COVID-19, it does appear promising. These un-attended surveys could also be paired with long-term acoustic and environmental monitoring via a WASN or powered SLM which could simultaneously track the acoustic environment. This would thus result in a time series of online soundscape questionnaires with a corresponding time series of acoustic and environmental information, allowing us to track the changes of each over long periods of time.
 
-Similarly, a move towards modelling methods based on objective and/or measurable factors would facilitate the application of mapping in soundscape. While noise maps have become common in urban noise research and legislation \citep{EEA2020Environment} \cit{other legislation and examples}, they can be difficult to translate into a soundscape approach. In general, noise maps are based on modelled traffic flows \cit{}, from which decibel levels are extrapolated and mapped. Alternatively, they can be produced using longterm \gls{slm}s or sensor networks. While these methods have significant utility for tracking increases in urban noise levels and are important for determining the health and societal impacts of noise on a large scale, their restricted focus on noise levels alone limits their scope and reduces the potential for identifying more nuanced health and psychological effects of urban sound \cit{need one to demonstrate failure}.
+Similarly, a move towards modelling methods based on objective and/or measurable factors would facilitate the application of mapping in soundscape. While noise maps have become common in urban noise research and legislation \citep{EEA2020Environment} \cit{other legislation and examples}, they can be difficult to translate into a soundscape approach. In general, noise maps are based on modelled traffic flows \cit{}, from which decibel levels are extrapolated and mapped. Alternatively, they can be produced using longterm \glspl{slm} or sensor networks. While these methods have significant utility for tracking increases in urban noise levels and are important for determining the health and societal impacts of noise on a large scale, their restricted focus on noise levels alone limits their scope and reduces the potential for identifying more nuanced health and psychological effects of urban sound \cit{need one to demonstrate failure}.
 
 Predictive soundscape modelling thus provides a possibility for a more holistic approach to large scale urban sound investigations. Studies from outside of soundscape have demonstrated that a user's perception of a space is a much better predictor of how the use it -- and of the benefits they derive from it -- than the strict physical characteristics of the space \citep{Kruize2019Exploring}. It thus stands that a soundscape approach focussed on perception which can be generalised across a city-scale -- rather than in isolated spaces -- could provide more reliable metrics with which to investigate the health, social, and psychological effects of sound.
 
@@ -71,7 +71,7 @@ As will be further expanded upon in \cref{ch:circumplex}, using the trigonometri
 
 \subsection{Multi-level Linear Regression}
 
-Multi-level regression modelling is a technique commonly used in fields such as psychology \cit{42, 43 from Orga paper}, and \draft{other examples}. \gls{mlm}s are particularly useful when data is organised at one or more levels or groups. The concept behind \gls{mlm}s can be built up starting from simple linear regression, as given by:
+Multi-level regression modelling is a technique commonly used in fields such as psychology \cit{42, 43 from Orga paper}, and \draft{other examples}. \glspl{mlm} are particularly useful when data is organised at one or more levels or groups. The concept behind \glspl{mlm} can be built up starting from simple linear regression, as given by:
 
 \begin{equation}
   y_i = X_i\beta + \epsilon_i
@@ -92,6 +92,24 @@ Their primary feature is the ability to have coefficients and intercepts which a
   \item Random slopes
   \item Random intercept and random slopes
 \end{enumerate}
+
+In a random intercept structure, the intercept for each input feature is allowed to vary according to the second level. This structure assumes that the linear relationship between each input feature and the output is consistent across the second level groups, but that the zero point (the intercept) is different. This is expressed mathematically as:
+
+\begin{equation}
+  %TODO: insert random intercept equation from Gelman 2006.
+\end{equation}
+
+In the context of auditory perception studies, this is most appropriate for repeated measures experimental designs (as will be demonstrated in \cref{ch:whostudy,ch:mlmann}). A repeated measures study is one in all participants experience all levels of the independent variables and provide some response in terms of the output variable. In other words, each participant constitutes a group in the model and they respond to all of the input variables \citep{Kristjansson2007Multilevel}. In this case, the \gls{mlm} framework is used to account for starting differences between respondents; populations are expected to demonstrate similar behaviours in response to a given stimulus, but may have differing initial starting points, i.e. different intercepts for each analysed feature. The \gls{mlm} framework using a varying intercept for each participant allows this initial difference among individuals to be accounted for while also highlighting the overall relationship between e.g. acoustic features and annoyance ratings for a given sound. 
+
+Random slope structures take the opposite assumption; each level shares the same intercept, while the coefficients for each feature are allowed to vary depending on the group. This assumes that different groups will have a different relationship between the input features and the output, but that these relationships may begin at a different threshold. This structure appears to be less commonly used than random intercept models. This can be mathematically described as:
+
+\begin{equation}
+  %TODO: insert random slope equation from Gelman 2006
+\end{equation}
+
+
+
+The structure inherent within the \gls{isd} means that this approach is particularly appropriate. In order to further demonstrate the structure and use of an \gls{mlm}, I'll further describe it in terms of the \gls{isd} data, where the most obvious second level for this \gls{mlm} is the location (a categorical variable defined by the LocationID). 
 
 %TODO: Finish mlm section
 
