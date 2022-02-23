@@ -25,7 +25,6 @@ This study made use of a subset of data from the \gls{isd}. This study was condu
 
 
 \begin{table}[!ht]
-  %TODO: Check the discrepancy in percentages between Employed and White - White has higher number but lower percentage?
 \centering
 \caption{The sample demographic characteristics \label{tab:whoDemo}}
 % \resizebox{\textwidth}{!}{%
@@ -109,7 +108,7 @@ To establish the linearity between all pairs of variables including the predicto
 
 \subsection{Model specification (linear mixed-effects modelling)}
 
-\glsfirst{lmer} with random intercept and fixed slope, using backward stepwise feature selection was utilised to (a) identify the association of our features of interest (FOIs) including psychological well-being, age, gender, education level, ethnicity, occupation status, and their interaction terms with \gls{isopl} and \gls{isoev} and (b) accommodate associations within participants among locations. In order to account for latent differences in the pleasantness and eventfulness ratings of various locations, the intercepts of each model are allowed to vary as a function of the location. Therefore, the model is constructed with two levels -- the individual level (the random effects) and the location level (the fixed effects). Separate models were constructed for each \gls{isopl} and \gls{isoev} and take the form:
+\glsfirst{lmer} with random intercept and fixed slope, using backward stepwise feature selection was utilised to (a) identify the association of our \glspl{foi} including psychological well-being, age, gender, education level, ethnicity, occupation status, and their interaction terms with \gls{isopl} and \gls{isoev} and (b) accommodate associations within participants among locations. In order to account for latent differences in the pleasantness and eventfulness ratings of various locations, the intercepts of each model are allowed to vary as a function of the location. Therefore, the model is constructed with two levels -- the individual level (the random effects) and the location level (the fixed effects). Separate models were constructed for each \gls{isopl} and \gls{isoev} and take the form:
 %
 \begin{equation}
   \label{eqn:whoPl}
@@ -129,15 +128,175 @@ where $ISOPleasant_{ij}$ or $ISOEventful_{ij}$ are the dependent variable value 
 %
 where $\gamma_{00}$ is the mean intercept across Locations; and $U_{0j}$ is the unique effect of Location $j$ on the intercept. In a random intercept model, the slope coefficients ($B_n$) are considered fixed across the locations (hence, labelled as the fixed effects) indicating that the relationship between the dependent variable (e.g. age, gender, etc.) and the independent variable (\gls{isopl} or \gls{isoev}) is the same for all locations, while the general \gls{isopl} of the location is accounted for by the varying intercept.
 
-In order to identify the significant FOIs within the multi-level structure, we employed a stepwise feature selection on the fixed effects portion of the mixed-effects model, with an inclusion threshold of $p < 0.05$. Since this model includes only the LocationID at the random effects level, only the fixed effects are reduced in the feature selection process. To check for multicollinearity among the selected features, the \glsfirst{vif} was calculated and a threshold of $VIF < 5$ was set. Any features which remained after the backwards stepwise selection which exceeded this threshold were investigated and removed if they were highly collinear with the other features. Once the feature selection process is completed, the final model with only significant FOIs included is fit and the table of the model coefficients is printed along with plots of the random effects and z-scaled and non-standardised estimates terms. 
+In order to identify the significant \glspl{foi} within the multi-level structure, we employed a stepwise feature selection on the fixed effects portion of the mixed-effects model, with an inclusion threshold of $p < 0.05$. Since this model includes only the LocationID at the random effects level, only the fixed effects are reduced in the feature selection process. To check for multicollinearity among the selected features, the \glsfirst{vif} was calculated and a threshold of $VIF < 5$ was set. Any features which remained after the backwards stepwise selection which exceeded this threshold were investigated and removed if they were highly collinear with the other features. Once the feature selection process is completed, the final model with only significant \glspl{foi} included is fit and the table of the model coefficients is printed along with plots of the random effects and z-scaled and non-standardised estimates terms. 
 
 The model fitting and feature selection was performed using `lme4' (version 1.1) and the `step' function from `lmerTest' (version 3.1.3) \cit{Kuznetsova, Brokhoff, Christensen, 2017} in R statistical software (version 4.0.3) \cit{R core team, 2013}. The summaries and plots were created using the `sjPlot' package (version 2.8.6) \cit{Ludecke, 2018}. 
 
-\section{Results}
+\section[Results]{Results\footnote{This section closely resembles the Results section of the original paper \citep{Erfanian2021Psychological} of which I was the second author. I contributed significantly to the drafting of the original paper and in particular to the analysis and results presented here.}}
 
-The setup and procedures %TODO: Return here
+\copied{The setup and procedures of this study allowed us to test a large group of participants with high diversity with rather various demographics including gender, age, education level, occupation statust, and ethnicity (N=1134) \cref{tab:whoDemo}.}
 
-\section{Discussion}
+\subsection{Correlations}
+
+\copied{The correlation matrix for all study measures is demonstrated in \cref{tab:whoCorr}. Age was negatively correlated with eventfulness, whereas it was positively correlated with pleasantness. Gender appeared to be independent of eventfulness but positively correlated with pleasantness. Education was positively correlated with both pleasantness and eventfulness. Whilst psychological well-being exhibited postivie and statistically significant correlations with pleasantness, it was negatively correlated with eventfulness.} It is worth noting that occupation is significantly correlated with all other independent variables considered in the study and highly correlated with age, although it is not significantly correlated with either of the dependent variables.  
+
+\begin{table}[!ht]
+  %FIXME: I think these correlations are from an earlier version of the paper which used the Lionello scaling
+  \centering
+  \caption{Correlation coefficients for study variables. **$p<0.005$, *$p>0.05$\label{tab:whoCorr}}
+  \begin{tabular}{@{}l|llllll@{}}
+  \toprule
+  Factors     & Age              & Education       & Ethnicity       & Gender         & WHO-5            & ISOPleasant      \\ \midrule
+  Age       &                  &      &               &      &  &  \\
+  Education & 0.32             &      &               &      &  &  \\
+  Ethnicity & 0.23             & 0.04 &               &      &  &  \\
+  Gender    & \textbf{-0.11**} & 0.05 & 0.08*         &      &  &  \\
+  Occupation  & \textbf{0.71**}  & \textbf{0.19**} & \textbf{0.13**} & \textbf{0.1**} &                  &                  \\
+  WHO-5     & \textbf{0.12**}  & 0.1  & \textbf{0.1*} & 0.02 &  &  \\
+  ISOPleasant & \textbf{0.12**}  & \textbf{0.11**} & 0.09            & \textbf{0.06*} & \textbf{-0.12**} &                  \\
+  ISOEventful & \textbf{-0.11**} & \textbf{0.1**}  & 0.08            & 0.05           & \textbf{0.14**}  & \textbf{-0.91**} \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+  \subsection{Linear mixed-effects modelling}
+\label{sec:whoLMERinit}
+  The linear mixed-effects regression derived regularised models of the soundscape pleasantness and eventfulness. This model was then reduced via backward stepwise feature selection. \cref{tab:whoLMER} presents the \gls{isopl} and \gls{isoev} models, including non-standardised and standardised estimate values and \glspl{ci} for the selected features that survived from the initial model. After the feature selection, age, education, and ethnicity were not found to be significant features in either the \gls{isopl} or \gls{isoev} models. It should be noted, however, that the presence of one feature (e.g. occupation) which is highly correlated with another (e.g. age and gender) may cause one of the features to not meet the threshold of significance when both are included, causing it to be removed during the stepwise feature selection. Nonetheless, it may be that, in a final model which included either of these features (but not both), they would each be considered significant. In this way, even though occupation was selected during this process, age may also have been considered significant, when not considering occupation. This behaviour is explored in more detail later.
+
+\afterpage{
+\begin{landscape}
+  \begin{table}[ht]
+  \centering
+  \caption{Fixed and random effects in a linear mixed model explaining variations in \gls{isopl} and \gls{isoev} while controlling for psychological well-being and demographic factors. The standardised estimates are calculated by refitting the model on standardised data scaled by subtracting the mean and dividing by 1 SD, allowing a comparison of all features. **$p<0.005$, *$p>0.05$  \label{tab:whoLMER}}
+    % \resizebox{\textwidth}{!}{%
+
+  \begin{tabular}{@{}lcccccc@{}}
+  \toprule
+                    & \multicolumn{3}{c|}{\textbf{ISOPleasant}}                                        & \multicolumn{3}{c}{\textbf{ISOEventful}}                   \\ 
+  \midrule
+  \textbf{Predictor} & \textbf{Estimates} & \textbf{Std. Est.} & \multicolumn{1}{c|}{\textbf{95\% CI}} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
+  WHO-5              & 0.001**            & \textbf{0.03}      & \multicolumn{1}{c|}{0.01, 0.05}       & 0.001              & 0.01               & -0.02, 0.04      \\
+  Gender (male)      & -                  & -                  & \multicolumn{1}{c|}{-}                & \textbf{-0.08*}    & \textbf{-0.04}     & -0.07, -0.00     \\
+  Occupation %
+  (Rather not say)   & -0.19*             & \textbf{-0.19}     & \multicolumn{1}{c|}{-0.36, -0.02}     & \textbf{0.7**}     & \textbf{0.02}      & -0.13, 0.17      \\
+  Occupation %
+  (Retired)          & 0.1**              & 0.10               & \multicolumn{1}{c|}{0.03, 0.18}       & \textbf{-0.18**}   & \textbf{-0.11}     & -0.18, -0.04     \\
+  Occupation %
+  (Unemployed)       & 0.01               & 0.01               & \multicolumn{1}{c|}{-0.13, 0.14}      & \textbf{0.01**}    & \textbf{0.18}      & 0.06, 0.3        \\
+  WHO-5 x Gender %
+  (male)             & -                  & -                  & \multicolumn{1}{c|}{-}                & \textbf{-0.001*}   & \textbf{-0.04}     & -0.07, -0.00     \\
+  WHO-5 x Occupation %
+  (Rather not say)   & -                  & -                  & \multicolumn{1}{c|}{-}                & \textbf{-0.01**}   & \textbf{-0.21}     & -0.33, -0.09     \\ 
+  \midrule
+  \multicolumn{7}{l}{\textbf{Random Effects}} \\ 
+  \midrule
+  $\sigma^2$         & \multicolumn{3}{l|}{0.11}               & \multicolumn{3}{l}{0.08}              \\
+  $\tau_{00}$        & \multicolumn{3}{l|}{0.06$_{Location}$}  & \multicolumn{3}{l}{0.01$_{Location}$} \\
+  ICC                & \multicolumn{3}{l|}{0.35}               & \multicolumn{3}{l}{0.15}              \\
+  N                  & \multicolumn{3}{l|}{11}                 & \multicolumn{3}{l}{11}                \\
+  \midrule
+  Observations       & \multicolumn{3}{l|}{1134}               & \multicolumn{3}{l}{1134}          \\
+  Marginal $R^2$/%
+  Conditional $R^2$  & \multicolumn{3}{l|}{0.014 / 0.354}      & \multicolumn{3}{l}{0.039 / 0.181} \\
+  AIC                & \multicolumn{3}{l|}{779.125}            & \multicolumn{3}{l}{451.351}       \\
+  \bottomrule
+  \end{tabular}
+    % }
+  \end{table}
+  \end{landscape}
+}
+
+  The final models found that a higher level of psychological well-being and retirement are associated with higher pleasantness, while individuals that prefer not to report their occupational status showed a negative association with pleasantness. Further analysis revelaed that psychological well-being was negatively associated with eventfulness in men and individuals that did not report their occupational status. Additionally, we detected that eventfulness is positively associated with unemployment, whereas it is negatively associated with gender (male) and retirement (\cref{tab:whoLMER}). 
+
+  The marginal and conditional $R^2$ values are given for each model in \cref{tab:whoLMER}. In a mixed effects model, the marginal $R^2$ represents the variance explained by the fixed effects (the individual-level independent variables) while the conditional $R^2$ represents the variance explained by both the fixed and random effects \cit{Nakagama, Schielzeth, 2013}. From the conditional $R^2$, we can say that the full models explain 35.4\% and 18.1\% of the variance in \gls{isopl} and \gls{isoev}, respectively (\cref{fig:whoRand}). While the majority of the variance is explained by location-level differences (as confirmed by the \glspl{icc}), 1.4\% of variance in \gls{isopl} and 3.9\% of variance in \gls{isoev} is explained by the \glspl{foi} (i.e. psychological well-being and age) included as fixed effects.
+
+%TODO: Recreate the random effects figures
+\begin{figure}
+  \centering
+
+  \begin{minipage}{.5\textwidth}
+    \includegraphics[width=\linewidth]{Figures/whoRandPl.jpg}
+  \end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Figures/whoRandEv.jpg}
+\end{minipage}
+\caption{The summary result demonstrated in the random-effects figures gives the average from the distribution of \gls{isopl} across locations.\label{fig:whoRand}}
+
+\end{figure}
+
+
+ \subsubsection*{Investigating the model without occupation status}
+ In order to further investigate the effect which the inclusion of occupational status had on the model building process, we re-ran the stepwise feature selection, this time without including occupation status in the initial model. This allowed us to determine whether other features (namely age and gender) would be finally selected and how they would interact within the model. The results of this process are given in \cref{tab:whoLMER2}.
+%TODO: More info about non-occupational results
+\draft{Need to add more info/discussion about the non-occupational results.}
+
+
+ \afterpage{
+  \begin{landscape}
+    \begin{table}[ht]
+    \centering
+    \caption{Linear mixed effects model resulting from the feature selection process when the initial model does not include occupational status. **$p<0.01$, *$p>0.05$  \label{tab:whoLMER2}}
+    % \resizebox{\textwidth}{!}{%
+  
+    \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+                      & \multicolumn{3}{c|}{\textbf{ISOPleasant}}                                        & \multicolumn{3}{c}{\textbf{ISOEventful}}                   \\ 
+    \midrule
+    \textbf{Predictor} & \textbf{Estimates} & \textbf{Std. Est.} & \multicolumn{1}{c|}{\textbf{95\% CI}} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
+    WHO-5              & 0.001**            & \textbf{0.03}      & \multicolumn{1}{c|}{0.01, 0.05}       & -                  & -                  & -                \\
+    Age                & \textbf{0.001*}    & \textbf{0.02}      & \multicolumn{1}{c|}{0.001, 0.04}      & \textbf{-0.001**}  & \textbf{-0.03}     & -0.05, -0.01     \\
+    Gender (male)      & -                  & -                  & \multicolumn{1}{c|}{-}                & \textbf{-0.04*}    & \textbf{-0.04}     & -0.07, -0.001    \\
+    Ethnicity          & -                  & -                  & \multicolumn{1}{c|}{-}                & \textbf{-0.09**}   & \textbf{-0.09}     & 0.03, 0.14       \\
+    \midrule
+    \multicolumn{7}{l}{\textbf{Random Effects}} \\ 
+    \midrule
+    $\sigma^2$         & \multicolumn{3}{l|}{0.11}               & \multicolumn{3}{l}{0.08}              \\
+    $\tau_{00}$        & \multicolumn{3}{l|}{0.06$_{Location}$}  & \multicolumn{3}{l}{0.01$_{Location}$} \\
+    ICC                & \multicolumn{3}{l|}{0.34}               & \multicolumn{3}{l}{0.14}              \\
+    N                  & \multicolumn{3}{l|}{11}                 & \multicolumn{3}{l}{11}                \\
+    \midrule
+    Observations       & \multicolumn{3}{l|}{1134}               & \multicolumn{3}{l}{1134}          \\
+    Marginal $R^2$/%
+    Conditional $R^2$  & \multicolumn{3}{l|}{0.009 / 0.345}      & \multicolumn{3}{l}{0.023 / 0.165} \\
+    AIC                & \multicolumn{3}{l|}{778.271}            & \multicolumn{3}{l}{456.130}       \\
+    \bottomrule
+    \end{tabular}
+      % }
+    \end{table}
+    \end{landscape}
+  }
+
+
+\section[Discussion]{Discussion\footnote{Portions of this section are taken directly the original paper \citep{Erfanian2021Psychological} of which I was the second author. I contributed significantly to the drafting of the original paper and in particular to the discussion presented here.}}
+\draft{The portions marked `copied' are directly taken from Mercede's sections of the paper.}
+\copied{For this study, data of 1134 participants across 11 locations in London were included in the analysis. Our initial assumption was that an increased level of psychological well-being is associated with increased pleasantness and eventfulness assessments of the soundscape. Although the results showed that psychological well-being was positively associated with pleasantness, it was negatively associated with eventfulness in males and individuals that did not report their occupation.}
+
+\copied{Then we hypothesized htat differences in soundscape assessments are associated with demographic features. The results suport this hypothesis to a certain degree. Occupation and gender appeared to be strong demographic factors influencing the pleasantness and eventfulness assessment. Retirement as occupation status showed to be positively attribute to pleasantness and negatively to the eventfulness assessment. Further investigation revealed that the occupation (no occupation reported) was negatively associated with pleasantness and gender (male) was negatively associated with eventfulness, whereas unemployment was positively associated with eventfulness.}
+
+As expected, the majority of the total variance in the perceptual ratings is explained by the location-level differences (i.e. overall sound level) which represent primary contributing factors to the acoustic environment (see \cit{McDermott, 2012}) and other non-acoustic factors. Approximately 3\% of the variance is then explained by the combination of personal factors, which represent secondary contributing factors as defined by McDermott. Although the variance explained by these secondary factors is small compared to the primary factors, they are still found to contribute significantly. Furthermor an additional 3 percentage points of explained variance would represent a meaningful improvement in the performance of predictive soundscape models based on in-situ measurements of varying soundscape types \citep{Lionello2020systematic} and should therefore be considered when constructing these models. 
+
+\subsection{Psychological well-being and its association with pleasantness and eventfulness}
+
+Our findings demonstrate a positive link between the perceived pleasantness and participants' psychological well-being, whereas the association between psychological well-being and eventfulness is negative in males and individuals that did not report their occupations. \copied{Our results can be interpreted in light of previous research and it is consistent with the idea that psychological well-being underlies the perception of the external world such as auditory input. \cit{Kelley, Schmeichel, 2014}. While the enhanced global level of psychological state has a positive effect on auditory processing \cit{Kumar,Sangamanatha,Vikas,2013}, there is evidence that suggests an impairment of early auditory processing (analysing, blending, and acoustic input segmentation) in individuals with poor psychological well-being \cit{Kahkonen, 2007}. One of the potential trait biomarkers of poor psychological well-being such as depression (predominantly characterised by low mood and anhedonia \cit{Erfanian,2018}) is the attenuation of neuronal activation in the auditory cortical area leading to alterations in auditory processing \cit{Zwanzger,2012}.}
+
+\subsection{Demographic factors and their associations with pleasantness and eventfulness}
+
+\subsubsection*{Occupation status}
+
+According to our findings, occupation status, in particular `retirement' and to a lesser degree, gender (male) were important factors in the pattern of soundscape assessments. It is worthwhile to highlight that `retirement' factor could potentially be a proxy for age (>65) and gender (male). To explore the effect of occupation/retirement deeper, we removed the occupation factor from the initial model, prior to feature selection. Age (\gls{isopl}: $\beta=0.02, p=0.05$; \gls{isoev}: $\beta=-0.03, p=0.01$) and gender (\gls{isoev}: $\beta=-0.04, p=0.05$) then came out as significant, as shown in \cref{tab:whoLMER2}. This would indicate that occupation status, particularly `retirement', represents a group of older male individuals. Even though incorporation of occupation into our model complicates the interpretation of our outcome, it results in a slightly better fitting model ($R^2_c$ for \gls{isopl} (0.354) and \gls{isoev} (0.181)) relative to 0.345 for \gls{isopl} and 0.165 for \gls{isoev} in the model without occupation status, which is why it is selected by the feature selection process. These findings are in line with previous research, suggesting significant differences among age groups in the soundscape of different acoustic environments \cit{ren,kang,liu,2016} \citep{Yang2005Acoustic}. Our findings imply that an incrase in age leads to an increase in the positive appraisal of the soundscape pleasantness. This is supported by a study by \cit{Cakir Aydin, Yilmaz, 2016} in which they found that soundscape pleasantness reported by young individuals was significantly lower than the other age groups. 
+
+Age could potentially highlight the contextual role of the acoustic environment. Past experiences, memories, and even traumas give a particular context to our perception and shape the soundscape, making individual perception highly diverse, depending on the content of experience/memory. While the increase in age can lead to appreciating different sound elements, lower age seems to be related to more arousing and vibrant sounds \citep{Yang2005Acoustic}.
+
+Like age, gender was found to be associated with the soundscape eventfulness. Past works have also reported that there are gender-related discrepancies in soundscape \cit{Croome 1977} \citep{Yang2005Acoustic}. These differences may be an indication of different auditory processing across genders.
+
+\subsubsection*{Soundscape pleasantness and eventfulness differences among locations}
+
+The pleasantness and eventfulness were significantly different among locations. Pleasantness appeared to be highest in locations dominated by nature sounds (i.e. Regents Park Japan). In agreement with our results, Payne and colleagues \cit{Payne,2013} referred to the pleasantness dimension of the soundscape as the positive perception of natural places as well as the restorative capacity of the soundscape. \cit{Zhang,2014} also reported a significant impact of natural soundscape on individuals' restorative experiences and boosting pleasantness. In the study by \citet{Axelsson2010principal} participants reported that the sound excerpts of natural components are more pleasant than human and technical sounds. Unline pleasantness, the eventfulness increased the most in locations with dominant traffic and other sounds (i.e. Euston Tap). These findings are supported by previous research done by \cit{Bradley and Lange} and \citet{Hume2013Physiological}. In both studyies, unnatural and urban sound-clips (i.e. fire engine siren and traffic noise), inherent in the traffic-dominant locations in our study, were rated highest in arousal and lowest in the pleasantness dimension. As formerly mentioned by \citet{Erfanian2019Psychophysiological}, throughout the soundscape literature, arousal has been applied as the equivalent of eventfulness and indicated on the Y-axis of the circumplex model \citep{Axelsson2010principal,Erfanian2019Psychophysiological}.
+
+These results insinuate the notion that there are multiple primary factors \cit{McDermott,2012} that contribute to the perception of the acoustic environment whicn should be considered important by uran designers and policymakers. It is expected that understanding these factors will provide multidimensional knowledge in guiding the implementation of the technological infrastructure of smart cities.
+
+
+
  \subsection{Incorporating personal factors into a predictive soundscape model}
 Although, as \citet{Droumeva2021sound} points out, each individual brings their own cultural and subjective aspects of listening to the stage of urban sound, when attempting to characterise the soundscape of a space, it is not a particular individual's aspects we should be concerned with. That individual forms a part of the collective perception of the space. Their cultural and subjective (i.e. personal) aspects mitigate their perception, but this perception then forms only a single component of the collective perception. How then should we consider these personal factors? Surely there is no suggestion to disregard their influence and importance within the soundscape approach? In my view, there are two approaches:
 
@@ -148,9 +307,14 @@ Although, as \citet{Droumeva2021sound} points out, each individual brings their 
 
 Let's look at how these two approaches would be implemented in a multilevel acoustics-based predictive model, such as those presented in \crefrange{ch:mlmann}{ch:lockdown}.
 
+%TODO: Expand
 \subsubsection{Approach 1}
 In the first, the demographic breakdown of the space under investigation is estimated, either through a census or by the designers' desired use case. This demographic breakdown can then be compared to the results presented above \citep{Erfanian2021Psychological} to derive weighting factors which adjust the predicted soundscape assessment. For instance, the results suggest that retired persons perceive the soundscape as \draft{XX\% or amount [need to check with results]} less pleasant than others. If the particular space under investigation has a large proportion of retired persons, say 65\% we could then apply an adjustment to the initial personal-factors-agnostic prediction to reflect this tendency. In this example, an initial location-level \gls{isopl} prediction of 0.36, with a 65\% retired population would be corrected by \draft{-XX [0.65 x result]} for a final demographics-corrected \gls{isopl} prediction of \draft{XX}.
 
 \subsubsection{Approach 2}
 
 \subsubsection{Benefits and downsides of each approach}
+
+\section{Conclusion}
+
+In this chapter, we conducted a linear mixed-effects model to show the associations of psychological well-being and demographic factors with the soundscape pleasantness and eventfulness. The findings indicate that psychological well-being is positively associated with pleasantness and negatively associated with eventfulness in males and individuals that did not report their occupations. We further demonstrated that the occupational status, in particular retirement as a proxy of age and gender, was related to the perceptions of pleasantness and eventfulness. The findings of this chapter offer empirical grounds for developing and advancing theories on the influence of psychological well-being and demographic characteristics on the perception of the acoustic environment. 
