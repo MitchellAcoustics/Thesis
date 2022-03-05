@@ -1,4 +1,4 @@
-\chapter{How to Analyse and Represent Soundscape Perception}\label{ch:circumplex}
+\chapter{How to Analyse and Represent Quantitative Soundscape Data}\label{ch:circumplex}
 
 \section{Abstract}
 This study first examines the methods presented in ISO 12913 for analysing and representing soundscape perception by applying them to a large existing database of soundscape assessments. The key issue identified is the inability of the standard methods to summarise the soundscape of locations and groups. The presented solution inherently considers the variety of responses within a group and provides an open-source visualisation tool to facilitate a nuanced approach to soundscape assessment and design. Several demonstrations of the soundscape distribution of urban spaces are presented, along with proposals for how this approach can be used and developed.
@@ -195,8 +195,3 @@ As such, extreme values on each of the perceptual dimensions are less likely to 
 An implicit assumption of the transformation is that the resulting coordinates are now continuous values, which allows linear regression and correlation methods to be used. Indeed, the transformation of the 8-dimensional ordinal Likert scale data to the two-dimensional coordinates creates a higher resolution of intervals, which would appear to be pseudo-continuous. Upon further investigation, the transformation actually results in XX discrete possible values. \cref{fig:isoheatmap}(b) shows a histogram of this raw output from the transformation, demonstrating that these discrete values, while following the general normal distribution discussed above, are not evenly filled - some adjacent values may be much more or less likely than their neighbours. This poses potential issues for further analysis which assumes either continuous or equally-spaced discrete values.
 
 
-\section{The problem with the pleasant-annoying paradigm}
-
-As made clear by their name, noise annoyance studies have focussed on the relationship between noise (or acoustic) features and the perceived annoyance, to varying degrees of success. Within the soundscape circumplex framework, annoyance is the negative side of the pleasantness dimension, forming the \nth{1} primary component of soundscape perception. This means that, along with pleasantness, annoyance is that perceptual attribute which is most readily perceived and plays the largest part in differentiating between the perception of different soundscapes. This fact therefore makes this pleasantness dimension the prime target for addressing noise issues. 
-
-However, \citet{Mitchell2021Investigating} (i.e. \cref{ch:lockdown}) and \citet{Aumond2022} have both recently demonstrated a fundamental difference in the statistical relationships connecting context and acoustic features with the perceived pleasantness and eventfulness of urban soundscapes. %TODO: Continue this discussion about including eventfulness. Can draw from that review I wrote

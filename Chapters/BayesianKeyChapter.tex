@@ -1,22 +1,41 @@
-\chapter{A Bayesian Hierarchical Predictive Soundscape Model and a Proposed Soundscape Index}
-alt: Probabilistic soundscape models including personal, contextual, environmental, and acoustic information
-\label{ch:bayes}
+\chapter{A Proposal for a Future Predictive Model -- A Bayesian Hierarchical Approach}
+  \label{ch:bayes}
+% alt:A Bayesian Hierarchical Predictive Soundscape Model and a Proposed Soundscape Index
+% alt: Probabilistic soundscape models including personal, contextual, environmental, and acoustic information
 
 \section{Introduction}
- \subsection{Probabilistic Distribution Thinking}
+\subsection{The problem with the pleasant-annoying paradigm}
 
-   % !: from JASA-EL circumplex critique
-   The instruments described in the ISO 12913 Part 2 \citet{ISO12913_2_2018IOS} were originally designed primarily for the context of individual or small group assessments. In these scenarios, the focus is on assessing the particular soundscape of the person in question. Recent advances in the soundscape approach since the development of the standards have shifted some focus from individual soundscapes to characterizing the overall soundscape of public spaces \citep{Mitchell2020Soundscape}. In this context, a consideration of the natural variation in people's perception and the variation over time of a soundscape must be a core feature of how the soundscape is discussed. Boiling a public space which may have between tens and tens of thousands of people moving through it in a single day down to the mean (or median, or any other single metric) soundscape assessment completely dismisses the reality of the space. Likewise, this overall soundscape of a public space cannot possibly be determined through a 10-person soundwalk, as there is no guarantee that the sample of people engaged in the soundwalk are representative of the users of the space (in fact it is very likely they would not be).
+As made clear by their name, noise annoyance studies have focussed on the relationship between noise (or acoustic) features and the perceived annoyance, to varying degrees of success. Within the soundscape circumplex framework, annoyance is the negative side of the pleasantness dimension, forming the \nth{1} primary component of soundscape perception. This means that, along with pleasantness, annoyance is that perceptual attribute which is most readily perceived and plays the largest part in differentiating between the perception of different soundscapes. This fact therefore makes this pleasantness dimension the prime target for addressing noise issues. 
 
-   This shift is part of a move towards a more holistic approach to urban noise and to integrating the soundscape approach into urban design and regulations.
+However, \citet{Mitchell2021Investigating} (i.e. \cref{ch:lockdown}) and \citet{Aumond2022} have both recently demonstrated a fundamental difference in the statistical relationships connecting context and acoustic features with the perceived pleasantness and eventfulness of urban soundscapes. %TODO: Continue this discussion about including eventfulness. Can draw from that review I wrote
 
-\section{Methods}
+\section{Starting point} 
+\draft{The lockdown model, as the most developed model so far.}
 
-\section{Results}
+\section{Incorporating personal factors into a predictive soundscape model}
+Although, as \citet{Droumeva2021sound} points out, each individual brings their own cultural and subjective aspects of listening to the stage of urban sound, when attempting to characterise the soundscape of a space, it is not a particular individual's aspects we should be concerned with. That individual forms a part of the collective perception of the space. Their cultural and subjective (i.e. personal) aspects mitigate their perception, but this perception then forms only a single component of the collective perception. How then should we consider these personal factors? Surely there is no suggestion to disregard their influence and importance within the soundscape approach? In my view, there are two approaches:
+
+\begin{enumerate}
+  \item Incorporate these personal factors as demographic statistics of a location; or
+  \item An agent-based approach where each individual likely to use the space is simulated and modelled with their personal factors to then be included in the collective perception.
+\end{enumerate}
+
+Let's look at how these two approaches would be implemented in a multilevel acoustics-based predictive model, such as those presented in \crefrange{ch:mlmann}{ch:lockdown}.
+
+%TODO: Expand
+\subsection{Approach 1}
+In the first, the demographic breakdown of the space under investigation is estimated, either through a census or by the designers' desired use case. This demographic breakdown can then be compared to the results presented above \citep{Erfanian2021Psychological} to derive weighting factors which adjust the predicted soundscape assessment. For instance, the results suggest that retired persons perceive the soundscape as \draft{XX\% or amount [need to check with results]} less pleasant than others. If the particular space under investigation has a large proportion of retired persons, say 65\% we could then apply an adjustment to the initial personal-factors-agnostic prediction to reflect this tendency. In this example, an initial location-level \gls{isopl} prediction of 0.36, with a 65\% retired population would be corrected by \draft{-XX [0.65 x result]} for a final demographics-corrected \gls{isopl} prediction of \draft{XX}.
+
+\subsection{Approach 2}
+
+\subsection{Benefits and downsides of each approach}
+
+\section{Incorporating sound source information}
+
+\section{Probabilistic predictions - A Bayesian Approach?}
 
 \section{Discussion}
-
-\section{Communicating SSID on the Basis of Percentages}
 
 \section{Conclusion}
 
