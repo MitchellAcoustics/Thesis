@@ -35,6 +35,27 @@ In the first, the demographic breakdown of the space under investigation is esti
 
 \section{Probabilistic predictions - A Bayesian Approach?}
 
+\subsection{Defining a distribution}
+
+\subsubsection{Truncated normal distribution}
+
+Given that the \gls{isopl} and \gls{isoev} values have a hard boundary at $[-1, +1]$, it is not in fact correct to consider the distribution of responses within the circumplex as a normal distribution. A normal distribution is defined as extending out to $(-\infty, \infty)$ with an area of 1 under the probability density. If the potential space of the responses is bounded, the assumption of them forming a normal distribution is violated, as part of the probability density function is unreachable, meaning the area under the probability density will not sum to 1.
+
+If we assume the general shape of the responses to be normal, then they would instead form a truncated normal distribution \cit{\url{https://people.sc.fsu.edu/~jburkardt/presentations/truncated_normal.pdf}, \url{https://www.tandfonline.com/doi/abs/10.1080/00031305.1999.10474490}}. Briefly, a truncated normal distribution is estimated by first calculating the probability density function of the standard normal distribution. Then, the density function is truncated at the set boundary ($[a, \infty)$ or $(-\infty, b]$) or boundaries ($[a, b]$) and the portion of the density function which is truncated is redistributed within the boundary.
+
+This redistribution means that the various parameters of a truncated distribution will be somewhat different than for a normal distribution, in particular the calculation of variance. This impacts the soundscape distribution plots demonstrated in \cref{ch:circumplex} as the kernel density estimation performed by the underlying plotting library (\texttt{seaborn}) assumes a normal distribution with no boundary. It is possible that making use of a truncated normal distribution would change the shape of the distributions produced by \texttt{soundscapy}. Although at this point there does not seem to be a simple method of adapting the \texttt{soundscapy} code to make use of a truncated distribution, I chose to briefly test out how much of a change the truncated distribution is likely to make to the shape of the \texttt{soundscapy} plots through functions available in \texttt{R}. 
+
+\begin{figure}
+  \centering
+  \includegraphics{Figures/Trunc-Normal-demo.png}
+  \caption{Comparing a probability distribution in the soundscape circumplex (using Regents Park Japan as the worst case example) using a normal kernel density estimation method (black line) and a truncated KDE (blue line). \label{fig:truncatekde}}
+\end{figure}
+
+From \cref{fig:truncatekde}, it appears that there would be some difference in the shape of the soundscape distribution when using a truncated distribution. However, I would note that Regents Park Japan was chosen as the worst case location in the whole \gls{isd} as the samples lie closest to the boundary and the density function estimated in \texttt{soundscapy} has the most area which lies outside the boundary. Most locations do not show any overlap with the boundary and would not be noticeably affected by the truncation. In addition, switching to the truncated normal distribution only affects those iso-density levels which overlap with the boundary. Therefore, the recommended simplified density curve given in \cref{ch:circumplex} of 50\% is effectively unchanged since it is very unlikely the \nth{50} percentile curve would exceed the boundaries. For the time-being, therefore it appears that there is not a detriment to using a standard normal distribution as opposed to a truncated normal distribution, for the visualisations created by \texttt{soundscapy}.
+
+However, as I move towards a probabilistic prediction framework, and even in the frequentist predictive models used throughout this thesis, it seems possible that the distinctions between these underlying distributions will become more important. 
+
+
 \section{Discussion}
 
 \section{Conclusion}
