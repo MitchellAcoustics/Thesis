@@ -40,27 +40,31 @@ This paper is part of a special issue on COVID-19 Pandemic Acoustic Effects.
 
  The same procedure was followed for the psychoacoustic metrics of Loudness (\gls{n5}, sone) and Sharpness (\gls{s}, acum). All parameters were computed using the ArtemiS Suite software (v11.5, HEAD acoustics GmbH). Loudness was calculated according to the ISO 532-1 standard for time-varying sounds, in a free-field, with the remaining analysis options left to their default \citep{ISO532Part1}. As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field, with the remaining analysis options left to their default \cit{DIN45692}. It was decided to include psychoacoustic parameters as they can often provide more nuances about the perception of the acoustic environment by people, as well as offer more insights into spectral features that could reflect changes in sound sources \cit{30,31}. Considering the necessity of keeping the computational time limited in this initial study, Loudness and Sharpness were selected because they have been reported to provide a sensible representation of perceptual aspects. \cit{32}
 
- \begin{figure}
+ \begin{figure}[h]
   %TODO: Redo these figures in python using ISD
-   \caption{Reproduced with permission from \citet{Aletta2020Assessing}. On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. \label{fig:NsMapLockLAeq}}
    \centering
-   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 1.png} 
+   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 1.png}   
+   \caption{Reproduced with permission from \citet{Aletta2020Assessing}. On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. \label{fig:NsMapLockLAeq}}
+
+   
   \end{figure}
 
 %TODO: Discuss LAeq figure results in own wods
 
-\begin{figure}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
+\begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 4.png}
+  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 4.png}
+  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
+
 \end{figure}
 
 %TODO: Discuss N5 figure in own words
 
-\begin{figure}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
+\begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 5.png}
+  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 5.png}
+  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
+
 \end{figure}
 
 %TODO: Discuss S figure in own words
@@ -69,18 +73,18 @@ This paper is part of a special issue on COVID-19 Pandemic Acoustic Effects.
 \paragraph*{Effect of the urban setting on sound levels reduction}
 In addition to strictly documenting the changes in the sound environment in London, the study also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an "Area type" variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their "typical" acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} ("elbow method") \cit{33}. The analysis was conducted in R \cit{RStats} and figures were produced using the package factoextra \cit{factoextra}. 
 
-\begin{figure}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. "Scree" plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an "elbow" can be identified for a three-cluster solution. \label{fig:NsMapLockScree}}
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}
+  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}  
+  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. "Scree" plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an "elbow" can be identified for a three-cluster solution. \label{fig:NsMapLockScree}}
 \end{figure}
 
 \cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \cit{36, 37}. 
 
-\begin{figure}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Di-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic-dominated Areas. \label{fig:NsMapLockBiplot}}
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 7.png}
+  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 7.png}  
+  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Di-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic-dominated Areas. \label{fig:NsMapLockBiplot}}
 \end{figure}
 
 \cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patters with information about dominant sound sources as derived from data from \cit{26}, the three clusters could be labelled as: \emph{Traffic-dominated areas} (locations: Camden Town, Euston Tap), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields). Traffic-dominated areas are on major roads, where traffic noise is the dominant sound source. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
@@ -88,16 +92,38 @@ In addition to strictly documenting the changes in the sound environment in Lond
 When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in Figure \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
 
 %TODO: Reproduce the table from Aletta2020
-\begin{table}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Descriptive statistics of the psychoacoustic metrics for the three identified clusters. \label{tab:NsMapLockClust}}
-  \centering
-  
+
+\begin{table}[h]
+\centering
+\caption{Reproduced with permission from \citet{Aletta2020Assessing}. Sharpness distributions at the 11 London locations before and during the lockdown measures implementation.}
+\label{fig:NsMapLockS}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrr} 
+\toprule
+\textbf{Cluster} & \textbf{Parameter} & \multicolumn{5}{c}{\textbf{Mean values }} \\ 
+\cline{3-7}
+ &  & \multicolumn{1}{c}{$L_{Aeq}$} & \multicolumn{1}{c}{$L_{A10}$} & \multicolumn{1}{c}{$L_{A90}$} & \multicolumn{1}{c}{$S$} & \multicolumn{1}{c}{$N_5$} \\ 
+\hline
+1 -- (Quiet areas) & Mean & 55.9 & 58.1 & 52.4 & 1.7 & 12.9 \\
+{[}N=3] & Std. deviation & 2.6 & 2.5 & 3.1 & 0.0 & 1.8 \\
+ & Variance & 7.0 & 6.3 & 9.3 & 0.0 & 3.1 \\ 
+\hline
+2 -- (Active areas) & Mean & 62.5 & 64.3 & 59.6 & 2.1 & 18.9 \\
+{[}N=6] & Std. deviation & 2.3 & 2.5 & 2.3 & 0.4 & 2.5 \\
+ & Variance & 5.3 & 6.4 & 5.5 & 0.1 & 6.3 \\ 
+\hline
+3 -- (Traffic-dominated areas) & Mean & 70.4 & 72.9 & 66.1 & 2.4 & 34.1 \\
+{[}N=2] & Std. deviation & 1.6 & 1.9 & 0.3 & 0.0 & 4.4 \\
+ & Variance & 2.4 & 3.6 & 0.1 & 0.0 & 19.8 \\
+\bottomrule
+\end{tabular}
+}
 \end{table}
 
-\begin{figure}
-    \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
+\begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
+  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
 \end{figure}
 
 
@@ -165,56 +191,61 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
    %NOTE: May want to move this to methods as well.
    The binaural recordings were analysed in ArtemiS SUITE 11 to calculate the suite of 11 acoustic and psychoacoustic features given in \cref{tab:psychoacoustics} to be used as initial predictors.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
+\begin{table}[h!]
   \centering
   \caption{Psychoacoustic features considered for inclusion in the predictive models. All metrics are calculated for the full length of the recording (30s). As recommended by \citet{ISO532Part1} and \citet{ISO12913Part2}, the \nth{5} percentile of Loudness is used rather than the average. \label{tab:psychoacoustics}}
-  \begin{tabular}{@{}lccl@{}}
-  \toprule
-  \textbf{Feature}        & \textbf{Symbol}    & \textbf{Unit}  & \textbf{Calculation Method} \\ \midrule
-  Loudness (\nth{5} percentile) & $N_5$        & sones & \citet{ISO532Part1}       \\
-  Sharpness                & $S$               & acum  & \citet{ISO532Part1}       \\
-  Roughness                & $R$               & asper & \citet{Sottek2005Models}  \\
-  Impulsiveness            & $I$               & iu    & \citet{Sottek2005Models}  \\
-  Fluctuation Strength     & $FS$              & vacil & \citet{Sottek2005Models}  \\
-  Tonality                 & $T$               & tuHMS & \citet{Sottek2005Models}  \\
-  Psychoacoustic Annoyance & $PA$              & --    & \citet{PsychoacousticsfactsmodelsZwicker} \\
-  $L_{Aeq}$                & $L_{Aeq}$         & dB    & \citet{IEC61672Part1}     \\
-  $L_{A10}-L_{A90}$        & $L_{A10}-L_{A90}$ & dB    & \citet{ISO1996Part1}      \\
-  $L_{Ceq}-L_{Aeq}$        & $L_{Ceq}-L_{Aeq}$ & dB    & \citet{ISO1996Part1}      \\
-  Relative Approach        & $RA$              & cPA   & \citet{Sottek2005Models}  \\ \bottomrule
-  \end{tabular}
-  \end{table}
+  % \resizebox{\linewidth}{!}{%
+    \begin{tabular}{lccl}
+      \toprule
+      \textbf{Feature}                                                      & \textbf{Symbol} & \textbf{Unit} & \textbf{Calculation Method}       \\
+      \midrule
+      \begin{tabular}[c]{@{}l@{}}Loudness \\(fifth percentile)\end{tabular} & $N_5$           & sones         & \citet{ISO532Part1}               \\
+      Sharpness                                                             & $S$             & acum          & \citet{ISO532Part1}               \\
+      Roughness                                                             & $R$             & asper         & \citet{ECMA418Part2}              \\
+      Impulsiveness                                                         & $I$             & iu            & \citet{ECMA418Part2}              \\
+      Fluctuation Strength                                                  & $FS$            & vacil         & \citet{ECMA418Part2}              \\
+      Tonality                                                              & $T$             & tuHMS         & \citet{Sottek2016Hearing}        \\
+      \begin{tabular}[c]{@{}l@{}}Psychoacoustic \\Annoyance\end{tabular}    & $PA$            & –             & \citet{PsychoacousticsfactsmodelsZwicker} \\
+      $L_{Aeq}$                                                               & $L_{Aeq}$         & dB            & \citet{IEC61672Part1}      \\
+      $L_{A10}-L_{A90}$                                                         & $L_{A10}-L_{A90}$   & dB            & \citet{ISO1996Part1}             \\
+      $L_{Ceq}-L_{Aeq}$                                                         & $L_{Ceq}-L_{Aeq}$   & dB            & \citet{ISO1996Part1}             \\
+      Relative Approach                                                     & $RA$            & cPA           & \citet{Sottek2005Models}          \\
+      \bottomrule
+    \end{tabular}
+  % }
+\end{table}
 
    The (psycho)acoustic predictors investigated were selected in order to describe many aspects of the recorded sound -- in particular, the goal was to move beyond a focus on sound level, which currently dominates the existing literature on the acoustic effects of lockdowns noted in \ref{sec:intro}. In all, they are expected to reflect the sound level (\gls{laeq}), perceived sound level (gls{n5}), spectral content (\gls{s}, \gls{lcla}, \gls{tu}), temporal character or predictability (\gls{iu}, \gls{fs}, \gls{ra}), and overall annoyance (\gls{pa}). These metrics have been proposed as indicators to predict perceptual constructs of the soundscape \citep{Aletta2017Dimensions, Aletta2016Soundscape} and have shown promise when combined together to form amore comprehensive model applied to real-world sounds \citep{Orga2021Multilevel}. The maximum value from the left and right channels of the binaural recording are used, as suggest in ISO/TS 12913-3:2019 \citep{ISO12913Part3}.
 
    %FIXME: Fix layout of correlation table
-\begin{table}[ht]
-  \caption{Pearson correlation coefficients between candidate acoustic features and ISOPleasant and ISOEventful across all 13 locations. Only statistically significant ($p < 0.01$) coefficients are shown. \label{tab:corr}}
-  \centering
-  \def\arraystretch{}
-    \begin{tabular}{@{}r|cccccccccccc@{}}
-      \textbf{Parameter} & ISOPl & ISOEv & $PA$  & $N_5$ & $S$   & $R$   & $I$   & $FS$  & $T$   & $L_{Aeq}$ & $L_{A10}-L_{A90}$ & $L_{Ceq}-L_{Aeq}$ \\
-      \midrule
-      ISOPleasant        &       &       &       &       &       &       &       &       &       &           &                   &                   \\
-      ISOEventful        & -0.24 &       &       &       &       &       &       &       &       &           &                   &                   \\
-      $PA$               & -0.28 & 0.24  &       &       &       &       &       &       &       &           &                   &                   \\
-      $N_5$              & -0.37 & 0.33  & 0.94  &       &       &       &       &       &       &           &                   &                   \\
-      $S$                &       &       & 0.71  & 0.56  &       &       &       &       &       &           &                   &                   \\
-      $R$                & -0.36 & 0.32  & 0.63  & 0.74  & 0.11  &       &       &       &       &           &                   &                   \\
-      $I$                &       &       & -0.10 &       & -0.37 & 0.24  &       &       &       &           &                   &                   \\
-      $FS$               & -0.11 & 0.14  & 0.37  & 0.43  &       & 0.46  & 0.55  &       &       &           &                   &                   \\
-      $T$                & -0.21 & 0.30  & 0.58  & 0.63  & 0.12  & 0.54  & 0.16  & 0.52  &       &           &                   &                   \\
-      $L_{Aeq}$          & -0.34 & 0.37  & 0.84  & 0.93  & 0.56  & 0.72  & -0.09 & 0.37  & 0.57  &           &                   &                   \\
-      $L_{A10}-L_{A90}$  & -0.18 & 0.15  & 0.21  & 0.33  & -0.20 & 0.31  & 0.36  & 0.44  & 0.40  & 0.23      &                   &                   \\
-      $L_{Ceq}-L_{Aeq}$  &       & -0.20 & -0.49 & -0.49 & -0.54 & -0.31 &       & -0.27 & -0.28 & -0.61     & -0.22             &                   \\
-      $RA$               & -0.34 & 0.31  & 0.60  & 0.74  & 0.18  & 0.71  & 0.31  & 0.63  & 0.58  & 0.73      & 0.23              & -0.14             \\
-    \end{tabular}
-\end{table}
+% \usepackage{booktabs}
+% \usepackage{rotating}
+
+
+\begin{sidewaystable}[hp]
+\centering
+\caption{Pearson correlation coefficients between candidate acoustic features and ISOPleasant and ISOEventful across all 13 locations. Only statistically significant ($p < 0.01$) coefficients are shown. \label{tab:corr}}
+\begin{tabular}{r|cccccccccccc} 
+\toprule
+\textbf{Parameter} & ISOPl & ISOEv & $PA$ & $N_5$ & $S$ & $R$ & $I$ & $FS$ & $T$ & $L_{Aeq}$ & $L_{A10}-L_{A90}$ & $L_{Ceq}-L_{Aeq}$ \\ 
+\midrule
+ISOPleasant &  &  &  &  &  &  &  &  &  &  &  &  \\
+ISOEventful & -0.24 &  &  &  &  &  &  &  &  &  &  &  \\
+$PA$ & -0.28 & 0.24 &  &  &  &  &  &  &  &  &  &  \\
+$N_5$ & -0.37 & 0.33 & 0.94 &  &  &  &  &  &  &  &  &  \\
+$S$ &  &  & 0.71 & 0.56 &  &  &  &  &  &  &  &  \\
+$R$ & -0.36 & 0.32 & 0.63 & 0.74 & 0.11 &  &  &  &  &  &  &  \\
+$I$ &  &  & -0.10 &  & -0.37 & 0.24 &  &  &  &  &  &  \\
+$FS$ & -0.11 & 0.14 & 0.37 & 0.43 &  & 0.46 & 0.55 &  &  &  &  &  \\
+$T$ & -0.21 & 0.30 & 0.58 & 0.63 & 0.12 & 0.54 & 0.16 & 0.52 &  &  &  &  \\
+$L_{Aeq}$ & -0.34 & 0.37 & 0.84 & 0.93 & 0.56 & 0.72 & -0.09 & 0.37 & 0.57 &  &  &  \\
+$L_{A10}-L_{A90}$ & -0.18 & 0.15 & 0.21 & 0.33 & -0.20 & 0.31 & 0.36 & 0.44 & 0.40 & 0.23 &  &  \\
+$L_{Ceq}-L_{Aeq}$ &  & -0.20 & -0.49 & -0.49 & -0.54 & -0.31 &  & -0.27 & -0.28 & -0.61 & -0.22 &  \\
+$RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.23 & -0.14 \\
+\bottomrule
+\end{tabular}
+\end{sidewaystable}
+
 
    \cref{tab:corr} shows the Pearson correlation coefficient between each of the candidate acoustic features and the outcome pleasantness and eventfulness. For \gls{isopl} ($ISOPl$), we can perhaps see three tiers of correlations:
 
@@ -264,7 +295,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    \cref{fig:lockdown-study-framework} illustrates and summarises the framework and sections described above.
 
-   \begin{figure}
+   \begin{figure}[h]
      \centering
      \includegraphics[width=\textwidth]{Figures/Lockdown-Fig1.pdf}
      \caption{The study flowchart indicating the data collection, analysis, modelling, and discussion throughout the study. The subsections in the text to which each box refers are indicated in italics. \label{fig:lockdown-study-framework}}
@@ -283,7 +314,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    According to the highest scored mean value of the dominant sound source type, as shown in \cref{fig:sound-source-dom}, the locations can be grouped into: natural sounds dominated (RegentsParkJapan, RegentsParkFields, RussellSq), human sounds dominated (SanMarco, TateModern, StPaulsRow, StPaulsCross, MonumentoGaribaldi), noise (traffic and other noise) sounds dominated (CamdenTown, EustonTap, TorringtonSq, PancrasLock).
 
-   \begin{figure}
+   \begin{figure}[h]
      \centering
      \includegraphics[width=.8\textwidth]{Figures/Lockdown-Fig2.jpg}
      \caption{Mean values per LocationID for the perceived dominance of the sound source types, for the 2019 on-site campaign. \label{fig:sound-source-dom}}
@@ -300,7 +331,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    The results from the listening tests deployed online were analysed using SPSS Statistics v. 25. Levene's test for equality of variances resulted in highly statistically significant values for all 4 sound sources investigated ($<0.001$). Therefore, a Mann-Whitney U-test was used as a non-parametric equivalent to the t-test to investigate the change in the perceived dominance of the four sound source types \citep{McKnight2010Mann}. The results for human sounds indicated that the perceived dominance was greater for the 2019 sample ($M=3.82$) than for the 2020 sample ($M=2.62, U=41,656, p<0.001$). The results for natural sounds indicated the perceived dominance increased from 2019 ($M=2.00$) to 2020 ($M=2.54, U=63,797, p<0.001$). However, the differences for the noise sources (traffic and other) were not statistically significant.
 
-   \begin{figure}
+   \begin{figure}[h]
      \caption{\label{tab:source-dominance-stats}}
    \end{figure}
 
@@ -311,7 +342,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
    Following the feature selection, the \gls{isopl} model (given in \cref{tab:scaled-model}) has \gls{n5} as the fixed effect with a scaled coefficient of -0.06, and \gls{laeq}, \gls{la10la90}, and \gls{lcla} as coefficients which vary depending on the LocationID. The training and testing \gls{mae} are very similar, indicating that the model is neither over- nor under-fitting to the training data ($MAE_{train}=0.259, MAE_{test}=0.259$). The model performs very well at predicting the average soundscape assessment of the locations ($R^2_{train}=0.998, R^2_{test}=0.85$).
 
   %FIXME: fix layout of model table
-   \begin{table}[ht]
+   \begin{table}[h!]
   \centering
 \caption{Scaled linear regression models of \gls{isopl} and \gls{isoev} for 13 locations in London and Venice. The \gls{isopl} model is a multi-level regression model with one level for individual effects and a second level for LocationID effects, while the \gls{isoev} model is a 'flat' multi-variate linear regression with no location effects. \label{tab:scaled-model}}
 
@@ -389,7 +420,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    The high intraclass correlation ($ICC=0.90$) demonstrates that the location-level effects are highly important in predicting the pleasantness dimension. Within this random-intercept random-slope model structure, these effects include both the specific context of the location (i.e. the LocationID factor), but also the \gls{laeq}, \gls{la10la90}, and \gls{lcla} features whose effects vary across locations. These slopes are given in \cref{fig:pl-slopes}. This point highlights the need to consider how the context of a location will influence the relationship between the acoustic features and the perceived pleasantness.
 
-   \begin{figure}
+   \begin{figure}[h!]
      \caption{Location-level scaled coefficients for the \gls{isopl} model. \label{fig:pl-slopes}}
      \centering
      \includegraphics[width=\textwidth]{Figures/Lockdown Figure4.jpg}
@@ -405,7 +436,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    In 2019 the majority of locations in the dataset fall within the 'vibrant' quadrant of the circumplex, particularly those which are primarily dominated by human activity (e.g. SanMarco, TateModern). CamdenTown and EustonTap, which are both in general visually and acoustically dominated by traffic, are the only two to be rated as 'chaotic', while no locations are overall considered to be 'monotonous'. During the 2020 lockdown, there is a general positive move along the 'pleasant' dimension and a general negative move along the 'eventful' dimension, but several patterns of movement can be noted. These are investigated further in the Discussion section below.
 
-   \begin{figure}
+   \begin{figure}[h!]
      \caption{Soundscape circumplex coordinates for (a) the mean \gls{isopl} and \gls{isoev} responses for each location; and (b) the mean predicted responses based on recordings made during the lockdown and the location's movement in the circumplex. \label{fig:circumplex-locations}}
      \centering
      \includegraphics[width=.75\textwidth]{Figures/Lockdown Figure5.jpg}
@@ -438,7 +469,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
      \item sound source composition.
    \end{enumerate}
 
-   \begin{figure}
+   \begin{figure}[h!]
      \caption{The relative movement of soundscape perception in the circumplex due to the \gls{covid19} lockdowns, represented as vectors centred on the origin. *The lawn-works dominated session is shown separately as MonumentoGaribaldi* with a grey arrow to indicate that this is distinct from the effects of the lockdown changes. \label{fig:circumplex-vectors}}
     \centering
     \includegraphics[width=.75\textwidth]{Figures/Lockdown Figure6.jpg}

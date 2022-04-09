@@ -290,3 +290,5 @@ Chapters/*.aux
 Chapters/__latexindent_temp.tex
 __latexindent_temp.tex
 PhD_Main_Library.bib.sav.tmp
+*.pptx
+Figures/WheelOfSoundscape.png
