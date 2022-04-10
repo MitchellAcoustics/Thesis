@@ -79,12 +79,13 @@
             \vspace*{3cm}
 
             \Huge
-            \textbf{Statistical Modelling of\\Complex Urban Soundscapes}
+            \textbf{Predictive Modelling of\\Complex Urban Soundscapes}
 
             \vspace{0.5cm}
             \LARGE
             % Thesis Subtitle
-            Conceptual developments, tools, and applications
+            % Conceptual developments, tools, and applications
+            Towards a Generalisable and Probabilistic Approach
 
             \vspace{1.5cm}
 
@@ -218,33 +219,23 @@ The statement should describe, in no more than 500 words, how the expertise, kno
 
 \mainmatter
 
-\include{Chapters/Introduction}
+\include{Parts/Introduction.tex}
+\include{Parts/LitReview.tex}
 
-\include{Chapters/LitReview}
+\part{Methodology}
+\include{Parts/PartA/ProtocolChapter.tex}
+\include{Parts/PartA/Methods.tex}
 
-\include{Chapters/ProtocolChapter}
+\part{A novel application of predictive soundscape modelling}
+\include{Parts/PartB/LockdownModelChapter.tex}
 
-\include{Chapters/Methods}
+\part{Towards a Generalisable and Probablistic Soundscape Model}
+\include{Parts/PartC/ModelFramework.tex}
+\include{Parts/PartC/SoundSource.tex}
+\include{Parts/PartC/PersonalFactors.tex}
+\include{Parts/PartC/ProbabilisticPOC.tex}
 
-\include{Chapters/WHOChapter}
-
-% \includepdf[pages={1-8}]{./Papers/Erfanian2021Psychological - Psychological Well Being and Demographic Factors Can Mediate Soundscape Pleasantness and Eventfulness_ a Large Sample Study.pdf}
-
-\include{Chapters/MLMAnnoyance}
-
-\include{Chapters/LockdownModelChapter}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- \include{Chapters/CircumplexChapter.tex}
-
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\include{Chapters/BayesianKeyChapter}
-
- \include{Chapters/Conclusions}
+\include{Parts/Conclusions.tex}
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
