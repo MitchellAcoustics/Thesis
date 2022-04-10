@@ -118,10 +118,51 @@ The detail of the stimuli included in each of the five sets of the test can be f
 
 The dataset resulted in 27 audio recordings of identified sound events with durations ranging between 1.01 and 2.69 s. The calibrated audio files were imported into the ArtemiS Suite software (v. 11.5, Head Acoustics GmbH) and the following psychoacoustic parameters were computed: \emph{loudness, sharpness, roughness, tonality} and \emph{impulsiveness} \cit{11}; values for these parameters are reported in Table \ref{tab:sensor-stimuli}. The rationale for selecting a relatively large set of psychoacoustic metrics is that they are often used as indicators to predict perceptual constructs (such as annoyance) in perceptual studies, as shown in recent soundscape literature \cit{37, 38}. Fluctuation Strength, which could otherwise be included in this list of psychoacoustic parameters, as in Zwicker's annoyance model, was not included as the length of the recordings are too short to obtain a valid value. Loudness was calculated according to the DIN 45631 / A1 standard for time-varying sounds, in a free-field \cit{39}.As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field \cit{39}. With this sharpness method, the absolute loudness of the sound is not accounted for, so there should not be a duplication of information across the loudness and sharpness metrics. Roughness was calculated according to the hearing model by Sottek \cit{40}, with the option to skip the first 0.5 s in order to not distort the single value. Impulsiveness was also calculated according to the hearing model by Sottek, with a 0.5 s skip interval. Finally, tonality was calculated according to ECMA-74 (17th edition), which is based on the hearing model of Sottek, with a frequency range of 20 Hz to 20 kHz \cit{41}.
 
+
 \begin{table}
-  \label{tab:sensor-stimuli}
-  \centering
-  \caption{Psychoacoustic parameters calculated for the 27 stimuli used in the listening experiment.}
+\centering
+\caption{Psychoacoustic parameters calculated for the 27 stimuli used in the listening experiment. \label{tab:sensor-stimuli}}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{ccccccc} 
+\toprule
+\multirow{2}{*}{\textbf{Sensor }} & \multirow{2}{*}{\textbf{Label }} & \multicolumn{5}{c}{\textbf{Psychoacoustic Parameters }} \\ 
+\cline{3-7}
+ &  & \begin{tabular}[c]{@{}c@{}}\textbf{Loudness}\\\textbf{($N_5$ sone)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Sharpness}\\\textbf{(acum)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Roughness}\\\textbf{(asper)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Tonality}\\\textbf{(tuHMS)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Impulsiveness}\\\textbf{(iu)}\end{tabular} \\ 
+\hline
+hb133 & peop & 15.1 & 1.46 & 0.032 & 0.204 & 0.270 \\
+hb133 & door & 16.8 & 1.43 & 0.029 & 0.113 & 0.354 \\
+hb133 & dog & 13.1 & 1.22 & 0.033 & 0.373 & 0.266 \\
+hb133 & brak & 16.0 & 1.76 & 0.030 & 0.326 & 0.241 \\
+hb133 & bird & 12.6 & 1.73 & 0.024 & 0.283 & 0.214 \\
+hb133 & airp & 13.0 & 1.27 & 0.060 & 0.438 & 0.231 \\ 
+\hline
+hb127 & sire & 17.7 & 1.56 & 0.045 & 1.540 & 0.178 \\
+hb127 & peop & 16.1 & 1.62 & 0.035 & 0.410 & 0.417 \\
+hb127 & horn & 18.1 & 1.56 & 0.028 & 0.666 & 0.260 \\
+hb127 & door & 19.8 & 1.72 & 0.037 & 0.037 & 0.479 \\
+hb127 & brak & 19.0 & 1.95 & 0.034 & 0.251 & 0.281 \\ 
+\hline
+hb127 & sire & 20.1 & 1.73 & 0.046 & 1.670 & 0.288 \\
+hb127 & peop & 22.0 & 1.96 & 0.036 & 0.322 & 0.452 \\
+hb127 & horn & 19.9 & 2.16 & 0.034 & 1.290 & 0.336 \\
+hb127 & brak & 21.0 & 1.81 & 0.030 & 1.170 & 0.285 \\
+hb127 & airp & 24.4 & 1.65 & 0.056 & 0.172 & 0.446 \\ 
+\hline
+hb115 & wrks & 20.3 & 1.97 & 0.054 & 0.227 & 0.267 \\
+hb115 & trck & 24.4 & 1.60 & 0.033 & 0.040 & 0.276 \\
+hb115 & sire & 19.5 & 1.46 & 0.054 & 0.861 & 0.333 \\
+hb115 & peop & 25.1 & 1.79 & 0.032 & 0.411 & 0.331 \\
+hb115 & horn & 22.3 & 2.00 & 0.032 & 0.806 & 0.155 \\
+hb115 & door & 26.3 & 1.62 & 0.038 & 0.045 & 0.397 \\
+hb115 & brak & 20.6 & 1.93 & 0.034 & 0.216 & 0.313 \\ 
+\hline
+hb115 & wrks & 24.6 & 1.92 & 0.064 & 0.447 & 0.317 \\
+hb115 & sire & 26.6 & 1.77 & 0.044 & 0.626 & 0.290 \\
+hb115 & horn & 29.5 & 2.35 & 0.039 & 0.486 & 0.262 \\
+hb115 & door & 31.3 & 1.88 & 0.048 & 0.223 & 0.402 \\
+\bottomrule
+\end{tabular}
+}
 \end{table}
 
 \subsection{Multi-Level Linear Regression Modelling}
@@ -161,9 +202,31 @@ The average annoyance score of all users across all stimuli was $M=0.58 (SD=0.05
 The modelling process returned some interesting results about the parameters that have an effect in predicting the individual annoyance scores. In the context of the multi-level linear regression modelling, the included variables were assumed to have an effect at two levels: the first level (i.e. fixed effect(s)), and the second level, where annoyance score intercepts are allowed to vary as a function of users (i.e. the 100 participants), and where each feature of interest is allowed its own coefficient as a function of labels (i.e. the 7 types of sounds). Sharpness came up as the main predictor with a strong statistical significance in the fixed-effect level, as reported in Table \ref{tab:annoyance-model}. This implies that, regardless of any other factors, the sharper the sounds, the more annoying these are perceived to be.
 
 \begin{table}
-  \label{tab:annoyance-model}
-  \centering
-  \caption{Random intercept-random slope multi-level model of psychoacoustic annoyance, accounting for repeated measures (user) and sound source type (label) within the second level. Coefficients and confidence intervals given are for z-scaled data.}
+\centering
+\caption{Random-intercept random-slope multi-level model of psychaocoustic annoyance, accounting for repeated measures (user) and sound source type (label) within the second level. Coefficients and confidence intervals given are for z-scaled data.}
+\label{tab:annoyance-model}
+\begin{tabular}{cccc} 
+\toprule
+ & \multicolumn{3}{c}{\textbf{Annoyance }} \\ 
+\hline
+\textit{Predictors} & \textit{Estimates} & \textit{CI} & \textit{p} \\ 
+\hline
+(Intercept) & 0.02 & -0.13 -- 0.16 & 0.811 \\
+Sharpness & 0.33 & 0.25 -- 0.40 & \textbf{\textless{}0.001} \\ 
+\hline
+\textbf{Random Effects} &  &  &  \\ 
+\hline
+$\sigma^2$ & 0.47 &  &  \\
+$\tau_{00user}$ & 0.28 &  &  \\
+$\tau_{00label}$ & 0.02 &  &  \\
+ICC & 0.39 &  &  \\
+$N_{user}$ & 100 &  &  \\
+$N_{label}$ & 10 &  &  \\ 
+\hline
+Observations & 2700 &  &  \\
+Marginal $R^2$ / Conditional $R^2$ & 0.08 / 0.64 &  &  \\
+\bottomrule
+\end{tabular}
 \end{table}
 
 The second-level effects presented in Figure \ref{fig:annoyance-effects} show that level- and loudness-based acoustic parameters do not play a significant role in predicting annoyance when considering other psychoacoustic factors and specific sound sources. The variables selected by the feature selection algorithm within the type of sound (label) level include: Impulsiveness, Roughness, Tonality, and type of sound are relatively small, while Roughness appears to be more important. For instance, when other effects are controlled, the sound type "horn" seems to be less annoying, the rougher it is; while for the types of sound "bird" and "siren", higher Roughness values will lead to higher annoyance scores. Looking at the model from the point of view of the types of sound, one could observe that "horns" tend to be more annoying than other sounds if they are more impulsive, while "people" or "birds" or "brakes" result in more annoying scores compared to other sounds if their tonal components are more prominent. Overall, for this model, the marginal and conditional $R^2$ values are 0.08 and 0.64, accordingly. Marginal $R^2$ provides the variance explained by the fixed effects only, and conditional $R^2$ provides the variance explained by the whole model, i.e. both fixed effects and second-level effects. Thus, the majority of variance is explained by second-level factors, while a smaller portion (8\%) is covered by Sharpness alone.
