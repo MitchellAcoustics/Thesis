@@ -1,0 +1,70 @@
+\chapter{Introduction}
+\label{ch:intro}
+
+\section{Background}
+Urban noise pollution affects 80 million EU citizens with substantial impacts on public health which are not well addressed by conventional noise control methods. Traditional noise control methods have typically limited their focus to the reduction of unwanted noise, ignoring the potential benefits of increasing positive sounds and remaining restricted by practical limitations of noise reduction. Modern approaches to achieve improved health outcomes and public satisfaction aim to incorporate a person's perception of an acoustic environment, an approach known as `Soundscape'.
+
+The soundscape concept represents a positive approach to understanding society's relationship with urban sound. In particular, it stands in contrast to the negative, reactive approach taken in existing noise control regulations. In a recent editorial, \citet{Axelsson2020Soundscape} stated:
+
+\begin{quote}
+  In practice, noise abatement is a reactive approach to sound. First, a member of the public must submit a complaint to the competent authority, which must verify that the complaint is valid and may then take actions. It is a common view among noise and health inspectors that they have no mandate to act, unless there is a complaint, the validity of which is verified. This makes noise abatement comparable to waste management. Sound is deemed a harmful waste product of human activity that must be removed.
+\end{quote}
+
+By contrast, soundscape studies view sound as a resource which both needs to be appropriately managed, but can also contribute positively. Towards this, soundscape studies strive to understand the perception of a sound environment, in context, including acoustic, (non-acoustic) environmental, contextual, and personal factors. These factors combine together to form a person's soundscape in complex interacting ways \citep{Berglund2006Tool}. In order to predict how people would perceive an acoustic environment, it is essential to identify the underlying acoustic and non-acoustic properties of soundscape.
+
+When attempting to apply soundscape in practical applications in the built environment, it is immediately apparent that a predictive model of the users' perceptual response to the acoustic environment is necessary. Whether to determine the impact of a design change, or to integrate a large scale data at neighbourhood and city levels, a mathematical model of the interacting factors will form a vital component of the implementation of the soundscape approach. 
+%REVIEW: Good up to here
+
+\draft{Need to add a connection here.}
+
+\section{The SSID Project}
+The \gls{ssid} Project is a five-year, multi-disciplinary project funded by a Horizon 2020 European Research Council grant (no. 740696). The stated goals of the \gls{ssid} project \cit{SSID} were to:
+
+\begin{quote}
+\begin{enumerate}
+  \item `characterise soundscapes, by capturing soundscapes and establishing a comprehensive database, which will be a cornerstone for the proposed analysis, and an invaluable resource for scientists for years to come.'
+  \item `determine key factors and their influence on soundscape quality based on the database'
+  \item `develop, test, and validate the soundscape indices, through analysing the influences by various factors, using a number of inter- \& trans-disciplinary approaches.'
+  \item demonstrate the applicability of the soundscapes indices in practice, by establishing frameworks for soundscape prediction, design, and standardisation.'
+\end{enumerate}
+\end{quote}
+
+Although the \gls{ssid} project is broad, including at least eight associated researchers from a wide array of academic backgrounds over its five-year tenure, the work in this thesis will address aspects of all four of its primary goals. \draft{Expand?}
+
+\section{Research Aims \& Questions}
+This work is intended to identify methods for incorporating contextual and objective information into a useable and interpretable predictive model of urban soundscapes and to develop tools for documenting, analysing, and visualising soundscape assessments. In order to achieve this, a protocol for collecting the multi-level, multi-factor perceptual assessment data has been developed and implemented, resulting in a large soundscape database. Several avenues of investigation are then drawn from the database and addressed throughout this thesis. The primary research questions are:
+
+\begin{enumerate}
+  \item What are the non-acoustic, personal factors which influence an individual's perception of the sound environment and to what degree do these factors explain the variance in soundscape assessments? 
+  \item How does the sound source composition in a complex sound environment mediate this interaction and how can this effect be simplified and modelled? \draft{Rephrase}
+  \item What are the primary acoustic features involved in soundscape formation and what are the driving interactions between acoustic features and soundscape assessment?
+  % \item How was the change in urban sound environments as a result of the COVID-19 lockdown reflected in the likely soundscape perception? 
+  \item To what extent can a predictive model be used to investigate changes in likely soundscape perception in situations where the actual soundscape cannot be assessed? 
+  \item How can the inherent variation in soundscape assessments best be represented and in what ways and to what extent can this analysis of soundscapes be applied to address future urban design challenges? 
+  \item What are the design requirements of a predictive model of soundscape assessments and how can future work move towards achieving these?
+\end{enumerate}
+
+Throughout this thesis, a \gls{mlm} approach has been developed and progressively improved. Although the key chapters may make use of separate datasets or be focussed on different aspects of the multi-dimensional perception of urban soundscapes, underlying each of them is an analysis based on \gls{mlm} and a goal towards integrating each of their findings into a final, cohesive model.
+
+\section{Thesis Structure}
+
+This thesis presents the results of several studies which develop the conceptual and statistical frameworks to enable the prediction and presentation of the soundscape analysis of urban spaces. \cref{chap:protocol,ch:whostudy,ch:mlmann,ch:lockdown,ch:circumplex} have all been published in peer-reviewed academic journals. \cref{ch:whostudy,ch:mlmann}, although written in heavy collaboration with coauthors are based primarily on the \gls{mlm} analysis developed in this thesis.
+
+\draft{Need to make the structure clearer.}
+The first study presents a protocol for conducting large-scale soundscape assessments and describes the resulting publicly available database which includes 18 locations in 4 European cities. The second study reviews the current state of research on the relationships between soundscape features and psychophysiological health and presents an initial development of the multilevel modelling approach used throughout the thesis to investigate the influence of psychological wellbeing on soundscape perception.
+
+Studies three and four developed two approaches to incorporating context into a predictive model. The first makes use of sound source information to inform the statistical relationships between psychoacoustic metrics and noise annoyance, demonstrating that loudness is a crucial factor, regardless of the sound type. The second model presents a multilevel model which incorporates contextual information about the location. 
+
+Towards answering these questions, the results of five %TODO: check this number at the end.
+peer-reviewed studies are presented. These studies represent a series of work to
+
+\begin{enumerate}
+  \item Advance the conceptual development and practice of soundscape studies
+  \item Develop a transparent and useful method of predicting soundscape assessments
+  \item Investigate the various components which influence soundscape perception, including personal factors like psychological well-being, acoustical factors, and sound source specifics and to integrate these components into the predictive modelling methods.
+\end{enumerate}
+
+%TODO: Diagram of the structure of the thesis
+\begin{figure}
+  \caption[]{Diagram of the chapter structure of this thesis. \label{fig:thesisStructure}}
+\end{figure}
