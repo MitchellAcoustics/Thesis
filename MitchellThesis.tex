@@ -256,20 +256,22 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
- \backmatter
- % A glossary and list of acronyms may go here
- % or may go in the front matter after the abstract.
- \printglossaries
+% A glossary and list of acronyms may go here
+% or may go in the front matter after the abstract.
+\printglossaries
 
- % The bibliography will go here.
- \bibliography{PhD_Main_Library}
+% The bibliography will go here.
+\bibliography{PhD_Main_Library}
 
-%  \appendix
+ \appendix
 
-\begin{appendices}
+% \begin{appendices}
 
  \chapter{SSID Questionnaire}\label{app:questionnaire}
  \includepdf[pages={1-5}]{./Papers/190411_LondonQuestionnaire_cutdown.pdf}
+
+\chapter{SSID Codebook}\label{app:codebook}
+\includepdf{./Figures/Questionnaire-codebook_V1.pdf}
 
  \chapter{ISO 12913 Part 3 Report of Location Data}\label{app:location-data}
       \includepdf[landscape=true,pages=1-4]{./Papers/SuppPub1-Location-data.pdf}
@@ -278,7 +280,11 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
 
  \include{Chapters/delta.tex}
 
-\end{appendices}
+% \end{appendices}
+
+\backmatter
+
+
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
