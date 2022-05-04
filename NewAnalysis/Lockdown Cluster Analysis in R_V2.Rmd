@@ -1,0 +1,133 @@
+---
+title: "Cluster Analysis in R"
+author: "Andrew Mitchell"
+date: "29/04/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Clustering Analysis Libraries
+
+There are many libraries and functions in R for performing clustering analysis, so why look at these 2? Well, they solve two important challenges with clustering: visualisation and determining the optimal number of clusters.
+
+In general, cluster analysis is an unsupervised machine learning task, meaning we don't predefine a target output for the learning. For clustering, this mainly means that we don't know what the categories will be before we start the analysis. We also don't know how many clusters are present. 
+
+```{r load data, message=FALSE, warning=FALSE, include=TRUE}
+library(here)   # file navigation
+library(readxl)
+library(dplyr)  # Data processing and piping
+library(tidyverse)
+# Clustering libraries
+library(factoextra) # Clustering and visualisation
+library(NbClust)    # Optimal Number of Clusters
+
+# ssid.data <- read_excel(here("Data", "AllLondon_combined-corrected_200421.xlsx"))
+# ssid.data <- read_excel(here("SSID Europe Database v0.5.xlsx"))
+ssid.data <- read_excel("SSID Europe Database v0.5.xlsx")
+
+acoustic_vars <- c("LAeq", "LA10_LA90", "LC_LA", "Ton", "FS", "N5", "S")
+# acoustic_vars <- c("LAeq", "LA_10", "LA_90", "N5", "S")
+
+# Cutdown the dataset
+ssid.data <- ssid.data[c("GroupID", "SessionID", "LocationID", "Lockdown", acoustic_vars)]
+
+ssid.data <- subset(ssid.data, Lockdown != 1)
+ssid.data <- subset(ssid.data, SessionID != "MonumentoGaribaldi2")
+ssid.data <- subset(ssid.data, !(LocationID %in% c("CarloV", "PlazaBibRambla", "CampoPrincipe", "MiradorSanNicolas", "Noorderplantsoen")))
+
+
+# Set GroupID, SessionID, Location as factor type
+ssid.data <- ssid.data %>% mutate_at(vars(GroupID, SessionID, LocationID),
+                                     funs(as.factor))
+ssid.data <- ssid.data %>% mutate_at(vars(acoustic_vars),
+                                     funs(as.numeric))
+
+# Calculate the mean response for each GroupID
+# ssid.data <- ssid.data %>%
+#     group_by(GroupID) %>%
+#     summarize(LAeq = mean(LAeq, na.rm=TRUE),
+#               LA10_LA90 = mean(LA10_LA90, na.rm=TRUE),
+#               LC_LA = mean(LC_LA, na.rm=TRUE),
+#               # LA_10 = mean(LA_10, na.rm=TRUE),
+#               # LA_90 = mean(LA_90, na.rm=TRUE),
+#               Ton = mean(Ton, na.rm = TRUE),
+#               FS = mean(FS, na.rm=TRUE),
+#               N5 = mean(N5, na.rm=TRUE),
+#               S = mean(S, na.rm=TRUE),
+#               LocationID = LocationID[1])
+
+# analysis.data$LocationID <- unique(ssid.data[c('GroupID', 'LocationID')])['LocationID']
+ssid.data <- na.omit(ssid.data)
+
+# Standardise the values
+ssid.data <- ssid.data %>%
+    mutate_at(acoustic_vars, ~(scale(.) %>% as.vector))
+
+ssid.data <- ssid.data %>%
+    mutate(LocationID = fct_recode(LocationID,
+                                   "CAM" = "CamdenTown",
+                                   "EUS" = "EustonTap",
+                                   "MAR" = "MarchmontGarden",
+                                   "PAN" = "PancrasLock",
+                                   "RPF" = "RegentsParkFields",
+                                   "RPJ" = "RegentsParkJapan",
+                                   "RUS" = "RussellSq",
+                                   "SPC" = "StPaulsCross",
+                                   "SPR" = "StPaulsRow",
+                                   "TAT" = "TateModern",
+                                   "TOR" = "TorringtonSq",
+                                   "VenMON" = "MonumentoGaribaldi",
+                                   "VenPSM" = "SanMarco"))
+
+head(ssid.data)
+
+```
+
+
+## Calculate the mean value for each Location
+
+```{r}
+means <- aggregate(ssid.data[c(acoustic_vars)], by=list(ssid.data$LocationID), FUN=mean, na.rm=TRUE)
+means <- data.frame(means[, -1], row.names = means[, 1])
+
+means
+```
+
+## Clustering Analysis
+
+
+```{r}
+set.seed(123)
+k = 3
+k.fit <- kmeans(means, centers=k, algorithm="Hartigan-Wong")
+print(k.fit)
+fviz_cluster(k.fit, means, repel=TRUE, ggtheme = theme_bw())
+fviz_nbclust(means, hcut, method="wss", ggtheme = theme_bw())
+
+```
+
+
+```{r}
+res.pca <- prcomp(means)
+fviz_pca_biplot(res.pca)+
+  theme_minimal() +
+  coord_cartesian(xlim = c(-2.5, 2.5), ylim = c(-2.5, 2.5))
+
+```
+
+
+
+The features will be ranked from most important to least, with most on top of the figure.
+
+```{r, message=FALSE, warning=FALSE, }
+library(FeatureImpCluster)
+library(flexclust)
+# res <- kcca(means,k=3)
+k.fit.kcca <- flexclust::as.kcca(k.fit, means) # cl is a kcca or pam object
+f <- FeatureImpCluster(k.fit.kcca,as.data.table(means))
+# f <- FeatureImpCluster(res,as.data.table(means))
+plot(f)
+```

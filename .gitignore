@@ -292,3 +292,7 @@ __latexindent_temp.tex
 PhD_Main_Library.bib.sav.tmp
 *.pptx
 Figures/WheelOfSoundscape.png
+*.docx
+NewAnalysis/SSID Lockdown Database VL0.2.2.xlsx
+.gitignore
+NewAnalysis/SSID Europe Database v0.5.xlsx

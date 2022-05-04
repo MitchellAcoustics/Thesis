@@ -15,6 +15,8 @@
 \usepackage{ebgaramond}
 \usepackage{rotating}
 \usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \usepackage{nth}
 \usepackage[page,title,titletoc]{appendix}
@@ -28,6 +30,9 @@
 % \usepackage{makecell}
 \usepackage{booktabs}
 \usepackage{tabularx}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\itshape}
 
 % glossary
 \usepackage[xindy]{glossaries} 
@@ -147,48 +152,63 @@ People to thank:
 
 \chapter*{List of Studies}
 
-This doctoral thesis is based on the following studies:
+This doctoral thesis is composed of the following peer-reviewed articles (in order of appearance):
 
 \paragraph*{}
-\textbf{Mitchell, A.}, Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., \& Kang, J. (2020) The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information. \emph{Applied Sciences, 10} (7), 2397. \url{https://doi.org/10.3390/app10072397}
+\textbf{Mitchell, A.}, Oberman, T., Aletta, F., Erfanian, M., Kachlicka, M., Lionello, M., \& Kang, J. (2020) The Soundscape Indices (SSID) Protocol: A Method for Urban Soundscape Surveys -- Questionnaires with Acoustical and Contextual Information. \emph{Applied Sciences, 10} (7), 2397. MDPI AG. \url{https://doi.org/10.3390/app10072397}
 
 \paragraph*{}
-Erfanian, M., \textbf{Mitchell, A. J.}, Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. \url{https://doi.org/10.3390/ijerph16193533}
+\textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2022). How to analyse and represent quantitative soundscape data. \emph{JASA Express Letters 2}, 037201. \url{https://doi.org/10.1121/10.0009794}.
+
 
 \paragraph*{}
-Erfanian, M., \textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2020). Psychological Well-being and Demographic Factors can Mediate Soundscape Pleasantness and Eventfulness: A large sample study. \emph{Environmental Psychology}. \url{https://doi.org/10.1016/j.jenvp.2021.101660}
+Aletta, F., Oberman, T., \textbf{Mitchell, A.}, Tong, H., \& Kang, J. (2020). Assessing the changing urban sound environment during the COVID-19 lockdown period using short-term acoustic measurements. \emph{Noise Mapping}.
+
+\paragraph*{}
+\textbf{Mitchell, A.}, Oberman, T., Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Investigating Urban Soundscapes of the COVID-19 Lockdown: A predictive soundscape modelling approach. \emph{The Journal of the Acoustical Society of America 150} 4474-4488. \url{https://doi.org/10.1121/10.0008928}
 
 \paragraph*{}
 Orga, F., \textbf{Mitchell, A.}\footnote{Joint first author}, Freixes, M., Aletta, F., Alsina-Pagès, R. M., \& Foraster, M. (2021). Multilevel Annoyance Modelling of Short Environmental Sound Recordings. \emph{Sustainability, 13}(11), Article 11. \url{https://doi.org/10.3390/su13115779}
 
 \paragraph*{}
-\textbf{Mitchell, A.}, Oberman, T., Kachlicka, M., Aletta, F., Lionello, M., Erfanian, M., \& Kang, J. (2021). Investigating Urban Soundscapes of the COVID-19 Lockdown: A predictive soundscape modelling approach. \emph{JASA}.
-
-% \paragraph*{}
-% \textbf{Mitchell, A.}, Soelitsyo, C., Erfanian, M., Xue, J-H., Oberman, T., Kang, J., \& Aletta, F. (2021). A Temporal Convolutional Neural Network for Multi-label Sound Recognition and Annoyance Detection of Complex Soundscapes. \emph{IEEE}.
-
-\paragraph*{}
-\textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2022). How to analyse and represent quantitative soundscape data. \emph{JASA Express Letters, 2}(13):037201.
-
-
+Erfanian, M., \textbf{Mitchell, A.}, Aletta, F., \& Kang, J. (2021). Psychological Well-being and Demographic Factors can Mediate Soundscape Pleasantness and Eventfulness: A large sample study. \emph{Environmental Psychology}. \url{https://doi.org/10.1016/j.jenvp.2021.101660}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 The following studies are related works which influenced this thesis and were completed as part of the same work but have not been included as key components:
 
-% \paragraph*{}
-% Kang, J., Aletta, F., Oberman, T., \textbf{Mitchell, A}., Erfanian, M., Tong, H., Torresin, S., Xu, C., Yang, T. (2021). Supportive Soundscapes are Crucial for Sustainable Cities and Communities. \emph{Nature Sustainability}.
+\paragraph*{}
+Kang, J., Aletta, F., Oberman, T., Erfanian., M., Kachlicka, M., Lionello, M., \& \textbf{Mitchell, A.} (2019). Towards soundscape indices. In: \emph{Proceedings of the 23rd International Congress on Acoustics: integrating 4th EAA Euroregio 2019: 9-13 September 2019 in Aachen, Germany.} (pp. pp. 2488-2495). International Congress on Acoustics: Berlin, Germany. \url{http://dx.doi.org/10.18154/RWTH-CONV-239249}
 
-\paragraph*{}Lionello, M., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2020). Introducing a Method for Intervals Correction on Multiple Likert Scales: A Case Study on an Urban Soundscape Data Collection Instrument. \emph{frontiers in Psychology}.
+\paragraph*{}
+Aletta, F., Oberman, T., \textbf{Mitchell, A.}, Erfanian, M., Lionello, M., Kachlicka, M., \& Kang, J. (2019). Associations between soundscape experience and self-reported wellbeing in open public urban spaces: A field study. \emph{The Lancet, 394}, S17. \url{https://10.1016/s0140-6736(19)32814-4}.
 
-\paragraph*{}Aletta, F., Oberman, T., \textbf{Mitchell, A.}, Tong, H., \& Kang, J. (2020). Assessing the changing urban sound environment during the COVID-19 lockdown period using short-term acoustic measurements. \emph{Noise Mapping}.
+\paragraph*{}
+\textbf{Mitchell, A.} \& Kang, J. (2019). The spectral structure of acoustic time series can predict the perceptual assessment of urban soundscapes. In \emph{The Journal of the Acoustical Society of America, 146}, 2795. \url{https://doi.org/10.1121/1.5136681}
 
-\paragraph*{}Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberman, T., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2021). The "sound of silence" in Granada during the COVID-19 lockdown. \emph{Noise Mapping, 8}(1), 16--31. \url{https://doi.org/10.1515/noise-2021-0002} 
+\paragraph*{}
+Erfanian, M., \textbf{Mitchell, A. J.}, Kang, J., \& Aletta, F. (2019). The Psychophysiological Implications of Soundscape: A Systematic Review of Empirical Literature and a Research Agenda. \emph{International Journal of Environmental Research and Public Health, 16(19)}, 3533. \url{https://doi.org/10.3390/ijerph16193533}
 
+\paragraph*{}
+Lionello, M., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2020). Introducing a Method for Intervals Correction on Multiple Likert Scales: A Case Study on an Urban Soundscape Data Collection Instrument. \emph{Frontiers in Psychology}.
 
+\paragraph*{}Tong, H., Aletta, F., \textbf{Mitchell, A.}, Oberman, T., \& Kang, J. (2021). Increases in noise complaints during the COVID-19 lockdown in Spring 2020: A case study in Greater London, UK. \emph{Science of the Total Environment}.
 
-% \paragraph*{}Tong, H., Aletta, F., \textbf{Mitchell, A.}, Oberman, T., \& Kang, J. (2021). Increases in noise complaints during the COVID-19 lockdown in Spring 2020: A case study in Greater London, UK. \emph{Science of the Total Environment}.
+\paragraph*{}
+Vida, J., Almagro, J. A., García-Quesada, R., Aletta, F., Oberman, T., \textbf{Mitchell, A.}, \& Kang, J. (2021). Urban Soundscape Assessment by Visually Impaired People: First Methodological Approach in Granada (Spain). \emph{Sustainability, 13}(24), 13867. MDPI AG. \url{http://dx.doi.org/10.3390/su132413867}
+
+\paragraph*{}
+Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberman, T., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2021). The ``sound of silence" in Granada during the COVID-19 lockdown. \emph{Noise Mapping, 8}(1), 16--31. \url{https://doi.org/10.1515/noise-2021-0002} 
+
+\paragraph*{}Tong, H., Aletta, F., \textbf{Mitchell, A.}, Oberman, T., \& Kang, J. (2021). Increases in noise complaints during the COVID-19 lockdown in Spring 2020: A case study in Greater London, UK. \emph{Science of the Total Environment}.
+
+\includepdf{Forms/Mitchell2020 Declaration-form_published-work-in-thesis.pdf}
+\includepdf{Forms/Mitchell2021 Declaration-form_published-work-in-thesis.pdf}
+\includepdf{Forms/Aletta2020 Declaration-form_published-work-in-thesis.pdf}
+\includepdf{Forms/Mitchell2022 Declaration-form_published-work-in-thesis.pdf}
+\includepdf{Forms/Orga2021 Declaration-form_published-work-in-thesis.pdf}
+\includepdf{Forms/Erfanian2020 Declaration-form_published-work-in-thesis.pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -224,6 +244,10 @@ In particular, this final point has had an impact on the structure and content o
 \include{Parts/LitReview.tex}
 
 \part{Methodology}
+\section*{Introduction}
+
+\draft{Explaing what data is needed. How my method section is different from other theses.}
+
 \include{Parts/PartA/ProtocolChapter.tex}
 \include{Parts/PartA/Methods.tex}
 
