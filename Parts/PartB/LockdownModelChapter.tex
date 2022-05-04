@@ -21,22 +21,22 @@
  
  \citet{Munoz2020Lockdown} combined noise measurements with an online questionnaire deployed to residents, some of which were residing in the areas covered by the noise monitoring network available. The participants were asked to recall how their lockdown area sounded before and during the first lockdown in 2020 and to describe the perceived change. They observed a consistent reduction in levels, followed by the perceived reduction of transport sounds (air and road) and an increase of natural sounds, while the resulting environment was described as pleasant, calm, and peaceful. By combining field recordings and focus groups, \citet{Sakagami2020How} and \citet{Lenzi2021Soundscape} observed changes in the sound source composition and the affective quality of soundscape in a residential area in Kobe, Japan and a public space in Getxa, Spain, respectively, during the different stages of the lockdown period. Following the easing of lockdown measures, a decrease in animal and traffic sounds was observed in Kobe, while an increase in eventfulness, loudness, and presence of human sound sources, followed by a decrease in pleasantness, was shown in Getxa.
 
- \subsection{The impacts of the lockdown in London}
+ \subsection{The impacts of the lockdown in London and Venice}
  \label{sec:LondonLockdown}
- \citet{Aletta2020Assessing}\footnote{\cref{sec:LondonLockdown} reproduces my contribution to \citep{Aletta2020Assessing}, examining the impact of the \gls{covid19} lockdown in London on the sound environment through \emph{in-situ} binaural recordings. The data examined in this paper forms the majority of the dataset used for the modelling describing in this chapter. There are slight differences in the psychoacoustic analyses used in these two papers.} explored the impacts of the \gls{covid19} lockdowns on the acoustic environment in London in particular, through many short-term (30s) binaural recordings and presented an important early analysis of the changes in acoustic features during the lockdown. %The data from this study form the basis for the modelling presented in this chapter; the results and analysis of \citep{Aletta2020Assessing} were performed by the author of this thesis and are reviewed in depth. 
+ \citet{Aletta2020Assessing}\footnote{\cref{sec:LondonLockdown} reproduces my contribution to \citep{Aletta2020Assessing}, examining the impact of the \gls{covid19} lockdown in London on the sound environment through \emph{in-situ} binaural recordings. The data examined in this paper forms the majority of the dataset used for the modelling describing in this chapter. There are slight differences in the psychoacoustic analyses used in this paper from what is presented in this chapter.} explored the impacts of the \gls{covid19} lockdowns on the acoustic environment in London in particular, through many short-term (30s) binaural recordings and presented an important early analysis of the changes in acoustic features during the lockdown. %The data from this study form the basis for the modelling presented in this chapter; the results and analysis of \citep{Aletta2020Assessing} were performed by the author of this thesis and are reviewed in depth. 
 
  The lockdown measures implemented in the UK to contain the spread of the SARS-CoV-2 virus were not particularly strict if compared with other countries. In general, lockdown measures involved `staying at home' recommendations, social distancing, stopping non-essential commercial activities, banning public gatherings, limiting traffic mobility and alike. Specifically, the UK Government passed the Health Protection (Coronavirus, Restrictions) (England) Regulations 2020, which were put into place at 1:00 pm on \nth{26} March 2020 \citep{PHE2020Health}. Under these restrictions, the public were only allowed to leave their homes once per day for essential activities and exercise. All officers and shops selling non-essential goods were told to close, gatherings of more than two people in public were banned, and individuals were advised to only interact with members of their own household. These restrictions were set to be reviewed by the Secretary of State at least once every 21 days and would continue indefinitely until they were no longer necessary to prevent the spread of infection in England. In practice the lockdown continued through the spring of 2020 and was first partially eased on the \nth{1} of June, with school children in England returning to school, but the broader lockdown continued throughout the summer \citep{Tong2021Increases}. During this period of lockdown, noise complaints increased by 48\% compared to the same period during the preceding year, with an immediate uptick seen once lockdown measures were implemented. \cref{fig:noiseComplaints} shows the timeline of these restrictions and the accompanying noise complaints received by 22 boroughs in London \citep{Tong2021Increases}.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/LockdownNoiseComplaints-TimeSeriesPlot_3.png}
-  \caption{Time series of the number of noise complaints received in the first half year of 2019 and 2020. A 7-day rolling average window is applied to account for weekly patterns in noise complaint reporting. Source: \citep{Tong2021Increases}. \label{fig:noiseComplaints}}
+  \caption{Time series of the number of noise complaints received in the first half year of 2019 and 2020. A 7-day rolling average window is applied to account for weekly patterns in noise complaint reporting. \label{fig:noiseComplaints}}
 \end{figure}
 
- Taking advantage of short-term acoustic measurements carried out in 2019 which formed the \gls{isd}, before the implementation of the lockdown measures related to \gls{covid19}, a number of urban locations were selected in London where data were available and measurements were performed again according to the same protocols to assess the extent of sound level variation achieved at each site. 
+ Taking advantage of short-term acoustic measurements carried out in 2019 which formed the \gls{isd}, before the implementation of the lockdown measures related to \gls{covid19}, a number of urban locations were selected in London and Venice where data were available and measurements were performed again according to the same protocols to assess the extent of sound level variation achieved at each site. 
 
  \paragraph*{Data analysis}
- From the binaural recording datasets (both the 2019 and 2020 series), the following acoustic parameters were computed for the left and right channels and the arithmetic average was presented: \gls{laeq}, \gls{la10}, \gls{la90}. There is still no clear consensus on how to merge binaural psychoacoustic readings into single values; in the case presented in \citet{Aletta2020Assessing} an arithmetic average level was deemed to be acceptable as the interaural level difference was typically very small (less than 1 dB) \citep{Kang2018model}.
+ From the binaural recording datasets (both the 2019 and 2020 series), the following acoustic parameters were computed for the left and right channels and the maximum value of the two channels was presented: \gls{laeq}, \gls{la10}, \gls{la90}. There is still no clear consensus on how to merge binaural psychoacoustic readings into single values; in the case presented in \citet{Aletta2020Assessing} an arithmetic average level was deemed to be acceptable as the interaural level difference was typically very small (less than 1 dB) \citep{Kang2018model}.
 
  The same procedure was followed for the psychoacoustic metrics of Loudness (\gls{n5}, sone) and Sharpness (\gls{s}, acum). All parameters were computed using the ArtemiS Suite software (v11.5, HEAD acoustics GmbH). Loudness was calculated according to the ISO 532-1 standard for time-varying sounds, in a free-field, with the remaining analysis options left to their default \citep{ISO532Part1}. As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field, with the remaining analysis options left to their default \citep{DIN2009measurement}. It was decided to include psychoacoustic parameters as they can often provide more nuances about the perception of the acoustic environment by people, as well as offer more insights into spectral features that could reflect changes in sound sources \citep{Genuit2006Psychoacoustics,Yang2013Psychoacoustical}. Considering the necessity of keeping the computational time limited in this initial study, Loudness and Sharpness were selected because they have been reported to provide a sensible representation of perceptual aspects \citep{AlsinaPages2019Noise}.
 
@@ -44,7 +44,7 @@
   %TODO: Redo these figures in python using ISD
    \centering
    \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 1.png}   
-   \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. Source: \citep{Aletta2020Assessing} \label{fig:NsMapLockLAeq}}
+   \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. \label{fig:NsMapLockLAeq}}
 
    
   \end{figure}
@@ -54,7 +54,7 @@
 \begin{figure}[h]
   \centering
   \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 4.png}
-  \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. Source: \citep{Aletta2020Assessing} \label{fig:NsMapLockN5}}
+  \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
 
 \end{figure}
 
@@ -63,7 +63,7 @@
 \begin{figure}[h]
   \centering
   \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 5.png}
-  \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. Source: \citep{Aletta2020Assessing} \label{fig:NsMapLockS}}
+  \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
 
 \end{figure}
 
@@ -76,7 +76,7 @@ In addition to strictly documenting the changes in the sound environment in Lond
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}  
-  \caption{`Scree' plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an `elbow' can be identified for a three-cluster solution. Source: \citep{Aletta2020Assessing} \label{fig:NsMapLockScree}}
+  \caption{`Scree' plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an `elbow' can be identified for a three-cluster solution. \label{fig:NsMapLockScree}}
 \end{figure}
 
 \cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \citep{deCoensel2006quiet,Aletta2017Dimensions}. 
@@ -84,7 +84,7 @@ In addition to strictly documenting the changes in the sound environment in Lond
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 7.png}  
-  \caption{Bi-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic-dominated Areas. Source: \citep{Aletta2020Assessing} \label{fig:NsMapLockBiplot}}
+  \caption{Bi-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic-dominated Areas. \label{fig:NsMapLockBiplot}}
 \end{figure}
 
 \cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patterns with information about dominant sound sources as derived from data from \citet{Mitchell2020Soundscape}, the three clusters could be labelled as: \emph{Traffic-dominated areas} (locations: Camden Town, Euston Tap), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields). Traffic-dominated areas are on major roads, where traffic noise is the dominant sound source. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
@@ -122,7 +122,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
-  \caption{Reproduced with permission from \citet{Aletta2020Assessing}. Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
+  \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
 \end{figure}
 
 
