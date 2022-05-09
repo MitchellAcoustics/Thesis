@@ -260,6 +260,12 @@ Being able to predict noise annoyance from recorded sounds is particularly helpf
 
 %TODO: Add a more indepth discussion and add a limitation  section to lead into DeLTA
 
+\subsection{Incorporating into the general model}
+Incorporating information about the sound source can greatly improve the prediction of perceived annoyance. The modelling structure used in this chapter effectively created separate, sound-source-dependent models of psychoacoustic annoyance, in contrast to the general annoyance model developed by \citet{PsychoacousticsfactsmodelsZwicker}. Each sound source (traffic, horns, people, etc.) has its own linear combination of psychoacoustic values to demonstrate how the semantic meaning which the listener assigns to a sound mitigates the perceptual mapping from physical inputs to perceptual outcomes. Incorporating this information, such that this semantic meaning influences the outcome of the ideal predictive model, is crucial. What is less clear is 1) how to deal with complex scenes where multiple overlapping sound sources are present and how to integrate this into the model; and 2) how this process can be automated, with minimal manual input from the model's users. %TODO: Expand on sound source inclusion
+
+Given the somewhat unexpected result from this study that demographic factors had little difference on annoyance ratings, the next chapter will further investigate the influence of personal factors on soundscape perception making use of the larger and more diverse dataset from the \gls{isd}.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %DONE: Restructure the Conclusion and Incorporating sections to be more cohesive with the rest of Part C
@@ -276,7 +282,3 @@ In this chapter, an online listening experiment was conducted with 100 participa
 %DONE: need ot rephrase this
 % Taken together, the results of this study encourage us to continue our research work at all the stages described in this paper. The improvement of real-time algorithms to automatically detect the predefined sound sources under study is the first stage to gathering the most relevant samples in all and each of the sensors of a \gls{wasn}. The application of the annoyance modelling can give the \gls{wasn} a dimension without precedent: the availability of the objective acoustic measurements conducted by the sensors, and the estimation of annoyance in a real-time evaluation by means of the model. We can start to think about a dynamic annoyance map, which could be more far-reaching than a dynamic noise map.
 
-\subsection{Incorporating into the general model}
-Incorporating information about the sound source can greatly improve the prediction of perceived annoyance. The modelling structure used in this chapter effectively created separate, sound-source-dependent models of psychoacoustic annoyance, in contrast to the general annoyance model developed by \citet{PsychoacousticsfactsmodelsZwicker}. Each sound source (traffic, horns, people, etc.) has its own linear combination of psychoacoustic values to demonstrate how the semantic meaning which the listener assigns to a sound mitigates the perceptual mapping from physical inputs to perceptual outcomes. Incorporating this information, such that this semantic meaning influences the outcome of the ideal predictive model, is crucial. What is less clear is 1) how to deal with complex scenes where multiple overlapping sound sources are present and how to integrate this into the model; and 2) how this process can be automated, with minimal manual input from the model's users. %TODO: Expand on sound source inclusion
-
-Given the somewhat unexpected result from this study that demographic factors had little difference on annoyance ratings, the next chapter will further investigate the influence of personal factors on soundscape perception making use of the larger and more diverse dataset from the \gls{isd}.

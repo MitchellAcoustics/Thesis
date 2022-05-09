@@ -2,9 +2,7 @@
 \label{ch:whostudy}
 \draft{The orange highlighted sections are those which I am potentially concerned about being too similar to Mercede's work or weren't sections I wrote in the original paper. I would highly prefer to be able to leave them in as is, and I'm hoping the context and footnotes provided are enough to make this possible.}
 
-\section{Introduction}
-
-\copied{Understanding of soundscape perception is intimately tied to certain key factors known as primary factors of soundscape perception comprising acoustic properties (physical features) of the sound such as frequency/pitch \citep{Kumar2008Mapping} and intensity/loudness \citep{Kaya2020Pitch} and secondary influences like emotions and personality traits \citep{McDermott2012Auditory,Erfanian2019Psychophysiological}. There are understudied secondary factors that may be linked to the perception of the acoustic environment, such as psychological well-being \citep{Aletta2019Associations}.}
+% \copied{Understanding of soundscape perception is intimately tied to certain key factors known as primary factors of soundscape perception comprising acoustic properties (physical features) of the sound such as frequency/pitch \citep{Kumar2008Mapping} and intensity/loudness \citep{Kaya2020Pitch} and secondary influences like emotions and personality traits \citep{McDermott2012Auditory,Erfanian2019Psychophysiological}. There are understudied secondary factors that may be linked to the perception of the acoustic environment, such as psychological well-being \citep{Aletta2019Associations}.}
 
 Soundscape studies aim to consider the holistic human perception of a sound environment, including both the physical phenomena and how these are mediated by internal factors. Within the context of the predictive modelling strategy presented in this thesis, the inclusion of personal factors presents a particular challenge. The primary factors have been addressed by the models presented in \cref{ch:lockdown,ch:mlmann}. The first step to exploring how we might account for the influence of personal factors is to establish which factors have the most influence and to what extent they can mitigate soundscape perception. Towards this, a first study was conducted on an early subset of the \gls{isd} data, making use of the demographic information (age, gender, educational status, ethnicity, and occupational status) and the psychological well-being included in the \gls{ssid} questionnaire.
 
@@ -13,13 +11,22 @@ The initial draft of the text of this study was written by the first author, Mer
 
 % \copied{The perception of the acoustic environment involves the sensation, identification, organisation, and interpretation of ongoing omnipresent auditory information \citep{Goldstein2014}. Soundscape perception does not always maintain consistency and shows a huge variation across individuals and, on a general scale, among populations \citep{Schneider2009Neural,Weinstein1978Individual}. There is evidence to suggest that the differences in the demographic characteristics like gender \citep{Gulian1986effects,Xiao2019Investigation}, age, and educational background \citep{Zhang2007Towards} may determine the way we perceive environmental sounds. Additionally, these individual differences can potentially reflect in various perceptual properties, implying the difference between the encoding of certain auditory information between individuals such as pitch \citep{Coffey2016Individual} or loudness \citep{Berthomieu2021Does}. However, the results from past studies have, for a good part, remained inconclusive or incosistent.}
 
-\subsection{The current study}
+\section{Introduction}
 
-\copied{Whilst previous research has substantially advanced our knowledge of the soundscape determinants, past results are predominantly limited, often focussing on controlled laboratory-based experiments, individuals with psychopathology (i.e. depression) and investigating simple tones rather than complex sounds \citep{Laufer2016Behavioral,Riskind2014Influence}. In addition, the impact of psychological well-being in the context of soundsape, by its current definition, has still largely been unexplored. So, my first aim is to understand if high levels of psychological well-being are associated with increased soundscape pleasantness and eventfulness. }
+Whilst advancements have been made in understanding soundscape determinants, there is a lack of consensus in the literature about the impact of demographic factors on soundscape perception. Additionally, much work in this area relies on limited case studies \citep{Fang2021Soundscape,Ismail2014Sound,Yang2005Soundscape}. There is also a parallel set of literature examining the effect of psychological well-being on sound perception. However, as previous research in this area has typically focused on simple tones rather than complex sounds \citep{Laufer2016Behavioral,Riskind2014Influence}, controlled laboratory-based experiments, or subsets of individuals, the extent to which psychological well-being affects soundscape remains under-researched. Therefore, this study has two aims:
 
-\copied{The second aim of the study was to determine the associations between soundscape perception and demographic factors, given there was insufficient consensus in the literature, and studies were restricted to limited case studies (i.e. Peace Gardens in Sheffield, UK) or a single ethnicity (i.e. Chinese) \citep{Fang2021Soundscape,Ismail2014Sound,Yang2005Soundscape}. I asked if age, gender, ethnicity, education level, and occupation status are associated with changes in the perceived soundscape pleasantness and eventfulness.}
+\begin{enumerate}
+  \item to determine the associations between soundscape perception and demographic factors (i.e. age, gender, ethnicity, education level, occupation status);
+  \item  to understand whether high levels of psychological well-being are associated with increased soundscape pleasantness and eventfulness
+\end{enumerate}
 
-\copied{In this large-scale study, I explore the association of psychological well-being and demographic factors with soundscape perception among the members of the public with presumably no apparent psycholpathology in an immersive environment with diverse demographic characteristics such as ethnicity (i.e. American, Italian) and occupation status (i.e. student, retired).}
+To achieve this we explore the association between personal factors (including psychological well-being and demographics) and the soundscape perception using the \emph{in-situ} data collected in the \gls{isd}. In keeping with the methodology used throughout this thesis, this was investigated through a \gls{mlm}, which incorporates the LocationID as a proxy for contextual information in order to demonstrate what degree of explanatory power these personal factors may have for a predictive model. Finally, I discuss how these results should be considered in the context of my expanded predictive model and what methods may be used to include them as predictors.
+
+% \copied{Whilst previous research has substantially advanced our knowledge of the soundscape determinants, past results are predominantly limited, often focussing on controlled laboratory-based experiments, individuals with psychopathology (i.e. depression) and investigating simple tones rather than complex sounds \citep{Laufer2016Behavioral,Riskind2014Influence}. In addition, the impact of psychological well-being in the context of soundsape, by its current definition, has still largely been unexplored. So, my first aim is to understand if high levels of psychological well-being are associated with increased soundscape pleasantness and eventfulness. }
+
+% \copied{The second aim of the study was to determine the associations between soundscape perception and demographic factors, given there was insufficient consensus in the literature, and studies were restricted to limited case studies (i.e. Peace Gardens in Sheffield, UK) or a single ethnicity (i.e. Chinese) \citep{Fang2021Soundscape,Ismail2014Sound,Yang2005Soundscape}. I asked if age, gender, ethnicity, education level, and occupation status are associated with changes in the perceived soundscape pleasantness and eventfulness.}
+
+% \copied{In this large-scale study, I explore the association of psychological well-being and demographic factors with soundscape perception among the members of the public with presumably no apparent psycholpathology in an immersive environment with diverse demographic characteristics such as ethnicity (i.e. American, Italian) and occupation status (i.e. student, retired).}
 
 % \section*{Context}
 
@@ -104,10 +111,13 @@ This chapter made use of a subset of data from the \gls{isd}. This study was con
 \end{table}
 
 \subsubsection*{Psychological well-being/WHO-5 well-being index}
-\footnote{This section was provided by Ms Erfanian and has been reproduced verbatim from the published paper \citep{Erfanian2021Psychological}.}
-\copied{The \glsfirst{who5} asks how individuals have been feeling over the last two weeks such as `I have felt cheerful and in good spirits'. The \gls{who5} has been designed for multiple research and clinical purposes, covering a wide range of mental health domains, namely perinatal mental health, geriatrics mental health, endocrinology, clinical psychometrics, and psychiatric disorders screening.}
+The \glsfirst{who5} is a validated metric used to quantify general well-being. It is measured by asking how individuals have been feeling over the last two weeks through a series of questions such as `I have felt cheerful and in good spirits'. The \gls{who5} has been designed for multiple research and clinical purposes, covering a wide range of mental health domains, namely perinatal mental health, geriatrics mental health, endocrinology, clinical, psychometrics, and psychiatric screening.
 
-\copied{The \gls{who5} is known to be one of the most valid generic scales for quantification of general well-being. In terms of the construct validity of the scale, \gls{who5} shoed to have properties that are a coherent measure of well-being \citep{Topp2015WHO}. With regards to relevant literature, \gls{who5} confirmed that all items constitute an integrated scale in which items add up related information about the level of general pscyhological well-being among both youngsters and elderlies \citep{Blom2012Screening,LucasCarrasco2012Validity}. For the purpose of analysis, a composite \gls{who5} score is calculated by summing the responses to each of the 5 questions (coded from 0 (for `at no time') to 5 (for `all of the time')), then multiplying by 4 to get a single score which ranges from 0 (the lowest level of well-being) to 100 ( the highest level of well-being) \citep{Topp2015WHO}.}
+The \gls{who5} has been shown to be a coherent measure of well-being, with good validity \citep{Topp2015WHO}. For the purpose of analysis, a composite \gls{who5} score is calculated by summing the responses to each of the 5 questions (coded from 0 [for `at no time'] to 5 [for `all of the time']), then multiplying by 4 to get a single score which ranges from 0 (the lowest level of well-being) to 100 (the highest level of well-being) \citep{Topp2015WHO}. \citet{Blom2012Screening,LucasCarrasco2012Validity} have confirmed that the \gls{who5} items constitute an integrated scale in which items add up related information about the level of general psychological well-being among both young people and the elderly. 
+
+% \copied{The \glsfirst{who5} asks how individuals have been feeling over the last two weeks such as `I have felt cheerful and in good spirits'. The \gls{who5} has been designed for multiple research and clinical purposes, covering a wide range of mental health domains, namely perinatal mental health, geriatrics mental health, endocrinology, clinical psychometrics, and psychiatric disorders screening.}
+
+% \copied{The \gls{who5} is known to be one of the most valid generic scales for quantification of general well-being. In terms of the construct validity of the scale, \gls{who5} shoed to have properties that are a coherent measure of well-being \citep{Topp2015WHO}. With regards to relevant literature, \gls{who5} confirmed that all items constitute an integrated scale in which items add up related information about the level of general pscyhological well-being among both youngsters and elderlies \citep{Blom2012Screening,LucasCarrasco2012Validity}. For the purpose of analysis, a composite \gls{who5} score is calculated by summing the responses to each of the 5 questions (coded from 0 (for `at no time') to 5 (for `all of the time')), then multiplying by 4 to get a single score which ranges from 0 (the lowest level of well-being) to 100 ( the highest level of well-being) \citep{Topp2015WHO}.}
 
 \subsubsection*{Demographic characteristics}
 \copied{Demographic characteristics were presented such as age, gender (male, female), education level (some high school, high school, trade/technical/vocational training, university, and postgraduate), occupational status (employed, unemployed, retired, student, employed-student, other, and rather not say), and ethnicity (Asian, Black/Caribbean, Middle Eastern, White, and Mixed). Some blank spaces were provided if the participant wished to add further information. At the end of the survey, participants had the opportunity to write down any additional questions or remarks and were thanked for their participation.}
@@ -165,23 +175,25 @@ The model fitting and feature selection was performed using `lme4' (version 1.1)
 
 \subsection{Correlations}
 
+\cref{tab:whoCorr} presents a matrix of the Pearson correlation coefficients for the features of interest. 
+
 \copied{The correlation matrix for all study measures is demonstrated in \cref{tab:whoCorr}. Age was negatively correlated with eventfulness, whereas it was positively correlated with pleasantness. Gender appeared to be independent of eventfulness but positively correlated with pleasantness. Education was positively correlated with both pleasantness and eventfulness. Whilst psychological well-being exhibited positive and statistically significant correlations with pleasantness, it was negatively correlated with eventfulness. It is worth noting that occupation is significantly correlated with all other independent variables considered in the study and highly correlated with age, although it is not significantly correlated with either of the dependent variables. }
 
 \begin{table}[!h]
   %FIXME: I think these correlations are from an earlier version of the paper which used the Lionello scaling
   \centering
   \caption{Correlation coefficients for study variables. **$p<0.005$, *$p>0.05$\label{tab:whoCorr}}
-  \begin{tabular}{@{}l|llllll@{}}
+  \begin{tabular}{@{}l|lllllll@{}}
     \toprule
-    Factors     & Age              & Education       & Ethnicity       & Gender         & WHO-5            & ISOPleasant      \\ \midrule
-    Age         &                  &                 &                 &                &                  &                  \\
-    Education   & 0.32             &                 &                 &                &                  &                  \\
-    Ethnicity   & 0.23             & 0.04            &                 &                &                  &                  \\
-    Gender      & \textbf{-0.11**} & 0.05            & 0.08*           &                &                  &                  \\
-    Occupation  & \textbf{0.71**}  & \textbf{0.19**} & \textbf{0.13**} & \textbf{0.1**} &                  &                  \\
-    WHO-5       & \textbf{0.12**}  & 0.1             & \textbf{0.1*}   & 0.02           &                  &                  \\
-    ISOPleasant & \textbf{0.12**}  & \textbf{0.11**} & 0.09            & \textbf{0.06*} & \textbf{-0.12**} &                  \\
-    ISOEventful & \textbf{-0.11**} & \textbf{0.1**}  & 0.08            & 0.05           & \textbf{0.14**}  & \textbf{-0.91**} \\ \bottomrule
+    Factors     & Age              & Education       & Ethnicity       & Gender         & Occupation & WHO-5            & ISOPleasant      \\ \midrule
+    Age         &                  &                 &                 &                &            &                  &                  \\
+    Education   & 0.32             &                 &                 &                &            &                  &                  \\
+    Ethnicity   & 0.23             & 0.04            &                 &                &            &                  &                  \\
+    Gender      & \textbf{-0.1**}  & 0.05            & \textbf{0.08*}  &                &            &                  &                  \\
+    Occupation  & \textbf{0.71**}  & \textbf{0.19**} & \textbf{0.13**} & \textbf{0.1*}  &            &                  &                  \\
+    WHO-5       & \textbf{0.12**}  & 0.1             & \textbf{0.1*}   & 0.02           & 0.16       &                  &                  \\
+    ISOPleasant & \textbf{0.13**}  & \textbf{0.12**} & 0.11            & \textbf{0.07*} & 0.16       & \textbf{0.14**}  &                  \\
+    ISOEventful & \textbf{-0.08**} & 0.08            & 0.07            & 0.05           & 0.12       & 0.00             & \textbf{-0.24**}  \\ \bottomrule
   \end{tabular}
 \end{table}
 
@@ -189,48 +201,42 @@ The model fitting and feature selection was performed using `lme4' (version 1.1)
 \label{sec:whoLMERinit}
 The linear mixed-effects regression derived regularised models of the soundscape pleasantness and eventfulness. This model was then reduced via backward stepwise feature selection. \cref{tab:whoLMER} presents the \gls{isopl} and \gls{isoev} models, including non-standardised and standardised estimate values and \glspl{ci} for the selected features that survived from the initial model. After the feature selection, age, education, and ethnicity were not found to be significant features in either the \gls{isopl} or \gls{isoev} models. It should be noted, however, that the presence of one feature (e.g. occupation) which is highly correlated with another (e.g. age and gender) may cause one of the features to not meet the threshold of significance when both are included, causing it to be removed during the stepwise feature selection. Nonetheless, it may be that, in a final model which included either of these features (but not both), they would each be considered significant. In this way, even though occupation was selected during this process, age may also have been considered significant, when not considering occupation. This behaviour is explored in more detail later.
 
-\afterpage{
-  \begin{landscape}
-    \begin{table}[hp]
-      \centering
-      \caption{Fixed and random effects in a linear mixed model explaining variations in \gls{isopl} and \gls{isoev} while controlling for psychological well-being and demographic factors. The standardised estimates are calculated by refitting the model on standardised data scaled by subtracting the mean and dividing by 1 SD, allowing a comparison of all features. **$p<0.005$, *$p>0.05$  \label{tab:whoLMER}}
-      % \resizebox{\textwidth}{!}{%
+% \usepackage{graphicx}
+% \usepackage{booktabs}
 
-      \begin{tabular}{@{}lcccccc@{}}
-        \toprule
-                           & \multicolumn{3}{c|}{\textbf{ISOPleasant}} & \multicolumn{3}{c}{\textbf{ISOEventful}}                                                                                                      \\
-        \midrule
-        \textbf{Predictor} & \textbf{Estimates}                        & \textbf{Std. Est.}                       & \multicolumn{1}{c|}{\textbf{95\% CI}} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
-        WHO-5              & 0.001**                                   & \textbf{0.03}                            & \multicolumn{1}{c|}{0.01, 0.05}       & 0.001              & 0.01               & -0.02, 0.04      \\
-        Gender (male)      & -                                         & -                                        & \multicolumn{1}{c|}{-}                & \textbf{-0.08*}    & \textbf{-0.04}     & -0.07, -0.00     \\
-        Occupation %
-        (Rather not say)   & -0.19*                                    & \textbf{-0.19}                           & \multicolumn{1}{c|}{-0.36, -0.02}     & \textbf{0.7**}     & \textbf{0.02}      & -0.13, 0.17      \\
-        Occupation %
-        (Retired)          & 0.1**                                     & 0.10                                     & \multicolumn{1}{c|}{0.03, 0.18}       & \textbf{-0.18**}   & \textbf{-0.11}     & -0.18, -0.04     \\
-        Occupation %
-        (Unemployed)       & 0.01                                      & 0.01                                     & \multicolumn{1}{c|}{-0.13, 0.14}      & \textbf{0.01**}    & \textbf{0.18}      & 0.06, 0.3        \\
-        WHO-5 x Gender %
-        (male)             & -                                         & -                                        & \multicolumn{1}{c|}{-}                & \textbf{-0.001*}   & \textbf{-0.04}     & -0.07, -0.00     \\
-        WHO-5 x Occupation %
-        (Rather not say)   & -                                         & -                                        & \multicolumn{1}{c|}{-}                & \textbf{-0.01**}   & \textbf{-0.21}     & -0.33, -0.09     \\
-        \midrule
-        \multicolumn{7}{l}{\textbf{Random Effects}}                                                                                                                                                                    \\
-        \midrule
-        $\sigma^2$         & \multicolumn{3}{l|}{0.11}                 & \multicolumn{3}{l}{0.08}                                                                                                                      \\
-        $\tau_{00}$        & \multicolumn{3}{l|}{0.06$_{Location}$}    & \multicolumn{3}{l}{0.01$_{Location}$}                                                                                                         \\
-        ICC                & \multicolumn{3}{l|}{0.35}                 & \multicolumn{3}{l}{0.15}                                                                                                                      \\
-        N                  & \multicolumn{3}{l|}{11}                   & \multicolumn{3}{l}{11}                                                                                                                        \\
-        \midrule
-        Observations       & \multicolumn{3}{l|}{1134}                 & \multicolumn{3}{l}{1134}                                                                                                                      \\
-        Marginal $R^2$/%
-        Conditional $R^2$  & \multicolumn{3}{l|}{0.014 / 0.354}        & \multicolumn{3}{l}{0.039 / 0.181}                                                                                                             \\
-        AIC                & \multicolumn{3}{l|}{779.125}              & \multicolumn{3}{l}{451.351}                                                                                                                   \\
-        \bottomrule
-      \end{tabular}
-      % }
-    \end{table}
-  \end{landscape}
+
+\begin{table}
+\centering
+\caption{Fixed and random effects in a linear mixed model explaining variations in \gls{isopl} and \gls{isoev} while controlling for psychological well-being and demographic factors. The standardised estimates are calculated by refitting the model on standardised data scaled by subtracting the mean and dividing by 1 SD, allowing a comparison of all features. **$p<0.005$, *$p>0.05$  \label{tab:whoLMER}}
+\label{tab:whoLMER}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc|ccc} 
+\toprule
+ & \multicolumn{3}{c|}{\textbf{ISOPleasant}} & \multicolumn{3}{c}{\textbf{ISOEventful}} \\ 
+\midrule
+\textbf{Predictor} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
+WHO-5 & 0.001** & \textbf{0.03} & 0.01, 0.05 & 0.001 & 0.01 & -0.02, 0.04 \\
+Gender (male) & - & - & - & \textbf{-0.08*} & \textbf{-0.04} & -0.07, -0.00 \\
+Occupation         (Rather not say) & -0.19* & \textbf{-0.19} & -0.36, -0.02 & \textbf{0.7**} & \textbf{0.02} & -0.13, 0.17 \\
+Occupation         (Retired) & 0.1** & 0.10 & 0.03, 0.18 & \textbf{-0.18**} & \textbf{-0.11} & -0.18, -0.04 \\
+Occupation         (Unemployed) & 0.01 & 0.01 & -0.13, 0.14 & \textbf{0.01**} & \textbf{0.18} & 0.06, 0.3 \\
+WHO-5 x Gender         (male) & - & - & - & \textbf{-0.001*} & \textbf{-0.04} & -0.07, -0.00 \\
+WHO-5 x Occupation         (Rather not say) & - & - & - & \textbf{-0.01**} & \textbf{-0.21} & -0.33, -0.09 \\ 
+\midrule
+\multicolumn{7}{l}{\textbf{Random Effects}} \\ 
+\midrule
+$\sigma^2$ & \multicolumn{3}{l|}{0.11} & \multicolumn{3}{l}{0.08} \\
+$\tau_00$ & \multicolumn{3}{l|}{0.06$_{Location}$} & \multicolumn{3}{l}{0.01$_{Location}$} \\
+ICC & \multicolumn{3}{l|}{0.35} & \multicolumn{3}{l}{0.15} \\
+N & \multicolumn{3}{l|}{11} & \multicolumn{3}{l}{11} \\ 
+\midrule
+Observations & \multicolumn{3}{l|}{1134} & \multicolumn{3}{l}{1134} \\
+Marginal $R^2$/ Conditional $R^2$ & \multicolumn{3}{l|}{0.014 / 0.354} & \multicolumn{3}{l}{0.039 / 0.181} \\
+AIC & \multicolumn{3}{l|}{779.125} & \multicolumn{3}{l}{451.351} \\
+\bottomrule
+\end{tabular}
 }
+\end{table}
 
 \subsubsection*{Psychological well-being and its association with pleasantness and eventfulness}
 
@@ -245,11 +251,11 @@ The marginal and conditional $R^2$ values are given for each model in \cref{tab:
   \centering
 
   \begin{minipage}{.5\textwidth}
-    \includegraphics[width=\linewidth]{Figures/whoRandPl.jpg}
+    \includegraphics[width=\linewidth]{Figures/whoRandPlNew.png}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Figures/whoRandEv.jpg}
+    \includegraphics[width=\linewidth]{Figures/whoRandEvNew.png}
   \end{minipage}
   \caption{The summary result demonstrated in the random-effects figures gives the average from the distribution of \gls{isopl} across locations.\label{fig:whoRand}}
 
@@ -257,42 +263,42 @@ The marginal and conditional $R^2$ values are given for each model in \cref{tab:
 
 
 \subsubsection*{Occupation status}
-According to my findings, occupation status, in particular `retirement' and to a lesser degree, gender (male) were important factors in the pattern of soundscape assessments. It is worthwhile to highlight that `retirement' factor could potentially be a proxy for age (>65) and gender (male). In order to further investigate the effect which the inclusion of occupational status had on the model building process, I re-ran the stepwise feature selection, this time without including occupation status in the initial model. This allowed me to determine whether other features (namely age and gender) would be finally selected and how they would interact within the model. The results of this process are given in \cref{tab:whoLMER2}.
+According to my findings, occupation status, in particular `retirement' and to a lesser degree, gender (male) were important factors in the pattern of soundscape assessments. It is worthwhile to highlight that `retirement' factor could potentially be a proxy for age (>65) and gender (male). In order to further investigate the effect which the inclusion of occupational status had on the model building process, I re-ran the stepwise feature selection, this time without including occupation status in the initial model. This allowed me to determine whether other features (namely age and gender) would be finally selected and how they would interact within the model. The results of this process are given in \cref{tab:whoLMER2}. \draft{Cont.}
 
-%  \afterpage{
-\begin{landscape}
-  \begin{table}[hp]
-    \centering
-    \caption{Linear mixed effects model resulting from the feature selection process when the initial model does not include occupational status. **$p<0.01$, *$p>0.05$  \label{tab:whoLMER2}}
-    % \resizebox{\textwidth}{!}{%
+% \usepackage{graphicx}
+% \usepackage{booktabs}
 
-    \begin{tabular}{@{}lcccccc@{}}
-      \toprule
-                         & \multicolumn{3}{c|}{\textbf{ISOPleasant}} & \multicolumn{3}{c}{\textbf{ISOEventful}}                                                                                                      \\
-      \midrule
-      \textbf{Predictor} & \textbf{Estimates}                        & \textbf{Std. Est.}                       & \multicolumn{1}{c|}{\textbf{95\% CI}} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
-      WHO-5              & 0.001**                                   & \textbf{0.03}                            & \multicolumn{1}{c|}{0.01, 0.05}       & -                  & -                  & -                \\
-      Age                & \textbf{0.001*}                           & \textbf{0.02}                            & \multicolumn{1}{c|}{0.001, 0.04}      & \textbf{-0.001**}  & \textbf{-0.03}     & -0.05, -0.01     \\
-      Gender (male)      & -                                         & -                                        & \multicolumn{1}{c|}{-}                & \textbf{-0.04*}    & \textbf{-0.04}     & -0.07, -0.001    \\
-      Ethnicity          & -                                         & -                                        & \multicolumn{1}{c|}{-}                & \textbf{-0.09**}   & \textbf{-0.09}     & 0.03, 0.14       \\
-      \midrule
-      \multicolumn{7}{l}{\textbf{Random Effects}}                                                                                                                                                                    \\
-      \midrule
-      $\sigma^2$         & \multicolumn{3}{l|}{0.11}                 & \multicolumn{3}{l}{0.08}                                                                                                                      \\
-      $\tau_{00}$        & \multicolumn{3}{l|}{0.06$_{Location}$}    & \multicolumn{3}{l}{0.01$_{Location}$}                                                                                                         \\
-      ICC                & \multicolumn{3}{l|}{0.34}                 & \multicolumn{3}{l}{0.14}                                                                                                                      \\
-      N                  & \multicolumn{3}{l|}{11}                   & \multicolumn{3}{l}{11}                                                                                                                        \\
-      \midrule
-      Observations       & \multicolumn{3}{l|}{1134}                 & \multicolumn{3}{l}{1134}                                                                                                                      \\
-      Marginal $R^2$/%
-      Conditional $R^2$  & \multicolumn{3}{l|}{0.009 / 0.345}        & \multicolumn{3}{l}{0.023 / 0.165}                                                                                                             \\
-      AIC                & \multicolumn{3}{l|}{778.271}              & \multicolumn{3}{l}{456.130}                                                                                                                   \\
-      \bottomrule
-    \end{tabular}
-    % }
-  \end{table}
-\end{landscape}
-% }
+
+\begin{table}
+\centering
+\caption{Linear mixed effects model resulting from the feature selection process when the initial model does not include occupational status. **$p<0.01$, *$p>0.05$  \label{tab:whoLMER2}}
+\label{tab:whoLMER2}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc|ccc} 
+\toprule
+ & \multicolumn{3}{c|}{\textbf{ISOPleasant}} & \multicolumn{3}{c}{\textbf{ISOEventful}} \\ 
+\midrule
+\textbf{Predictor} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} & \textbf{Estimates} & \textbf{Std. Est.} & \textbf{95\% CI} \\
+WHO-5 & 0.001** & \textbf{0.03} & 0.01, 0.05 & - & - & - \\
+Age & \textbf{0.001*} & \textbf{0.02} & 0.001, 0.04 & \textbf{-0.001**} & \textbf{-0.03} & -0.05, -0.01 \\
+Gender (male) & - & - & - & \textbf{-0.04*} & \textbf{-0.04} & -0.07, -0.001 \\
+Ethnicity & - & - & - & \textbf{-0.09**} & \textbf{-0.09} & 0.03, 0.14 \\ 
+\midrule
+\multicolumn{7}{l}{\textbf{Random Effects}} \\ 
+\midrule
+$\sigma^2$ & \multicolumn{3}{l|}{0.11} & \multicolumn{3}{l}{0.08} \\
+$\tau_00$ & \multicolumn{3}{l|}{0.06$_{Location}$} & \multicolumn{3}{l}{0.01$_{Location}$} \\
+ICC & \multicolumn{3}{l|}{0.34} & \multicolumn{3}{l}{0.14} \\
+N & \multicolumn{3}{l|}{11} & \multicolumn{3}{l}{11} \\ 
+\midrule
+Observations & \multicolumn{3}{l|}{1134} & \multicolumn{3}{l}{1134} \\
+Marginal/Conditional $R^2$ & \multicolumn{3}{l|}{0.009 / 0.345} & \multicolumn{3}{l}{0.023 / 0.165} \\
+AIC & \multicolumn{3}{l|}{778.271} & \multicolumn{3}{l}{456.130} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
 
 Age (\gls{isopl}: $\beta=0.02, p=0.05$; \gls{isoev}: $\beta=-0.03, p=0.01$) and gender (\gls{isoev}: $\beta=-0.04, p=0.05$) then came out as significant, as shown in \cref{tab:whoLMER2}. This would indicate that occupation status, particularly `retirement', represents a group of older male individuals. Even though incorporation of occupation into the model complicates the interpretation of the outcome, it results in a slightly better fitting model ($R^2_c$ for \gls{isopl} (0.354) and \gls{isoev} (0.181)) relative to 0.345 for \gls{isopl} and 0.165 for \gls{isoev} in the model without occupation status, which is why it is selected by the feature selection process. These findings are in line with previous research, suggesting significant differences among age groups in the soundscape of different acoustic environments \citep{Ren2016Soundscape,Yang2005Acoustic}. My findings imply that an increase in age leads to an increase in the positive appraisal of the soundscape pleasantness. This is supported by a study by \citet{Aydin2016Assessment} in which they found that soundscape pleasantness reported by young individuals was significantly lower than the other age groups.
 
@@ -303,7 +309,6 @@ Like age, gender was found to be associated with the soundscape eventfulness. Pa
 In order to further investigate the effect which the inclusion of occupational status had on the model building process, I re-ran the stepwise feature selection, this time without including occupation status in the initial model. This allowed me to determine whether other features (namely age and gender) would be finally selected and how they would interact within the model. The results of this process are given in \cref{tab:whoLMER2}.
 
 
-
 \subsubsection*{Soundscape pleasantness and eventfulness differences among locations}
 
 The pleasantness and eventfulness were significantly different among locations. Pleasantness appeared to be highest in locations dominated by nature sounds (i.e. Regents Park Japan). In agreement with my results, \citet{Payne2013production} referred to the pleasantness dimension of the soundscape as the positive perception of natural places as well as the restorative capacity of the soundscape. \citet{Zhang2014Research} also reported a significant impact of natural soundscape on individuals' restorative experiences and boosting pleasantness. In the study by \citet{Axelsson2010principal} participants reported that the sound excerpts of natural components are more pleasant than human and technical sounds. Unlike pleasantness, the eventfulness increased the most in locations with dominant traffic and other sounds (i.e. Euston Tap). These findings are supported by previous research done by \citet{Bradley2000Emotion} and \citet{Hume2013Physiological}. In both studies, unnatural and urban sound-clips (i.e. fire engine siren and traffic noise), inherent in the traffic-dominant locations in this chapter, were rated highest in arousal and lowest in the pleasantness dimension. As formerly mentioned by \citet{Erfanian2019Psychophysiological}, throughout the soundscape literature, arousal has been applied as the equivalent of eventfulness and indicated on the Y-axis of the circumplex model \citep{Axelsson2010principal,Erfanian2019Psychophysiological}.
@@ -312,17 +317,13 @@ The pleasantness and eventfulness were significantly different among locations. 
 These results insinuate the notion that there are multiple primary factors \citep{Bradley2000Emotion} that contribute to the perception of the acoustic environment which should be considered important by urban designers and policymakers. It is expected that understanding these factors will provide multidimensional knowledge in guiding the implementation of the technological infrastructure of smart cities.
 
 \section{Discussion}
-\copied{For this chapter, data of 1134 participants across 11 locations in London were included in the analysis.} The goal of this chapter was to determine to what extent secondary factors mediate soundscape perception, and to highlight which of these secondary factors are important to consider. 
+The goal of this chapter was to determine to what extent secondary factors mediate soundscape perception, and to highlight which of these secondary factors are important to consider. 
 
 As expected, the majority of the total variance in the perceptual ratings is explained by the location-level differences (i.e. overall sound level) which represent primary contributing factors to the acoustic environment (see \citep{McDermott2012Auditory}) and other non-acoustic factors. Approximately 3\% of the variance is then explained by the combination of personal factors, which represent secondary contributing factors as defined by McDermott. Although the variance explained by these secondary factors is small compared to the primary factors, they are still found to contribute significantly. Furthermore an additional 3 percentage points of explained variance would represent a meaningful improvement in the performance of predictive soundscape models based on in-situ measurements of varying soundscape types \citep{Lionello2020systematic} and should therefore be considered when constructing these models.
 
+% \copied{My initial assumption was that an increased level of psychological well-being is associated with increased pleasantness and eventfulness assessments of the soundscape. Although the results showed that psychological well-being was positively associated with pleasantness, it was negatively associated with eventfulness in males and individuals that did not report their occupation.}
 
-
-\copied{My initial assumption was that an increased level of psychological well-being is associated with increased pleasantness and eventfulness assessments of the soundscape. Although the results showed that psychological well-being was positively associated with pleasantness, it was negatively associated with eventfulness in males and individuals that did not report their occupation.}
-
-\copied{Then I hypothesized that differences in soundscape assessments are associated with demographic features. The results suport this hypothesis to a certain degree. Occupation and gender appeared to be strong demographic factors influencing the pleasantness and eventfulness assessment. Retirement as occupation status showed to be positively attribute to pleasantness and negatively to the eventfulness assessment. Further investigation revealed that the occupation (no occupation reported) was negatively associated with pleasantness and gender (male) was negatively associated with eventfulness, whereas unemployment was positively associated with eventfulness.}
-
-
+% \copied{Then I hypothesized that differences in soundscape assessments are associated with demographic features. The results suport this hypothesis to a certain degree. Occupation and gender appeared to be strong demographic factors influencing the pleasantness and eventfulness assessment. Retirement as occupation status showed to be positively attribute to pleasantness and negatively to the eventfulness assessment. Further investigation revealed that the occupation (no occupation reported) was negatively associated with pleasantness and gender (male) was negatively associated with eventfulness, whereas unemployment was positively associated with eventfulness.}
 
 \subsection{Incorporating personal factors}
 Although, as \citet{Droumeva2021sound} points out, each individual brings their own cultural and subjective aspects of listening to the stage of urban sound, when attempting to characterise the soundscape of a space, it is not a particular individual's aspects we should be concerned with. That individual forms a part of the collective perception of the space. Their cultural and subjective (i.e. personal) aspects mitigate their perception, but this perception then forms only a single component of the collective perception. How then should we consider these personal factors? Surely there is no suggestion to disregard their influence and importance within the soundscape approach? In my view, there are two approaches:
@@ -336,13 +337,17 @@ Let's look at how these two approaches would be implemented into the multilevel 
 
 %TODO: Expand
 \subsubsection{Approach 1}
-In the first, the demographic breakdown of the space under investigation is estimated, either through a census or by the designers' desired use case. This demographic breakdown can then be compared to the results presented above \citep{Erfanian2021Psychological} to derive weighting factors which adjust the predicted soundscape assessment. For instance, the results suggest that retired persons perceive the soundscape as \draft{XX\% or amount [need to check with results]} less pleasant than others. If the particular space under investigation has a large proportion of retired persons, say 65\% we could then apply an adjustment to the initial personal-factors-agnostic prediction to reflect this tendency. In this example, an initial location-level \gls{isopl} prediction of 0.36, with a 65\% retired population would be corrected by \draft{-XX [0.65 x result]} for a final demographics-corrected \gls{isopl} prediction of \draft{XX}.
+In the first, the demographic breakdown of the space under investigation is estimated, either through a census or by the designers' desired use case. This demographic breakdown can then be compared to the results presented above \citep{Erfanian2021Psychological} to derive weighting factors which adjust the predicted soundscape assessment. For instance, the results suggest that retired persons perceive the soundscape as 0.01 points more pleasant than others. If the particular space under investigation has a large proportion of retired persons, say 65\% we could then apply an adjustment to the initial personal-factors-agnostic prediction to reflect this tendency. In this example, an initial location-level \gls{isopl} prediction of 0.36, with a 65\% retired population would be corrected by 0.0065 (0.65 x 0.01) for a final demographics-corrected \gls{isopl} prediction of 0.3665.
 
 \subsubsection{Approach 2}
+In the second approach, rather than performing an overall estimation of the demographics and soundscape perception distribution, individual responses (with their own probability estimation) are modelled. To illustrate this, let's assume that the modelling is performed for a 30 second section of audio; for a given day, we would then model a single response to each 30s audio, where the individual response, including adjustments for that individual's demographic features would be modelled. For any given individual, their likely demographic profile would be randomly drawn from the estimated demographic breakdown of the space -- i.e. if the space is expected to have 40\% men and 60\% women, there would be a 40\% chance that the individual modelled for a randomly selected 30s audio is a man and the appropriate feature coefficients would be used. The multiple individual responses are then summed to give the overall distribution of responses. Again, the general demographics of the space would need to be estimated in order to ensure that a reasonable distribution is used. This is a more direct implementation of the modelling presented in this chapter, directly using the models derived in this chapter, as opposed to deriving weighting factors as in approach 1.
 
-\subsubsection{Benefits and downsides of each approach}
+\subsubsection{Benefits and downsides}
+Without knowing the implementation of a final model (i.e. exactly how the input data is measured and fed through the system and the structure of the model), it is difficult to know which approach would be more or less difficult to implement. Assuming a system which generates a predicted distribution of responses for each 30s recording, it seems likely that both approaches would be equally simple to implement. However, approach 2 seems to offer one useful advantage; by applying the demographic corrections to each individual response prediction, it would be easier to appropriately include estimates for intra-correlated demographic characteristics. For instance, as illustrated in \cref{tab:whoLMER}, the \gls{isoev} has an interaction factor for psychological well-being (\gls{who5}) and gender (Male), so the proper breakdown both of the gender distribution and of the psychological well-being within the genders would be required. This seems much better suited to approach 2, where any individual's full personal profile could be created based on the factors which are likely to appear together (e.g. high psychological well-being and retired may be more prevalent in men than women and this would need to be reflected in the demographic statistics). 
+
+On the other hand, again depending on the particular implementation of the final model, approach 1 would seem to be easier to exclude personal factors. As noted in \cref{sec:modelConstraints}, a robust model should allow us to define `optional' factors - ones which can be excluded from the model. Given their low impact and difficulty to estimate, personal and demographic factors will likely not always be available to include. If they are incorporated by applying weighting factors to the model predictions, then excluding them is as simple as not adding these weighting factors. 
 
 \section{Conclusion}
-\draft{Rewrite to put in context of the predictive model framework}
-In this chapter, I conducted a linear mixed-effects model to show the associations of psychological well-being and demographic factors with the soundscape pleasantness and eventfulness. The findings indicate that psychological well-being is positively associated with pleasantness and negatively associated with eventfulness in males and individuals that did not report their occupations. I further demonstrated that the occupational status, in particular retirement as a proxy of age and gender, was related to the perceptions of pleasantness and eventfulness. In total, these personal factors were shown to account for 1.4\% of the variance for pleasantness and 3.9\% of the variance for eventfulness. The findings of this chapter offer empirical grounds for developing and advancing theories on the influence of psychological well-being and demographic characteristics on the perception of the acoustic environment.
+In this chapter, I conducted a linear mixed-effects model to show the associations of psychological well-being and demographic factors with soundscape pleasantness and eventfulness. The findings indicate that psychological well-being is positively associated with pleasantness and negatively associated with eventfulness in males and individuals that did not report their occupations. I further demonstrated that the occupational status, in particular retirement as a proxy of age and gender, was related to the perceptions of pleasantness and eventfulness. In total, these personal factors were shown to account for 1.4\% of the variance for pleasantness and 3.9\% of the variance for eventfulness. 
 
+I then offer a series of proposals for how these personal factors can be included in a predictive modelling framework to enable soundscape predictions to account for differences in demographic patterns. At some point, it seems necessary that a truly holistic approach to soundscape design will need to account for these differences, particularly as we begin to make better comparisons across countries and cultures. However, given the level of uncertainty still present in soundscape predictions and the relatively low explanatory demonstrated for these demographic features, at this point it does not appear that further exploring personal factors in a predictive modelling context is the most necessary step. Other, more impactful features such as including sound sources and visual features, are more important for creating accurate and useful predictive models. That said, the inclusion of psychological well-being (as measured by \gls{who5}) does provide new empirical grounds for research to explore the influence of one's psychological state on their perception and experience of complex sound environments.
