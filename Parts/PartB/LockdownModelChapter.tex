@@ -1,31 +1,29 @@
 \chapter{Investigating Urban Soundscapes of the COVID-19 Lockdown: A predictive soundscape modelling approach}
 \label{ch:lockdown}
 
-\section{Introduction}
-\label{sec:intro}
- The unprecedented lockdowns due to COVID-19 in spring 2020 triggered changes in human activities in public spaces. I developed a predictive modelling approach to characterise the resulting change in the perception of the sound environment in a scenario where people could not be surveyed. Building on the \gls{isd} dataset of soundscape questionnaires ($N = 1,136$) and binaural recordings ($N = 687$) collected in 13 locations across London and Venice during 2019, new recordings ($N = 571$) were made in the same locations during the 2020 lockdowns. Using these 30-second-long recordings, linear multi-level models were developed to predict the soundscape pleasantness ($R^2=0.85$) and eventfulness ($R^2=0.715$) during the lockdown and compare the changes for each location. The performance was above average for comparable models. An online listening study also investigated the change in sound sources within the spaces. Results indicate:
+The engineering soundscape approach developed in this thesis strives to make certain applications of soundscape possible. As highlighted earlier, one of these applications is the ability to assess the soundscape perception in situations where surveys are impractical as well as to be able to track changes in the soundscape of public spaces. This chapter therefore presents a unique application of predictive modelling towards these goals as well as the development of the predictive modelling method itself. First, I will review the identified impacts of the \gls{covid19} lockdowns on the sound environment in cities around the world, investigates these changes in detail within London and Venice, and finally presents the impact of these changes on the likely perception of the soundscape of public spaces through the results of the predictive model. 
 
- \begin{enumerate}
-   \item human sounds were less dominant and natural sounds more dominant across all locations;
-   \item contextual, location-based information is important for predicting pleasantness but not for eventfulness;
-   \item in general, perception shifted towards less eventful soundscapes and to more pleasant soundscapes for previously traffic-dominated locations, but not for human- and natural-dominated locations.
- \end{enumerate}
+% \section{Introduction}
+% \label{sec:intro}
+%  The unprecedented lockdowns due to COVID-19 in spring 2020 triggered changes in human activities in public spaces. I developed a predictive modelling approach to characterise the resulting change in the perception of the sound environment in a scenario where people could not be surveyed. Building on the \gls{isd} dataset of soundscape questionnaires ($N = 1,136$) and binaural recordings ($N = 687$) collected in 13 locations across London and Venice during 2019, new recordings ($N = 571$) were made in the same locations during the 2020 lockdowns. Using these 30-second-long recordings, linear multi-level models were developed to predict the soundscape pleasantness ($R^2=0.85$) and eventfulness ($R^2=0.715$) during the lockdown and compare the changes for each location. The performance was above average for comparable models. An online listening study also investigated the change in sound sources within the spaces. Results indicate:
 
- I will first review the sound environment impacts of the \gls{covid19} lockdowns. Then, I will detail the additional data collection, analysis, and model building process. Finally, the results of the model will be presented, with a focus on interpreting the predicted changes in the soundscape perception of these spaces. This study demonstrates the usefulness of predictive modelling and the importance of considering contextual information when discussing the impact of sound level reductions on the soundscape.
+%  \begin{enumerate}
+%    \item human sounds were less dominant and natural sounds more dominant across all locations;
+%    \item contextual, location-based information is important for predicting pleasantness but not for eventfulness;
+%    \item in general, perception shifted towards less eventful soundscapes and to more pleasant soundscapes for previously traffic-dominated locations, but not for human- and natural-dominated locations.
+%  \end{enumerate}
+
+%  I will first review the sound environment impacts of the \gls{covid19} lockdowns. Then, I will detail the additional data collection, analysis, and model building process. Finally, the results of the model will be presented, with a focus on interpreting the predicted changes in the soundscape perception of these spaces. This study demonstrates the usefulness of predictive modelling and the importance of considering contextual information when discussing the impact of sound level reductions on the soundscape.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Review of the impacts of COVID-19}
  \label{sec:covidReview}
  The global emergency caused by \gls{covid19} in early 2020 required national lockdown measures across the world, primarily targeting human activity. In the United Kingdom, construction and transport were allowed to continue, but a decrease in activity was observed \citep{Hadjidemetriou2020impact}. In other countries, such as Italy, the restrictions were more severe and even included limiting people's movement to a certain radius from their place of residence \citep{Ren2020Pandemic}. The explorations in environmental acoustics of lockdown conditions across the world have revealed various degrees of impact on the acoustic environment, with researchers reporting reductions in noise levels affecting the population at the scale of urban agglomerations such as the Ruhr Area in Germany \citep{Hornberg2021Impact} and conurbations in the south of France \citep{Munoz2020Lockdown}. Impacts have also been reported at a scale of a multimillion city such as Madrid \citep{Asensio2020Changes} or Barcelona \citep{BonetSola2021Soundscape} as well as at a more local, city-centre or even public space-scale in cities such as Stockholm \citep{Rumpler2021Noise}, London \citep{Aletta2020Assessing}, Girona \citep{AlsinaPages2021Changes}, or Granada \citep{VidaManzano2021sound}. In general, these studies have demonstrated a decrease in urban noise levels and indicated a difference in the amount of decrease depending on the type of space investigated (e.g. parks, urban squares, etc.) and the type of human activity characteristic for the space, with higher reductions in places typically associated with human sounds and activities such as shopping and tourism.
 
- Those studies were mostly focussed around the \gls{laeq}, as well as a standardization approach to reporting subsequent changes in soundscape proposed by \citet{Asensio2020Taxonomy}. They were not able to reveal the perceptual impact of such conditions in public spaces as well because of: 1) the lack of subjective data for the exact or comparable locations in previous years; and 2) the lack of participants present in public spaces during the lockdown, hence the ability to collect soundscape data \emph{in-situ}. Attempts have been made to bridge this gap by using social networks to source subjective data, but this resulted in a focus on indoor conditions following the shift in the citizens' behaviour, i.e. spending more time indoors \citep{Bartalucci2021survey,Lee2021Attitudes}. \citet{GarridoCumbrera2021Perceptions} relied on an online survey deployed in England, Ireland, and Spain to explore the perceived change in natural environments in particular. They observed a consistent increase in the perceived presence of natural sounds across all major cities and rural areas respectively in these three countries. A very similar trend was observed in Argentina, also based on an online questionnaire without a listening task \citep{Maggi2021Perception}. 
- 
- \citet{Munoz2020Lockdown} combined noise measurements with an online questionnaire deployed to residents, some of which were residing in the areas covered by the noise monitoring network available. The participants were asked to recall how their lockdown area sounded before and during the first lockdown in 2020 and to describe the perceived change. They observed a consistent reduction in levels, followed by the perceived reduction of transport sounds (air and road) and an increase of natural sounds, while the resulting environment was described as pleasant, calm, and peaceful. By combining field recordings and focus groups, \citet{Sakagami2020How} and \citet{Lenzi2021Soundscape} observed changes in the sound source composition and the affective quality of soundscape in a residential area in Kobe, Japan and a public space in Getxa, Spain, respectively, during the different stages of the lockdown period. Following the easing of lockdown measures, a decrease in animal and traffic sounds was observed in Kobe, while an increase in eventfulness, loudness, and presence of human sound sources, followed by a decrease in pleasantness, was shown in Getxa.
+ \subsection{The lockdown measures in London and Venice}
 
- \subsection{The impacts of the lockdown in London and Venice}
- \label{sec:LondonLockdown}
- \citet{Aletta2020Assessing}\footnote{\cref{sec:LondonLockdown} reproduces my contribution to \citep{Aletta2020Assessing}, examining the impact of the \gls{covid19} lockdown in London on the sound environment through \emph{in-situ} binaural recordings. The data examined in this paper forms the majority of the dataset used for the modelling describing in this chapter. There are slight differences in the psychoacoustic analyses used in this paper from what is presented in this chapter.} explored the impacts of the \gls{covid19} lockdowns on the acoustic environment in London in particular, through many short-term (30s) binaural recordings and presented an important early analysis of the changes in acoustic features during the lockdown. %The data from this study form the basis for the modelling presented in this chapter; the results and analysis of \citep{Aletta2020Assessing} were performed by the author of this thesis and are reviewed in depth. 
-
- The lockdown measures implemented in the UK to contain the spread of the SARS-CoV-2 virus were not particularly strict if compared with other countries. In general, lockdown measures involved `staying at home' recommendations, social distancing, stopping non-essential commercial activities, banning public gatherings, limiting traffic mobility and alike. Specifically, the UK Government passed the Health Protection (Coronavirus, Restrictions) (England) Regulations 2020, which were put into place at 1:00 pm on \nth{26} March 2020 \citep{PHE2020Health}. Under these restrictions, the public were only allowed to leave their homes once per day for essential activities and exercise. All officers and shops selling non-essential goods were told to close, gatherings of more than two people in public were banned, and individuals were advised to only interact with members of their own household. These restrictions were set to be reviewed by the Secretary of State at least once every 21 days and would continue indefinitely until they were no longer necessary to prevent the spread of infection in England. In practice the lockdown continued through the spring of 2020 and was first partially eased on the \nth{1} of June, with school children in England returning to school, but the broader lockdown continued throughout the summer \citep{Tong2021Increases}. During this period of lockdown, noise complaints increased by 48\% compared to the same period during the preceding year, with an immediate uptick seen once lockdown measures were implemented. \cref{fig:noiseComplaints} shows the timeline of these restrictions and the accompanying noise complaints received by 22 boroughs in London \citep{Tong2021Increases}.
+ The lockdown measures implemented in the UK to contain the spread of the SARS-CoV-2 virus were not particularly strict if compared with other countries. In general, lockdown measures involved `stay at home' recommendations, social distancing, stopping non-essential commercial activities, banning public gatherings, limiting traffic mobility and alike. Specifically, the UK Government passed the Health Protection (Coronavirus, Restrictions) (England) Regulations 2020, which were put into place at 1:00 pm on \nth{26} March 2020 \citep{PHE2020Health}. Under these restrictions, the public were only allowed to leave their homes once per day for essential activities and exercise. All officers and shops selling non-essential goods were told to close, gatherings of more than two people in public were banned, and individuals were advised to only interact with members of their own household. These restrictions were set to be reviewed by the Secretary of State at least once every 21 days and would continue indefinitely until they were no longer necessary to prevent the spread of infection in England. In practice the lockdown continued through the spring of 2020 and was first partially eased on the \nth{1} of June, with school children in England returning to school, but the broader lockdown continued throughout the summer \citep{Tong2021Increases}. During this period of lockdown, noise complaints increased by 48\% compared to the same period during the preceding year, with an immediate uptick seen once lockdown measures were implemented. \cref{fig:noiseComplaints} shows the timeline of these restrictions and the accompanying noise complaints received by 22 boroughs in London \citep{Tong2021Increases}.
 
 \begin{figure}[h]
   \centering
@@ -33,126 +31,42 @@
   \caption{Time series of the number of noise complaints received in the first half year of 2019 and 2020. A 7-day rolling average window is applied to account for weekly patterns in noise complaint reporting. \label{fig:noiseComplaints}}
 \end{figure}
 
- Taking advantage of short-term acoustic measurements carried out in 2019 which formed the \gls{isd}, before the implementation of the lockdown measures related to \gls{covid19}, a number of urban locations were selected in London and Venice where data were available and measurements were performed again according to the same protocols to assess the extent of sound level variation achieved at each site. 
+\subsection{Perceptual changes}
 
- \paragraph*{Data analysis}
- From the binaural recording datasets (both the 2019 and 2020 series), the following acoustic parameters were computed for the left and right channels and the maximum value of the two channels was presented: \gls{laeq}, \gls{la10}, \gls{la90}. There is still no clear consensus on how to merge binaural psychoacoustic readings into single values; in the case presented in \citet{Aletta2020Assessing} an arithmetic average level was deemed to be acceptable as the interaural level difference was typically very small (less than 1 dB) \citep{Kang2018model}.
+ Those studies were mostly focussed around the \gls{laeq}, as well as a standardization approach to reporting subsequent changes in soundscape proposed by \citet{Asensio2020Taxonomy}. They were not able to reveal the perceptual impact of such conditions in public spaces as well because of: 1) the lack of subjective data for the exact or comparable locations in previous years; and 2) the lack of participants present in public spaces during the lockdown, hence the ability to collect soundscape data \emph{in-situ}. Attempts have been made to bridge this gap by using social networks to source subjective data, but this resulted in a focus on indoor conditions following the shift in the citizens' behaviour, i.e. spending more time indoors \citep{Bartalucci2021survey,Lee2021Attitudes}. \citet{GarridoCumbrera2021Perceptions} relied on an online survey deployed in England, Ireland, and Spain to explore the perceived change in natural environments in particular. They observed a consistent increase in the perceived presence of natural sounds across all major cities and rural areas respectively in these three countries. A very similar trend was observed in Argentina, also based on an online questionnaire without a listening task \citep{Maggi2021Perception}. 
+ 
+ \citet{Munoz2020Lockdown} combined noise measurements with an online questionnaire deployed to residents, some of which were residing in the areas covered by the noise monitoring network available. The participants were asked to recall how their lockdown area sounded before and during the first lockdown in 2020 and to describe the perceived change. They observed a consistent reduction in levels, followed by the perceived reduction of transport sounds (air and road) and an increase of natural sounds, while the resulting environment was described as pleasant, calm, and peaceful. By combining field recordings and focus groups, \citet{Sakagami2020How} and \citet{Lenzi2021Soundscape} observed changes in the sound source composition and the affective quality of soundscape in a residential area in Kobe, Japan and a public space in Getxa, Spain, respectively, during the different stages of the lockdown period. Following the easing of lockdown measures, a decrease in animal and traffic sounds was observed in Kobe, while an increase in eventfulness, loudness, and presence of human sound sources, followed by a decrease in pleasantness, was shown in Getxa.
 
- The same procedure was followed for the psychoacoustic metrics of Loudness (\gls{n5}, sone) and Sharpness (\gls{s}, acum). All parameters were computed using the ArtemiS Suite software (v11.5, HEAD acoustics GmbH). Loudness was calculated according to the ISO 532-1 standard for time-varying sounds, in a free-field, with the remaining analysis options left to their default \citep{ISO532Part1}. As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field, with the remaining analysis options left to their default \citep{DIN2009measurement}. It was decided to include psychoacoustic parameters as they can often provide more nuances about the perception of the acoustic environment by people, as well as offer more insights into spectral features that could reflect changes in sound sources \citep{Genuit2006Psychoacoustics,Yang2013Psychoacoustical}. Considering the necessity of keeping the computational time limited in this initial study, Loudness and Sharpness were selected because they have been reported to provide a sensible representation of perceptual aspects \citep{AlsinaPages2019Noise}.
+ This metric-focussed approach left the following research questions unanswered:
 
- \begin{figure}[h]
-  %TODO: Redo these figures in python using ISD
-   \centering
-   \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 1.png}   
-   \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. \label{fig:NsMapLockLAeq}}
+\begin{enumerate}
+  \item How would people have perceived these spaces as a result of this change in acoustic environment? (RQ1)
+  \item Would these sound level reductions result in improvements to the soundscape of the spaces? (RQ2)
+  \item What are the key features needed for a soundscape prediction model based on comprehensive acoustic on site measurements to be used for assessing locations with low social presence or in situations where conducting surveys is impractical (RQ3)?
+\end{enumerate}
 
-   
-  \end{figure}
+The \nth{1} research question (RQ1), addressing the perceptual effect of the change in urban soundscape induced by the lockdowns, can be further broken down into the following questions:
 
-%TODO: Discuss LAeq figure results in own wods
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 4.png}
-  \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
-
-\end{figure}
-
-%TODO: Discuss N5 figure in own words
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 5.png}
-  \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
-
-\end{figure}
-
-%TODO: Discuss S figure in own words
+\begin{itemize}
+  \item How was the sound source composition influenced by the change?
+  \item How would the affective response to the acoustic environment in lockdowns change?
+  \item Could this demonstrate the effect of human activities on the perception of an acoustic environment in general?
+\end{itemize}
 
 
-\paragraph*{Effect of the urban setting on sound levels reduction}
-In addition to strictly documenting the changes in the sound environment in London, the study also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}. 
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}  
-  \caption{`Scree' plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an `elbow' can be identified for a three-cluster solution. \label{fig:NsMapLockScree}}
-\end{figure}
-
-\cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \citep{deCoensel2006quiet,Aletta2017Dimensions}. 
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 7.png}  
-  \caption{Bi-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic-dominated Areas. \label{fig:NsMapLockBiplot}}
-\end{figure}
-
-\cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patterns with information about dominant sound sources as derived from data from \citet{Mitchell2020Soundscape}, the three clusters could be labelled as: \emph{Traffic-dominated areas} (locations: Camden Town, Euston Tap), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields). Traffic-dominated areas are on major roads, where traffic noise is the dominant sound source. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
-
-When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
-
-%TODO: Reproduce the table from Aletta2020
-
-\begin{table}[h]
-\centering
-\caption{Descriptive statistics of the psychoacoustic metrics for the three identified clusters. Source: \citep{Aletta2020Assessing} \label{tab:NsMapLockClust}}
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{llrrrrr} 
-\toprule
-\textbf{Cluster} & \textbf{Parameter} & \multicolumn{5}{c}{\textbf{Mean values }} \\ 
-\cline{3-7}
- &  & \multicolumn{1}{c}{$L_{Aeq}$} & \multicolumn{1}{c}{$L_{A10}$} & \multicolumn{1}{c}{$L_{A90}$} & \multicolumn{1}{c}{$S$} & \multicolumn{1}{c}{$N_5$} \\ 
-\hline
-1 -- (Quiet areas) & Mean & 55.9 & 58.1 & 52.4 & 1.7 & 12.9 \\
-{[}N=3] & Std. deviation & 2.6 & 2.5 & 3.1 & 0.0 & 1.8 \\
- & Variance & 7.0 & 6.3 & 9.3 & 0.0 & 3.1 \\ 
-\hline
-2 -- (Active areas) & Mean & 62.5 & 64.3 & 59.6 & 2.1 & 18.9 \\
-{[}N=6] & Std. deviation & 2.3 & 2.5 & 2.3 & 0.4 & 2.5 \\
- & Variance & 5.3 & 6.4 & 5.5 & 0.1 & 6.3 \\ 
-\hline
-3 -- (Traffic-dominated areas) & Mean & 70.4 & 72.9 & 66.1 & 2.4 & 34.1 \\
-{[}N=2] & Std. deviation & 1.6 & 1.9 & 0.3 & 0.0 & 4.4 \\
- & Variance & 2.4 & 3.6 & 0.1 & 0.0 & 19.8 \\
-\bottomrule
-\end{tabular}
-}
-\end{table}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
-  \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
-\end{figure}
-
-
- This study revealed that average reductions in the various locations considered ranged from 10.7 dB (\gls{laeq}) to 1.2 dB, with an overall average reduction of 5.4 dB. This metric-reporting focussed approach left the following research questions unanswered:
- \begin{enumerate}
-   \item How would people have perceived these spaces as a result of this change in acoustic environment? (RQ1)
-   \item Would these sound level reductions result in improvements to the soundscape of the spaces? (RQ2)
- \end{enumerate}
-
- The \nth{1} research question (RQ1), addressing the perceptual effect of the change in urban soundscape induced by the lockdowns, can be further broken down into the following questions:
-
- \begin{itemize}
-   \item How was the sound source composition influenced by the change?
-   \item How would the affective response to the acoustic environment in lockdowns change?
-   \item Could this demonstrate the effect of human activities on the perception of an acoustic environment in general?
- \end{itemize}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \subsection{Review of predictive modelling}
+ \draft{Maybe move this to general lit review section?}
  These questions arise out of the soundscape approach, which is characterised by prioritising the perceptual effect of an acoustic environment by taking into account the interaction of sound sources, context, and the person perceiving it \citep{ISO12913Part1,Truax1999Handbook}, bringing together objective and subjective factors. The soundscape approach to noise mitigation and management is being recognised as a response to arising environmental requirements on noise pollution and sustainability, such as the regulation of quiet areas in Europe \citep{EEA2020Environmental,Aletta2018Towards,Radicchi2021Sound}. This has been further formalised in \citet{ISO12913Part2} via the adoption of the circumplex model of soundscape \citep{Axelsson2010principal}, in which the perception of a soundscape can be described in terms of its pleasantness and eventfulness, as one of the standard methods of soundscape assessment.
 
  Soundscape research is therefore traditionally rooted in environmental acoustics and environmental psychology, typically dealing with outdoor spaces \citep{Torresin2020Indoor} and urban open spaces, where parks and squares are often used as case study sites \citep{Kang2006Urban}. A soundscape assessment typically requires people to be surveyed but the presence of people at a location influences assessment \citep{Aletta2018Towards} and `quiet places' usually require low numbers of users to remain quiet, which limits the possibility of an assessment. Even in a crowded public space, soundscape surveys are demanding as they require significant resources to carry out at scale, limiting their widespread application \citep{Mitchell2020Soundscape}. Therefore, a need for a predictive model arises to overcome this limitation and improve the implementation of the soundscape approach into everyday planning and management practices.
 
  According to a recent review of predictive soundscape models from \citet{Lionello2020systematic}, the degree of employing auditory and non-auditory factors in soundscape prediction varies, with some studies relying on contextual, personal/demographic \citep{Erfanian2021Psychological,Tarlao2020Investigating} or social media \citep{Aiello2016Chatty} data entirely to predict and generate soundscape features. Some methods also incorporate perceptually-derived features, such as subjective sound level and visual pleasantness as predictors \citep{Lionello2020systematic}. In general, these methods which incorporate perceptually-derived inputs achieve better accuracy rates than those which don't, however this information must also be obtained from people via a survey and therefore are unsuitable for predictive modelling where surveys are not possible. For example, \citet{Ricciardi2015Sound} proposed two models based on data collected from a smartphone application to predict urban sound quality indicators based on linear regressions. The first model which incorporated perceptually-derived input features (visual quality and familiarity) achieved an $R^2$ of 0.72, while a second model without these features achieved an $R^2$ of 0.58. This indicates the necessity for considering and accounting for the influence which contextual factors in a space have on the relationship between the sound environment itself and the listener's perception of it (i.e. the soundscape) while also highlighting the challenges associated with a predictive model which depends only on measurable features.
 
- Therefore, a third research question arises: what are the key features needed for a soundscape prediction model based on comprehensive acoustic on site measurements to be used for assessing locations with low social presence or in situations where conducting surveys is impractical (RQ3)?
-
 \section{Materials and Methods}
 
- This study was conducted via initial onsite data collection campaigns in Central London and Venice in 2019 before the outbreak of \gls{covid19} as part of the \gls{ssid} project \citep{Mitchell2020Soundscape} and in 2020 during the strictest part of the lockdowns \citep{Aletta2020Assessing}, including objective acoustic data (2019 and 2020) and subjective responses (2019 only). The full \emph{in-situ} dataset, as described in this section, has been made publicly available as `The International Soundscape Database (V0.2.1)' on Zenodo (\url{https://zenodo.org/record/5654747}) \citep{Mitchell2021International}.
+ This study was conducted via initial onsite data collection campaigns in Central London and Venice in 2019 before the outbreak of \gls{covid19} as part of the \gls{ssid} project \citep{Mitchell2020Soundscape} and in 2020 during the strictest part of the lockdowns \citep{Aletta2020Assessing}, including objective acoustic data (2019 and 2020) and subjective responses (2019 only). % The full \emph{in-situ} dataset, as described in this section, has been made publicly available as `The International Soundscape Database (V0.2.1)' on Zenodo (\url{https://zenodo.org/record/5654747}) \citep{Mitchell2021International}.
  
  Using both 2019 and 2020 binaural recordings, an online listening experiment was conducted to provide an understanding about the change in sound source composition. The 2019 onsite questionnaire data were used to define the dominant sound source at each location as a starting point for interpreting the soundscape change. A predictive model was developed to reveal the change in the perceived pleasantness and eventfulness using objective acoustic data and location to predict subjective responses. Although the initial (2019) dataset contains additional locations (specifically, in Spain, the Netherlands, and China), due to the nature of this study as a reaction to the strict movement and activity restrictions, the sites which could be included in the lockdown (2020) measurement campaigns were limited to locations where staff and equipment had access and where recordings could be undertaken during the spring of 2020.
 
@@ -161,9 +75,10 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 \citet{ISO12913Part2} was consulted for reporting on soundscape data. A detailed description of the 2019 survey campaigns is featured through the paper and in the public database. This study was approved by departmental UCL IEDE Ethics Committee on \nth{17} July 2018 for onsite data collection and on the \nth{2} of June 2020 for the online listening experiment and is conducted in adherence to the ethical requirements of the Declaration of Helsinki \citep{WMA2013World}.
 
  \subsection{Onsite data: Questionnaires, binaural measurements, and recordings}
+ 
    The initial onsite data collection featured both questionnaire data collected from the general public and acoustic measurements, conducted across thirteen urban locations (in London $N=11$, in Venice $N=2$) between the \nth{28} of February and the \nth{21} of June 2019, with additional sessions in July and October 2019. Although the total survey period in 2019 extended over several seasons, the surveys at any individual location did not extend over seasons with different occupancy patterns. A total of 1,318 questionnaire responses were collected from the general population across the measurement points during 1 -- 3 hour-long campaigns in both cities in 2019, accompanied by 693 approximately 30-second long 24-bit 44.1 kHz binaural recordings. After data cleaning, each of the 13 locations was characterised by between 14 to 80 recordings and between 24 to 147 questionnaire responses. Mean age of the participants was 33.9, with a standard deviation of 14.57 (45\% male, 53.8\% female, 0.4\% non-conforming, 0.9\% prefer-not-to-say).
 
-   Although recent results from both \citet{Tarlao2020Investigating} and \citet{Erfanian2021Psychological} indicate the important influence of personal and demographic factors -- in particular age and gender -- on soundscape perception, these factors were not included as potential features in the modelling process. Given the nature of this study as addressing a scenario when people could not be surveyed, no additional demographic information is available in the lockdown case to be fed into the model and is therefore not useful to include for the development and application of this specific predictive model. This information is reported throughout the study simply to provide further context to the data collection.
+   Although recent results from both \citet{Tarlao2020Investigating} and \citet{Erfanian2021Psychological} indicate the important influence of personal and demographic factors -- in particular age and gender -- on soundscape perception, these factors were not included as potential features in the modelling process\footnote{See \cref{ch:whostudy} for the results of \citep{Erfanian2021Psychological} and an in depth discussion of how these factors should or could be integrated into the predictive modelling process.}. Given the nature of this study as addressing a scenario when people could not be surveyed, no additional demographic information is available in the lockdown case to be fed into the model and is therefore not useful to include for the development and application of this specific predictive model. This information is reported throughout the study simply to provide further context to the data collection.
 
    The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the \nth{6} and the \nth{25} of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on site in 2020.
 
@@ -173,7 +88,6 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
    In order to simplify the results and allow for modelling the responses as continuous values, the 8 \glspl{paq} undergo a trigonometric projection to reduce them onto the two primary dimensions of pleasant and eventful, according to the procedure outlined in Part 3 of the ISO 12913 series \citep{ISO12913Part3}. In order to distinguish the projected values from the Likert-scale \gls{paq} responses, the projected values will be referred to as \gls{isopl} and \gls{isoev} and can be considered to form an x-y coordinate point (x = \gls{isopl}, y = \gls{isoev}) as explained in detail in \cref{chap:methods} \citep{Lionello2021Introducing}.
 
    \subsubsection{Data cleaning}
-   %TODO: Move and expand this data cleaning section to the methods section
    The cleaning of the samples was conducted using the ArtemiS SUITE 11. I discarded or cropped whole recordings, or its parts affected by wind gusts or containing noises and speech generated by the recording operator by accident or for the purpose of explaining the questionnaire to a participant. This resulted in 1,291 binaural recordings which were then processed further, as described in \cref{sec:analyses}. Psychoacoustic analyses are shown in the publicly available database.
 
    In order to maintain data quality and exclude cases where respondents either clearly did not understand the \gls{paq} adjectives or intentionally misrepresented their answers, surveys for which the same response was given for every \gls{paq} (e.g. `Strongly agree' to all 8 attributes) were excluded prior to calculating the ISO projected values. This is justified as no reasonable respondent who understood the questions would answer that they `strongly agree' that a soundscape is pleasant and annoying, calm and chaotic, etc. Cases where respondents answered `Neutral' to all \glspl{paq} are not excluded in this way, as a neutral response to all attributes is not necessarily contradictory. In addition, surveys were discarded as incomplete if more than 50\% of the \gls{paq} and sound source questions were not completed. The site characterisation per \citet{ISO12913Part2} is available in \cref{app:location-data}, featuring the address, overall psychoacoustic characteristics of the location, typical use of each location, and pictures taken during the survey sessions.
@@ -256,6 +170,12 @@ $RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.
 
    Among the correlations for the psychoacoustic metrics considered for inclusion as input features, we can see several highly inter-correlated features. As expected, \gls{pa}, \gls{laeq}, and \gls{n5} are highly correlated, meaning that careful consideration is paid to these features to ensure they do not contribute to multicollinearity in the final model.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
  \subsection{Modelling}
 
    Two linear multi-level models (MLM) were computed to predict: 1) \gls{isopl}, and 2) \gls{isoev}. The inherent grouped structure of the \gls{isd} necessitates a modelling and analysis approach which considers the differing relationships between the objective acoustic features and the soundscape's perceived affective quality ratings across the various locations and contexts. The individual-level of the models is made up of the acoustic features calculated from the binaural recordings made during each respondent's survey period, while the group-level includes the categorical `LocationID' variable indicating the location in which the survey was taken, acting as a non-auditory contextual factor.
@@ -297,6 +217,103 @@ $RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.
 \section{Results}
 
  The results of the onsite surveys, online experiment, and the model development are reported here. They are reported following the structure of the ISO/TS 12913 series, revealing the perceived sound source dominance, key perceptual attributes (\gls{isopl} and \gls{isoev}) and the lockdown-related changes.
+
+\subsection{The sound environment impacts of the lockdown in London and Venice}
+\label{sec:LondonLockdown}
+% \citet{Aletta2020Assessing}\footnote{\cref{sec:LondonLockdown} reproduces my contribution to \citep{Aletta2020Assessing}, examining the impact of the \gls{covid19} lockdown in London on the sound environment through \emph{in-situ} binaural recordings. The data examined in this paper forms the majority of the dataset used for the modelling describing in this chapter. There are slight differences in the psychoacoustic analyses used in this paper from what is presented in this chapter.} explored the impacts of the \gls{covid19} lockdowns on the acoustic environment in London in particular, through many short-term (30s) binaural recordings and presented an important early analysis of the changes in acoustic features during the lockdown. 
+Before continuing to the predictive model and the impacts on the soundscape perception, I will first review results indicating the change in the sound environment. To summarise these impacts, I present the location-level changes in the \gls{laeq}, \gls{n5}, and \gls{s} from the 2019 condition to the 2020 lockdown condition. The original analysis in this section was presented in \citet{Aletta2020Assessing}. This analysis has been updated to include the Venice data and to correct slight discrepancies between the datasets and psychoacoustic analyses used in the two papers (\citep{Aletta2020Assessing} and \citep{Mitchell2021Investigating}).
+
+% \paragraph*{Data analysis}
+% From the binaural recording datasets (both the 2019 and 2020 series), the following acoustic parameters were computed for the left and right channels and the maximum value of the two channels was presented: \gls{laeq}, \gls{la10}, \gls{la90}. There is still no clear consensus on how to merge binaural psychoacoustic readings into single values; in the case presented in \citet{Aletta2020Assessing} an arithmetic average level was deemed to be acceptable as the interaural level difference was typically very small (less than 1 dB) \citep{Kang2018model}.
+
+% The same procedure was followed for the psychoacoustic metrics of Loudness (\gls{n5}, sone) and Sharpness (\gls{s}, acum). All parameters were computed using the ArtemiS Suite software (v11.5, HEAD acoustics GmbH). Loudness was calculated according to the ISO 532-1 standard for time-varying sounds, in a free-field, with the remaining analysis options left to their default \citep{ISO532Part1}. As recommended by the standard, in order to avoid the under-estimation of evaluated loudness which is seen when using the arithmetic average of the loudness curve, the \gls{n5} value (the 5\% percentile value of the time-dependent loudness curve) is used as the single value of loudness. Sharpness was calculated according to DIN 45692, in a free-field, with the remaining analysis options left to their default \citep{DIN2009measurement}. It was decided to include psychoacoustic parameters as they can often provide more nuances about the perception of the acoustic environment by people, as well as offer more insights into spectral features that could reflect changes in sound sources \citep{Genuit2006Psychoacoustics,Yang2013Psychoacoustical}. Considering the necessity of keeping the computational time limited in this initial study, Loudness and Sharpness were selected because they have been reported to provide a sensible representation of perceptual aspects \citep{AlsinaPages2019Noise}.
+
+\cref{fig:NsMapLockLAeq} presents the distributions of \gls{laeq} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. To determine whether there is a statistically significant difference between the two campaigns in each location, a one-tailed t-test was used. The results and the mean and standard deviation for each location in both campaigns are presented in \cref{tab:LockdownNumbers}. 
+The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
+
+
+\begin{figure}[h]
+  %TODO: Redo these figures in python using ISD
+  \centering
+  \includegraphics[width=\textwidth]{Figures/LockdownLAeqCombined.png}
+  \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation. \label{fig:NsMapLockLAeq}}
+
+
+\end{figure}
+
+\cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/LockdownLoudness.png}
+  \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
+
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/LockdownSharp.png}
+  \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
+
+\end{figure}
+
+
+\paragraph*{Effect of the urban setting on sound levels reduction}
+In addition to strictly documenting the changes in the sound environment in London, the study also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.75\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}
+  \caption{`Scree' plot used to identify the optimal number of clusters to use in the \emph{k}-means clustering algorithm where an `elbow' can be identified for a three-cluster solution. \label{fig:NsMapLockScree}}
+\end{figure}
+
+\cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \citep{deCoensel2006quiet,Aletta2017Dimensions}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/LockdownClusterAnalysis1_2022-04-29.png}
+  \caption{Bi-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic/Noise-dominated Areas. \label{fig:NsMapLockBiplot}}
+\end{figure}
+
+\cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patterns with information about dominant sound sources as derived from data from \citet{Mitchell2020Soundscape}, the three clusters could be labelled as: \emph{Traffic/Noise-dominated areas} (locations: Camden Town, Euston Tap, Piazza San Marco), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields, Monumento Garibaldi). Traffic/Noise-dominated (with the exception of San Marco) areas with an exceptionally high noise level; typically this is because they are on major roads, where traffic noise is the dominant sound source. However Piazza San Marco also clusters here due to its unique use-case. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
+
+When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
+
+
+\begin{table}[h]
+  \centering
+  \caption{Descriptive statistics of the psychoacoustic metrics for the three identified clusters. Source: \citep{Aletta2020Assessing} \label{tab:NsMapLockClust}}
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{llrrrrr}
+      \toprule
+      \textbf{Cluster}               & \textbf{Parameter} & \multicolumn{5}{c}{\textbf{Mean values }}                                                                                                                       \\
+      \cline{3-7}
+                                     &                    & \multicolumn{1}{c}{$L_{Aeq}$}             & \multicolumn{1}{c}{$L_{A10}$} & \multicolumn{1}{c}{$L_{A90}$} & \multicolumn{1}{c}{$S$} & \multicolumn{1}{c}{$N_5$} \\
+      \hline
+      1 -- (Quiet areas)             & Mean               & 55.9                                      & 58.1                          & 52.4                          & 1.7                     & 12.9                      \\
+      {[}N=3]                        & Std. deviation     & 2.6                                       & 2.5                           & 3.1                           & 0.0                     & 1.8                       \\
+                                     & Variance           & 7.0                                       & 6.3                           & 9.3                           & 0.0                     & 3.1                       \\
+      \hline
+      2 -- (Active areas)            & Mean               & 62.5                                      & 64.3                          & 59.6                          & 2.1                     & 18.9                      \\
+      {[}N=6]                        & Std. deviation     & 2.3                                       & 2.5                           & 2.3                           & 0.4                     & 2.5                       \\
+                                     & Variance           & 5.3                                       & 6.4                           & 5.5                           & 0.1                     & 6.3                       \\
+      \hline
+      3 -- (Traffic-dominated areas) & Mean               & 70.4                                      & 72.9                          & 66.1                          & 2.4                     & 34.1                      \\
+      {[}N=2]                        & Std. deviation     & 1.6                                       & 1.9                           & 0.3                           & 0.0                     & 4.4                       \\
+                                     & Variance           & 2.4                                       & 3.6                           & 0.1                           & 0.0                     & 19.8                      \\
+      \bottomrule
+    \end{tabular}
+  }
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
+  \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \subsection{Perceived sound source dominance}
 
