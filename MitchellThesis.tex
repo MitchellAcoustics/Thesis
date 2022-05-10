@@ -5,10 +5,11 @@
 % * Packages
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-% \usepackage{eso-pic}
 \usepackage[hidelinks]{hyperref}
-\usepackage{natbib}
-\bibliographystyle{apalike}
+% \usepackage{natbib}
+\usepackage[natbibapa]{apacite}
+\usepackage{doi}
+\bibliographystyle{apacite}
 \usepackage{color, soul}
 \usepackage{xcolor}
 \usepackage{pdfpages}
@@ -23,11 +24,7 @@
 \usepackage{lscape,afterpage}
 \usepackage{tablefootnote}
 
-% Show labels in pdf, remove for final
-% \usepackage{showlabels}
-
 \usepackage{gensymb}
-% \usepackage{makecell}
 \usepackage{rotating}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -54,6 +51,7 @@
 \newcommand{\fig}[1]{\remark{fig}{blue}{#1}}
 \newcommand{\copied}[1]{\remark{copy}{orange}{#1}} % Used when the section is copied wholesale from the original paper and this may be an issue
 
+\renewcommand{\doiprefix}{}
 
 % * Formatting
 % Margins at the binding edge must not be less than 40mm (1.5 inches) and other margins not less than 20mm (0.75 inches).
