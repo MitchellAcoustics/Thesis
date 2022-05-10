@@ -4,29 +4,6 @@
 %TODO: Diagram - What issues do I cover, how are they linked? Soundscape practice, Acoustic Analysis, Predictive Modelling
 %TODO: Content from Soundscape and the Built Environment, Chapter 10, Applied Soundscape Practice
 
-% \section{Impact of Urban Noise on Health and Wellbeing}
-
-% \cit{Environmental noise in Europe 2020}
-
-% \draft{Give a brief background to why noise control is important for public health.}
-% % https://www.euro.who.int/__data/assets/pdf_file/0008/383921/noise-guidelines-eng.pdf?ua=1
-% BS4142
-
-% \section{Current Methods of Assessing and Addressing Urban Noise}
-
-% The approach to a practical predictive soundscape model arrived at within this thesis is heavily based on past environmental acoustics approaches. I will therefore begin with a brief summary of these past approaches.
-
-% \subsection{Acoustical Parameters}
-
-% \subsection{ISO Environmental Acoustics Standards}
-% \cit{ISO 1996-1, esp sections on annoyance, e.g. Annex F, G, H}
-
-% \subsection{EU Noise Mapping}
-
-% \cit{Environmental noise in Europe 2020}
-
-% \subsection{Shortcomings}
-
 \draft{Chapter Abstract}
 
 \section{Introduction}
@@ -360,10 +337,8 @@ Where previous ground-breaking strategies toward practical urban soundscape desi
 
 \section{Existing Predictive Models}
 
-Contrary to the hopes expressed by \citet{Aletta2014Towards}, that "ideally there should be one acoustic indicator per dimension", the evidence from subsequent investigations and modelling attempts \citep{Lionello2020systematic} indicates this to be unlikely. There appears to be no reason we should think the perceptual dimensions should be reduced to a single acoustic indicator. The dimensions of soundscape represent complex perceptual concepts which we should expect to be composed of a multi-factor interaction between the input features. This necessary complexity  highlights the need for a more sophisticated machine learning approach in order to handle and interpret the interactions between the many input features which contribute to the formation of a soundscape perception.
+Contrary to the hopes expressed by \citet{Aletta2014Towards}, that `ideally there should be one acoustic indicator per dimension', the evidence from subsequent investigations and modelling attempts \citep{Lionello2020systematic} indicates this to be unlikely. There appears to be no reason we should think the perceptual dimensions should be reduced to a single acoustic indicator. The dimensions of soundscape represent complex perceptual concepts which we should expect to be composed of a multi-factor interaction between the input features. This necessary complexity  highlights the need for a more sophisticated machine learning approach in order to handle and interpret the interactions between the many input features which contribute to the formation of a soundscape perception.
 \citep{Aletta2016Soundscape}
-
-\citep{Lionello2020systematic}
 
 \paragraph*{Perceptual Mapping}
 One way to consider the function of a statistical model of soundscape perception is as replicating the perceptual mapping between soundscape indicators and descriptors \citep{Lionello2021Thesis}. As a person experiences an urban space, they are exposed to an array of physical inputs, these are then processed by the listener through their own personal experience and mapped to their perception of that space. This perception is then expressed through their description of this experience of the soundscape. It is this mapping of physical inputs to perceptual description which the statistical model aims to reflect. The most successful model would then accurately replicate the general perceptual mapping across the population.
@@ -372,6 +347,8 @@ One way to consider the function of a statistical model of soundscape perception
   \includegraphics[width=\textwidth]{Figures/Overall Model Concept Diagram_2022-04-28.png}
   \caption{The conceptual model of soundscape perception, illustrating the perceptual mapping from physical inputs, through personal experience, to soundscape descriptors. The role of the statistical model is to attempt to approximate or reflect this perceptual mapping. \label{fig:percepMap}}
 \end{figure}
+
+According to a recent review of predictive soundscape models from \citet{Lionello2020systematic}, the degree of employing auditory and non-auditory factors in soundscape prediction varies, with some studies relying on contextual, personal/demographic \citep{Erfanian2021Psychological,Tarlao2020Investigating} or social media \citep{Aiello2016Chatty} data entirely to predict and generate soundscape features. Some methods also incorporate perceptually-derived features, such as subjective sound level and visual pleasantness as predictors \citep{Lionello2020systematic}. In general, these methods which incorporate perceptually-derived inputs achieve better accuracy rates than those which don't, however this information must also be obtained from people via a survey and therefore are unsuitable for predictive modelling where surveys are not possible. For example, \citet{Ricciardi2015Sound} proposed two models based on data collected from a smartphone application to predict urban sound quality indicators based on linear regressions. The first model which incorporated perceptually-derived input features (visual quality and familiarity) achieved an $R^2$ of 0.72, while a second model without these features achieved an $R^2$ of 0.58. This indicates the necessity for considering and accounting for the influence which contextual factors in a space have on the relationship between the sound environment itself and the listener's perception of it (i.e. the soundscape) while also highlighting the challenges associated with a predictive model which depends only on measurable features.
 
 \subsection{Psychoacoustic Models}
 

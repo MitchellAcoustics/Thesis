@@ -200,7 +200,7 @@ Lionello, M., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2020). Introducing
 Vida, J., Almagro, J. A., García-Quesada, R., Aletta, F., Oberman, T., \textbf{Mitchell, A.}, \& Kang, J. (2021). Urban Soundscape Assessment by Visually Impaired People: First Methodological Approach in Granada (Spain). \emph{Sustainability, 13}(24), 13867. MDPI AG. \url{http://dx.doi.org/10.3390/su132413867}
 
 \paragraph*{}
-Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberman, T., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2021). The ``sound of silence" in Granada during the COVID-19 lockdown. \emph{Noise Mapping, 8}(1), 16--31. \url{https://doi.org/10.1515/noise-2021-0002} 
+Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberman, T., Aletta, F., \textbf{Mitchell, A.}, \& Kang, J. (2021). The ``sound of silence" in Granada during the COVID-19 lockdown. \emph{Noise Mapping, 8}(1), 16--31. \url{https://doi.org/10.1515/noise-2021-0002}
 
 \paragraph*{}Tong, H., Aletta, F., \textbf{Mitchell, A.}, Oberman, T., \& Kang, J. (2021). Increases in noise complaints during the COVID-19 lockdown in Spring 2020: A case study in Greater London, UK. \emph{Science of the Total Environment}.
 
@@ -262,17 +262,17 @@ The ability to predict the likely soundscape assessment of urban spaces has grea
 \part{Towards a Generalisable and Probablistic Soundscape Model}
 \label{part:generalModel}
 \section*{Introduction}
-\cref{ch:lockdown} has demonstrated a novel application of predictive soundscape modelling. Given the conditions of the \gls{covid19} lockdowns, existing soundscape assessment methods were impractical (or illegal) to implement. As outlined in \cref{ch:lit}, this is an example of one of the scenarios where predictive modelling is necessary, as the existing \emph{post-hoc} survey methods cannot be used. Other applicable scenarios include: soundscape mapping, predicting soundscapes of not-yet-existing spaces, unattended sensor networks, and long-term soundscape monitoring. 
+\cref{ch:lockdown} has demonstrated a novel application of predictive soundscape modelling. Given the conditions of the \gls{covid19} lockdowns, existing soundscape assessment methods were impractical (or illegal) to implement. As outlined in \cref{ch:lit}, this is an example of one of the scenarios where predictive modelling is necessary, as the existing \emph{post-hoc} survey methods cannot be used. Other applicable scenarios include: soundscape mapping, predicting soundscapes of not-yet-existing spaces, unattended sensor networks, and long-term soundscape monitoring.
 
-The model in \cref{ch:lockdown} represents an advance for current soundscape methods and provided valuable insight into the likely soundscape during the \gls{covid19} lockdown. However, it does not yet represent a generalisable soundscape model which would be neccesary to address these other applications of predictive modelling. Towards this goal, I therefore present a forward-looking proposal for expanding this model to include the additional types of soundscape indicators introduced in \cref{ch:lit}. 
+The model in \cref{ch:lockdown} represents an advance for current soundscape methods and provided valuable insight into the likely soundscape during the \gls{covid19} lockdown. However, it does not yet represent a generalisable soundscape model which would be neccesary to address these other applications of predictive modelling. Towards this goal, I therefore present a forward-looking proposal for expanding this model to include the additional types of soundscape indicators introduced in \cref{ch:lit}.
 
-In \cref{ch:bayes} I develop the overall requirements of a generalised predictive soundscape model and the development constraints that these requirements place on such a model. I describe how we can begin to build on the model from \cref{ch:lockdown}, incorporating architectural and visual information, and make it generalisable to new locations, contexts, and applications. 
+In \cref{ch:bayes} I develop the overall requirements of a generalised predictive soundscape model and the development constraints that these requirements place on such a model. I describe how we can begin to build on the model from \cref{ch:lockdown}, incorporating architectural and visual information, and make it generalisable to new locations, contexts, and applications.
 
 \cref{ch:mlmann} addresses the necessity of incorporating semantic information about the sound source type into a model for predicting soundscape perception. I illustrate how this information can be integrated by presenting the results of my study on predicting noise annoyance with a \gls{mlm} incorporating sound source information \citep{Orga2021Multilevel}\footnote{The content in this study and chapter are my own work, conducted as part of this thesis. I shared first-authorship with Dr. Ferran Orga for the published version and his contributions to the text included in the chapter are clearly marked and referenced. }. \draft{In addition, since the data for this study was collected via a \gls{wasn}, I also propose how sophisticated soundscape models can be integrated into unmanned sensor networks.}
 
 In \cref{ch:whostudy} I investigate to what extent personal factors (e.g. age, gender, psychological well-being) influence soundscape perception. I constructed a third \gls{mlm} and performed feature selection to determine the relative importance of these personal factors \citep{Erfanian2021Psychological}\footnote{The content in this study and chapter are my own work, conducted as part of this thesis. I shared co-authorship with Ms. Mercede Erfanian for the published version. The text included in this chapter represents my portion of the original work. Where Ms. Erfanian drafted the original text, this has been clearly indicated and referenced.}. Several approaches for how this information could be integrated into a practical predictive model are proposed, following the constraints laid out in \cref{ch:bayes}.
 
-Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and representing soundscape assessments, published as \citet{Mitchell2022How}. This method emphasises the necessity of considering the variation in people's responses to a soundscape. Given this variation, the soundscape of a space cannot be represented by an single person's assessment, but is better thought of as a collective perception. As such, the method I have developed represents a soundscape as a distribution of soundscape assessments. This chapter introduces this visualisation method and its implications. I also provide a proof-of-concept demonstration for how a predictive soundscape model can reflect this consideration of the natural variation in perception.  
+Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and representing soundscape assessments, published as \citet{Mitchell2022How}. This method emphasises the necessity of considering the variation in people's responses to a soundscape. Given this variation, the soundscape of a space cannot be represented by an single person's assessment, but is better thought of as a collective perception. As such, the method I have developed represents a soundscape as a distribution of soundscape assessments. This chapter introduces this visualisation method and its implications. I also provide a proof-of-concept demonstration for how a predictive soundscape model can reflect this consideration of the natural variation in perception.
 
 \include{Parts/PartC/ModelFramework.tex}
 \include{Parts/PartC/SoundSource.tex}
@@ -282,7 +282,7 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
 \include{Parts/Conclusions.tex}
 
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % A glossary and list of acronyms may go here
@@ -292,31 +292,31 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
 % The bibliography will go here.
 \bibliography{PhD_Main_Library}
 
- \appendix
+\appendix
 
 % \begin{appendices}
 
- \chapter{SSID Questionnaire}\label{app:questionnaire}
- \includepdf[pages={1-5}]{./Papers/190411_LondonQuestionnaire_cutdown.pdf}
+\chapter{SSID Questionnaire}\label{app:questionnaire}
+\includepdf[pages={1-5}]{./Papers/190411_LondonQuestionnaire_cutdown.pdf}
 
 \chapter{SSID Codebook}\label{app:codebook}
 \includepdf{./Figures/Questionnaire-codebook_V1.pdf}
 
- \chapter{ISO 12913 Part 3 Report of Location Data}\label{app:location-data}
-      \includepdf[landscape=true,pages=1-4]{./Papers/SuppPub1-Location-data.pdf}
+\chapter{ISO 12913 Part 3 Report of Location Data}\label{app:location-data}
+\includepdf[landscape=true,pages=1-4]{./Papers/SuppPub1-Location-data.pdf}
 
 \include{LockdownDataApp.tex}
 
- \include{Chapters/OverFAppendix.tex}
+\include{OverFAppendix.tex}
 
- \include{Chapters/delta.tex}
+%  \include{Chapters/delta.tex}
 
 % \end{appendices}
 
-\backmatter
+% \backmatter
 
 
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
