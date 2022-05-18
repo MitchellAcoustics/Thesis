@@ -30,7 +30,7 @@
 \usepackage{tabularx}
 
 \usepackage{etoolbox}
-\AtBeginEnvironment{quote}{\itshape}
+% \AtBeginEnvironment{quote}{\itshape}
 
 % glossary
 \usepackage[xindy]{glossaries} 
@@ -134,6 +134,24 @@ When attempting to apply soundscape in practice, it is apparent that new methods
 
 This thesis presents the results of several studies which develop the conceptual and statistical frameworks to enable the prediction and presentation of the soundscape analysis of urban spaces. The first and final studies present the conceptual developments, including a new protocol for conducting soundscape assessments, the creation of a large-scale international database, and a novel method of representing the soundscape of an urban space. The key chapters trace the development of a multilevel linear regression model of soundscape perception. The first iteration of this model revealed how soundscape pleasantness and eventfulness are mediated by psychological well-being and demographic factors. The second makes use of sound source information to inform the statistical relationships between psychoacoustic metrics and noise annoyance, demonstrating that loudness is a crucial factor, regardless of the sound type. Finally, a context-aware model was put into practical use to investigate how the soundscapes of urban spaces were impacted by the COVID-19 lockdowns in a situation where previous assessment methods were impractical.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Impact Statement}
+% The abstract should be followed by an impact statement consisting of no more than 500 words.
+The statement should describe, in no more than 500 words, how the expertise, knowledge, analysis, discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits from \textbf{inside} and \textbf{outside} academia and the ways in which these benefits could be brought about.
+
+\chapter*{COVID-19 Statement}
+
+In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. Solely by good fortune and a tendency to speed ahead with too-little thought, the primary data collection had fortunately been completed prior to the first lockdown. However, this work was impacted in three ways:
+
+\begin{enumerate}
+      \item Further in-situ data collection could not be completed, reducing the range of soundscape types we could include;
+      \item The unprecedented and stressful world of the pandemic had a significant mental health and social impact, the effects of which cannot be quantified, nor overstated;
+      \item In response to the unique scientific opportunity of a world-wide transportation and social lockdown, new, unplanned studies were carried out.
+\end{enumerate}
+
+In particular, this final point has had an impact on the structure and content of this thesis. Certain aspects of the research, in particular the model development and building, were accelerated and put into practice to investigate the impacts of the COVID lockdowns, before being returned to and further developed. The initial research plan would have followed a more logical path of nailing down the model development first, then moving on to a first implementation. In addition, new work was added to this thesis which may appear incongruous or unrelated, but represents a great deal of necessary work which further informed the key strains of the thesis.
+
 \chapter*{Acknowledgements}
 This research was funded by the European Research Council.
 
@@ -209,23 +227,7 @@ Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberma
 \includepdf{Forms/Orga2021 Declaration-form_published-work-in-thesis.pdf}
 \includepdf{Forms/Erfanian2020 Declaration-form_published-work-in-thesis.pdf}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter*{Impact Statement}
-% The abstract should be followed by an impact statement consisting of no more than 500 words.
-The statement should describe, in no more than 500 words, how the expertise, knowledge, analysis, discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits from \textbf{inside} and \textbf{outside} academia and the ways in which these benefits could be brought about.
-
-\chapter*{COVID-19 Statement}
-
-In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. Solely by good fortune and a tendency to speed ahead with too-little thought, the primary data collection had fortunately been completed prior to the first lockdown. However, this work was impacted in three ways:
-
-\begin{enumerate}
-      \item Further in-situ data collection could not be completed, reducing the range of soundscape types we could include;
-      \item The unprecedented and stressful world of the pandemic had a significant mental health and social impact, the effects of which cannot be quantified, nor overstated;
-      \item In response to the unique scientific opportunity of a world-wide transportation and social lockdown, new, unplanned studies were carried out.
-\end{enumerate}
-
-In particular, this final point has had an impact on the structure and content of this thesis. Certain aspects of the research, in particular the model development and building, were accelerated and put into practice to investigate the impacts of the COVID lockdowns, before being returned to and further developed. The initial research plan would have followed a more logical path of nailing down the model development first, then moving on to a first implementation. In addition, new work was added to this thesis which may appear incongruous or unrelated, but represents a great deal of necessary work which further informed the key strains of the thesis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -242,29 +244,41 @@ In particular, this final point has had an impact on the structure and content o
 \include{Parts/Introduction.tex}
 \include{Parts/LitReview.tex}
 
-\part{Methodology}
-\section*{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\draft{Explaing what data is needed. How my method section is different from other theses.}
+\part{Methodology}
+\label{part:Methodology}
+
+\section*{Introduction}
+The first key step toward developing a predictive soundscape model is the creation of a coherent, large-scale, multi-factor database of objective environmental measurements and subjective perceptual responses. My research makes use of in-person field questionnaires, long-term manned questionnaires, and multi-factor characterisation of the environment. Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913Part2} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context. Towards this, we developed an in depth soundscape assessment protocol based on \citet{ISO12913Part2}. 
+
+Due to the unique nature of this data collection method as a novel contribution submitted as its own journal paper, the methodology section has been split into two sections: \cref{chap:protocol} presents the data collection protocol as its own, stand-alone contribution, and \cref{chap:methods} then presents the data analysis and modelling methods made use of throughout the rest of the thesis. 
+
+\cref{ch:lockdown} makes use of the paired binaural recordings and soundscape assessments to model the relationship between (psycho)acoustic features and the soundscape descriptors., including information related to the context of the assessment location. \cref{ch:whostudy} relies on the accompanying demographic information. The visual and environmental information and the Recording Stage information have not been used in the models presented in this thesis, but are considered necessary for future studies and for the ability to generalise to new locations. Once the data was collected via the protocol in \cref{chap:protocol}, the questionnaire data was then analysed and modelled according to the methods presented in \cref{chap:methods}.
 
 \include{Parts/PartA/ProtocolChapter.tex}
 \include{Parts/PartA/Methods.tex}
 
-\part{A novel application of predictive soundscape modelling}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{An Initial Application of Predictive Soundscape Modelling}
+\label{part:Lockdown}
 \section*{Introduction}
 
 The ability to predict the likely soundscape assessment of urban spaces has great potential for bringing a soundscape focus to design, but it also unlocks new opportunities to track how urban spaces change. In order to demonstrate this potential, and to give a practical example of the principles I have outlined in this thesis, this part presents a novel application of predictive soundscape modelling used to track how the \gls{covid19} lockdowns impacted urban soundscapes. The model presented in \cref{ch:lockdown}\footnote{The study presented in \cref{ch:lockdown} has been published as \citep{Mitchell2021Investigating} in a special issue on \gls{covid19} Pandemic Acoustic Effects. } represents a first-step approach which will be further built upon and developed throughout the following chapters in \cref{part:generalModel}.
 
 \include{Parts/PartB/LockdownModelChapter.tex}
 
-\part{Towards a Generalisable and Probablistic Soundscape Model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Towards a Generalisable and Probabilistic Soundscape Model}
 \label{part:generalModel}
 \section*{Introduction}
 \cref{ch:lockdown} has demonstrated a novel application of predictive soundscape modelling. Given the conditions of the \gls{covid19} lockdowns, existing soundscape assessment methods were impractical (or illegal) to implement. As outlined in \cref{ch:lit}, this is an example of one of the scenarios where predictive modelling is necessary, as the existing \emph{post-hoc} survey methods cannot be used. Other applicable scenarios include: soundscape mapping, predicting soundscapes of not-yet-existing spaces, unattended sensor networks, and long-term soundscape monitoring.
 
-The model in \cref{ch:lockdown} represents an advance for current soundscape methods and provided valuable insight into the likely soundscape during the \gls{covid19} lockdown. However, it does not yet represent a generalisable soundscape model which would be neccesary to address these other applications of predictive modelling. Towards this goal, I therefore present a forward-looking proposal for expanding this model to include the additional types of soundscape indicators introduced in \cref{ch:lit}.
+The model in \cref{ch:lockdown} represents an advance for current soundscape methods and provided valuable insight into the likely soundscape during the \gls{covid19} lockdown. However, it does not yet represent a generalisable soundscape model which would be necessary to address these other applications of predictive modelling. Towards this goal, I therefore present a forward-looking proposal for expanding this model to include the additional types of soundscape indicators introduced in \cref{ch:lit}.
 
-In \cref{ch:bayes} I develop the overall requirements of a generalised predictive soundscape model and the development constraints that these requirements place on such a model. I describe how we can begin to build on the model from \cref{ch:lockdown}, incorporating architectural and visual information, and make it generalisable to new locations, contexts, and applications.
+In \cref{ch:bayes} I develop the overall goals of a generalised predictive soundscape model and the development constraints that these requirements place on such a model. I describe how we can begin to build on the model from \cref{ch:lockdown}, incorporating architectural and visual information, and make it generalisable to new locations, contexts, and applications.
 
 \cref{ch:mlmann} addresses the necessity of incorporating semantic information about the sound source type into a model for predicting soundscape perception. I illustrate how this information can be integrated by presenting the results of my study on predicting noise annoyance with a \gls{mlm} incorporating sound source information \citep{Orga2021Multilevel}\footnote{The content in this study and chapter are my own work, conducted as part of this thesis. I shared first-authorship with Dr. Ferran Orga for the published version and his contributions to the text included in the chapter are clearly marked and referenced. }. \draft{In addition, since the data for this study was collected via a \gls{wasn}, I also propose how sophisticated soundscape models can be integrated into unmanned sensor networks.}
 
@@ -303,7 +317,9 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
 \chapter{ISO 12913 Part 3 Report of Location Data}\label{app:location-data}
 \includepdf[landscape=true,pages=1-4]{./Papers/SuppPub1-Location-data.pdf}
 
-\include{LockdownDataApp.tex}
+% \include{LockdownDataApp.tex}
+
+\include{CircumplexDiscussionApp.tex}
 
 \include{OverFAppendix.tex}
 
