@@ -6,8 +6,6 @@
 This chapter begins by reviewing the methods presented in \citet{ISO12913Part2} for analysing soundscape assessment data which makes use of the soundscape circumplex, such as that collected with the \gls{ssid} Protocol. Next, a review of machine learning prediction and regression methods is presented and an in-depth review of the \glsfirst{mlm} method used throughout this thesis is given. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\draft{Why questionnaires and modelling?}
-
 \section{The current ISO 12913 framework}
 \label{sec:current}
 Although different methods are proposed for data collection in ISO12913 Part 2 \citep{ISO12913Part2}, in the context of this thesis I focus on the questionnaire-based soundscape assessment (Method A), because it is underpinned by a theoretical relationship among the items of the questionnaire that compose it. The core of this questionnaire is the 8 perceptual attributes (PA) originally derived in \citet{Axelsson2010principal}: pleasant, vibrant (or exciting), eventful, chaotic, annoying, monotonous, uneventful, and calm. In the questionnaire procedure, these PAs are assessed independently of each other, however they are conceptually considered to form a two-dimensional circumplex with \textit{Pleasantness} and \textit{Eventfulness} on the x- and y-axis, respectively, where all regions of the space are equally likely to accommodate a given soundscape assessment \citep{Aletta2016Soundscape}. In \citet{Axelsson2010principal}, a third primary dimension, \textit{Familiarity} was also found, however this only accounted for 8\% of the variance and is typically disregarded as part of the standard circumplex. As will be made clear throughout, the circumplex model has several aspects which make it useful for representing the soundscape perception of a space as a whole.
@@ -59,7 +57,7 @@ The majority of this thesis is therefore focussed on creating a supervised learn
 
 \subsection{Multi-level Linear Regression}
 
-Multi-level regression modelling is a technique commonly used in fields such as psychology \cit{42, 43 from Orga paper}, and \draft{other examples}. \glspl{mlm} are particularly useful when data is organised at one or more levels or groups. As noted in \cref{tab:metadata}, the \gls{isd} forms a hierarchical structure with several groups nested within each other: Questionnaires within GroupIDs within SessionIDs within Locations, making a \gls{mlm} especially well-suited. The concept behind \glspl{mlm} can be built up starting from simple linear regression, as given by:
+Multi-level regression modelling is a technique commonly used in fields such as psychology \citep{Quene2004multi,VolpertEsmond2021Using}, for applied prediction models \citep{Gelman2006Multilevel,Frees2006Multilevel}, and for a small number of previous soundscape studies \citep{Aumond2017Modeling}. \glspl{mlm} are particularly useful when data is organised at one or more levels or groups. As noted in \cref{tab:metadata}, the \gls{isd} forms a hierarchical structure with several groups nested within each other: Questionnaires within GroupIDs within SessionIDs within Locations, making a \gls{mlm} especially well-suited. The concept behind \glspl{mlm} can be built up starting from simple linear regression, as given by:
 
 \begin{equation}
   y_i = \alpha + \beta x_i + \epsilon
@@ -174,9 +172,12 @@ where $\alpha_{j[i]}$ is the mean \gls{isopl} score for LocationID \emph{j} wher
 
 In all, this concept helps to highlight the specific benefit of a \gls{mlm} approach. Conceptually, it would be possible to achieve a similar goal by treating the grouped data as `fully un-pooled' and to fit a separate linear regression model for each group. In the case of \cref{eqn:basicISDMLM}, we would treat the data from each location as a separate dataset and train a model on them each independently. This would reveal, within each location, the relationship between the loudness and sharpness of a sound and its perceived pleasantness. However, it would ignore the fact that there is a general, \emph{fixed}, relationship between loudness and pleasantness, regardless of the effects of the location.Alternatively, we could treat the data as `fully-pooled', creating a linear model with the form given in \cref{eqn:classicRegressModel} and only considers the fixed relationship across the entire dataset. A \gls{mlm}, which treats the data as `partially-pooled', and includes effects which are both fixed and can vary according to the location, enables us to investigate both the degree to which loudness generally impacts on pleasantness \emph{and} how this relationship changes according to the context of the location. 
 
-\draft{A bit more on what this model means in our terms.}
+\subsubsection{Structural Equation Models}
 
- \subsection{Feature Selection}
+\gls{sem} is a statistical approach to testing hypotheses about relationships between variables and latent features which has been used by several studies in soundscape \citep{Tarlao2020Investigating,Hong2015Influence}. \gls{sem} is a flexible approach in that it can include one or more independent or dependent variables and the variables can be continuous or discrete, factors or measured. As a collection of statistical methods, \gls{sem} is focussed on causal inference and is fundamentally built on a combination of path diagrams and regression modelling techniques \citep{Ullman2012Structural}. Most frequently in an \gls{sem}, the researcher constructs a path diagram which expresses the hypothesised relationships between the variables of interest. These path diagrams can be quite complex, including covariance relationships, latent variables, residuals, and distinctions between factors and measured variables. The model is then fit to the data through a selected estimation method (most typically Maximum likelihood (ML) as in regression modelling) and evaluated. The model may then be further reduced or modified if necessary. \gls{sem} also allows for multilevel modelling where separate models are developed for different levels of a nested hierarchy. This is conceptually equivalent to the \gls{mlm} or \gls{lmer} discussed throughout this thesis. Several studies in the soundscape literature have made use of \gls{sem}. 
+
+
+%  \subsection{Feature Selection}
   %  \subsubsection{Mutual Information}
   %  \draft{It appears that mutual information is related to the Bayes formula. I still need to read more into this, but it appears based on relative and overlapping probability distributions between the variables in question.}
   %  \paragraph*{From scholarpedia:}
@@ -192,4 +193,3 @@ In all, this concept helps to highlight the specific benefit of a \gls{mlm} appr
 %  \subsection{Clustering Analysis}
 %    \paragraph{K-means}
 %    \paragraph{nbclust}
-

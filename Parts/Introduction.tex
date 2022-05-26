@@ -9,9 +9,9 @@
 
 \section{Background}
 
-Urban noise pollution affects 80 million EU citizens with substantial impacts on public health which are not well addressed by conventional noise control methods. Concerns about noise pollution have recently received increased attention both as an environmental issue \citep{Aletta2022Frontiers} and as a necessary component of the UN Sustainable Development Goals \citep{King2022Here}. Noise pollution has been recognised as the second most impactful environmental health concern in cities, behind air pollution \citep{CDC2011Burden}. \citet{CDC2011Burden} found that, among other vectors, transport noise accounted for a loss of 903,000 \glsfirstplural{daly} due to sleep disturbance and 587,000 \glsplural{daly} due to annoyance in the EU.
+Urban noise pollution affects 80 million EU citizens (approx. 20\% of the population) with substantial impacts on public health which are not well addressed by conventional noise control methods \citep{EEA2020Environmental}. Concerns about noise pollution have recently received increased attention both as a global environmental issue \citep{Aletta2022Frontiers} and as a necessary component of the UN Sustainable Development Goals \citep{King2022Here}. Noise pollution has been recognised as the second most impactful environmental health concern in cities, behind air pollution. The WHO found that, among other vectors, transport noise accounted for a loss of 903,000 \glsfirstplural{daly} due to sleep disturbance and 587,000 \glsplural{daly} due to annoyance in the EU \citep{CDC2011Burden}.
 
-Traditional noise control methods have typically limited their focus to the reduction of unwanted noise, ignoring the potential benefits of increasing positive sounds and remaining restricted by practical limitations of noise reduction. Modern approaches to achieve improved health outcomes and public satisfaction aim to incorporate a person's perception of an acoustic environment, an approach known as `Soundscape'.
+Traditional noise control methods have typically limited their focus to the reduction of unwanted noise, ignoring the potential benefits of increasing positive sounds and remaining restricted by practical limitations of noise reduction. Modern approaches to achieve improved health outcomes and public satisfaction aim to incorporate a person's perception of an acoustic environment, an approach known as `Soundscape'\footnotemark.
 
 The soundscape concept represents a positive approach to understanding society's relationship with urban sound. In particular, it stands in contrast to the negative, reactive approach taken in existing noise control regulations. In a recent editorial, \citet{Axelsson2020Soundscape} stated:
 
@@ -44,7 +44,7 @@ As the future moves toward a more holistic soundscape focus, the ability to affe
 This work is intended to identify methods for incorporating contextual and objective information into a useable and interpretable predictive model of urban soundscapes and to develop tools for documenting, analysing, and visualising soundscape assessments. In order to achieve this, a protocol for collecting the multi-level, multi-factor perceptual assessment data has been developed and implemented, resulting in a large soundscape database. Several avenues of investigation are then drawn from the database and addressed throughout this thesis. The primary research questions are:
 
 \begin{enumerate}
-  \item What are the primary acoustic features involved in soundscape formation and what are the driving interactions between acoustic features and soundscape assessment?
+  \item What are the primary acoustic features involved in soundscape perception and what are the driving interactions between acoustic features and soundscape assessment?
   % \item How was the change in urban sound environments as a result of the COVID-19 lockdown reflected in the likely soundscape perception? 
   \item To what extent can a predictive model be used to investigate changes in likely soundscape perception in situations where the actual soundscape cannot be assessed?
   \item What are the design requirements of a predictive model of soundscape assessments and how can future work move towards achieving these?
@@ -63,7 +63,7 @@ This thesis presents the results of several studies which develop the conceptual
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{Figures/Thesis Structure.png}
+  \includegraphics[width=\textwidth]{Figures/Thesis Structure 2022-05-24.png}
   \caption{The overall thesis structure showing how each Research Question (RQ) and published study relates to each chapter. \label{fig:thesisStructure}}
 \end{figure}
 
@@ -71,7 +71,7 @@ This thesis presents the results of several studies which develop the conceptual
 
 After the introduction and literature review, the body of the text containing the original work is separated into three parts: \textbf{\cref{part:Methodology}} contains the methodology; \textbf{\cref{part:Lockdown}} presents an initial effort to develop and apply a predictive soundscape model; and \textbf{\cref{part:generalModel}} further develops this initial model with two related modelling studies with discussions of how each of these developments can be integrated into a single, general model. \cref{fig:thesisStructure} presents an overview of the chapter structure of this thesis and how each published study and research question are integrated into the structure.
 
-The methods section is split into two chapters: the first (\textbf{\cref{chap:protocol}}) provides an in-depth explanation of the unique data collection protocol developed for the \gls{ssid} Project. The collection and organisation methods included in this protocol were directed toward the creation of a large scale database suitable for training a soundscape prediction model which includes both acoustical and contextual information. The second part of the methods section (\textbf{\cref{chap:methods}}) focusses on how this database is analysed, which includes the questionnaire analysis methods and the multi-level modelling strategy employed throughout the rest of the thesis.
+The methods section is split into two chapters: the first (\textbf{\cref{chap:protocol}}) provides an in-depth explanation of the unique data collection protocol developed for the \glsfirst{ssid} Project and this thesis. The collection and organisation methods included in this protocol were directed toward the creation of a large scale database suitable for training a soundscape prediction model which includes both acoustical and contextual information. The second part of the methods section (\textbf{\cref{chap:methods}}) focusses on how this database is analysed, which includes the questionnaire analysis methods and the multi-level modelling strategy employed throughout the rest of the thesis.
 
 \textbf{\cref{ch:lockdown}} details the development of a predictive soundscape model based on a multivariate psychoacoustic analysis of the collected database. To demonstrate the usefulness of predictive models, this initial model was applied to answer how the soundscape perception of urban public spaces was likely affected by the \gls{covid19} lockdowns in 2020. This chapter begins with an analysis of the sound environment impacts of the lockdowns, as revealed by the psychoacoustic analysis of binaural recordings. An initial \gls{mlm} to predict soundscape pleasantness and eventfulness was trained on data collected before the lockdowns (in 2019) according to the protocol set out in \cref{chap:protocol}, then applied to recordings taken in the same spaces during the height of the 2020 lockdowns (where traditional soundscape assessment methods are impractical) to investigate how these changes to the sound environment would likely have been perceived. 
 
@@ -84,8 +84,22 @@ Finally, \textbf{\cref{ch:ProbabilisticPOC}} reflects on the analysis methods fo
 In all, the results of six peer-reviewed studies are presented. These studies represent a series of work to
 
 \begin{enumerate}
-  \item Advance the conceptual development and practice of soundscape studies
+  \item Advance the conceptual development and practice of soundscape studies as applied to public spaces
   \item Develop a transparent and useful method of predicting soundscape assessments
   \item Investigate the various components which influence soundscape perception, including personal factors like psychological well-being, acoustical factors, and sound source specifics and to integrate these components into the predictive modelling methods.
   \item Propose a future framework for predictive soundscape models and provide proposals for how a general model should be developed that can be put to use in engineering approaches to designing the soundscapes of public urban spaces. 
 \end{enumerate}
+
+\newpage
+
+
+\paragraph*{\textsuperscript{1}A note on terminology: Soundscape \emph{Perception}?}
+
+According to the definition of soundscape provided in \citet{ISO12913Part1}, the soundscape is `the acoustic environment as perceived or experienced and/or understood by people'. Both in the standard and elsewhere, this has commonly been taken to mean that the soundscape is the perception itself, while the factors which lead to the soundscape are separate entitites. In this definition, the soundscape is not made up of sound sources, the visual environment, etc. but instead is the perception formed by them. This definition was proposed by \citet{Brown2012review} where the author made this distinction very clear in a section titled \textbf{`Soundscape is perception of the acoustic environment of a place'}: `Thus, a soundscape exists through human perception [\ldots] the soundscape of a place is thus a percieved entity'.
+
+Given this definition, speaking about the `soundscape perception' would be redundant; the soundscape already is the perception. By extension, saying `the soundscape is perceived as pleasant' also would not make sense; we should rather say `the soundscape is pleasant'. However, even among the foundational modern soundscape literature these uses are relatively widespread; \citet{Axelsson2010principal,Liu2014Effects} both refer to soundscape perception within the title.
+
+This definition also conflicts with other popular definitions of soundscape. The term soundscape is commonly used in acoustic ecology and underwater acoustics -- see titles such as `The soundscape of bat swarms' \citep{Kloepper2017soundscape}, `An integrated underwater soundscape analysis in the Bering Strait region' \citep{McKenna2021integrated}, `Soundscape analysis and acoustic monitoring document impacts of natural gas exploration on biodiversity in a tropical forest' \citep{Deichmann2017Soundscape}, and `Identification and quantification of soundscape components in the Marginal Ice Zone' \citep{Geyer2016Identification}. Several analysis packages have also been developed for the purpose of soundscape analysis, whether for urban-, underwater-, or bio-acoustics, which include no aspect of human perception in context (see e.g. Soundscape Viewer \citep{Sun2020Soundscape} and \texttt{scikit-maad} \citep{Ulloa2021scikit}). 
+
+These fields appear to use the term \emph{soundscape} more broadly, without a reference to human perception, to refer to either a broad consideration of the entire sound environment or to a focus on the sound environment as perceived by all creatures, not just humans. This first definition comes from \citet{Pijanowski2011Soundscape} where the authors state that `soundscape ecology focuses mostly on macro or community acoustics [\dots] the
+composition of all sounds heard at a location that are biological, geological, or anthropogenic' to differentiate it from previous acoustic ecology studies which `focus on a single species or a comparison of species'. Within the ISO 12913 framework, this would more accurately be described as the \emph{acoustic environment} (`sound at the receiver from all sound sources as modified by the environment'). In the end, all of these conflicting and overlapping definitions can make cross-disciplinary communication more difficult and prone to disagreements and misunderstandings. \draft{cont. If you want to keep this in.}
