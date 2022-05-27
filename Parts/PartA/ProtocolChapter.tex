@@ -1,6 +1,6 @@
-\chapter[Development of the SSID Protocol]{Development of The Soundscape Indices (SSID) Protocol and The International Soundscape Database (ISD)}
-
+\chapter{Development of The Soundscape Indices (SSID) Protocol and The International Soundscape Database (ISD)}
 \label{chap:protocol}
+\markleft{\cref{chap:protocol}. Development of the SSID Protocol and the ISD}
 
 %DONE: Still need to fix tables
 %DONE: Add in citations
@@ -8,7 +8,6 @@
 %TODO: Report summary statistics of the database here. In particular, replicate the demographic info mercede included in the WHO paper. Alternatively, if a database paper is ready in time, it would be reported there instead.
 
 This chapter presents the data collection method used to build the dataset used throughout this thesis. Published as \emph{The Soundscape Indices (SSID) Protocol} \citep{Mitchell2020Soundscape}, this protocol gives detailed instructions for carrying out soundscape assessments, how this data is organised, and descriptions of each data type collected. This protocol is presented both to document the data collection methods used throughout the \gls{ssid} project and to provide comprehensive instructions for future researchers hoping to make use of the protocol. The protocol consists of two stages: (1) a Recording Stage to collect audio-visual recordings for further analysis and for use in laboratory experiments, and (2) a Questionnaire Stage to collect in-situ soundscape assessments via a questionnaire method paired with acoustic data collection. Key adjustments and improvements have been made to enable the collation of data gathered from research groups around the world. The data collected under this protocol has been compiled into the International Soundscape Database \citep{Mitchell2021International}. 
-
 
 \section{Purpose}
 
@@ -305,24 +304,81 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
 
    Regarding the onsite soundscape survey, the translation of the questionnaires (and in particular the perceptual adjectives used for the soundscape appraisal) is a key point to consider when using the protocol in regions where English is not the local language. Indeed, while the ISO/TS 12913-2:2018 document from which the soundscape-related questions of this protocol are derived aims at providing standardised scales, it does not provide official translations in languages other than English. Some perceptual constructs are difficult to render in different languages and people might assign different meanings to them (e.g. \citep{Tarlao2016Comparing,Jeon2018cross,Nagahata2019Examination,AlmagroPastor2019Soundscape}). For this reason, in the soundscape research community, there is a growing interest in testing and validating reliable translation of the ISO soundscape adjectives \citep{Aletta2020Soundscape}, which will hopefully lead to a wide-spread use of this soundscape tool. It is expected that these validated translations could simply be substituted for their English counterparts in this protocol, when they become available.
    
-   \subsubsection*{The Soundscape Attributes Translation Project (SATP)}
 
-  % TODO Finish database section
 \section{The Database} 
-\misc{This section will form the start of the Scientific Data paper.}
 
-The implementation of this protocol within the \gls{ssid} project has resulted in the creation of a large dataset of urban soundscape assessments. The first version of the dataset has been released publicly as The \gls{isd}. This database forms the basis for the majority of the work reported in this thesis.
-
-\draft{Technical description of the database, including organisation}
-
-\draft{Summary including figures of the data}
-
-\draft{The future of the database.}
-
-\cref{fig:databaseUse} shows how the various portions of the database have been used throughout this thesis for constructing and using the models.
+The implementation of this protocol within the \gls{ssid} project has resulted in the creation of a large dataset of urban soundscape assessments. This database forms the basis for the majority of the work reported in this thesis. \cref{fig:databaseUse} shows how the various portions of the database have been used throughout this thesis for constructing and using the models.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/Database use figure.png}
   \caption{Diagram of how the data from the ISD has been used in the models throughout this thesis. \label{fig:databaseUse}}
 \end{figure}
+
+
+On 8 November, 2022, the first publicly available version, v0.2.0, was published on zenodo.org to coincide with the publication of \citet{Mitchell2021Investigating} (i.e. the study reported in \cref{ch:lockdown}). As of 26 May, 2022, the published version of the database is v0.2.4. It is the intention that this dataset be added to and augmented with new locations, cities, and contexts in the future, with contributions from the \gls{ssid} team at UCL, our collaborators at other institutions around the world, and via submissions from similar research groups. If a soundscape assessment is collected according to the \gls{ssid} Protocol, it can be integrated with the rest of the database to form a large, cohesive, and ever-growing database of soundscape assessments. As v0 was intended as a pre-release dataset, it included only the 13 locations in London and Venice used throughout this thesis and the results of the psychoacoustic analysis of the binaural recordings, but not the recordings themselves. In the near future, the intention is for this to be updated to V1.0, which will include more cities in Europe and China with thousands more surveys and will include the binaural recordings themselves. By following a consistent protocol designed to follow the ISO 12913 data collection standards, The \glsfirst{isd} \citep{Mitchell2021International} will hopefully form a new standard database of soundscape assessments and documentation to be used by soundscape researchers and practitioners around the world.
+
+
+% \usepackage{graphicx}
+% \usepackage{multirow}
+% \usepackage{booktabs}
+
+
+% \begin{table}
+% \centering
+% \caption{Summary of The International Soundscape Database (v0.2.4)}
+% \resizebox{\linewidth}{!}{%
+% \begin{tabular}{clccc} 
+% \toprule
+% \textbf{City} & \multicolumn{1}{c}{\textbf{LocationID}} & \textbf{\# SessionIDs} & \begin{tabular}[c]{@{}c@{}}\textbf{\# of BIN }\\\textbf{recordings}\end{tabular} & \textbf{\# of Surveys} \\ 
+% \hline
+% \multirow{11}{*}{London} & CamdenTown & 4 & 59 & 105 \\
+%  & EustonTap & 3 & 54 & 96 \\
+%  & MarchmontGarden & 4 & 66 & 104 \\
+%  & PancrasLock & 2 & 37 & 93 \\
+%  & RegentsParkFields & 2 & 62 & 118 \\
+%  & RegentsParkJapan & 2 & 56 & 91 \\
+%  & RussellSq & 3 & 84 & 145 \\
+%  & StPaulsCross & 1 & 43 & 66 \\
+%  & StPaulsRow & 1 & 33 & 72 \\
+%  & TateModern & 3 & 83 & 152 \\
+%  & TorringtonSq & 3 & 65 & 113 \\ 
+% \hline
+% \multirow{2}{*}{Venice} & MonumentoGaribaldi & 1 & 15 & 24 \\
+%  & SanMarco & 3 & 74 & 73 \\ 
+% \hline
+% Total &  & 32 & 731 & 1249 \\
+% \bottomrule
+% \end{tabular}
+% }
+% \end{table}
+% % \usepackage{multirow}
+% % \usepackage{booktabs}
+
+
+% \begin{table}
+% \centering
+% \caption{Summary of data collected during the 2020 lockdowns included in The International Soundscape Database (v0.2.4).}
+% \begin{tabular}{clcc} 
+% \toprule
+% \textbf{City} & \multicolumn{1}{c}{\textbf{LocationID}} & \begin{tabular}[c]{@{}c@{}}\textbf{\# of BIN}\\\textbf{recordings}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Total length of~}\\\textbf{recordings (min)}\end{tabular} \\ 
+% \hline
+% \multirow{11}{*}{London} & CamdenTown & 44 & 24.54 \\
+%  & EustonTap & 38 & 20.46 \\
+%  & MarchmontGarden & 41 & 22.15 \\
+%  & PancrasLock & 80 & 43.39 \\
+%  & RegentsParkFields & 43 & 24.52 \\
+%  & RegentsParkJapan & 35 & 18.83 \\
+%  & RussellSq & 40 & 21.64 \\
+%  & StPaulsCross & 27 & 13.96 \\
+%  & StPaulsRow & 48 & 25.8 \\
+%  & TateModern & 41 & 22.3 \\
+%  & TorringtonSq & 41 & 23.33 \\ 
+% \hline
+% \multirow{2}{*}{Venice} & MonumentoGaribaldi & 53 & 27.98 \\
+%  & SanMarco & 40 & 21.05 \\ 
+% \hline
+% Total & \multicolumn{1}{c}{} & 571 & 309.97 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
