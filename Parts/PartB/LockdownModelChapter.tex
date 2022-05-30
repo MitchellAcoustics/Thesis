@@ -1,30 +1,18 @@
 \chapter{Investigating Urban Soundscapes of the COVID-19 Lockdown: A predictive soundscape modelling approach}
 \label{ch:lockdown}
-\markleft{\cref{ch:lockdown}. Soundscapes the COVID-19 Lockdown: A predictive modelling approach}
+\markright{\cref{ch:lockdown}. Soundscapes of the COVID-19 Lockdown: A predictive modelling approach}
 
-The engineering soundscape approach developed in this thesis strives to make certain applications of soundscape possible. As highlighted earlier, one of these applications is the ability to assess the soundscape perception in situations where surveys are impractical as well as to be able to track changes in the soundscape of public spaces. This chapter therefore presents a unique application of predictive modelling towards these goals as well as the development of the predictive modelling method itself. First, I will review the identified impacts of the \gls{covid19} lockdowns on the sound environment in cities around the world, investigates these changes in detail within London and Venice, and finally presents the impact of these changes on the likely perception of the soundscape of public spaces through the results of the predictive model. 
-
-% \section{Introduction}
-% \label{sec:intro}
-%  The unprecedented lockdowns due to COVID-19 in spring 2020 triggered changes in human activities in public spaces. I developed a predictive modelling approach to characterise the resulting change in the perception of the sound environment in a scenario where people could not be surveyed. Building on the \gls{isd} dataset of soundscape questionnaires ($N = 1,136$) and binaural recordings ($N = 687$) collected in 13 locations across London and Venice during 2019, new recordings ($N = 571$) were made in the same locations during the 2020 lockdowns. Using these 30-second-long recordings, linear multi-level models were developed to predict the soundscape pleasantness ($R^2=0.85$) and eventfulness ($R^2=0.715$) during the lockdown and compare the changes for each location. The performance was above average for comparable models. An online listening study also investigated the change in sound sources within the spaces. Results indicate:
-
-%  \begin{enumerate}
-%    \item human sounds were less dominant and natural sounds more dominant across all locations;
-%    \item contextual, location-based information is important for predicting pleasantness but not for eventfulness;
-%    \item in general, perception shifted towards less eventful soundscapes and to more pleasant soundscapes for previously traffic-dominated locations, but not for human- and natural-dominated locations.
-%  \end{enumerate}
-
-%  I will first review the sound environment impacts of the \gls{covid19} lockdowns. Then, I will detail the additional data collection, analysis, and model building process. Finally, the results of the model will be presented, with a focus on interpreting the predicted changes in the soundscape perception of these spaces. This study demonstrates the usefulness of predictive modelling and the importance of considering contextual information when discussing the impact of sound level reductions on the soundscape.
+The engineering soundscape approach developed in this thesis strives to make certain applications of soundscape possible. As highlighted earlier, one of these applications is the ability to assess the soundscape perception in situations where surveys are impractical as well as to be able to track changes in the soundscape of public spaces. This chapter therefore presents a unique application of predictive modelling towards these goals as well as the development of the predictive modelling method itself. First, I will review the identified impacts of the \gls{covid19} lockdowns on the sound environment in cities around the world, investigate these changes in detail within London and Venice, and finally presents the impact of these changes on the likely perception of the soundscape of public spaces through the results of the predictive model. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Review of the impacts of COVID-19}
  \label{sec:covidReview}
- The global emergency caused by \gls{covid19} in early 2020 required national lockdown measures across the world, primarily targeting human activity. In the United Kingdom, construction and transport were allowed to continue, but a decrease in activity was observed \citep{Hadjidemetriou2020impact}. During some periods and in other countries, such as Italy, the restrictions were more severe and even included limiting people's movement to a certain radius from their place of residence \citep{Ren2020Pandemic}. The explorations in environmental acoustics of lockdown conditions across the world have revealed various degrees of impact on the acoustic environment, with researchers reporting reductions in noise levels affecting the population at the scale of urban agglomerations such as the Ruhr Area in Germany \citep{Hornberg2021Impact} and conurbations in the south of France \citep{Munoz2020Lockdown}. Impacts have also been reported at a scale of a multimillion city such as Madrid \citep{Asensio2020Changes} or Barcelona \citep{BonetSola2021Soundscape} as well as at a more local, city-centre or even public space-scale in cities such as Stockholm \citep{Rumpler2021Noise}, London \citep{Aletta2020Assessing}, Girona \citep{AlsinaPages2021Changes}, or Granada \citep{VidaManzano2021sound}. In general, these studies have demonstrated a decrease in urban noise levels and indicated a difference in the amount of decrease depending on the type of space investigated (e.g. parks, urban squares, etc.) and the type of human activity characteristic for the space, with higher reductions in places typically associated with human sounds and activities such as shopping and tourism.
+ The global emergency caused by \gls{covid19} in early 2020 required national lockdown measures across the world, primarily targeting human activity. In the United Kingdom, construction and transport were allowed to continue, but a decrease in activity was observed \citep{Hadjidemetriou2020impact}. During some periods and in other countries, such as Italy, the restrictions were more severe and even included limiting people's movement to a certain radius from their place of residence \citep{Ren2020Pandemic}. Explorations in environmental acoustics of lockdown conditions across the world have revealed various degrees of impact on the acoustic environment, with researchers reporting reductions in noise levels affecting the population at the scale of urban agglomerations such as the Ruhr Area in Germany \citep{Hornberg2021Impact} and conurbations in the south of France \citep{Munoz2020Lockdown}. Impacts have also been reported at a scale of a multimillion city such as Madrid \citep{Asensio2020Changes} or Barcelona \citep{BonetSola2021Soundscape} as well as at a more local, city-centre or even public space-scale in cities such as Stockholm \citep{Rumpler2021Noise}, London \citep{Aletta2020Assessing}, Girona \citep{AlsinaPages2021Changes}, or Granada \citep{VidaManzano2021sound}. In general, these studies have demonstrated a decrease in urban noise levels, indicating a difference in the amount of decrease depending on the type of space investigated (e.g. parks, urban squares, etc.) and the type of human activity characteristic for the space, with higher reductions in places typically associated with human sounds and activities such as shopping and tourism.
 
  \subsection{The lockdown measures in London and Venice}
 
-In general, the lockdown measures implemented in the UK to contain the spread of the SARS-CoV-2 virus involved `stay at home' recommendations, social distancing, stopping non-essential commercial activities, banning public gatherings, limiting traffic mobility and alike. Specifically, the UK Government passed the Health Protection (Coronavirus, Restrictions) (England) Regulations 2020, which were put into place at 1:00 pm on \nth{26} March 2020 \citep{PHE2020Health}. Under these restrictions, the public were only allowed to leave their homes once per day for essential activities and exercise. All offices and shops selling non-essential goods were told to close, gatherings of more than two people in public were banned, and individuals were advised to only interact with members of their own household. These restrictions were set to be reviewed by the Secretary of State at least once every 21 days and would continue indefinitely until they were no longer necessary to prevent the spread of infection in England. In practice the lockdown continued through the spring of 2020 and was first partially eased on the \nth{1} of June, with school children in England returning to school, but the broader lockdown continued throughout the summer \citep{Tong2021Increases}. During this period of lockdown, noise complaints increased by 48\% compared to the same period during the preceding year, with an immediate uptick seen once lockdown measures were implemented. \cref{fig:noiseComplaints} shows the timeline of these restrictions and the accompanying noise complaints received by 22 boroughs in London \citep{Tong2021Increases}.
+In general, the lockdown measures implemented in the UK to contain the spread of the SARS-CoV-2 virus involved `stay at home' recommendations, social distancing, stopping non-essential commercial activities, banning public gatherings, limiting traffic mobility, etc. Specifically, the UK Government passed the Health Protection (Coronavirus, Restrictions) (England) Regulations 2020, which were put into place at 1:00 pm on \nth{26} March 2020 \citep{PHE2020Health}. Under these restrictions, the public were only allowed to leave their homes once per day for essential activities and exercise. All offices and shops selling non-essential goods were told to close, gatherings of more than two people in public were banned, and individuals were advised to only interact with members of their own household. These restrictions were set to be reviewed by the Secretary of State at least once every 21 days and would continue indefinitely until they were no longer necessary to prevent the spread of infection in England. In practice the lockdown continued through the spring of 2020 and was first partially eased on the \nth{1} of June, with school children in England returning to school, but the broader lockdown continued throughout the summer \citep{Tong2021Increases}. During this period of lockdown, noise complaints increased by 48\% compared to the same period during the preceding year, with an immediate uptick seen once lockdown measures were implemented. \cref{fig:noiseComplaints} shows the timeline of these restrictions and the accompanying noise complaints received by 22 boroughs in London \citep{Tong2021Increases}.
 
 \begin{figure}[h]
   \centering
@@ -58,9 +46,9 @@ The \nth{1} research question (RQ1), addressing the perceptual effect of the cha
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Materials and Methods}
+\section{Materials and methods}
 
- This study was conducted via initial onsite data collection campaigns in Central London and Venice in 2019 before the outbreak of \gls{covid19} as part of the \gls{ssid} project \citep{Mitchell2020Soundscape} and in 2020 during the strictest part of the lockdowns \citep{Aletta2020Assessing}, including objective acoustic data (2019 and 2020) and subjective responses (2019 only). % The full \emph{in-situ} dataset, as described in this section, has been made publicly available as `The International Soundscape Database (V0.2.1)' on Zenodo (\url{https://zenodo.org/record/5654747}) \citep{Mitchell2021International}.
+ This study was conducted via initial onsite data collection campaigns in Central London and Venice in 2019 before the outbreak of \gls{covid19} as part of the \gls{ssid} project \citep{Mitchell2020Soundscape} and in 2020 during the strictest part of the lockdowns \citep{Aletta2020Assessing}, including objective acoustic data (2019 and 2020) and subjective responses (2019 only). 
  
  Using both 2019 and 2020 binaural recordings, an online listening experiment was conducted to provide an understanding about the change in sound source composition. The 2019 onsite questionnaire data were used to define the dominant sound source at each location as a starting point for interpreting the soundscape change. A predictive model was developed to reveal the change in the perceived pleasantness and eventfulness using objective acoustic data and location to predict subjective responses. Although the initial (2019) dataset contains additional locations (specifically, in Spain, the Netherlands, and China), due to the nature of this study as a reaction to the strict movement and activity restrictions, the sites which could be included in the lockdown (2020) measurement campaigns were limited to locations where staff and equipment had access and where recordings could be undertaken during the spring of 2020.
 
@@ -71,18 +59,11 @@ The \nth{1} research question (RQ1), addressing the perceptual effect of the cha
  \subsection{Onsite data: Questionnaires, binaural measurements, and recordings}
   The 2019 data collection was performed across all the locations using the protocol based on the Method A of the ISO/TS 12913-2:2018 \citep{ISO12913Part2}, collected either via handheld tablets or paper copies of the questionnaire. The full questionnaire and data collection procedure are given in \cref{app:questionnaire} and \cref{chap:protocol}, respectively, however the key parts used for this study are those addressing sound source dominance and \gls{paq}.
    
-   The initial onsite data collection featured both questionnaire data collected from the general public and acoustic measurements, conducted across thirteen urban locations (in London $N=11$, in Venice $N=2$) between the \nth{28} of February and the \nth{21} of June 2019, with additional sessions in July and October 2019. Although the total survey period in 2019 extended over several seasons, the surveys at any individual location did not extend over seasons with different occupancy patterns. A total of 1,318 questionnaire responses were collected from the general population across the measurement points during 1 -- 3 hour-long campaigns in both cities in 2019, accompanied by 693 approximately 30-second long 24-bit 44.1 kHz binaural recordings. After data cleaning, each of the 13 locations was characterised by between 14 to 80 recordings and between 24 to 147 questionnaire responses. Mean age of the participants was 33.9, with a standard deviation of 14.57 (45\% male, 53.8\% female, 0.4\% non-conforming, 0.9\% prefer-not-to-say). The data cleaning for the binaural recordings resulted in in 1,291 binaural recordings which were then processed further, as described in \cref{sec:analyses}. Psychoacoustic analyses are shown in the publicly available database.
+   The initial onsite data collection featured both questionnaire data collected from the general public and acoustic measurements, conducted across thirteen urban locations (in London $N=11$, in Venice $N=2$) between the \nth{28} of February and the \nth{21} of June 2019, with additional sessions in July and October 2019. Although the total survey period in 2019 extended over several seasons, the surveys at any individual location did not extend over seasons with different occupancy patterns. A total of 1,318 questionnaire responses were collected from the general population across the measurement points during 1 -- 3 hour-long campaigns in both cities in 2019, accompanied by 693 approximately 30-second long 24-bit 44.1 kHz binaural recordings. After data cleaning, each of the 13 locations was characterised by between 14 to 80 recordings and between 24 to 147 questionnaire responses. Mean age of the participants was 33.9, with a standard deviation of 14.57 (45\% male, 53.8\% female, 0.4\% non-conforming, 0.9\% prefer-not-to-say). Psychoacoustic analyses of the binaural recordings were performed as described in \cref{sec:analyses}.
 
-   Although recent results from both \citet{Tarlao2020Investigating} and \citet{Erfanian2021Psychological} indicate the important influence of personal and demographic factors -- in particular age and gender -- on soundscape perception, these factors were not included as potential features in the modelling process\footnote{See \cref{ch:whostudy} for the results of \citep{Erfanian2021Psychological} and an in depth discussion of how these factors should or could be integrated into the predictive modelling process.}. Given the nature of this study as addressing a scenario when people could not be surveyed, no additional demographic information is available in the lockdown case to be fed into the model and is therefore not useful to include for the development and application of this specific predictive model. This information is reported throughout the study simply to provide further context to the data collection.
+   Although recent results from both \citet{Tarlao2020Investigating} and \citet{Erfanian2021Psychological} indicate the important influence of personal and demographic factors -- in particular age and gender -- on soundscape perception, these factors were not included as potential features in the modelling process\footnote{See \cref{ch:whostudy} for the results of \citet{Erfanian2021Psychological} and an in depth discussion of how these factors could or should be integrated into the predictive modelling process.}. Given the nature of this study as addressing a scenario when people could not be surveyed, no additional demographic information is available in the lockdown case to be fed into the model and is therefore not useful to include for the development and application of this specific predictive model. This information is reported throughout the study simply to provide further context to the data collection.
 
    The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the \nth{6} and the \nth{25} of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on site in 2020.
-
-  %  \subsubsection{Data collection}
-  %  In order to simplify the results and allow for modelling the responses as continuous values, the 8 \glspl{paq} undergo a trigonometric projection to reduce them onto the two primary dimensions of pleasant and eventful, according to the procedure outlined in Part 3 of the ISO 12913 series \citep{ISO12913Part3}. In order to distinguish the projected values from the Likert-scale \gls{paq} responses, the projected values will be referred to as \gls{isopl} and \gls{isoev} and can be considered to form an x-y coordinate point (x = \gls{isopl}, y = \gls{isoev}) as explained in detail in \cref{chap:methods} \citep{Lionello2021Introducing}.
-
-   %FIXME: Fix layout of correlation table
-% \usepackage{booktabs}
-% \usepackage{rotating}
 
 
 \begin{sidewaystable}[hp]
@@ -109,7 +90,6 @@ $RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.
 \end{tabular}
 \end{sidewaystable}
 
-
    \cref{tab:corr} shows the Pearson correlation coefficient between each of the candidate acoustic features and the outcome pleasantness and eventfulness. As all variables considered are continuous, and the eventual model is linear, the Pearson coefficient is chosen as a measure of the strength of the linear relationship between two continuous variables. For \gls{isopl} ($ISOPl$), we can see three tiers of correlations:
 
    \begin{enumerate}
@@ -129,7 +109,11 @@ $RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+   \begin{figure}[h]
+     \centering
+     \includegraphics[width=\textwidth]{Figures/Lockdown-Fig1.png}
+     \caption{The study flowchart indicating the data collection, analysis, modelling, and discussion throughout the study. \label{fig:lockdown-study-framework}}
+   \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -137,62 +121,14 @@ $RA$ & -0.34 & 0.31 & 0.60 & 0.74 & 0.18 & 0.71 & 0.31 & 0.63 & 0.58 & 0.73 & 0.
 
    Two linear multi-level models (MLM) were computed to predict: 1) \gls{isopl}, and 2) \gls{isoev}. These models are trained on the 2019 data only, then applied to the acoustic data collected during the 2020 lockdowns, the results of which are reported in \cref{sec:applicationLockdown}. The individual-level of the models is made up of the acoustic features calculated from the binaural recordings made during each respondent's survey period, while the group-level includes the categorical `LocationID' variable indicating the location in which the survey was taken, acting as a non-auditory contextual factor. The performance criterion used for the feature selection process was the \gls{aic} \citep{Akaike1974new}.
 
-  %  A separate backwards-step feature selection was performed for each of the outcome models in order to identify the minimal feature set to be used for predicting each outcome. In this feature selection process, an initial model containing all of the candidate features was fit. Each feature was then removed from the model one at a time, then the best-performing model is selected and the procedure continues step-wise until no improvement is seen by removing more features. This process is carried out first on the location-level features (including the potential to remove all features including LocationID, resulting in a `flat' or standard multivariate linear regression model), then on the individual-level features. The performance criterion used for this process was the \gls{aic} \citep{Akaike1974new}. To check for multicollinearity among the selected features, the \gls{vif} was calculated and a threshold of $\gls{vif} < 5$ was set. Any features which remained after the backwards step-wise selection and which exceeded this threshold were investigated and removed if they were highly collinear with the other features.
-
    All of the input features are numeric values, in the units described above. Before conducting feature selection, the input features are z-scaled to enable proper comparison of their effect sizes. After the feature selection, the scaled coefficients are used in the text when reporting the final fitted models to facilitate discussion and comparison between the features. The unscaled model coefficients are reported in \cref{app:lockdown} to enable the models to be applied to new data. In order to properly assess the predictive performance of the model, an 80/20 train-test split with a balanced shuffle across LocationIDs was used. The z-scaling and feature selection were performed on the training set only, in order to prevent data leakage. To score the performance of the model on the training and testing sets, I use the \gls{mae}, which is in the scale of the response feature -- for \gls{isopl} and \gls{isoev} this means our response can range from $-1$ to $+1$. However, since the end-goal of the model is to predict the soundscape assessment of the location as a whole, rather than the individual responses, I also assess the performance of the model in predicting the average response in each location. To do this, the mean response value for each location is calculated, and the $R^2$ accuracy across LocationIDs is reported for both the training and testing sets.
 
    The model fitting and feature selection was performed using the \texttt{step} function from \texttt{lmerTest} (v3.1.3) \citep{Kuznetsova2017lmerTest} in R statistical software (v.4.0.3) \citep{RCT2018R}. The summaries and plots were created using the \texttt{sjPlot} package (v.2.8.6) \citep{Luedecke2021sjPlot} and \texttt{seaborn} (v.0.11.1) \citep{Waskom2021seaborn}.
 
- \subsection{Online Survey}
+ \subsection{Online survey}
 \label{sec:GorillaTin}
  
-   \begin{figure}[h]
-     \centering
-     \includegraphics[width=\textwidth]{Figures/Lockdown-Fig1.pdf}
-     \caption{The study flowchart indicating the data collection, analysis, modelling, and discussion throughout the study. \draft{The subsections in the text to which each box refers are indicated in italics.} \label{fig:lockdown-study-framework}}
-     %FIXME: Change the section references to match.
-   \end{figure}
-
    A online listening test was conducted using the Gorilla Experiment Builder\footnote{The development of this online survey was performed by Ms. Magdalena Kachlicka and Dr. Tin Oberman and the text of \cref{sec:GorillaTin} was originally drafted by Dr. Oberman. The text is included here verbatim from \citet{Mitchell2021Investigating} to accurately reflect the methods used and provide context for the later discussions.} \citep{AnwylIrvine2019Gorilla}. The participants were exposed to a random selection of 78 binaural recordings (39 from 2019 and 39 from 2020, 6 recordings per location). Each participant had the option to evaluate either 1 or 2 sets of 6 recordings randomly assigned between 13 stimuli sets. Mp3 files, converted at 256 kBps were used due to the requirements of the Gorilla platform.
-
-   No visual stimuli were used in the experiment. The experiment consisted of:
-
-   \begin{enumerate}
-     \item an initial exercise to enhance the chances of participants complying with the instructions and wearing headphones
-     \item a training set using two randomly chosen binaural recordings (then not used in the main task) from the dataset
-     \item a soundscape characterisation questionnaire starting with an open-ended question about perceived sound sources and featuring the same questions as the one used in-situ, looking into the perceived affective quality of the soundscape the perceived sound source dominance of the following four types: traffic noise, other noise, human sounds, and natural sounds
-     \item a questionnaire on the basic demographic factors.
-   \end{enumerate}
-
-   The questionnaire used in Part 3 of the online experiment is reported in \cref{tab:gorilla}.
-
-   Baring in mind the remote nature of the study and to ensure a minimum level of robustness for reliable sound source recognition, an initial exercise was performed consisting of a headphone screening test \citep{Woods2017Headphone} and a headphone reproduction level adjustment test \citep{Gontier2019Estimation}. The level adjustment was performed using an 11-second-long pink noise sample matched to the lowest and the highest \gls{la90} values from the experimental set. Participants were asked to adjust their listening level to clearly hear the quieter sample while keeping the level low enough, so they don't find the louder sample disturbing. The headphone screening test followed, featuring a stereo signal of 1-second-long 100 Hz sin tone, generated with Izotope RX6 application, played at a 3 dB difference where one of the equally loud pairs had its phase inverted. A 100 Hz sin was used because the pilot tests revealed that the 200 Hz sin tone proposed by \citet{Woods2017Headphone} created a higher uncertainty varying across different laptop models and would likely contribute to the chances of a participant fooling the test. It was expected that participants using speakers would not be able to either hear the sin wave or would be fooled by the inverted phase effect and therefore not able to pass the trials, unless they were indeed using headphones. The participant needed to recognise the quietest of the 3 samples in a trial of 6 attempts. Only participants correctly answering 5 or more out of 6 trials were allowed to proceed with the experiment. Participants were asked not to change their audio output settings during the rest of the experiment. This was introduced to ensure that a participant is using a headphone playback system which allows a listener to clearly recognise a 3 dB difference at 100 Hz as a proxy for sufficient audio quality playback.
-
-   However, after the initial data collection, questions were raised as to how the playback loudness impacts ecological validity as it relates to the perceived affective quality of the soundscape. Given this concern, the \gls{paq} responses from the online surveys were not included in further data analysis. Sound source identification is not considered to suffer the same validity concerns as this is not directly dependent on absolute playback level and requires only that the participant can clearly hear what is present. The purpose of the calibration procedure described above was to ensure that the participant could clearly hear the softest samples used.
-
-   Online questionnaire data was collected between the \nth{9} of June and the \nth{9} of August 2020. Within the Gorilla Experiment Builder, a total of 250 attempts to complete the experiment were recorded, where 165 participants were excluded either on the basis of not passing the headphone screening ($N=79$) or for not completing the experiment, usually before engaging into the screening ($N=83$). Out of a total of 88 participants who completed the test, 2 participants were excluded as outliers as they provided uniform answers across all the questions and commented on not being able to properly hear the stimuli, despite their successful completion of the training tests. The participants of the online experiment were of mean age 32.42, 45.1\% male, 54.9\% female.
-
-   \cref{fig:lockdown-study-framework} illustrates and summarises the framework and sections described above.
-
-\section{Results}
-
- The results of the onsite surveys, online experiment, and the model development are reported here. They are reported following the structure of the ISO/TS 12913 series, revealing the perceived sound source dominance, key perceptual attributes (\gls{isopl} and \gls{isoev}) and the lockdown-related changes.
-
-\subsection{The sound environment impacts of the lockdown in London and Venice}
-\label{sec:LondonLockdown}
-Before continuing to the predictive model and the impacts on the soundscape perception, I will first review results indicating the change in the sound environment. To summarise these impacts, I present the location-level changes in the \gls{laeq}, \gls{n5}, and \gls{s} from the 2019 condition to the 2020 lockdown condition. The original analysis in this section was presented in \citet{Aletta2020Assessing}. This analysis has been updated to include the Venice data and to correct slight discrepancies between the datasets and psychoacoustic analyses used in the two papers (\citep{Aletta2020Assessing} and \citep{Mitchell2021Investigating}). Namely, in \citet{Aletta2020Assessing} the psychoacoustic features of the two binaural channels were combined by taking the average of the values from the two values. This has been brought in line with \citet{Mitchell2021Investigating} by taking the max value.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{Figures/LockdownLAeqCombined.png}
-  \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions in each city (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation (solid line: London; dashed line: Venice). \label{fig:NsMapLockLAeq}}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cref{fig:NsMapLockLAeq} presents the distributions of \gls{laeq} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. To determine whether there is a statistically significant difference between the two campaigns in each location, a one-tailed t-test was used. The results and the mean and standard deviation for each location in both campaigns are presented in \cref{tab:LockdownNumbers}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -245,9 +181,43 @@ Total & Mean & \multirow{2}{*}{1172 ~} & 21.62 & 2.04 & 63.47 & \multirow{2}{*}{
 }
 \end{sidewaystable}
 
+   No visual stimuli were used in the experiment. The experiment consisted of:
+
+   \begin{enumerate}
+     \item an initial exercise to enhance the chances of participants complying with the instructions and wearing headphones
+     \item a training set using two randomly chosen binaural recordings (then not used in the main task) from the dataset
+     \item a soundscape characterisation questionnaire starting with an open-ended question about perceived sound sources and featuring the same questions as the one used in-situ, looking into the perceived affective quality of the soundscape the perceived sound source dominance of the following four types: traffic noise, other noise, human sounds, and natural sounds
+     \item a questionnaire on the basic demographic factors.
+   \end{enumerate}
+
+   The questionnaire used in Part 3 of the online experiment is reported in \cref{tab:gorilla}.
+
+   Baring in mind the remote nature of the study and to ensure a minimum level of robustness for reliable sound source recognition, an initial exercise was performed consisting of a headphone screening test \citep{Woods2017Headphone} and a headphone reproduction level adjustment test \citep{Gontier2019Estimation}. The level adjustment was performed using an 11-second-long pink noise sample matched to the lowest and the highest \gls{la90} values from the experimental set. Participants were asked to adjust their listening level to clearly hear the quieter sample while keeping the level low enough, so they don't find the louder sample disturbing. The headphone screening test followed, featuring a stereo signal of 1-second-long 100 Hz sin tone, generated with Izotope RX6 application, played at a 3 dB difference where one of the equally loud pairs had its phase inverted. A 100 Hz sin was used because the pilot tests revealed that the 200 Hz sin tone proposed by \citet{Woods2017Headphone} created a higher uncertainty varying across different laptop models and would likely contribute to the chances of a participant fooling the test. It was expected that participants using speakers would not be able to either hear the sin wave or would be fooled by the inverted phase effect and therefore not able to pass the trials, unless they were indeed using headphones. The participant needed to recognise the quietest of the 3 samples in a trial of 6 attempts. Only participants correctly answering 5 or more out of 6 trials were allowed to proceed with the experiment. Participants were asked not to change their audio output settings during the rest of the experiment. This was introduced to ensure that a participant is using a headphone playback system which allows a listener to clearly recognise a 3 dB difference at 100 Hz as a proxy for sufficient audio quality playback.
+
+   However, after the initial data collection, questions were raised as to how the playback loudness impacts ecological validity as it relates to the perceived affective quality of the soundscape. Given this concern, the \gls{paq} responses from the online surveys were not included in further data analysis. Sound source identification is not considered to suffer the same validity concerns as this is not directly dependent on absolute playback level and requires only that the participant can clearly hear what is present. The purpose of the calibration procedure described above was to ensure that the participant could clearly hear the softest samples used.
+
+   Online questionnaire data was collected between the \nth{9} of June and the \nth{9} of August 2020. Within the Gorilla Experiment Builder, a total of 250 attempts to complete the experiment were recorded, where 165 participants were excluded either on the basis of not passing the headphone screening ($N=79$) or for not completing the experiment, usually before engaging into the screening ($N=83$). Out of a total of 88 participants who completed the test, 2 participants were excluded as outliers as they provided uniform answers across all the questions and commented on not being able to properly hear the stimuli, despite their successful completion of the training tests. The participants of the online experiment were of mean age 32.42, 45.1\% male, 54.9\% female.
+
+   \cref{fig:lockdown-study-framework} illustrates and summarises the framework and sections described above.
+
+\section{Results}
+
+ The results of the onsite surveys, online experiment, and the model development are reported here. They are reported following the structure of the ISO/TS 12913 series, revealing the perceived sound source dominance, key perceptual attributes (\gls{isopl} and \gls{isoev}) and the lockdown-related changes.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/LockdownLAeqCombined.png}
+  \caption{On the left: Sound levels distributions at the 11 London locations before and during the lockdown measures implementation; on the right: Sound levels distributions in each city (aggregated across locations) and corresponding mean values before and during the lockdown measures implementation (solid line: London; dashed line: Venice). \label{fig:NsMapLockLAeq}}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The sound environment impacts of the lockdown in London and Venice}
+\label{sec:LondonLockdown}
+
+Before continuing to the predictive model and the impacts on the soundscape perception, I will first review results indicating the change in the sound environment. To summarise these impacts, I present the location-level changes in the \gls{laeq}, \gls{n5}, and \gls{s} from the 2019 condition to the 2020 lockdown condition. The original analysis in this section was presented in \citet{Aletta2020Assessing}. This analysis has been updated to include the Venice data and to correct slight discrepancies between the datasets and psychoacoustic analyses used in the two papers (\citet{Aletta2020Assessing} and \citet{Mitchell2021Investigating}). Namely, in \citet{Aletta2020Assessing} the psychoacoustic features of the two binaural channels were combined by taking the average of the values from the two values. This has been brought in line with \citet{Mitchell2021Investigating} by taking the max value.
 
 
 \begin{figure}[h]
@@ -256,7 +226,11 @@ The t-test results indicate that all locations except Regents Park Japan demonst
   \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
 \end{figure}
 
-\cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
+\cref{fig:NsMapLockLAeq} presents the distributions of \gls{laeq} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. To determine whether there is a statistically significant difference between the two campaigns in each location, a one-tailed t-test was used. The results and the mean and standard deviation for each location in both campaigns are presented in \cref{tab:LockdownNumbers}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
 
 \begin{figure}[h]
   \centering
@@ -264,8 +238,7 @@ The t-test results indicate that all locations except Regents Park Japan demonst
   \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
 \end{figure}
 
-
-\paragraph*{Effect of the urban setting on sound levels reduction}
+\cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
 
 \begin{figure}[!h]
   \centering
@@ -285,6 +258,9 @@ The t-test results indicate that all locations except Regents Park Japan demonst
 
 \end{figure}
 
+
+\paragraph*{Effect of the urban setting on sound levels reduction}
+
 In addition to strictly documenting the changes in the sound environment in London, we also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
 
 % \begin{figure}[h]
@@ -294,6 +270,13 @@ In addition to strictly documenting the changes in the sound environment in Lond
 % \end{figure}
 
 \cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \citep{deCoensel2006quiet,Aletta2017Dimensions}.
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.7\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
+  \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
+\end{figure}
 
 \begin{table}[!h]
   \centering
@@ -331,13 +314,6 @@ In addition to strictly documenting the changes in the sound environment in Lond
 
 When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=.7\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
-  \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
-\end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \subsection{Perceived sound source dominance}
@@ -345,13 +321,14 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
    \subsubsection{2019 sound source composition per location}
   While the previous clustering was focussed on differentiating locations according to their strictly acoustic parameters, the listening test allowed us to also differentiate locations according to their sound source profiles. Based on the results derived from the source-dominance questions in the online listening test, this section presents the differences between the locations. Questionnaire data was collected English, Italian, and Spanish in both cities. Data presented here was aggregated per LocationID.
 
-   According to the highest scored mean value of the dominant sound source type, as shown in \cref{fig:sound-source-dom}, the locations can be grouped into: natural sounds dominated (RegentsParkJapan, RegentsParkFields, RussellSq), human sounds dominated (SanMarco, TateModern, StPaulsRow, StPaulsCross, MonumentoGaribaldi), noise (traffic and other noise) sounds dominated (CamdenTown, EustonTap, TorringtonSq, PancrasLock). Traffic noise and other noise have been combined here and for the rest of the discussion, as these responses are highly correlated within this dataset and it is not helpful to consider them separately for this analysis. This follows the alternative sound source labels given in Fig. C.3 of \citet{ISO12913Part2}, which combines traffic and other noise. Finally, MarchmontGarden is unique in that all of the sound source types are assessed as being nearly equally present with only 0.2 separating the least present (other noise, 2.5) and the most present (traffic noise, 2.7).
 
    \begin{figure}[h]
      \centering
      \includegraphics[width=.75\textwidth]{Figures/Lockdown-Fig2.jpg}
      \caption{Mean response per LocationID for the perceived dominance of the sound source types, for the 2019 on-site campaign. The values represent the mean response of all participants in each location to the question `To what extent do you presently hear the following four types of sounds?' Response values range from [1] Not at all to [5] Dominates completely. \label{fig:sound-source-dom}}
    \end{figure}
+
+   According to the highest scored mean value of the dominant sound source type, as shown in \cref{fig:sound-source-dom}, the locations can be grouped into: natural sounds dominated (RegentsParkJapan, RegentsParkFields, RussellSq), human sounds dominated (SanMarco, TateModern, StPaulsRow, StPaulsCross, MonumentoGaribaldi), noise (traffic and other noise) sounds dominated (CamdenTown, EustonTap, TorringtonSq, PancrasLock). Traffic noise and other noise have been combined here and for the rest of the discussion, as these responses are highly correlated within this dataset and it is not helpful to consider them separately for this analysis. This follows the alternative sound source labels given in Fig. C.3 of \citet{ISO12913Part2}, which combines traffic and other noise. Finally, MarchmontGarden is unique in that all of the sound source types are assessed as being nearly equally present with only 0.2 separating the least present (other noise, 2.5) and the most present (traffic noise, 2.7).
 
    \subsubsection[Overall change in the perceived sound source dominance during lockdown]{Overall change in the perceived sound source dominance during lockdown\footnote{The analysis of the online survey carried out in this subsection was performed by Dr. Tin Oberman. These results are included here verbatim from the original published paper to provide context for the later discussion on the influence of sound source composition on soundscape perception.}}
    \label{sec:soundSourceTin}
@@ -538,7 +515,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    The most frequent sound sources detected from the open-ended question correspond to the main four sound source types investigated, which indicated that all types remained present in the lockdown condition (at all the locations). While traffic intensity might have gone down, where the results of the Mann-Whitney \emph{U}-test were inconclusive, but supported by the psychoacoustic measurements according to \citet{Aletta2020Assessing}, traffic-related sound sources were still clearly present.
 
-   The sound source composition of an outdoor acoustic environment is extremely complex. Removing one component, such as human sounds, has implications on the whole soundscape \citep{Gordo2021Rapid}. Testing the effects of this \emph{in-situ} is not straightforward and interpreting this study in line with `what is the impact of human sounds' must be taken within the broader context of the range of conditions which changed within the acoustic environment. However, looking at the overarching picture, the lockdown condition was a useful and unique case study to understand the impact which human activities -- and the human sound source type in particular -- can have on soundscape perception of urban open spaces.
+   The sound source composition of an outdoor acoustic environment is extremely complex. Removing one component, such as human sounds, has implications on the whole soundscape \citep{Gordo2021Rapid}. Testing the effects of this \emph{in-situ} is not straightforward; interpreting this study in line with `what is the impact of human sounds' must be taken within the broader context of the range of conditions which changed within the acoustic environment. However, looking at the overarching picture, the lockdown condition was a useful and unique case study to understand the impact which human activities -- and the human sound source type in particular -- can have on soundscape perception of urban open spaces.
 
    \subsubsection{Predicted relative changes in soundscapes due to \gls{covid19} restrictions}
 
@@ -601,4 +578,3 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
  Starting from the success and unique application of this model, \cref{part:generalModel} will present developed framework for creating a generalisable predictive model, and a series of case studies illustrating how additional soundscape indicators could be integrated into the model to improve its performance and usefulness.
 
- %NOTE: Sort out appendix and supplementary material from lockdown paper.

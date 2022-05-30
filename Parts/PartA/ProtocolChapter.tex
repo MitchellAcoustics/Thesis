@@ -1,11 +1,6 @@
 \chapter{Development of The Soundscape Indices (SSID) Protocol and The International Soundscape Database (ISD)}
 \label{chap:protocol}
-\markleft{\cref{chap:protocol}. Development of the SSID Protocol and the ISD}
-
-%DONE: Still need to fix tables
-%DONE: Add in citations
-%DONE: Edit intro / add context of this being a stand-alone scientific work.%
-%TODO: Report summary statistics of the database here. In particular, replicate the demographic info mercede included in the WHO paper. Alternatively, if a database paper is ready in time, it would be reported there instead.
+\markright{\cref{chap:protocol}. Development of the SSID Protocol and the ISD}
 
 This chapter presents the data collection method used to build the dataset used throughout this thesis. Published as \emph{The Soundscape Indices (SSID) Protocol} \citep{Mitchell2020Soundscape}, this protocol gives detailed instructions for carrying out soundscape assessments, how this data is organised, and descriptions of each data type collected. This protocol is presented both to document the data collection methods used throughout the \gls{ssid} project and to provide comprehensive instructions for future researchers hoping to make use of the protocol. The protocol consists of two stages: (1) a Recording Stage to collect audio-visual recordings for further analysis and for use in laboratory experiments, and (2) a Questionnaire Stage to collect in-situ soundscape assessments via a questionnaire method paired with acoustic data collection. Key adjustments and improvements have been made to enable the collation of data gathered from research groups around the world. The data collected under this protocol has been compiled into the International Soundscape Database \citep{Mitchell2021International}. 
 
@@ -21,7 +16,7 @@ This chapter presents the data collection method used to build the dataset used 
 
  However, there are questions that cannot be practically addressed in-situ, such as soundscape assessment of less- or un-populated areas, the influence of mismatched acoustic and visual cues, physiological and neural responses to soundscapes, and so on \citep{Kogan2017comprehensive}. Laboratory experiments with controlled environments are required to address these aspects. Toward the development of a coherent \gls{ssid}, therefore, it is important that these two forms of data are collected simultaneously and with compatible methods, such that the results of the two approaches can be confidently combined and compared. In addition, since this protocol is intended to be used for the creation of a large-scale international database with additions carried out by several different and remote teams, it has been designed for efficiency, scalability, and information redundancy.
 
-\section{Protocol Design and Equipment}
+\section{Protocol design and equipment}
  The first goal is achieved by conducting in-situ questionnaires using a slightly altered version of Method A (questionnaire) from Annex C of the ISO/TS 12913-2:2018 technical specification \citep{ISO12913Part2} collected either via handheld tablets or paper copies of the questionnaire. Typically, a minimum of 100 responses are collected at each location during multiple 2-5 hr sessions over several days. During the survey sessions, acoustic data are collected via a stationary class 1 or class 2 \glsfirst{slm} (as defined in IEC 61672-1:2013 \citep{IEC61672Part1}) running throughout the survey period and through binaural recordings taken next to each respondent. These acoustic and response data are linked through an indexing system so that features of the acoustic environment can be correlated with individual responses or with the overall assessment of the soundscape, as required by researchers.
 
  The second goal is achieved by making First-Order (or higher) Ambisonic recordings simultaneously with 360\degree video which can be reproduced in a virtual reality environment. It has been shown that head-tracked binaural and multi-speaker ambisonic reproduction of recorded acoustic environments recorded in this way have high ecological validity \citep{Davies2014Soundscape}, particularly when paired with simultaneous head-tracked virtual reality video \citep{DeCoensel2017Urban,Hong2018Quality}.
@@ -30,7 +25,7 @@ This chapter presents the data collection method used to build the dataset used 
 
  The procedure has been designed to include multiple levels of data and metadata redundancy, making it robust to on-site issues and human error. The most crucial aspect of the redundancy is ensuring the perceptual responses can be matched with the appropriate corresponding environmental and acoustic data even when some information is lost or forgotten.
 
- \subsection{Labelling and Data Organisation}
+ \subsection{Labelling and data organisation}
    \label{section:metadata}
    In order to be able to identify all of the many data components of the Recording and Questionnaire Stages and to associate these with their various corresponding data, the following labelling system is suggested. This system is focussed on (1) relating all of the separate recordings and factors to specific questionnaire responses and (2) efficiency and consistency on site. A recent paper by \citet{Aumond2017Modeling} demonstrated the importance of addressing multiple levels of factors which influence perception, from individual-, to session-, to location-level. The successful pleasantness models built incorporating these information levels showed a marked improvement over the equivalent individual-level or location-level only models. The data organisation system proposed here was designed in order to maintain this important information, and the levels of information for the data collected on site are shown in \cref{tab:metadata}.
 
@@ -59,7 +54,7 @@ This chapter presents the data collection method used to build the dataset used 
 
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \subsection{Location and Measurement Point Selection}
+ \subsection{Location and measurement point selection}
    \label{sec:location-selection}
 
    To select the appropriate measurement point, it should be ensured that the following contextual factors representative of the site are present in the spatial recording: openness, greenness, presence of landmarks, dominant use (walking, staying), and social presence (related to the dominant use). These are identified as objective metrics often used in urban and landscape research \citep{Lynch1964,Kaplan1989,Ewing2013,Quercia2014Aesthetic,Joglekar2020Facelift}, possibly contributing to soundscape assessment \citep{Aletta2019Exploring,Pheasant2010importance}. This relies on the researcher's opinion-driven assessment -- it is advised to observe the location for a moment and then choose the point representative of the context and the first-person user experience. For instance, in a park, it would probably be near a bench in the central area near the fountain; in a busy square, it would be a place where most people gather and have the best view of the landmark. While doing so, the placement too near the prominent vertical objects such as a statue, a wall, or a mast should be avoided as it might cause issues in later handling the visual data (3m is considered a safe distance from these features). Similar concerns are also true for the audio data and careful attention should be paid to avoid placing the recording equipment near extraneous noisy equipment or acoustic shadows. Further guidance on this is given in Point 4 of \cref{sec:proc}. It is important to avoid placing the recording equipment at a position where no users are expected (i.e. avoid putting the equipment in the middle of a flower bed or a grass area that nobody uses).
@@ -135,11 +130,11 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
 \end{table}
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Techniques for Field Data Collection}
+\section{Techniques for field data collection}
 
  There are several methods available for characterising the physical environment and collecting soundscape assessments. Here, I will address the techniques employed in this protocol and general best practice for each of them.
 
- \subsection{Questionnaire Surveys}
+ \subsection{Questionnaire surveys}
 
    As stated above, the questionnaire is primarily based on Method A of ISO/TS 12913-2:2018. This method begins with a set of questions relating to the sound environment which are assess on a 5-point Likert scale, coded from 1 to 5. A sample codebook to demonstrate the recommended variable naming and response coding is included in \cref{app:codebook}.
    %DONE: Fix internal references
@@ -168,11 +163,11 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
 
 
 
- \subsection{Contextual and Environmental Factor Data Collection}
+ \subsection{Contextual and environmental factor data collection}
 
    During each survey, the equipment listed in \cref{sec:equipment} is set up to capture the contextual and environmental data for the location. \cref{tab:factors} lists the factors to be collected and at what stage they should be collected.
 
-   \subsubsection{Spatial Audio-Visual Recordings}
+   \subsubsection{Spatial audio-visual recordings}
 
    In order to capture the acoustic and visual information in the space for replication in a laboratory setting, 360\degree video and \gls{amb} audio are recorded to be used in \gls{vr} playback. The goal of this is two-fold: first, to enable researchers to document and replicate the in-situ environment of the space as it was during a questionnaire survey session for lab experiments and, second, to capture environments in which performing a questionnaire survey is not feasible.
 
@@ -187,7 +182,7 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
      \item The 360\degree video will take a significant amount of storage space. Researchers should ensure that there is ample free space on the camera SD cards prior to going out on site. If conducting multiple surveys away from their home institute (i.e. in another city), teams are recommended to bring a large external hard drive so that videos can be offloaded after each session.
    \end{itemize}
 
-   \subsubsection{Reference Recordings}
+   \subsubsection{Reference recordings}
 
    A soundscape index, or any investigation of the impact of the physical environment on the soundscape, requires consistent and accurate measurement of the environment, most importantly calibrated measurement and recording of the acoustic environment. For this protocol, this has been achieved through the use of separate calibrated binaural recordings and measurements made with a calibrated \gls{slm}.
 
@@ -205,7 +200,7 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
    \caption{Timeline of the on-site soundscape protocol. RegentsParkJapan (RPJ) is used as an example. Abbreviations as defined in Table \ref{tab:factors} -- \gls{que}: Questionnaires; \gls{vid}: 360\degree video; \gls{pic}: Site pictures; \gls{bin}: Binaural Recording; \gls{amb}: Ambisonic recording; \gls{slm}: Sound Level Meter (acoustical factors); \gls{env}: Environmental factors. \label{fig:timeline}}
  \end{figure}
 
- \paragraph*{Setup \& Calibration} The equipment should be assembled, checked, and calibrated prior to arriving at the measurement location. Calibrate the equipment according to the manufacturer's instructions. All \gls{slm}s should have built-in methods to calibrate using a standard 94 dB 1 kHz tone calibrator. If a similar method is available for the ambisonic microphone, this should be used. If a built-in method is not available, but a calibrator can be fitted to the microphone capsules, then the ambisonic microphone should be calibrated by recording the 1 kHz signal through the system for each microphone capsule after the gain settings have been finalised on site (see below). If it is not possible to calibrate the ambisonic microphone, then the levels recorded will need to be compared to the levels taken simultaneously with the \gls{slm}. This is why it is crucial to have an appropriate quality, calibrated \gls{slm} included within the same setup as the \gls{amb} recordings.
+ \paragraph*{Setup \& calibration} The equipment should be assembled, checked, and calibrated prior to arriving at the measurement location. Calibrate the equipment according to the manufacturer's instructions. All \gls{slm}s should have built-in methods to calibrate using a standard 94 dB 1 kHz tone calibrator. If a similar method is available for the ambisonic microphone, this should be used. If a built-in method is not available, but a calibrator can be fitted to the microphone capsules, then the ambisonic microphone should be calibrated by recording the 1 kHz signal through the system for each microphone capsule after the gain settings have been finalised on site (see below). If it is not possible to calibrate the ambisonic microphone, then the levels recorded will need to be compared to the levels taken simultaneously with the \gls{slm}. This is why it is crucial to have an appropriate quality, calibrated \gls{slm} included within the same setup as the \gls{amb} recordings.
 
  \begin{figure}[h]
    \centering
@@ -213,7 +208,7 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
    \caption{Photo of a full survey carried out in a park in London during the Questionnaire Stage. To the left is the equipment (colour-coded to match \cref{fig:timeline}), with the ambisonic microphone and \gls{slm} microphone in the windscreen, with the 360\degree camera on top of the tripod and to the right are one researcher interacting with the participant while the second researcher conducts the binaural recording. The body of the \gls{slm} and the multi-channel recorder are stored in a bag under the tripod which can contain all of the pieces of equipment for easy transport. \label{fig:survey-pic}}
  \end{figure}
 
- \subsection{Assembling the Equipment}
+ \subsection{Assembling the equipment}
 
    \begin{enumerate}
      \item Set up the equipment by prioritising the position of the 360\degree camera and position the lens at the average eye level 160--180 cm, as shown in \cref{fig:survey-pic}.
@@ -276,7 +271,7 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
            \end{itemize}
    \end{enumerate}
 
-\section{Lessons from International Data Collection}
+\section{Lessons from international data collection}
 
  As this protocol has already been implemented by several research groups across four countries, it has undergone a rigorous testing and development process. Throughout this process, adjustments have been made which resulted in the final protocol presented here. However, no process is perfect or applicable in all situations. As such, after consultation with the research groups involved, I have compiled the most common feedback and guidance to keep in mind when implementing this protocol.
 
@@ -286,7 +281,7 @@ Questionnaires & QUE & \begin{tabular}[c]{@{}l@{}}SSID Questionnaire given\\in A
 
    Several groups reported extremely hot and cold weather to negatively affect the response rates. One research group, which conducted the survey also in a residential area, distinguished privacy/ownership of the survey site as a major factor.
 
- \subsection{Data Collection}
+ \subsection{Data collection}
 
    A group of three researchers seems to be the minimum number needed to conduct the survey, as observed by the partner research groups. A group of nine researchers on site proved to be the most effective number. The time needed to complete the survey varied greatly depending on the location.
 
@@ -316,7 +311,7 @@ The implementation of this protocol within the \gls{ssid} project has resulted i
 \end{figure}
 
 
-\subsection{Data Cleaning}
+\subsection{Data cleaning}
 
 The cleaning of the binaural recordings was conducted using the ArtemiS SUITE 11. I discarded or cropped whole recordings, or its parts affected by wind gusts or containing noises and speech generated by the recording operator by accident or for the purpose of explaining the questionnaire to a participant. This resulted in 1,291 binaural recordings which were then processed further, as described in \cref{sec:analyses}. Psychoacoustic analyses are shown in the publicly available database.
 
@@ -356,8 +351,8 @@ In order to maintain data quality and exclude cases where respondents either cle
    The (psycho)acoustic predictors investigated were selected in order to describe many aspects of the recorded sound -- in particular, the goal was to move beyond a focus on sound level, which currently dominates the existing literature on the acoustic effects of lockdowns noted in \cref{ch:lit}. In all, they are expected to reflect the sound level (\gls{laeq}), perceived sound level (\gls{n5}), spectral content (\gls{s}, \gls{lcla}, \gls{tu}), temporal character or predictability (\gls{iu}, \gls{fs}, \gls{ra}), and overall annoyance (\gls{pa}). These metrics have been proposed as indicators to predict perceptual constructs of the soundscape \citep{Aletta2017Dimensions, Aletta2016Soundscape} and have shown promise when combined together to form a more comprehensive model applied to real-world sounds \citep{Orga2021Multilevel}. The maximum value from the left and right channels of the binaural recording are used, as suggested in ISO/TS 12913-3:2019 \citep{ISO12913Part3}.
 
 
-\subsection{Open Data}
-On 8 November, 2022, the first publicly available version, v0.2.0, was published on zenodo.org to coincide with the publication of \citet{Mitchell2021Investigating} (i.e. the study reported in \cref{ch:lockdown}). As of 26 May, 2022, the published version of the database is v0.2.4. It is the intention that this dataset be added to and augmented with new locations, cities, and contexts in the future, with contributions from the \gls{ssid} team at UCL, our collaborators at other institutions around the world, and via submissions from similar research groups. If a soundscape assessment is collected according to the \gls{ssid} Protocol, it can be integrated with the rest of the database to form a large, cohesive, and ever-growing database of soundscape assessments. As v0 was intended as a pre-release dataset, it included only the 13 locations in London and Venice used throughout this thesis and the results of the psychoacoustic analysis of the binaural recordings, but not the recordings themselves. In the near future, the intention is for this to be updated to V1.0, which will include more cities in Europe and China with thousands more surveys and will include the binaural recordings themselves. By following a consistent protocol designed to follow the ISO 12913 data collection standards, The \glsfirst{isd} \citep{Mitchell2021International} will hopefully form a new standard database of soundscape assessments and documentation to be used by soundscape researchers and practitioners around the world.
+\subsection{Open data}
+On 8 November, 2022, the first publicly available version, V0.2.0, was published on zenodo.org to coincide with the publication of \citet{Mitchell2021Investigating} (i.e. the study reported in \cref{ch:lockdown}). As of 26 May, 2022, the published version of the database is V0.2.4. It is the intention that this dataset be added to and augmented with new locations, cities, and contexts in the future, with contributions from the \gls{ssid} team at UCL, our collaborators at other institutions around the world, and via submissions from similar research groups. If a soundscape assessment is collected according to the \gls{ssid} Protocol, it can be integrated with the rest of the database to form a large, cohesive, and ever-growing database of soundscape assessments. As V0 was intended as a pre-release dataset, it included only the 13 locations in London and Venice used throughout this thesis and the results of the psychoacoustic analysis of the binaural recordings, but not the recordings themselves. In the near future, the intention is for this to be updated to V1.0, which will include more cities in Europe and China with thousands more surveys and will include the binaural recordings themselves. By following a consistent protocol designed to follow the ISO 12913 data collection standards, The \glsfirst{isd} \citep{Mitchell2021International} will hopefully form a new standard database of soundscape assessments and documentation to be used by soundscape researchers and practitioners around the world.
 
 
 % \usepackage{graphicx}

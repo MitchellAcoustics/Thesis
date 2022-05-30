@@ -1,4 +1,4 @@
-\documentclass[oneside,fontsize=11.5pt,titlepage,chapterprefix=true
+\documentclass[oneside,fontsize=11pt,titlepage,chapterprefix=true
 ]{scrbook}
 
 % * Packages
@@ -142,62 +142,57 @@ I, Andrew Mitchell, confirm that the work presented in this thesis is my own. Wh
 
 \chapter*{Abstract}
 % The signed declaration should be followed by an abstract consisting of no more than 300 words (one page)
-* 1 para short background and overall aim
-* 1 para diss structure and overall method
-* majority of text (60\% findings)
-* Lockdown - amount of decrease, r2 of models, trends of predicted assessments
-* This thesis sets up a baseline and requirements for developing useful models
-* Based on empirical evidence, a framework has been established, including teh goals and constraints of general predictive models to be used. 'Describe framework'
+Conventional noise control methods typically limit their focus to the reduction of unwanted noise, ignoring the benefits of positive sounds and struggling to reflect the totality of noise impacts. Modern approaches to achieve improved health outcomes and public satisfaction aim to incorporate the perception of an acoustic environment, an approach known as `soundscape'. When attempting to apply soundscape in practice, it is apparent that new methods of analysing soundscape perception in urban spaces are required; in particular, a predictive model of the users' perceptual response to the acoustic environment is necessary. The goal of this thesis is to move towards enabling an engineering approach to soundscape design. This is achieved by developing predictive models of soundscape perception through empirical studies examining a large scale soundscape assessment database. 
 
-\draft{Need to update the abstract and impact statements}
-Urban noise pollution affects 80 million EU citizens with impacts on public health which are not well addressed by conventional noise control methods. These methods typically limit their focus to the reduction of unwanted noise, ignoring the benefits of positive sounds and remaining restricted by practical limitations of noise reduction. Modern approaches to achieve improved health outcomes and public satisfaction aim to incorporate the perception of an acoustic environment, an approach known as ‘Soundscape’.
+This thesis begins by establishing a protocol for large scale soundscape data collection based on ISO 12913-2 and the creation of a database containing 1,318 responses paired with 693 binaural recordings collected in 13 locations in London and Venice. The first study then presents an initial development and application of a model designed to predict soundscape perception based on psychoacoustic analysis of the binaural recordings. Through the collection of an additional 571 binaural recordings during the COVID-19 lockdowns, sound level reductions at every location are seen, ranging from a reduction of 1.27 dB(A) in Regents Park Japan to 17.33 dB(A) in Piazza San Marco, with an average reduction across all locations of 7.27 dB(A). Multi-level models were developed to predict the overall soundscape pleasantness ($R^2=0.85$) and eventfulness ($R^2=0.715$) of each location and applied to the lockdown recordings to determine how the soundscape perception likely changed. The results demonstrated that perception shifted toward less eventful soundscapes and to more pleasant soundscapes for previously traffic-dominated locations but not for human- and natural-dominated locations. The modelling process also demonstrated that contextual information was important for predicting pleasantness but not for predicting eventfulness.
 
-When attempting to apply soundscape in practice, it is apparent that new methods of analysing soundscape perception in urban spaces are required; in particular, a predictive model of the users’ perceptual response to the acoustic environment is necessary. Whether to determine the impact of an environmental change, or to integrate large scale data at neighbourhood and city levels, a mathematical model of the interacting factors forms a vital component of the implementation of the soundscape approach.
+The next stage of the thesis considers a series of expansions to the initial model. The second piece of empirical work makes use of a dataset of recordings collected from a \glsfirst{wasn} which includes sound source labels and annoyance ratings collected from 100 participants in an online listening study. A multilevel model was constructed using a combination of psychoacoustic metrics and sound source labels to predict perceived annoyance, achieving an $R^2$ of 0.64 for predicting individual responses. The sound source information is demonstrated to be a crucial factor, as the relationship between roughness, impulsiveness, and tonality and the predicted annoyance varies as a function of the sound source label. The third piece of empirical work uses multilevel models to examine the extent to which personal factors influence soundscape perception. The findings suggest that personal factors, including psychological wellbeing, age, gender, and occupational status, account for approximately 1.4\% of the variance for pleasantness and 3.9\% for eventfulness, while the influence of the locations accounted for approximately 34\% and 14\%, respectively. 
 
-This thesis presents the results of several studies which develop the conceptual and statistical frameworks to enable the prediction and presentation of the soundscape analysis of urban spaces. The first and final studies present the conceptual developments, including a new protocol for conducting soundscape assessments, the creation of a large-scale international database, and a novel method of representing the soundscape of an urban space. The key chapters trace the development of a multilevel linear regression model of soundscape perception. The first iteration of this model revealed how soundscape pleasantness and eventfulness are mediated by psychological well-being and demographic factors. The second makes use of sound source information to inform the statistical relationships between psychoacoustic metrics and noise annoyance, demonstrating that loudness is a crucial factor, regardless of the sound type. Finally, a context-aware model was put into practical use to investigate how the soundscapes of urban spaces were impacted by the COVID-19 lockdowns in a situation where previous assessment methods were impractical.
+Drawing from the experience gained working with urban soundscape data, a new method of analysing and presenting the soundscape perception of urban spaces is developed. This method inherently considers the variety of perceptions within a group and provides an open-source visualisation tool to facilitate a nuanced approach to soundscape assessment and design. Based on this empirical evidence, a framework is established for developing future predictive soundscape models which can be integrated into an engineering approach. At each stage, the results of these studies is discussed in terms of how it can contribute to a generalisable predictive soundscape model. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% * 1 para short background and overall aim
+% * 1 para diss structure and overall method
+% * majority of text (60\% findings)
+% * Lockdown - amount of decrease, r2 of models, trends of predicted assessments
+% * This thesis sets up a baseline and requirements for developing useful models
+% * Based on empirical evidence, a framework has been established, including teh goals and constraints of general predictive models to be used. 'Describe framework'
+
+% \draft{Need to update the abstract and impact statements}
+
+% When attempting to apply soundscape in practice, it is apparent that new methods of analysing soundscape perception in urban spaces are required; in particular, a predictive model of the users’ perceptual response to the acoustic environment is necessary. Whether to determine the impact of an environmental change, or to integrate large scale data at neighbourhood and city levels, a mathematical model of the interacting factors forms a vital component of the implementation of the soundscape approach.
+
+% This thesis presents the results of several studies which develop the conceptual and statistical frameworks to enable the prediction and presentation of the soundscape analysis of urban spaces. The first and final studies present the conceptual developments, including a new protocol for conducting soundscape assessments, the creation of a large-scale international database, and a novel method of representing the soundscape of an urban space. The key chapters trace the development of a multilevel linear regression model of soundscape perception. The first iteration of this model revealed how soundscape pleasantness and eventfulness are mediated by psychological well-being and demographic factors. The second makes use of sound source information to inform the statistical relationships between psychoacoustic metrics and noise annoyance, demonstrating that loudness is a crucial factor, regardless of the sound type. Finally, a context-aware model was put into practical use to investigate how the soundscapes of urban spaces were impacted by the COVID-19 lockdowns in a situation where previous assessment methods were impractical.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter*{Impact Statement}
 % The abstract should be followed by an impact statement consisting of no more than 500 words.
-* First para, background what will this work lead to
-* 3 Layers:
-* Importance for designers. this model will lead to design tools, incl soundscapy
-* Importance for policy-makers. Will enable assessment and policy guidelines and mapping
-* Impact on general public via outreach, communication, quality of life. Soundscape mapping
-* Tools and accessibility impact on future research - SSID protocol, ISD, and soundscapy all as tool for future researchers to make use of.
+This thesis presents a practical approach for integrating soundscape into engineering design approaches, through the development of detailed proposals towards a generalisable predictive soundscape model. This work is of relevance to the research community, designers, policy-makers, and the general public. 
 
+Firstly, the predictive model proposed is highly relevant to urban planning, allowing for hypothetical assessment of a soundscape before the urban space is built or iterative testing of proposed design elements. This is likely to result in more efficient use of resources, better public health outcomes, and more enjoyable public spaces. More immediately, the soundscape visualisation tool presented (\texttt{soundscapy}) is a nuanced means of communication which can be used within the research community as well as between soundscape practitioners and urban designers, regulators, artists, and lay-people.
 
+This work is also of relevance to policy-makers, as the approaches proposed enable more advanced tools for soundscape assessment and the implementation of policy guidelines. There has been regulatory interest in moving towards a more perceptual approach to urban sound environments, from protecting quiet areas to creating vibrant spaces. The generalisable predictive model proposed in this thesis would provide a practical tool for implementing this. 
 
-The statement should describe, in no more than 500 words, how the expertise, knowledge, analysis, discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits from \textbf{inside} and \textbf{outside} academia and the ways in which these benefits could be brought about.
+The methods developed and data collected throughout the course of this thesis also contribute to the soundscape research communities. A thorough protocol for soundscape data collection (SSID Protocol) is outlined, which has already been replicated by several research groups across Europe and China. An important aspect of the work in this thesis is their open access publication. The open publication of The International Soundscape Database (ISD) provides a starting point which can be adapted, reanalysed, and to which new data can be added. In addition, the \texttt{soundscapy} visualisation tool has been made open source to make it as accessible, flexible, and reproducible as possible and to become a key component of the soundscape  designer's toolbox of the future. 
 
-\chapter*{COVID-19 Statement}
-\draft{incorporate into acknowledgement}
+The results of the empirical studies provide evidence for shaping future soundscape research and for rethinking the results of noise level reductions. By taking a perceptual approach to investigating the impact of drastic traffic flow reductions as a result of COVID-19 lockdowns, the potential -- or lack thereof -- that reductions in traffic noise have for improving urban soundscapes is better revealed. 
 
-In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. Solely by good fortune and a tendency to speed ahead with too-little thought, the primary data collection had fortunately been completed prior to the first lockdown. However, this work was impacted in three ways:
+Finally, this research is beneficial to the general public. The visualisation tools developed in this thesis could be used for communication and outreach, enabling people to become more aware and educated about the sound environments they experience. Most importantly, the models proposed in this thesis could help create higher quality soundscapes in urban spaces, leading to improved public health outcomes, more effective use of tax-payers' money, and increased enjoyment of urban spaces. 
 
-\begin{enumerate}
-      \item Further in-situ data collection could not be completed, reducing the range of soundscape types we could include;
-      \item The unprecedented and stressful world of the pandemic had a significant mental health and social impact, the effects of which cannot be quantified, nor overstated;
-      \item In response to the unique scientific opportunity of a world-wide transportation and social lockdown, new, unplanned studies were carried out.
-\end{enumerate}
-
-In particular, this final point has had an impact on the structure and content of this thesis. Certain aspects of the research, in particular the model development and building, were accelerated and put into practice to investigate the impacts of the COVID lockdowns, before being returned to and further developed. The initial research plan would have followed a more logical path of nailing down the model development first, then moving on to a first implementation. In addition, new work was added to this thesis which may appear incongruous or unrelated, but represents a great deal of necessary work which further informed the key strains of the thesis.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter*{Acknowledgements}
-This research was funded by the European Research Council.
 
-People to thank:
-\begin{itemize}
-      \item Prof Jian Kang
-      \item Dr Francesco Aletta
-      \item Dr Tin Oberman
-      \item Dr Phil Symonds
-      \item Ms Mercede Erfanian
-      \item Ms Magdalena Kachlicka
-      \item Mr Matteo Lionello
-      \item Friends: Nicole Watson, Valentina
-\end{itemize}
+I would first like to thank Prof. Jian Kang for his patient supervision and constant support throughout my PhD. Special thanks goes to Francesco Aletta for his mentorship and for putting up with my endless digressions. Thank you both for taking a chance on me. Another special thanks goes to Nicole Watson for seeing me through the final years of the PhD and probably reading this thesis more times than anyone else. 
+
+I am grateful to have been surrounded by the other fantastic researchers in the SSID team and the UCL Acoustics Group: Tin Oberman, Mercede Erfanian, Matteo Lionello, Magdalena Kachlicka, Huan Tong, Chunyang Xu, Mithuna Maran, and honorary member Simone Torresin. Your conversations, insights, and critiques have made every bit of my work better. 
+
+In March of 2020, 18 months into the development of this thesis, the COVID-19 pandemic hit the UK, forcing it into lockdowns which would continue for over a year. My thanks go out to the whole SSID team, Prof. Dejan Mumovic, Valentina Marincioni, Phil Symonds, and the rest of IEDE for their support and for creating a community which helped us all deal with the stress and impacts of the pandemic. 
+
+I would like to extend my acknowledgements to Prof. Arianna Astolfi and Dr. Pierre Aumond who reviewed this thesis and to all of those academics who have reviewed my papers for their helpful and important feedback. Final thanks goes to my parents, to Stephen and Shannon, and to Karen for their encouragement and support throughout.
+
+This thesis was funded by the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No. 740696, project title: soundscape indices - SSID)
 
 \chapter*{List of Studies}
 
@@ -284,9 +279,9 @@ Vida Manzano, J., Almagro Pastor, J. A, Garc\'ia Quesada, R., Aletta, F., Oberma
 \label{part:Methodology}
 
 \section*{Introduction}
-The first key step toward developing a predictive soundscape model is the creation of a coherent, large-scale, multi-factor database of objective environmental measurements and subjective perceptual responses. My research makes use of in-person field questionnaires, long-term manned questionnaires, and multi-factor characterisation of the environment. Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913Part2} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context. Towards this, we developed an in depth soundscape assessment protocol based on \citet{ISO12913Part2}. 
+The first key step toward developing a predictive soundscape model is the creation of a coherent, large-scale, multi-factor database of objective environmental measurements and subjective perceptual responses. Conducting urban soundscape studies on a scale large enough to form a machine learning dataset presents a unique challenge. The standardised methods of conducting soundscape surveys \citep{ISO12913Part2} are labour-intensive, time-consuming, and provide limited information about the acoustical and environmental context. Towards this, we developed an in depth soundscape assessment protocol based on \citet{ISO12913Part2}. 
 
-Due to the unique nature of this data collection method as a novel contribution submitted as its own journal paper, the methodology section has been split into two sections: \cref{chap:protocol} presents the data collection protocol as its own, stand-alone contribution, and \cref{chap:methods} then presents the data analysis and modelling methods made use of throughout the rest of the thesis. 
+Due to the nature of this data collection method as a novel contribution submitted as its own journal paper, the methodology section has been split into two sections: \cref{chap:protocol} presents the data collection protocol as its own, stand-alone contribution, and \cref{chap:methods} then presents the data analysis and modelling methods made use of throughout the rest of the thesis. 
 
 \cref{ch:lockdown} makes use of the paired binaural recordings and soundscape assessments to model the relationship between (psycho)acoustic features and the soundscape descriptors., including information related to the context of the assessment location. \cref{ch:whostudy} relies on the accompanying demographic information. The visual and environmental information and the Recording Stage information have not been used in the models presented in this thesis, but are considered necessary for future studies and for the ability to generalise to new locations. Once the data was collected via the protocol in \cref{chap:protocol}, the questionnaire data was then analysed and modelled according to the methods presented in \cref{chap:methods}.
 
@@ -357,9 +352,9 @@ Finally, in \cref{ch:ProbabilisticPOC} I present a new method for analysing and 
 
 % \include{LockdownDataApp.tex}
 
-\include{Parts/CircumplexDiscussionApp.tex}
+\include{Parts/Appendices/CircumplexDiscussionApp.tex}
 
-\include{Parts/OverFAppendix.tex}
+\include{Parts/Appendices/OverFAppendix.tex}
 
 %  \include{Chapters/delta.tex}
 
