@@ -204,6 +204,13 @@ Total & Mean & \multirow{2}{*}{1172 ~} & 21.62 & 2.04 & 63.47 & \multirow{2}{*}{
 
  The results of the onsite surveys, online experiment, and the model development are reported here. They are reported following the structure of the ISO/TS 12913 series, revealing the perceived sound source dominance, key perceptual attributes (\gls{isopl} and \gls{isoev}) and the lockdown-related changes.
 
+\subsection{The sound environment impacts of the lockdown in London and Venice}
+\label{sec:LondonLockdown}
+
+Before continuing to the predictive model and the impacts on the soundscape perception, I will first review results indicating the change in the sound environment. To summarise these impacts, I present the location-level changes in the \gls{laeq}, \gls{n5}, and \gls{s} from the 2019 condition to the 2020 lockdown condition. The original analysis in this section was presented in \citet{Aletta2020Assessing}. This analysis has been updated to include the Venice data and to correct slight discrepancies between the datasets and psychoacoustic analyses used in the two papers (\citet{Aletta2020Assessing} and \citet{Mitchell2021Investigating}). Namely, in \citet{Aletta2020Assessing} the psychoacoustic features of the two binaural channels were combined by taking the average of the values from the two values. This has been brought in line with \citet{Mitchell2021Investigating} by taking the max value.
+
+\cref{fig:NsMapLockLAeq} presents the distributions of \gls{laeq} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. To determine whether there is a statistically significant difference between the two campaigns in each location, a one-tailed t-test was used. The results and the mean and standard deviation for each location in both campaigns are presented in \cref{tab:LockdownNumbers}. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
@@ -214,11 +221,11 @@ Total & Mean & \multirow{2}{*}{1172 ~} & 21.62 & 2.04 & 63.47 & \multirow{2}{*}{
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The sound environment impacts of the lockdown in London and Venice}
-\label{sec:LondonLockdown}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Before continuing to the predictive model and the impacts on the soundscape perception, I will first review results indicating the change in the sound environment. To summarise these impacts, I present the location-level changes in the \gls{laeq}, \gls{n5}, and \gls{s} from the 2019 condition to the 2020 lockdown condition. The original analysis in this section was presented in \citet{Aletta2020Assessing}. This analysis has been updated to include the Venice data and to correct slight discrepancies between the datasets and psychoacoustic analyses used in the two papers (\citet{Aletta2020Assessing} and \citet{Mitchell2021Investigating}). Namely, in \citet{Aletta2020Assessing} the psychoacoustic features of the two binaural channels were combined by taking the average of the values from the two values. This has been brought in line with \citet{Mitchell2021Investigating} by taking the max value.
+The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
 
+\cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
 
 \begin{figure}[h]
   \centering
@@ -226,11 +233,6 @@ Before continuing to the predictive model and the impacts on the soundscape perc
   \caption{Loudness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockN5}}
 \end{figure}
 
-\cref{fig:NsMapLockLAeq} presents the distributions of \gls{laeq} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. To determine whether there is a statistically significant difference between the two campaigns in each location, a one-tailed t-test was used. The results and the mean and standard deviation for each location in both campaigns are presented in \cref{tab:LockdownNumbers}. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
 
 \begin{figure}[h]
   \centering
@@ -238,7 +240,9 @@ The t-test results indicate that all locations except Regents Park Japan demonst
   \caption{Sharpness distributions at the 11 London locations before and during the lockdown measures implementation. \label{fig:NsMapLockS}}
 \end{figure}
 
-\cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
+\paragraph*{Effect of the urban setting on sound levels reduction}
+
+In addition to strictly documenting the changes in the sound environment in London, we also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
 
 \begin{figure}[!h]
   \centering
@@ -258,11 +262,6 @@ The t-test results indicate that all locations except Regents Park Japan demonst
 
 \end{figure}
 
-
-\paragraph*{Effect of the urban setting on sound levels reduction}
-
-In addition to strictly documenting the changes in the sound environment in London, we also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
-
 % \begin{figure}[h]
 %   \centering
 %   \includegraphics[width=.65\textwidth]{Figures/NoiseMappingLockdown Fig 6.png}
@@ -271,48 +270,39 @@ In addition to strictly documenting the changes in the sound environment in Lond
 
 \cref{fig:NsMapLockBiplot} shows a plot of clustered data based on the two most relevant underlying dimensions for the three-cluster solution. Dimension 1 seems to describe a pattern related to sound level and associated metrics, whilst Dimension 2 is related to Sharpness. This is consistent with previous findings in literature where it was observed that when it comes to categorization and classification of urban acoustic environments based on objective features, most solutions are reduced to intensity- and spectral-related parameters \citep{deCoensel2006quiet,Aletta2017Dimensions}.
 
+\cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patterns with information about dominant sound sources as derived from data from \citet{Mitchell2020Soundscape}, the three clusters could be labelled as: \emph{Traffic/Noise-dominated areas} (locations: Camden Town, Euston Tap, Piazza San Marco), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields, Monumento Garibaldi). Traffic/Noise-dominated (with the exception of San Marco) areas with an exceptionally high noise level; typically this is because they are on major roads, where traffic noise is the dominant sound source. However Piazza San Marco also clusters here due to its unique use-case. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
+
+\begin{table}[!h]
+  \centering
+  \caption{Descriptive statistics of the psychoacoustic metrics for the three identified clusters. \label{tab:NsMapLockClust}}
+    \begin{tabular}{llccccc}
+      \toprule
+      \textbf{Cluster} & \textbf{Parameter} & \multicolumn{5}{c}{\textbf{Mean values }}     \\
+      \cline{3-7}      &                    & $L_{Aeq}$ & $L_{A10}$ & $L_{A90}$ & $S$ & $N_5$ \\
+      \hline
+      1 -- (Quiet areas)  & Mean            & 55.9      & 58.1      & 52.4      & 1.7 & 12.9 \\
+      {[}N=3]             & Std. deviation  & 2.6       & 2.5       & 3.1       & 0.0 & 1.8  \\
+                          & Variance        & 7.0       & 6.3       & 9.3       & 0.0 & 3.1  \\
+      \hline
+      2 -- (Active areas) & Mean            & 62.5      & 64.3      & 59.6      & 2.1 & 18.9 \\
+      {[}N=6]             & Std. deviation  & 2.3       & 2.5       & 2.3       & 0.4 & 2.5  \\
+                          & Variance        & 5.3       & 6.4       & 5.5       & 0.1 & 6.3  \\
+      \hline
+      3 -- (Traffic-dominated areas) & Mean & 70.4      & 72.9      & 66.1      & 2.4 & 34.1 \\
+      {[}N=2]             & Std. deviation  & 1.6       & 1.9       & 0.3       & 0.0 & 4.4  \\
+                          & Variance        & 2.4       & 3.6       & 0.1       & 0.0 & 19.8 \\
+      \bottomrule
+    \end{tabular}
+
+\end{table}
+
+When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=.7\textwidth]{Figures/NoiseMappingLockdown Fig 8.png}
   \caption{Mean A-weighted equivalent sound level reductions between the pre- and during-lockdown conditions as a function of cluster membership (i.e. Area type). \label{fig:NsMapLockRedux}}
 \end{figure}
-
-\begin{table}[!h]
-  \centering
-  \caption{Descriptive statistics of the psychoacoustic metrics for the three identified clusters. \label{tab:NsMapLockClust}}
-
-    \begin{tabular}{llrrrrr}
-      \toprule
-      \textbf{Cluster}               & \textbf{Parameter} & \multicolumn{5}{c}{\textbf{Mean values }}                                                                                                                       \\
-      \cline{3-7}
-                                     &                    & \multicolumn{1}{c}{$L_{Aeq}$}             & \multicolumn{1}{c}{$L_{A10}$} & \multicolumn{1}{c}{$L_{A90}$} & \multicolumn{1}{c}{$S$} & \multicolumn{1}{c}{$N_5$} \\
-      \hline
-      1 -- (Quiet areas)             & Mean               & 55.9                                      & 58.1                          & 52.4                          & 1.7                     & 12.9                      \\
-      {[}N=3]                        & Std. deviation     & 2.6                                       & 2.5                           & 3.1                           & 0.0                     & 1.8                       \\
-                                     & Variance           & 7.0                                       & 6.3                           & 9.3                           & 0.0                     & 3.1                       \\
-      \hline
-      2 -- (Active areas)            & Mean               & 62.5                                      & 64.3                          & 59.6                          & 2.1                     & 18.9                      \\
-      {[}N=6]                        & Std. deviation     & 2.3                                       & 2.5                           & 2.3                           & 0.4                     & 2.5                       \\
-                                     & Variance           & 5.3                                       & 6.4                           & 5.5                           & 0.1                     & 6.3                       \\
-      \hline
-      3 -- (Traffic-dominated areas) & Mean               & 70.4                                      & 72.9                          & 66.1                          & 2.4                     & 34.1                      \\
-      {[}N=2]                        & Std. deviation     & 1.6                                       & 1.9                           & 0.3                           & 0.0                     & 4.4                       \\
-                                     & Variance           & 2.4                                       & 3.6                           & 0.1                           & 0.0                     & 19.8                      \\
-      \bottomrule
-    \end{tabular}
-
-\end{table}
-
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=.75\textwidth]{Figures/LockdownClusterAnalysis1_2022-04-29.png}
-%   \caption{Bi-dimensional plot for the three-cluster solution. The clusters have been labelled as: Cluster 1 -- Quiet Areas; Cluster 2 -- Active Areas; Cluster 3 -- Traffic/Noise-dominated Areas. \label{fig:NsMapLockBiplot}}
-% \end{figure}
-
-\cref{tab:NsMapLockClust} shows the basic descriptive statistics of the psychoacoustic features for the 11 locations according to cluster membership; when combining those patterns with information about dominant sound sources as derived from data from \citet{Mitchell2020Soundscape}, the three clusters could be labelled as: \emph{Traffic/Noise-dominated areas} (locations: Camden Town, Euston Tap, Piazza San Marco), \emph{Active Areas} (locations: Regents Park Japan, Russell Square, St Pauls Cross, St Pauls Row, Tate Modern, Torrington Square) and \emph{Quiet Areas} (locations: Marchmont Garden, Pancras Lock, Regents Park Fields, Monumento Garibaldi). Traffic/Noise-dominated (with the exception of San Marco) areas with an exceptionally high noise level; typically this is because they are on major roads, where traffic noise is the dominant sound source. However Piazza San Marco also clusters here due to its unique use-case. Active areas are locations where the human activity (also combined with traffic) is the main contributor to the acoustic environment. Quiet areas are generally parks or areas with greenery that tend to have a relatively low background noise (lack of traffic sources).
-
-When considering the mean \gls{laeq} reductions between 2019 and 2020 as a function of Area type, it can be observed that they vary across the three clusters, as shown in \cref{fig:NsMapLockRedux}. The biggest reductions are for Active areas (M = 6.6 dB; SD = 3.2 dB), followed by Traffic-dominated areas (M = 4.5 dB; SD = 0.8 dB), and Quiet areas (M = 3.6 dB; SD = 1.9 dB). A possible explanation for this is that road traffic at the selected locations in London is still sustained to some extent (e.g. circulation of public transport, key workers, etc.), while the most significant variation in Active areas is possibly due to the complete lack of (non-motorized) human activity on site. The locations in the cluster labelled as Quiet areas were already not particularly noisy even before the lockdown, thus the small changes observed are probably once again due to the absence of people.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -349,11 +339,9 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
       \caption{2020 \label{fig:wordcloudB}}     
     \end{subfigure}
     \caption{A graphic illustrating the frequency of occurrence of the sound sources reported by the participants of the online study across all locations, shown for recordings from 2019 (a) and 2020 (b). \label{fig:wordclouds}}
-
     \end{figure}
 
    The results from the listening tests deployed online were analysed using SPSS Statistics v. 25 (IBM United Kingdom Limited, Portsmouth, UK; see \cref{tab:source}). Levene's test for equality of variances resulted in highly statistically significant values for all 4 sound sources investigated ($<0.001$). Therefore, a Mann-Whitney U-test was used as a non-parametric equivalent to the t-test to investigate the change in the perceived dominance of the four sound source types \citep{McKnight2010Mann}. The results for human sounds indicated that the perceived dominance was greater for the 2019 sample ($M=3.82$) than for the 2020 sample ($M=2.62, U=41,656, p<0.001$). The results for natural sounds indicated the perceived dominance increased from 2019 ($M=2.00$) to 2020 ($M=2.54, U=63,797, p<0.001$). However, the differences for the noise sources (traffic and other) were not statistically significant. The result of these changes is that although human sounds were the clearly dominant source across the whole dataset in 2019, in 2020, the sound sources are, on average, much more evenly balanced. No single sound source category was identified as frequent across the 2020 dataset.
-
 
 \begin{table}[h]
 \centering
@@ -363,99 +351,54 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 \toprule
 \textbf{Sound source type} & \textbf{Campaign} & \textbf{N} & \textbf{Mean} & \textbf{Std. Dev.} & \begin{tabular}[c]{@{}c@{}}\textbf{Std. Error }\\\textbf{ Mean}\end{tabular}  \\ 
 \midrule
-\textbf{Traffic }          & 2019              & 422        & 2.51          & 1.369              & .067                                                                          \\
-                           & 2020              & 383        & 2.56          & 1.525              & .078                                                                          \\
-\textbf{Other }            & 2019              & 422        & 2.00          & 1.182              & .058                                                                          \\
-                           & 2020              & 382        & 2.23          & 1.333              & .068                                                                          \\
-\textbf{Human}             & 2019              & 423        & 3.82          & 1.143              & .056                                                                          \\
-\textbf{}                  & 2020              & 382        & 2.62          & 1.346              & .069                                                                          \\
-\textbf{Natural}           & 2019              & 424        & 2.00          & 1.307              & .063                                                                          \\
-\textbf{}                  & 2020              & 380        & 2.54          & 1.441              & .074                                                                          \\
+\textbf{Traffic } & 2019 & 422 & 2.51 & 1.369 & .067  \\
+                  & 2020 & 383 & 2.56 & 1.525 & .078  \\
+\textbf{Other }   & 2019 & 422 & 2.00 & 1.182 & .058  \\
+                  & 2020 & 382 & 2.23 & 1.333 & .068  \\
+\textbf{Human}    & 2019 & 423 & 3.82 & 1.143 & .056  \\
+                  & 2020 & 382 & 2.62 & 1.346 & .069  \\
+\textbf{Natural}  & 2019 & 424 & 2.00 & 1.307 & .063  \\
+                  & 2020 & 380 & 2.54 & 1.441 & .074  \\
 \bottomrule
 \end{tabular}
 \end{table}
 
  \subsection{Model selection, performance, and application}
 
+\subsubsection{\gls{isopl} model selected}
+   Following the feature selection, the \gls{isopl} model (given in \cref{tab:scaled-model}) has \gls{n5} as the fixed effect with a scaled coefficient of -0.06, and \gls{laeq}, \gls{la10la90}, and \gls{lcla} as coefficients which vary depending on the LocationID. The training and testing \gls{mae} are very similar, indicating that the model is neither over- nor under-fitting to the training data ($MAE_{train}=0.258, MAE_{test}=0.259$), as shown in \cref{fig:lockdownMAE}. The model performs very well at predicting the average soundscape assessment of the locations ($R^2_{train}=0.998, R^2_{test}=0.85$).
+
+
    \begin{table}[h!]
   \centering
 \caption{Scaled linear regression models of \gls{isopl} and \gls{isoev} for 13 locations in London and Venice. \gls{isopl} model structure: Varying slope, varying intercept multi-level model. \gls{isoev} model structure: Multi-variate linear regression. \label{tab:scaled-model}}
 
   \def\arraystretch{.5}
-  \begin{tabular}{@{}l|lccccc@{}}
+   \begin{tabular}{@{}l|cccccc@{}}
     \toprule
-    \multicolumn{1}{l|}{}                    &
-    \multicolumn{3}{c}{\textbf{ISOPleasant}} &
-    \multicolumn{3}{c}{\textbf{ISOEventful}}                                                                                                                                                           \\
-    \textit{Predictors}                      &
-    \multicolumn{1}{c}{\textit{Estimates}}   &
-    \textit{CI}                              &
-    \textit{p}                               &
-    \textit{Estimates}                       &
-    \textit{CI}                              &
-    \textit{p}                                                                                                                                                                                         \\ \midrule
-    (Intercept)                              &
-    \multicolumn{1}{c}{0.24}                 &
-    0.15 - 0.33                              &
-    \textbf{\textless{}0.001}                &
-    0.14                                     &
-    0.12 - 0.16                              &
-    \textbf{\textless{}0.001}                                                                                                                                                                          \\
-    $N_5$                                    & \multicolumn{1}{c}{-0.06}                               & -0.10 - -0.02 & \textbf{\textless{}0.001} &       &               &                           \\
-    S                                        & \multicolumn{1}{c}{}                                    &               &                           & -0.08 & -0.11 - -0.06 & \textbf{\textless{}0.001} \\
-    FS                                       & \multicolumn{1}{c}{}                                    &               &                           & -0.02 & -0.05 - -0.00 & \textbf{0.033}            \\
-    T                                        & \multicolumn{1}{c}{}                                    &               &                           & 0.04  & 0.01 - 0.07   & \textbf{0.002}            \\
-    $L_{Aeq}$                                & \multicolumn{1}{c}{}                                    &               &                           & 0.14  & 0.11 - 0.17   & \textbf{\textless{}0.001} \\
-    $L_{Ceq}-L_{Aeq}$                        & \multicolumn{1}{c}{}                                    &               &                           & -0.03 & -0.05 - 0.00  & 0.052                     \\
+    \multicolumn{1}{l|}{} & \multicolumn{3}{c}{\textbf{ISOPleasant}} & \multicolumn{3}{c}{\textbf{ISOEventful}} \\
+    \textit{Predictors} & \textit{Estimates} & \textit{CI} & \textit{p} & \textit{Estimates} & \textit{CI} & \textit{p} \\ \midrule
+    (Intercept) & 0.24 & 0.15 - 0.33      & \textbf{\textless{}0.001} & 0.14 & 0.12 - 0.16 & \textbf{\textless{}0.001}  \\
+    $N_5$      & -0.06 & -0.10 - -0.02 & \textbf{\textless{}0.001} &    &     & \\
+    S          &       &               &     & -0.08 & -0.11 - -0.06 & \textbf{\textless{}0.001} \\
+    FS         &       &               &     & -0.02 & -0.05 - -0.00 & \textbf{0.033}  \\
+    T          &       &               &     & 0.04  & 0.01 - 0.07   & \textbf{0.002}  \\
+    $L_{Aeq}$  &       &               &     & 0.14  & 0.11 - 0.17   & \textbf{\textless{}0.001} \\
+    $L_{Ceq}-L_{Aeq}$ &  &             &     & -0.03 & -0.05 - 0.00  & 0.052        \\
     \\
-    \textbf{Random Effects}                  &
-                                             &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                                                                                                                                                                               \\
-    $\sigma^2$                               &
-    0.11                                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                                                                                                                                                                               \\
-    $\tau_{00}$                              & \multicolumn{6}{l}{$0.03_{LocationID}$}                                                                                                                 \\
-    $\tau_{11}$                              & \multicolumn{6}{l}{$0.02_{LocationID.L_{Aeq}}$}                                                                                                         \\
-                                             & \multicolumn{6}{l}{$0.00_{LocationID.L_{A10}-L_{A90}}$}                                                                                                 \\
-                                             & \multicolumn{6}{l}{$0.00_{LocationID.L_{Ceq}-L_{Aeq}}$}                                                                                                 \\
-    ICC                                      &
-    0.90                                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                                                                                                                                                                               \\ \midrule
-    N                                        & \multicolumn{6}{l}{$13_{LocationID}$}                                                                                                                   \\
-    Observations                             &
-    914                                      &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{914}                  &
-    \multicolumn{1}{l}{}                     &
-    \multicolumn{1}{l}{}                                                                                                                                                                               \\
-
-    MAE Test, Train                          &
-    0.258                                    &
-    0.259                                    &
-                                             &
-    \multicolumn{1}{l}{0.233}                &
-    0.231                                                                                                                                                                                              \\
-
+    \textbf{Random Effects} &  &       &     &       &               & \\
+    $\sigma^2$  & 0.11  &              &     &       &               & \\
+    $\tau_{00}$ & \multicolumn{6}{l}{$0.03_{LocationID}$} \\ 
+    $\tau_{11}$ & \multicolumn{6}{l}{$0.02_{LocationID.L_{Aeq}}$}  \\
+                & \multicolumn{6}{l}{$0.00_{LocationID.L_{A10}-L_{A90}}$} \\
+                & \multicolumn{6}{l}{$0.00_{LocationID.L_{Ceq}-L_{Aeq}}$} \\
+    ICC         & 0.90 &               &     &       &               &    \\ \midrule
+    N           & \multicolumn{6}{l}{$13_{LocationID}$} \\
+    Observations & 914 &               &     & 914   &               &  \\
+    MAE Test, Train & 0.258 & 0.259    &     & 0.233 & 0.231 \\
     \bottomrule
   \end{tabular}
 \end{table}
-
-\subsubsection{\gls{isopl} model selected}
-
-   Following the feature selection, the \gls{isopl} model (given in \cref{tab:scaled-model}) has \gls{n5} as the fixed effect with a scaled coefficient of -0.06, and \gls{laeq}, \gls{la10la90}, and \gls{lcla} as coefficients which vary depending on the LocationID. The training and testing \gls{mae} are very similar, indicating that the model is neither over- nor under-fitting to the training data ($MAE_{train}=0.258, MAE_{test}=0.259$), as shown in \cref{fig:lockdownMAE}. The model performs very well at predicting the average soundscape assessment of the locations ($R^2_{train}=0.998, R^2_{test}=0.85$).
 
 \begin{figure}[h]
   \centering
@@ -572,7 +515,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
 \section{Conclusion}
 
- This chapter demonstrates an application of predictive modelling to the field of soundscape studies. The model building results reveal that, within this dataset, an approach based on psychoacoustics can achieve $R^2=0.85$ for predicting the pleasantness of locations and $R^2=0.715$ for predicting the eventfulness. A modelling-focussed method of this sort is a key component to the potential scalability of the soundscape approach to applications such as smart city sensing, urban planning, and cost-effective, sustainable design. To demonstrate the usefulness and feasibility of such an approach, I applied my predictive model to a unique case study in which traditional soundscape survey methods were impossible.
+ This chapter demonstrates an application of predictive modelling to the field of soundscape studies. The model building results reveal that, within this dataset, an approach based on psychoacoustics can achieve $R^2=0.85$ for predicting the pleasantness of locations and $R^2=0.715$ for predicting the eventfulness. It should be noted that this result is given for that accuracy in predicting the overall response in a given location, averaged across all responses or recordings in the location, not for predicting the individual responses. A modelling-focussed method of this sort is a key component to the potential scalability of the soundscape approach to applications such as smart city sensing, urban planning, and cost-effective, sustainable design. To demonstrate the usefulness and feasibility of such an approach, I applied this model to a unique case study in which traditional soundscape survey methods were impossible.
 
  By applying this predictive model to recordings collected during the 2020 lockdown, the predicted change in perception of the urban soundscapes is revealed. In general, soundscapes became less eventful, and those locations which were previously dominated by traffic noise became more pleasant. By contrast, previously human- and natural-dominated locations are in fact predicted to become less pleasant despite the decrease in sound levels. While all sound source categories remained present in both years, overall, in 2020 a decrease in human sounds' dominance was observed together with an increase in the perceived dominance of natural sounds. Although these results are limited in that they present one snapshot of the soundscape of the spaces, the success of the model in responding to new and disturbing sound events demonstrates its potential usefulness in long-term monitoring of urban soundscapes.
 
