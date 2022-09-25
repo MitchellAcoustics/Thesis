@@ -2,7 +2,7 @@
 \label{ch:lockdown}
 \markleft{\cref{ch:lockdown}. Soundscapes of the COVID-19 Lockdown: A predictive modelling approach}
 
-The engineering soundscape approach developed in this thesis strives to make certain applications of soundscape possible. As highlighted earlier, one of these applications is the ability to assess the soundscape perception in situations where surveys are impractical as well as to be able to track changes in the soundscape of public spaces. This chapter therefore presents a unique application of predictive modelling towards these goals as well as the development of the predictive modelling method itself. First, I will review the identified impacts of the \gls{covid19} lockdowns on the sound environment in cities around the world, investigate these changes in detail within London and Venice, and finally presents the impact of these changes on the likely perception of the soundscape of public spaces through the results of the predictive model. 
+The engineering soundscape approach developed in this thesis strives to make certain applications of soundscape possible. As highlighted earlier, one of these applications is the ability to assess the soundscape perception in situations where surveys are impractical as well as to be able to track changes in the soundscape of public spaces. This chapter therefore presents a unique application of predictive modelling towards these goals as well as the development of the predictive modelling method itself. First, I will review the identified impacts of the \gls{covid19} lockdowns on the sound environment in cities around the world, investigate these changes in detail within London and Venice, and finally present the impact of these changes on the likely perception of the soundscape of public spaces through the results of the predictive model. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -66,10 +66,10 @@ The \nth{1} research question (RQ1), addressing the perceptual effect of the cha
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/Database use figure - Chap 5.png}
-  \caption{Version of \ref{fig:databaseUse} showing which subsets of the data from the \gls{isd} are used in the study. Those portions used are highlighted in green while the portions not used in this study are crossed out. \label{fig:databaseUse5}}
+  \caption{Version of \cref{fig:databaseUse} showing which subsets of the data from the \gls{isd} are used in the study. Those portions used are highlighted in green while the portions not used in this study are crossed out. \label{fig:databaseUse5}}
 \end{figure}
 
-   The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the \nth{6} and the \nth{25} of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on site in 2020. 
+   The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the \nth{6} and the \nth{25} of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on site in 2020. \proof{\cref{fig:databaseUse5} illustrates which subsets of the data collected in the \gls{isd} were used in this study.}
 
 
 \begin{sidewaystable}[hp]
@@ -192,7 +192,7 @@ Total & Mean & \multirow{2}{*}{1172 ~} & 21.62 & 2.04 & 63.47 & \multirow{2}{*}{
    \begin{enumerate}
      \item an initial exercise to enhance the chances of participants complying with the instructions and wearing headphones
      \item a training set using two randomly chosen binaural recordings (then not used in the main task) from the dataset
-     \item a soundscape characterisation questionnaire starting with an open-ended question about perceived sound sources and featuring the same questions as the one used in-situ, looking into the perceived affective quality of the soundscape the perceived sound source dominance of the following four types: traffic noise, other noise, human sounds, and natural sounds
+     \item a soundscape characterisation questionnaire starting with an open-ended question about perceived sound sources and featuring the same questions as the one used in-situ, looking into the perceived affective quality of the soundscape and the perceived sound source dominance of the following four types: traffic noise, other noise, human sounds, and natural sounds
      \item a questionnaire on the basic demographic factors.
    \end{enumerate}
 
@@ -200,7 +200,52 @@ Total & Mean & \multirow{2}{*}{1172 ~} & 21.62 & 2.04 & 63.47 & \multirow{2}{*}{
 
    Baring in mind the remote nature of the study and to ensure a minimum level of robustness for reliable sound source recognition, an initial exercise was performed consisting of a headphone screening test \citep{Woods2017Headphone} and a headphone reproduction level adjustment test \citep{Gontier2019Estimation}. The level adjustment was performed using an 11-second-long pink noise sample matched to the lowest and the highest \gls{la90} values from the experimental set. Participants were asked to adjust their listening level to clearly hear the quieter sample while keeping the level low enough, so they don't find the louder sample disturbing. The headphone screening test followed, featuring a stereo signal of 1-second-long 100 Hz sin tone, generated with Izotope RX6 application, played at a 3 dB difference where one of the equally loud pairs had its phase inverted. A 100 Hz sin was used because the pilot tests revealed that the 200 Hz sin tone proposed by \citet{Woods2017Headphone} created a higher uncertainty varying across different laptop models and would likely contribute to the chances of a participant fooling the test. It was expected that participants using speakers would not be able to either hear the sin wave or would be fooled by the inverted phase effect and therefore not able to pass the trials, unless they were indeed using headphones. The participant needed to recognise the quietest of the 3 samples in a trial of 6 attempts. Only participants correctly answering 5 or more out of 6 trials were allowed to proceed with the experiment. Participants were asked not to change their audio output settings during the rest of the experiment. This was introduced to ensure that a participant is using a headphone playback system which allows a listener to clearly recognise a 3 dB difference at 100 Hz as a proxy for sufficient audio quality playback.
 
-   However, after the initial data collection, questions were raised as to how the playback loudness impacts ecological validity as it relates to the perceived affective quality of the soundscape. Given this concern, the \gls{paq} responses from the online surveys were not included in further data analysis. Sound source identification is not considered to suffer the same validity concerns as this is not directly dependent on absolute playback level and requires only that the participant can clearly hear what is present. The purpose of the calibration procedure described above was to ensure that the participant could clearly hear the softest samples used.
+   \subsubsection*{Online perceptual data}
+   \label{sec:onlinePerceptualData}
+
+   However, after the initial data collection, questions were raised as to how the playback loudness impacts ecological validity as it relates to the perceived affective quality of the soundscape. \proof{The results of the listening study indicated that the \gls{paq} responses collected in the online study to the 2019 recordings were not consistent with those collected on site. \cref{tab:onlineComparison} shows the range, mean, and standard deviation of the responses collected for each location. By looking at the difference between the mean responses for online vs. in-situ we can see multiple large differences between the two. The largest difference is for the RegentsParkJapan pleasantness - while this was rated highly pleasant (0.62) on site, the online study resondents rated it as neutral (0.05). In general, the online listeners rated the soundscapes as much more neutral than the in-situ listeners. This difference was less pronounced for eventfulness, where the biggest difference between the in-situ and online measurements was 0.22, for St Pauls Row.} 
+
+   \proof{This difference in the online study could have a few possible explanations. The first is the lack of control over the playback level. Without a reference level for the participants to calibrate to, it was not possible to verify the actual sound level they were exposed to. The second is a lack of contextual information; the participants were exposed only to the binaural recording, with no additional information about the visual environment, the architectural typology, or the general setting of the space. The particular online listening setup we designed appears to be insufficient for collecting perceptual responses, however since the \gls{covid19} lockdowns, new developments in online listening studies have been made, which may enable this in the future \citep{Tan2022, Peng2022}.}
+   
+   Given this concern, the \gls{paq} responses from the online surveys were not included in further data analysis. Sound source identification is not considered to suffer the same validity concerns as this is not directly dependent on absolute playback level and requires only that the participant can clearly hear what is present. The purpose of the calibration procedure described above was to ensure that the participant could clearly hear the softest samples used.
+
+\begin{sidewaystable}
+  \centering
+  \caption{Comparison in perceptual responses between the online listening study and in-situ survey data. Both sets include only 2019 data; responses to 2019 recordings for the online study and survey data collected in 2019 for the in-situ data. The range, mean, and standard deviation of the responses are reported for each location. The difference between the online and in-situ responses is also reported. \label{tab:onlineComparison}}
+  \begin{tabular}{cl|ccc|ccc|ccc} 
+  \toprule
+  \multicolumn{1}{l}{} &  & \multicolumn{3}{c|}{\textbf{Online Study }} & \multicolumn{3}{c|}{\textbf{In-situ }} & \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}\textbf{Difference }\\\textbf{(Online minus in-situ) }\end{tabular}} \\
+  \multicolumn{1}{l}{} & \multicolumn{1}{c|}{\textbf{LocationID}} & \textbf{Range} & \textbf{Mean} & \textbf{Std. Dev.} & \textbf{Range} & \textbf{Mean} & \textbf{Std. Dev.} & \textbf{Range} & \textbf{Mean} & \textbf{Std. Dev.} \\
+  \multirow{13}{*}{\textbf{Pleasant }} & CamdenTown & 1.41 & -0.32 & 0.27 & 1.38 & -0.10 & 0.29 & 0.03 & -0.22 & -0.01 \\
+   & EustonTap & 1.25 & -0.11 & 0.30 & 1.21 & -0.20 & 0.28 & 0.04 & 0.09 & 0.02 \\
+   & MarchmontGarden & 1.53 & -0.03 & 0.35 & 1.85 & 0.27 & 0.42 & -0.32 & -0.30 & 0.07 \\
+   & MonumentoGaribaldi & 1.06 & 0.06 & 0.30 & 0.93 & 0.42 & 0.27 & 0.13 & -0.36 & 0.03 \\
+   & PancrasLock & 1.38 & -0.19 & 0.29 & 1.68 & 0.25 & 0.39 & -0.29 & -0.43 & 0.09 \\
+   & RegentsParkFields & 1.18 & 0.34 & 0.27 & 2.00 & 0.50 & 0.39 & -0.82 & -0.16 & 0.12 \\
+   & RegentsParkJapan & 1.75 & 0.05 & 0.49 & 1.78 & 0.62 & 0.33 & -0.03 & -0.58 & 0.16 \\
+   & RussellSq & 1.28 & -0.12 & 0.35 & 1.32 & 0.47 & 0.30 & -0.04 & -0.59 & 0.06 \\
+   & SanMarco & 1.19 & -0.10 & 0.31 & 1.43 & 0.21 & 0.32 & -0.23 & -0.32 & 0.01 \\
+   & StPaulsCross & 1.03 & -0.05 & 0.27 & 1.56 & 0.36 & 0.33 & -0.53 & -0.41 & 0.07 \\
+   & StPaulsRow & 1.28 & -0.22 & 0.32 & 1.60 & 0.22 & 0.34 & -0.32 & -0.44 & 0.02 \\
+   & TateModern & 1.31 & -0.12 & 0.33 & 1.43 & 0.37 & 0.29 & -0.12 & -0.50 & 0.04 \\
+   & TorringtonSq & 1.41 & 0.10 & 0.30 & 1.85 & 0.08 & 0.31 & -0.44 & 0.02 & 0.01 \\ 
+  \hline
+  \multirow{13}{*}{\textbf{Eventful }} & CamdenTown & 1.50 & 0.26 & 0.38 & 1.75 & 0.36 & 0.35 & -0.25 & -0.10 & 0.03 \\
+   & EustonTap & 1.10 & 0.06 & 0.32 & 1.32 & 0.18 & 0.30 & -0.22 & -0.12 & 0.02 \\
+   & MarchmontGarden & 1.34 & 0.04 & 0.36 & 1.21 & -0.04 & 0.26 & 0.13 & 0.08 & 0.10 \\
+   & MonumentoGaribaldi & 1.78 & -0.10 & 0.37 & 0.88 & -0.01 & 0.24 & 0.90 & -0.09 & 0.12 \\
+   & PancrasLock & 1.38 & 0.08 & 0.33 & 1.31 & 0.07 & 0.28 & 0.07 & 0.00 & 0.05 \\
+   & RegentsParkFields & 1.18 & 0.01 & 0.26 & 1.35 & -0.05 & 0.27 & -0.18 & 0.06 & 0.00 \\
+   & RegentsParkJapan & 1.15 & -0.07 & 0.25 & 1.27 & -0.01 & 0.25 & -0.12 & -0.06 & 0.01 \\
+   & RussellSq & 1.21 & 0.13 & 0.29 & 1.04 & 0.05 & 0.25 & 0.16 & 0.08 & 0.04 \\
+   & SanMarco & 1.31 & 0.44 & 0.33 & 1.28 & 0.37 & 0.29 & 0.03 & 0.07 & 0.05 \\
+   & StPaulsCross & 1.46 & 0.07 & 0.29 & 1.38 & 0.14 & 0.29 & 0.07 & -0.07 & 0.00 \\
+   & StPaulsRow & 1.21 & 0.34 & 0.27 & 1.51 & 0.11 & 0.27 & -0.31 & 0.22 & 0.00 \\
+   & TateModern & 1.72 & 0.30 & 0.36 & 1.68 & 0.21 & 0.31 & 0.04 & 0.09 & 0.05 \\
+   & TorringtonSq & 1.25 & 0.02 & 0.31 & 1.60 & 0.18 & 0.32 & -0.35 & -0.16 & 0.01 \\
+  \bottomrule
+  \end{tabular}
+  \end{sidewaystable}
 
    Online questionnaire data was collected between the \nth{9} of June and the \nth{9} of August 2020. Within the Gorilla Experiment Builder, a total of 250 attempts to complete the experiment were recorded, where 165 participants were excluded either on the basis of not passing the headphone screening ($N=79$) or for not completing the experiment, usually before engaging into the screening ($N=83$). Out of a total of 88 participants who completed the test, 2 participants were excluded as outliers as they provided uniform answers across all the questions and commented on not being able to properly hear the stimuli, despite their successful completion of the training tests. The participants of the online experiment were of mean age 32.42, 45.1\% male, 54.9\% female.
 
@@ -227,8 +272,6 @@ Before continuing to the predictive model and the impacts on the soundscape perc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 The t-test results indicate that all locations except Regents Park Japan demonstrate a significant change in the sound environment. Averaged across all locations, sound levels in London and Venice decreased by 5.66 dB and 17.45 dB, respectively, and an overall decrease of 7.08 dB for both cities. In London, the amount of reduction ranges from 10.49 dB (Russell Square) to 1.27 dB (Regents Park Japan). The largest reduction (22.03 dB) is seen in Piazza San Marco which is to be expected given the drastic contextual difference from Carnevale in 2019 to a deserted square in 2020. 
 
 \cref{fig:NsMapLockN5} presents the distributions of \gls{n5} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. The results here closely mirror the \gls{laeq} results. In London the \gls{n5} reduction ranges from 11.03 sones (Russell Square) to 0.35 sones (Pancras Lock). \cref{fig:NsMapLockS} presents the distributions of \gls{s} values measured in each of the 13 locations in 2019 and during the lockdown in 2020. An interesting point here is that, unlike the sound level and loudness results, there was not a universal reduction in the sharpness levels across all locations.
@@ -248,7 +291,7 @@ The t-test results indicate that all locations except Regents Park Japan demonst
 
 \paragraph*{Effect of the urban setting on sound levels reduction}
 
-In addition to strictly documenting the changes in the sound environment in London, we also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 11 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
+In addition to strictly documenting the changes in the sound environment in London, we also aimed to investigate whether the lockdown measures would result in different sound level reductions depending on the urban scenario (and its composition of sound sources). For this purpose, it was decided to define an `Area type' variable that would serve as a proxy for urban (acoustic) context: a \emph{k}-means cluster analysis was performed on the mean values of \gls{laeq}, \gls{la10}, \gls{la90}, \gls{n5}, \gls{tu}, \gls{fs}, and \gls{s} of the 2019 measurements campaign for the 13 locations, after those have been \emph{z}-score standardized to meet the algorithm criteria. The rationale was that clustering urban areas \emph{a priori} based on their `typical' acoustic climate (hence using only data from 2019) would allow us to see whether there was an association between area type and noise reduction. The algorithm was set to a three-cluster solution, based on visual inspection of the scree plot as reported in \cref{fig:NsMapLockScree} (`elbow method') \citep{KetchenJr.1996application}. The analysis was conducted in \texttt{R} \citep{RCT2018R} and figures were produced using the package \texttt{factoextra} \citep{Kassambara2020factoextra}.
 
 \begin{figure}[!h]
   \centering
@@ -499,7 +542,7 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
    \subsubsection{Model selection results}
 
-   The most immediately interesting result of the model-building and feature selection process, answering to RQ3\footnote{RQ3: What are the key features needed for a soundscape prediction model based on comprehensive acoustic on site measurements to be used for assessing locations with low social presence or in situations where conducting surveys is impractical?}, is the apparent irrelevance of location context to the \gls{isoev} dimension. The multilevel model structure was chosen since the starting assumption was that soundscape perception is heavily influenced by contextual factors, such as expectations of the space and visual context. For this modelling, these factors can be considered as location-level latent variables at least partially accounted for by the inclusion of the LocationID as the second-level factor. While this assumption certainly held true for \gls{isopl}, my results indicate that these types of contextual factors are not significant for \gls{isoev}, and do not affect the relationship between the acoustic features of the sound and the perception.
+   The most immediately interesting result of the model-building and feature selection process, answering to RQ3\footnote{RQ3: What are the key features needed for a soundscape prediction model based on comprehensive acoustic on site measurements to be used for assessing locations with low social presence or in situations where conducting surveys is impractical?}, is the apparent irrelevance of location context to the \gls{isoev} dimension. The multilevel model structure was chosen since the starting assumption was that soundscape perception is heavily influenced by contextual factors, such as expectations of the space and visual context. For this modelling, these factors can be considered as location-level latent variables at least partially accounted for by the inclusion of the LocationID as the second-level factor. While this assumption certainly held true for \gls{isopl}, my results indicate that these types of contextual factors are not significant for \gls{isoev}, and do not affect the relationship between the acoustic features of the sound and the perception. \proof{It is possible that this result also explains the difference in the online and in-situ responses highlighted in \cref{sec:onlinePerceptualData}. I observed a much greater discrepancy in pleasantness ratings between the two modalities than for eventfulness ratings. This may be the result of the lack of contextual information for the online study, greatly impacting pleasantness, while the eventfulness rating was not greatly affected.}
 
    In particular this result may herald a shift in modelling approach for soundscapes -- where previous methods, in both the soundscape and noise paradigms, have mostly focused on deriving acoustic models of annoyance (in other words have focussed on the \gls{isopl} dimension) perhaps they should instead consider the acoustic models as primarily describing the eventfulness dimension when considered \emph{in-situ}. In addition this study takes the approach of modelling responses at an individual level in order to derive the soundscape assessment of the location. Rather than either attempting to represent the predicted response of an individual person -- which is less useful in this sort of practical application -- or to base the model on average metrics of the location, the goal is instead to characterise the location itself, through the aggregated predicted responses of individuals. I believe this modelling approach better addresses the practical goal of predictive soundscape modelling and reflects the structure of the data collection.
 
@@ -523,7 +566,16 @@ When considering the mean \gls{laeq} reductions between 2019 and 2020 as a funct
 
  This chapter demonstrates an application of predictive modelling to the field of soundscape studies. The model building results reveal that, within this dataset, an approach based on psychoacoustics can achieve $R^2=0.85$ for predicting the pleasantness of locations and $R^2=0.715$ for predicting the eventfulness. It should be noted that this result is given for that accuracy in predicting the overall response in a given location, averaged across all responses or recordings in the location, not for predicting the individual responses. A modelling-focussed method of this sort is a key component to the potential scalability of the soundscape approach to applications such as smart city sensing, urban planning, and cost-effective, sustainable design. To demonstrate the usefulness and feasibility of such an approach, I applied this model to a unique case study in which traditional soundscape survey methods were impossible.
 
- By applying this predictive model to recordings collected during the 2020 lockdown, the predicted change in perception of the urban soundscapes is revealed. In general, soundscapes became less eventful, and those locations which were previously dominated by traffic noise became more pleasant. By contrast, previously human- and natural-dominated locations are in fact predicted to become less pleasant despite the decrease in sound levels. While all sound source categories remained present in both years, overall, in 2020 a decrease in human sounds' dominance was observed together with an increase in the perceived dominance of natural sounds. Although these results are limited in that they present one snapshot of the soundscape of the spaces, the success of the model in responding to new and disturbing sound events demonstrates its potential usefulness in long-term monitoring of urban soundscapes.
+ By applying this predictive model to recordings collected during the 2020 lockdown, the predicted change in perception of the urban soundscapes is revealed. In general, soundscapes became less eventful, and those locations which were previously dominated by traffic noise became more pleasant. By contrast, previously human- and natural-dominated locations are in fact predicted to become less pleasant despite the decrease in sound levels. While all sound source categories remained present in both years, overall, in 2020 a decrease in human sounds' dominance was observed together with an increase in the perceived dominance of natural sounds. Although these results are limited in that they present one snapshot of the soundscape of the spaces, the success of the model in responding to new and disturbing sound events demonstrates its potential usefulness in long-term monitoring of urban soundscapes. 
+
+\proof{The key takeaways demonstrated in this chapter are:}
+
+ \begin{itemize}
+  \item \proof{The modelling achieved reasonable performance and allowed me to investigate soundscape perception in a unique scenario.}
+  \item \proof{The model was able to capture the expected changes in perception within a wide variety of location types. The results of the model were consistent with what would typically be expected for the more obvious soundscape changes (i.e. Monumento Garibaldi became much more chaotic with the introduction of lawn works).}
+  \item \proof{Location-context effects are very important for pleasantness but not for eventfulness.}
+  \item \proof{A reduction in sound level does not always lead to an increase in pleasantness; the change in sound source composition and sonic character is important.}
+ \end{itemize}
 
  Starting from the success and unique application of this model, \cref{part:generalModel} will present developed framework for creating a generalisable predictive model, and a series of case studies illustrating how additional soundscape indicators could be integrated into the model to improve its performance and usefulness.
 
